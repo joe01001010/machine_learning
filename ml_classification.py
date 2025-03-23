@@ -9,6 +9,7 @@ from sklearn.datasets import make_circles
 from sklearn.metrics import confusion_matrix
 import itertools
 import random
+print("Imports complete")
 
 def main():
     train_data, train_labels = tf.keras.datasets.fashion_mnist.load_data()[0]
