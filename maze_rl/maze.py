@@ -3,12 +3,12 @@ from collections import defaultdict
 import random, os, sys, time
 
 ACTIONS         = ["U", "D", "L", "R"]
-SLEEP_DELAY     = 0.1
+SLEEP_DELAY     = 1
 STABLE_CRITERIA = 50
 ARROWS          = { "U": "↑", "D": "↓", "L": "←", "R": "→" }
 ROWS            = 5
 COLUMNS         = 5
-GOAL            = (12, 12)
+GOAL            = (4, 4)
 EPISODES        = 10000
 WALLS           = {
   (2, 1), (2, 2), (2, 3), (2, 4), (4, 2)
@@ -145,7 +145,7 @@ def improve_policy(policy, Q, epsilon=0.1):
   return stable
 
 
-def monte_carlo_control(episodes=5000):
+def monte_carlo_control(episodes):
   """
   This function takes one argument being the number of episodes to run to learn a policy
   This function will return the policy and Q table
