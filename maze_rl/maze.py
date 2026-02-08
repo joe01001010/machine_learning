@@ -2,14 +2,17 @@
 from collections import defaultdict
 import random, os, sys, time
 
-ACTIONS     = ["U", "D", "L", "R"]
-ROWS        = 10
-COLUMNS     = 10
-GOAL        = (9, 9)
-EPISODES    = 1000
-WALLS       = {(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (9, 2)}
-SLEEP_DELAY = 1
-ARROWS      = { "U": "↑", "D": "↓", "L": "←", "R": "→" }
+ACTIONS         = ["U", "D", "L", "R"]
+SLEEP_DELAY     = 0.1
+STABLE_CRITERIA = 50
+ARROWS          = { "U": "↑", "D": "↓", "L": "←", "R": "→" }
+ROWS            = 13
+COLUMNS         = 13
+GOAL            = (12, 12)
+EPISODES        = 10000
+WALLS           = {
+  (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (2, 12), (12, 2)
+}
 
 
 class Maze:
@@ -156,20 +159,31 @@ def monte_carlo_control(episodes=5000):
 
   Q = defaultdict(float)
   returns = defaultdict(list)
+  total_steps = 0
+  stable_count = 0
 
   for i in range(episodes):
 
     episode = generate_episode(env, policy)
+    total_steps += len(episode)
 
     mc_evaluate(Q, returns, episode)
 
-    improve_policy(policy, Q)
+    stable = improve_policy(policy, Q)
+    total_episodes += 1
     if i % 100 == 0:
-      total_episodes += 1
       print(f"Episode: {i+1}")
 
+    if stable:
+      stable_count += 1
+    else:
+      stable_count = 0
 
-  return policy, Q, total_episodes
+    if stable_count >= STABLE_CRITERIA:
+      return policy, Q, total_episodes, total_steps
+
+
+  return policy, Q, total_episodes, total_steps
 
 
 def display_board(rows, columns, walls, goal, agent_location):
@@ -268,20 +282,21 @@ def print_policy_display(policy):
 
 def main():
   start_time = time.time()
-  policy, Q, total_episodes = monte_carlo_control(episodes=EPISODES)
-  total_time = f"{(time.time() - start_time):.2f}"
+  policy, Q, total_episodes, total_steps = monte_carlo_control(episodes=EPISODES)
+  total_time = f"{(time.time() - start_time):.3f}"
   follow_policy(Maze(), policy)
 
-  print("=" * 80)
+  print("=" * 100)
 
   print(f"Total rows: {ROWS}")
   print(f"Total columns: {COLUMNS}")
   print(f"Total time: {total_time}")
   print(f"Total episodes: {total_episodes}")
+  print(f"Average steps per episode: {(total_steps / total_episodes):.2f}")
 
   print_policy_display(policy)  
 
-  print("=" * 80)
+  print("=" * 100)
 
 
 if __name__ == '__main__':
