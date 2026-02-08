@@ -8,7 +8,7 @@ STABLE_CRITERIA = 50
 ARROWS          = { "U": "↑", "D": "↓", "L": "←", "R": "→" }
 ROWS            = 5
 COLUMNS         = 5
-GOAL            = (4, 4)
+GOAL            = (ROWS - 1, COLUMNS - 1)
 EPISODES        = 10000
 WALLS           = {
   (2, 1), (2, 2), (2, 3), (2, 4), (4, 2)
@@ -93,7 +93,7 @@ def generate_episode(env, policy):
   return episode
 
 
-def mc_evaluate(Q, returns, episode, gamma=0.9):
+def mc_evaluate(Q, returns, episode, gamma=0.8):
   """
   This function takes 4 arguments
   Q is the list of state action pairs with the sum of returns
