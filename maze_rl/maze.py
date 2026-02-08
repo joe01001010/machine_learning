@@ -3,12 +3,13 @@ from collections import defaultdict
 import random, os, sys, time
 
 ACTIONS     = ["U", "D", "L", "R"]
-ROWS        = 5
-COLUMNS     = 5
-GOAL        = (4, 4)
+ROWS        = 10
+COLUMNS     = 10
+GOAL        = (9, 9)
 EPISODES    = 1000
-WALLS       = {(2, 1), (2, 2), (2, 3), (2, 4), (4, 2)}
+WALLS       = {(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (9, 2)}
 SLEEP_DELAY = 1
+ARROWS      = { "U": "↑", "D": "↓", "L": "←", "R": "→" }
 
 
 class Maze:
@@ -151,6 +152,7 @@ def monte_carlo_control(episodes=5000):
   """
   env = Maze()
   policy = random_policy()
+  total_episodes = 0
 
   Q = defaultdict(float)
   returns = defaultdict(list)
@@ -163,9 +165,11 @@ def monte_carlo_control(episodes=5000):
 
     improve_policy(policy, Q)
     if i % 100 == 0:
+      total_episodes += 1
       print(f"Episode: {i+1}")
 
-  return policy, Q
+
+  return policy, Q, total_episodes
 
 
 def display_board(rows, columns, walls, goal, agent_location):
@@ -183,14 +187,14 @@ def display_board(rows, columns, walls, goal, agent_location):
   for row in range(rows):
     for column in range(columns):
       if (row, column) == agent_location and (row, column) == goal:
-        print(" [A!] ", end='')
+        print(" [AG] ", end='')
       else:
         if (row, column) == agent_location:
           print(" [A] ", end='')
         elif (row, column) in walls:
           print(" [#] ", end='')
         elif (row, column) == goal:
-          print(" [!] ", end='')
+          print(" [G] ", end='')
         else:
           print(" [ ] ", end='')
     print()
@@ -239,9 +243,45 @@ def display_policy(policy):
     display_board(ROWS, COLUMNS, WALLS, GOAL, step)
 
 
+def print_policy_display(policy):
+  """
+  This function takes one argument
+  policy is the ranking for which action to take from each state
+  This function will return nothing
+  This function prints to stdout the optimal policy that was discovered through training
+  """
+  print("\nOptimal policy discovered through training")
+  for row in range(ROWS):
+    for column in range(COLUMNS):
+      state = (row, column)
+
+      if state in WALLS:
+        print(" [#] ", end='')
+      elif state == GOAL:
+        print(" [G] ", end='')
+      else:
+        best_action = max(policy[state], key=policy[state].get)
+        print(f" [{ARROWS[best_action]}] ", end='')
+
+    print()
+
+
 def main():
-  policy, Q = monte_carlo_control(episodes=EPISODES)
+  start_time = time.time()
+  policy, Q, total_episodes = monte_carlo_control(episodes=EPISODES)
+  total_time = f"{(time.time() - start_time):.2f}"
   follow_policy(Maze(), policy)
+
+  print("=" * 80)
+
+  print(f"Total rows: {ROWS}")
+  print(f"Total columns: {COLUMNS}")
+  print(f"Total time: {total_time}")
+  print(f"Total episodes: {total_episodes}")
+
+  print_policy_display(policy)  
+
+  print("=" * 80)
 
 
 if __name__ == '__main__':
