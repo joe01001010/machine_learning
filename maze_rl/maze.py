@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from collections import defaultdict
-import random, os, sys, time
+import random, os, time
 
 ACTIONS         = ["U", "D", "L", "R"]
 SLEEP_DELAY     = 1
@@ -171,8 +171,6 @@ def monte_carlo_control(episodes):
 
     stable = improve_policy(policy, Q)
     total_episodes += 1
-    if i % 100 == 0:
-      print(f"Episode: {i+1}")
 
     if stable:
       stable_count += 1
