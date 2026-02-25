@@ -63,5 +63,5 @@ typer-slim==0.20.0
 typing-inspection @ file:///home/task_176061348700415/conda-bld/typing-inspection_1760614166875/work
 typing_extensions @ file:///croot/typing_extensions_1756280817316/work
 urllib3 @ file:///home/task_176539908095521/conda-bld/urllib3_1765399198587/work
-wheel==0.45.1
+wheel==0.46.2
 zstandard @ file:///home/task_175818846949212/conda-bld/zstandard_1758189073015/work
