@@ -4,6 +4,7 @@
 import argparse
 import random
 import time
+from turtle import window_width
 
 
 class QLearningAgent:
@@ -66,7 +67,7 @@ class QLearningAgent:
         self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
 
 
-class ParkingLot():
+class ParkingLot:
     def __init__(self, rows, columns, goal):
         self.rows = rows
         self.columns = columns
@@ -147,8 +148,18 @@ class ParkingLot():
         return f"Rows: {self.rows}, Columns: {self.columns}, Goal: {self.goal}, Entrance: {self.entrance}"
 
 
-def train_agent(parking_lot, agent, episodes=2000, max_steps=100):
+def train_agent(parking_lot, agent, episodes=2000, max_steps=100, cutoff=50):
+    agent_history = {
+        'episode_rewards': [],
+        'episode_steps': [],
+        'success': [],
+        'epsilon': [],
+    }
+
     for episode in range(episodes):
+        total_reward = 0
+        steps_taken = 0
+        succeeded = 0
         state = parking_lot.reset()
 
         for step in range(max_steps):
@@ -158,11 +169,25 @@ def train_agent(parking_lot, agent, episodes=2000, max_steps=100):
             agent.update(state, action, reward, next_state, done)
 
             state = next_state
+            total_reward += reward
+            steps_taken += 1
 
-            if done or episode == episodes - 1:
+            if done:
+                succeeded = 1
                 break
 
+        agent_history['episode_rewards'].append(total_reward)
+        agent_history['episode_steps'].append(steps_taken)
+        agent_history['success'].append(succeeded)
+        agent_history['epsilon'].append(agent.epsilon)
         agent.decay_epsilon()
+
+        if sum(agent_history['success'][-cutoff:]) == cutoff:
+            if max(agent_history['episode_steps'][-cutoff:]) - min(agent_history['episode_steps'][-cutoff:]) <= 2:
+                break
+
+    print(f"Training successes: {sum(agent_history['success'])}/{len(agent_history['success'])}")
+    return agent_history
 
 
 def test_agent(parking_lot, agent, max_steps=50):
@@ -181,27 +206,58 @@ def test_agent(parking_lot, agent, max_steps=50):
         time.sleep(1)
 
         if done:
+            print(parking_lot)
             break
 
     agent.epsilon = old_epsilon
     return path, done
 
 
+def print_training_summary(history, window=100):
+    """
+    This function takes two arguments
+    history is the history of the training pipeline the agent took
+    windows it the subset to average over the history
+    This function will print the training summary to stdout
+    This function doesnt return anything
+    """
+    rewards = history["episode_rewards"]
+    steps = history["episode_steps"]
+    successes = history["success"]
+    epsilons = history["epsilon"]
+
+    for offset in range(0, len(rewards), window):
+        section = window
+        if len(rewards) - (offset + window) < window:
+            section = len(rewards) - (offset + window)
+
+        average_reward = sum(rewards[offset:offset + section]) / section
+        average_steps = sum(steps[offset:offset + section]) / section
+        success_rate = sum(successes[offset:offset + section]) / section
+        average_epsilon = sum(epsilons[offset:offset + section]) / section
+
+        print(f"Episodes {offset}-{offset + section}: ", end = '')
+        print(f"Average Reward={average_reward:.2f}, ", end = '')
+        print(f"Average Steps={average_steps:.2f}, ", end = '')
+        print(f"Success Rate={success_rate:.2%}, ", end = '')
+        print(f"Average Epsilon={average_epsilon:.3f}")
+        
+        if section != window:
+            break
+
+
 def main(rows, columns):
     for goal in range((columns - 2) * 2):
         parking_lot = ParkingLot(rows, columns, goal)
         agent = QLearningAgent()
-        print(repr(parking_lot))
 
         episode_stats = train_agent(parking_lot, agent)
+        print_training_summary(episode_stats)
 
         path, success = test_agent(parking_lot, agent)
         print("Success:", success)
+        print(f"Number of steps for optimal path found: {len(path) - 1}")
         print("Path:", path)
-    
-    print("Overall training stats:")
-    for episode in episode_stats:
-        print("Episode:", episode, "Steps:", episode_stats[episode])
 
 
 if __name__ == '__main__':
