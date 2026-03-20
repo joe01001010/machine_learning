@@ -8,6 +8,7 @@ from parking_lot import ParkingLot
 from q_table_agent import QTableAgent
 from double_q_table_agent import DoubleQTableAgent
 from deep_q_network import DeepQNetwork
+from tensorboard_logger import TensorBoardLogger
 from logging_init import configure_logging
 LOGGER = configure_logging(__file__)
 
@@ -25,7 +26,7 @@ def get_agent_state(parking_lot, agent):
     return getattr(parking_lot, state_method)()
 
 
-def train_agent(parking_lot, agent, episodes=2000, max_steps=100, cutoff=50):
+def train_agent(parking_lot, agent, tb_logger, goal_index, episodes=2000, max_steps=100, cutoff=50):
     """
     This function takes 5 arguments
     parking_lot is the object that represent the environment the agent is training in
@@ -97,6 +98,29 @@ def train_agent(parking_lot, agent, episodes=2000, max_steps=100, cutoff=50):
         agent_history['epsilon'].append(agent.epsilon)
         agent_history['loss'].append(sum(losses) / len(losses) if losses else None)
         agent.decay_epsilon()
+
+        window = 50
+        recent_rewards = agent_history['episode_rewards'][-window:]
+        recent_steps = agent_history['episode_steps'][-window:]
+        recent_successes = agent_history['success'][-window:]
+
+        avg_reward_50 = sum(recent_rewards) / len(recent_rewards)
+        avg_steps_50 = sum(recent_steps) / len(recent_steps)
+        avg_success_50 = sum(recent_successes) / len(recent_successes)
+
+        tb_logger.log_episode(
+            agent_name=agent_name,
+            goal_index=goal_index,
+            episode=episode,
+            reward=total_reward,
+            steps=steps_taken,
+            success=succeeded,
+            epsilon=agent.epsilon,
+            loss=(sum(losses) / len(losses) if losses else None),
+            avg_reward_50=avg_reward_50,
+            avg_steps_50=avg_steps_50,
+            avg_success_50=avg_success_50,
+        )
 
         if (episode + 1) % 100 == 0:
             window = min(100, len(agent_history['episode_rewards']))
@@ -221,46 +245,64 @@ def test_agent(parking_lot, agent, display=False,  max_steps=50):
 def main(rows, columns, display):
     LOGGER.info(f"Run started | rows={rows} columns={columns} display={display}")
     temp_lot = ParkingLot(rows, columns)
+    tb_logger = TensorBoardLogger()
     q_table_agents = dict()
     q_table_agents_stats = dict()
-    q_table_agents_tests = dict()
     double_q_table_agents = dict()
     double_q_table_agents_stats = dict()
-    double_q_table_agents_tests = dict()
     deep_q_network_agents = dict()
     deep_q_network_agents_stats = dict()
-    deep_q_network_tests = dict()
 
     for goal in range(len(temp_lot.parking_spots)):
         LOGGER.info(f"Goal processing started | goal_index={goal} target={temp_lot.parking_spots[goal]}")
 
         q_table_agent = QTableAgent()
-        q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), q_table_agent)
-        q_table_agents_tests[goal] = test_agent(ParkingLot(rows, columns, goal), q_table_agent, display=display)
+        q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), q_table_agent, tb_logger, goal_index=goal)
         q_table_agents[goal] = q_table_agent
 
         double_q_table_agent = DoubleQTableAgent()
-        double_q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), double_q_table_agent)
-        double_q_table_agents_tests[goal] = test_agent(ParkingLot(rows, columns, goal), double_q_table_agent, display=display)
+        double_q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), double_q_table_agent, tb_logger, goal_index=goal)
         double_q_table_agents[goal] = double_q_table_agent
 
         deep_q_network_agent = DeepQNetwork()
-        deep_q_network_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), deep_q_network_agent)
-        deep_q_network_tests[goal] = test_agent(ParkingLot(rows, columns, goal), deep_q_network_agent, display=display)
+        deep_q_network_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), deep_q_network_agent, tb_logger, goal_index=goal)
         deep_q_network_agents[goal] = deep_q_network_agent
 
+    for goal in range(len(temp_lot.parking_spots)):
+        parking_lot_test = ParkingLot(rows, columns, goal)
+
+        for agent_name, agent_dict in [
+            ("QTableAgent", q_table_agents),
+            ("DoubleQTableAgent", double_q_table_agents),
+            ("DeepQNetwork", deep_q_network_agents),
+        ]:
+            agent_test = agent_dict[goal]
+            path, success = test_agent(parking_lot_test, agent_test, display=display)
+
+            tb_logger.log_test_result(
+                agent_name=agent_name,
+                goal_index=goal,
+                success=success,
+                steps=len(path) - 1,
+                path=path,
+            )
+    
+    tb_logger.close()
     LOGGER.info(f"Run finished | goals_trained={len(temp_lot.parking_spots)}")
 
 
 if __name__ == '__main__':
     start = time.perf_counter()
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--rows", default=7, type=int)
     parser.add_argument("--columns", default=6, type=int)
     parser.add_argument("--display", default=False, type=bool)
     args = parser.parse_args()
+
     LOGGER.info(f"Calling main | rows={args.rows} columns={args.columns} display={args.display}")
     main(args.rows, args.columns, args.display)
+
     end = time.perf_counter()
     seconds = end - start
     metric = f"{'Execution Time (Seconds):' if seconds <= 60 else 'Execution Time (Minutes)'}"

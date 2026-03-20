@@ -201,7 +201,10 @@ class DeepQNetwork:
         This function will store the experiences 
         """
         self._store_experience(state, action, reward, next_state, done)
-        LOGGER.debug(f"Learning: {self._store_experience(state, action, reward, next_state, done)} from {sys._getframe().f_code.co_name}")
+        LOGGER.debug(
+            f"Learning from {sys._getframe().f_code.co_name}: "
+            f"state={state}, action={action}, reward={reward}, next_state={next_state}, done={done}"
+        )
         return self._train_batch()
 
 

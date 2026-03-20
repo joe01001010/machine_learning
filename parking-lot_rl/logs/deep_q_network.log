@@ -1,18 +1,18 @@
-2026-03-20 00:28:21,097 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:20:54,102 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:28:21,130 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:20:54,141 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:28:21,612 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:20:54,693 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -42,21 +42,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:28:50,727 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:21:29,789 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:28:50,728 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:21:29,790 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:28:50,728 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:21:29,790 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -86,21 +86,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:29:07,464 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:21:46,612 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:29:07,464 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:21:46,612 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:29:07,465 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:21:46,613 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -130,21 +130,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:29:38,009 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:22:15,348 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:29:38,009 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:22:15,349 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:29:38,010 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:22:15,350 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -174,21 +174,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:29:56,500 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:22:29,821 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:29:56,503 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:22:29,822 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:29:56,503 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:22:29,823 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -218,21 +218,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:30:20,701 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:22:54,557 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:30:20,702 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:22:54,558 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:30:20,702 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:22:54,559 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -262,21 +262,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:30:32,155 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:23:04,607 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:30:32,156 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:23:04,608 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:30:32,156 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:23:04,608 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
@@ -306,21 +306,21 @@ Parameter Group 0
     maximize: False
     weight_decay: 0
 ), Loss Function: MSELoss()
-2026-03-20 00:30:47,218 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:23:19,308 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:30:47,218 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
+2026-03-20 01:23:19,309 | INFO | deep_q_network | Initializing constructor for _QModel, Network: Sequential(
   (0): Linear(in_features=6, out_features=64, bias=True)
   (1): ReLU()
   (2): Linear(in_features=64, out_features=64, bias=True)
   (3): ReLU()
   (4): Linear(in_features=64, out_features=4, bias=True)
 )
-2026-03-20 00:30:47,219 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
+2026-03-20 01:23:19,310 | INFO | deep_q_network | Initializing constructor for DeepQNetwork, State size: 6, Action size: 4, Alpha: 0.001, Gamma: 0.95, Epsilon: 1.0, Epsilon Decay: 0.995, Epsilon Min: 0.05, Batch Size: 32, Target Update Frequency: 25, State Method: get_dqn_state, Memory: deque([], maxlen=10000), Device: cuda, Q network: _QModel(
   (network): Sequential(
     (0): Linear(in_features=6, out_features=64, bias=True)
     (1): ReLU()
