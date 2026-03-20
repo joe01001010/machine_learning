@@ -1,3 +1,8 @@
+import sys
+
+from logging_init import configure_logging
+LOGGER = configure_logging(__file__)
+
 class ParkingLot:
     def __init__(self, rows, columns, goal=1):
         self.rows = rows
@@ -8,6 +13,16 @@ class ParkingLot:
         self.goal = self.parking_spots[goal]
         self.actions = {0: (-1, 0), 1: (1, 0), 2: (0, -1), 3: (0, 1)}
         self.reset()
+        LOGGER.info(
+            f"Initializing constructor for {self.__class__.__name__}"
+            f"Rows: {self.rows}"
+            f"Columns: {self.columns}"
+            f"Entrance: {self.entrance}"
+            f"Barriers: {self.barriers}"
+            f"Parking Spots: {self.parking_spots}"
+            f"Goal: {self.goal}"
+            f"Actions: {self.actions}"
+        )
 
     def reset(self):
         """
@@ -17,6 +32,7 @@ class ParkingLot:
         """
         self.agent_location = self.entrance
         self.parked = self.agent_location == self.goal
+        LOGGER.debug(f"Resetting state and returning {self.get_state()} from {sys._getframe().f_code.co_name}")
         return self.get_state()
 
     def get_state(self):
@@ -24,6 +40,7 @@ class ParkingLot:
         This function takes no arguments
         This function will return the location of the agent
         """
+        LOGGER.debug(f"Getting state and returning: {self.agent_location} from {sys._getframe().f_code.co_name}")
         return self.agent_location
 
     def get_dqn_state(self):
@@ -35,6 +52,14 @@ class ParkingLot:
         """
         agent_row, agent_col = self.agent_location
         goal_row, goal_col = self.goal
+        LOGGER.debug(f"Getting state and returning: {(
+            agent_row / (self.rows - 1),
+            agent_col / (self.columns - 1),
+            goal_row / (self.rows - 1),
+            goal_col / (self.columns - 1),
+            (goal_row - agent_row) / (self.rows - 1),
+            (goal_col - agent_col) / (self.columns - 1))} from {sys._getframe().f_code.co_name}")
+
         return (
             agent_row / (self.rows - 1),
             agent_col / (self.columns - 1),
@@ -59,16 +84,21 @@ class ParkingLot:
         new_col = curr_col + col_mod
         next_position = (new_row, new_col)
         if new_row < 0 or new_row >= self.rows or new_col < 0 or new_col >= self.columns:
+            LOGGER.debug(f"new_row: {new_row} >= self.rows: {self.rows} or new_col: {new_col} >= self.columns: {self.columns} from {sys._getframe().f_code.co_name}")
             return self.get_state(), -5, False
         elif next_position in self.barriers:
+            LOGGER.debug(f"Next position was in barriers: {next_position} barriers: {self.barriers} from {sys._getframe().f_code.co_name}")
             return self.get_state(), -5, False
         elif next_position in self.parking_spots and next_position != self.goal:
+            LOGGER.debug(f"Next position was in wrong parking spot: {next_position} barriers: {self.parking_spots}, goal: {self.goal} from {sys._getframe().f_code.co_name}")
             return self.get_state(), -10, False
         elif next_position == self.goal:
+            LOGGER.debug(f"Agent found the goal, updating agents location and setting parked to true from {sys._getframe().f_code.co_name}")
             self.agent_location = next_position
             self.parked = True
             return self.get_state(), 100, True
         else:
+            LOGGER.debug(f"Agent made a valid move but it was not the goal, move: {next_position}, goal: {self.goal} from {sys._getframe().f_code.co_name}")
             self.agent_location = next_position
             return self.get_state(), -1, False
 

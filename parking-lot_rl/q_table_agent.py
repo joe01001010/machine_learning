@@ -1,4 +1,8 @@
 import random
+import sys
+
+from logging_init import configure_logging
+LOGGER = configure_logging(__file__)
 
 class QTableAgent:
     def __init__(self, alpha=0.1, gamma=0.95, epsilon=1.0, epsilon_decay=0.995, epsilon_min=0.05):
@@ -9,6 +13,15 @@ class QTableAgent:
         self.epsilon_min = epsilon_min
         self.q_table = {}
         self.state_method = "get_state"
+        LOGGER.info(
+            f"Initializing constructor for {self.__class__.__name__}, "
+            f"Alpha: {self.alpha}, "
+            f"Gamma: {self.gamma}, "
+            f"Epsilon: {self.epsilon}, "
+            f"Epsilon decay: {self.epsilon_decay}, "
+            f"Epsilon Min: {self.epsilon_min}, "
+            f"State Method: {self.state_method}"
+        )
 
     def get_q_values(self, state):
         """
@@ -18,6 +31,7 @@ class QTableAgent:
         """
         if state not in self.q_table:
             self.q_table[state] = [0.0, 0.0, 0.0, 0.0]
+        LOGGER.debug(f"Returning Q values: {self.q_table} from {sys._getframe().f_code.co_name}")
         return self.q_table[state]
 
     def choose_action(self, state):
@@ -32,6 +46,7 @@ class QTableAgent:
         q_values = self.get_q_values(state)
         max_q = max(q_values)
         best_actions = [i for i, q in enumerate(q_values) if q == max_q]
+        LOGGER.debug(f"Returning action: {best_actions} from {sys._getframe().f_code.co_name}")
         return random.choice(best_actions)
 
     def learn(self, state, action, reward, next_state, done):
@@ -52,10 +67,12 @@ class QTableAgent:
         )
 
         self.q_table[state][action] = new_q
+        LOGGER.debug(f"Learning: {self.q_table[state][action]} <- {new_q} from {sys._getframe().f_code.co_name}")
 
     def decay_epsilon(self):
         """
         This function will update the epsilon value of the object
         This function will decay until it hits the minimum
         """
+        LOGGER.debug(f"Decaying epsilon: max({self.epsilon_min}, {self.epsilon} * {self.epsilon_decay}) from {sys._getframe().f_code.co_name}")
         self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)

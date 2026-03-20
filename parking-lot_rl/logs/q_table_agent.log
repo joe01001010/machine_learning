@@ -1,0 +1,8 @@
+2026-03-19 23:52:19,745 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:52:47,339 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:53:00,195 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:53:23,125 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:53:36,392 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:53:59,814 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:54:08,823 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-19 23:54:22,774 | INFO | q_table_agent | Initializing constructor for QTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state

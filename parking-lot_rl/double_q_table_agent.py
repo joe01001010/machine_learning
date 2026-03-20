@@ -1,4 +1,8 @@
 import random
+import sys
+
+from logging_init import configure_logging
+LOGGER = configure_logging(__file__)
 
 class DoubleQTableAgent:
     def __init__(self, alpha=0.1, gamma=0.95, epsilon=1.0, epsilon_decay=0.995, epsilon_min=0.05):
@@ -10,6 +14,15 @@ class DoubleQTableAgent:
         self.q1_table = {}
         self.q2_table = {}
         self.state_method = "get_state"
+        LOGGER.info(
+            f"Initializing constructor for {self.__class__.__name__}, "
+            f"Alpha: {self.alpha}, "
+            f"Gamma: {self.gamma}, "
+            f"Epsilon: {self.epsilon}, "
+            f"Epsilon decay: {self.epsilon_decay}, "
+            f"Epsilon Min: {self.epsilon_min}, "
+            f"State Method: {self.state_method}"
+        )
 
     def get_q_values(self, table, state):
         """
@@ -21,6 +34,7 @@ class DoubleQTableAgent:
         """
         if state not in table:
             table[state] = [0.0, 0.0, 0.0, 0.0]
+        LOGGER.debug(f"Returning Q values: {table[state]} from {sys._getframe().f_code.co_name}")
         return table[state]
 
     def choose_action(self, state):
@@ -42,6 +56,7 @@ class DoubleQTableAgent:
 
         max_q = max(combined)
         best_actions = [i for i, q in enumerate(combined) if q == max_q]
+        LOGGER.debug(f"Returning best actions: {best_actions} from {sys._getframe().f_code.co_name}")
         return random.choice(best_actions)
 
     def learn(self, state, action, reward, next_state, done):
@@ -72,6 +87,7 @@ class DoubleQTableAgent:
                 target = reward + self.gamma * q2_next[best_next_action]
 
             q1[action] += self.alpha * (target - q1[action])
+            LOGGER.debug(f"Updating Q1 {q1[action]} += {self.alpha} * ({target} - {q1[action]}) from {sys._getframe().f_code.co_name}")
 
         else:
             q2 = self.get_q_values(self.q2_table, state)
@@ -85,6 +101,7 @@ class DoubleQTableAgent:
                 target = reward + self.gamma * q1_next[best_next_action]
 
             q2[action] += self.alpha * (target - q2[action])
+            LOGGER.debug(f"Updating Q2 {q2[action]} += {self.alpha} * ({target} - {q2[action]}) from {sys._getframe().f_code.co_name}")
 
     def decay_epsilon(self):
         """
@@ -92,4 +109,5 @@ class DoubleQTableAgent:
         This function will update the objects epsilon value the either the min value
         or it will decay the epsilon value by the decay value multiplied by the current epsilon
         """
+        LOGGER.debug(f"Decaying epsilon: self.epsilon = max({self.epsilon_min}, {self.epsilon} * {self.epsilon_decay}) from {sys._getframe().f_code.co_name}")
         self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)

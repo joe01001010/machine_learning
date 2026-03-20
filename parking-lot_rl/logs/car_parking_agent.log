@@ -1,0 +1,260 @@
+2026-03-19 23:52:19,745 | INFO | car_parking_agent | Run started | rows=7 columns=6 display=False
+2026-03-19 23:52:19,745 | INFO | car_parking_agent | Goal processing started | goal_index=0 target=(2, 1)
+2026-03-19 23:52:19,745 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(2, 1) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:52:20,149 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=100 avg_reward=-56.75 successes_last_100=78 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:52:20,357 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=200 avg_reward=59.26 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:52:20,502 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=300 avg_reward=79.25 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:52:20,630 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=400 avg_reward=85.79 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:52:20,744 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=500 avg_reward=87.17 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:52:20,863 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=600 avg_reward=88.98 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:52:20,982 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 1) episode=700 avg_reward=89.85 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:52:21,005 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(2, 1) episode=720 recent_successes=50
+2026-03-19 23:52:21,005 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(2, 1) episodes_run=720 successes=698 final_epsilon=0.0500
+2026-03-19 23:52:21,005 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(2, 1) max_steps=50 display=False
+2026-03-19 23:52:21,005 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(2, 1) success=True steps=10 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (5, 3), (5, 2), (5, 1), (5, 0), (4, 0), (3, 0), (2, 0), (2, 1)]
+2026-03-19 23:52:21,005 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(2, 1) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:52:21,056 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 1) episode=100 avg_reward=-54.20 successes_last_100=80 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:52:21,079 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 1) episode=200 avg_reward=58.99 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:52:21,095 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 1) episode=300 avg_reward=79.60 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:52:21,109 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 1) episode=400 avg_reward=84.68 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:52:21,123 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 1) episode=500 avg_reward=87.55 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:52:21,137 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 1) episode=600 avg_reward=89.32 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:52:21,149 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(2, 1) episode=697 recent_successes=50
+2026-03-19 23:52:21,149 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(2, 1) episodes_run=697 successes=677 final_epsilon=0.0500
+2026-03-19 23:52:21,149 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(2, 1) max_steps=50 display=False
+2026-03-19 23:52:21,149 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(2, 1) success=True steps=10 final_reward=100 path=[(6, 5), (6, 4), (5, 4), (5, 3), (5, 2), (5, 1), (5, 0), (4, 0), (3, 0), (2, 0), (2, 1)]
+2026-03-19 23:52:21,661 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(2, 1) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:52:30,498 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=100 avg_reward=-58.46 successes_last_100=76 epsilon=0.6058 avg_loss=27.4915
+2026-03-19 23:52:33,554 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=200 avg_reward=70.59 successes_last_100=100 epsilon=0.3670 avg_loss=5.7189
+2026-03-19 23:52:36,002 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=300 avg_reward=81.51 successes_last_100=100 epsilon=0.2223 avg_loss=2.7664
+2026-03-19 23:52:38,250 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=400 avg_reward=85.41 successes_last_100=100 epsilon=0.1347 avg_loss=1.1866
+2026-03-19 23:52:40,381 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=500 avg_reward=88.19 successes_last_100=100 epsilon=0.0816 avg_loss=0.5161
+2026-03-19 23:52:42,532 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=600 avg_reward=88.17 successes_last_100=100 epsilon=0.0500 avg_loss=0.3284
+2026-03-19 23:52:44,585 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=700 avg_reward=90.20 successes_last_100=100 epsilon=0.0500 avg_loss=0.3387
+2026-03-19 23:52:46,695 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 1) episode=800 avg_reward=89.43 successes_last_100=100 epsilon=0.0500 avg_loss=0.1541
+2026-03-19 23:52:47,334 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(2, 1) episode=831 recent_successes=50
+2026-03-19 23:52:47,334 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(2, 1) episodes_run=831 successes=807 final_epsilon=0.0500
+2026-03-19 23:52:47,334 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(2, 1) max_steps=50 display=False
+2026-03-19 23:52:47,339 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(2, 1) success=True steps=10 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (6, 2), (6, 1), (6, 0), (5, 0), (4, 0), (3, 0), (2, 0), (2, 1)]
+2026-03-19 23:52:47,339 | INFO | car_parking_agent | Goal processing started | goal_index=1 target=(4, 1)
+2026-03-19 23:52:47,339 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(4, 1) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:52:47,632 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 1) episode=100 avg_reward=8.63 successes_last_100=90 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:52:47,729 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 1) episode=200 avg_reward=83.05 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:52:47,811 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 1) episode=300 avg_reward=89.15 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:52:47,885 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 1) episode=400 avg_reward=92.38 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:52:47,956 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 1) episode=500 avg_reward=93.43 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:52:47,993 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(4, 1) episode=555 recent_successes=50
+2026-03-19 23:52:47,993 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(4, 1) episodes_run=555 successes=545 final_epsilon=0.0619
+2026-03-19 23:52:47,993 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(4, 1) max_steps=50 display=False
+2026-03-19 23:52:47,993 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(4, 1) success=True steps=6 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (6, 2), (6, 1), (5, 1), (4, 1)]
+2026-03-19 23:52:47,993 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(4, 1) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:52:48,026 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 1) episode=100 avg_reward=5.81 successes_last_100=87 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:52:48,029 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 1) episode=200 avg_reward=80.06 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:52:48,051 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 1) episode=300 avg_reward=88.69 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:52:48,059 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 1) episode=400 avg_reward=92.07 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:52:48,068 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 1) episode=500 avg_reward=93.74 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:52:48,076 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 1) episode=600 avg_reward=94.01 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:52:48,078 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(4, 1) episode=621 recent_successes=50
+2026-03-19 23:52:48,078 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(4, 1) episodes_run=621 successes=608 final_epsilon=0.0500
+2026-03-19 23:52:48,078 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(4, 1) max_steps=50 display=False
+2026-03-19 23:52:48,078 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(4, 1) success=True steps=6 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (5, 3), (5, 2), (5, 1), (4, 1)]
+2026-03-19 23:52:48,079 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(4, 1) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:52:52,893 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 1) episode=100 avg_reward=15.56 successes_last_100=90 epsilon=0.6058 avg_loss=63.6803
+2026-03-19 23:52:54,881 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 1) episode=200 avg_reward=81.50 successes_last_100=100 epsilon=0.3670 avg_loss=12.8321
+2026-03-19 23:52:56,365 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 1) episode=300 avg_reward=91.01 successes_last_100=100 epsilon=0.2223 avg_loss=7.1862
+2026-03-19 23:52:57,829 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 1) episode=400 avg_reward=92.22 successes_last_100=100 epsilon=0.1347 avg_loss=4.6427
+2026-03-19 23:52:59,072 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 1) episode=500 avg_reward=93.98 successes_last_100=100 epsilon=0.0816 avg_loss=2.5685
+2026-03-19 23:53:00,193 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(4, 1) episode=588 recent_successes=50
+2026-03-19 23:53:00,193 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(4, 1) episodes_run=588 successes=578 final_epsilon=0.0525
+2026-03-19 23:53:00,193 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(4, 1) max_steps=50 display=False
+2026-03-19 23:53:00,195 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(4, 1) success=True steps=6 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (6, 2), (6, 1), (5, 1), (4, 1)]
+2026-03-19 23:53:00,195 | INFO | car_parking_agent | Goal processing started | goal_index=2 target=(2, 2)
+2026-03-19 23:53:00,196 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(2, 2) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:00,709 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=100 avg_reward=-71.88 successes_last_100=73 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:53:00,888 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=200 avg_reward=63.20 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:53:01,023 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=300 avg_reward=80.51 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:53:01,132 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=400 avg_reward=85.91 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:53:01,249 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=500 avg_reward=89.53 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:53:01,355 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=600 avg_reward=90.37 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:53:01,458 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=700 avg_reward=90.42 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:53:01,559 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 2) episode=800 avg_reward=90.40 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:53:01,565 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(2, 2) episode=806 recent_successes=50
+2026-03-19 23:53:01,566 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(2, 2) episodes_run=806 successes=779 final_epsilon=0.0500
+2026-03-19 23:53:01,566 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(2, 2) max_steps=50 display=False
+2026-03-19 23:53:01,566 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(2, 2) success=True steps=9 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (1, 5), (1, 4), (1, 3), (1, 2), (2, 2)]
+2026-03-19 23:53:01,566 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(2, 2) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:01,621 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 2) episode=100 avg_reward=-79.05 successes_last_100=70 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:53:01,643 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 2) episode=200 avg_reward=60.93 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:53:01,658 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 2) episode=300 avg_reward=80.48 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:53:01,672 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 2) episode=400 avg_reward=86.93 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:53:01,684 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 2) episode=500 avg_reward=89.26 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:53:01,696 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 2) episode=600 avg_reward=90.36 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:53:01,698 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(2, 2) episode=618 recent_successes=50
+2026-03-19 23:53:01,698 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(2, 2) episodes_run=618 successes=588 final_epsilon=0.0500
+2026-03-19 23:53:01,698 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(2, 2) max_steps=50 display=False
+2026-03-19 23:53:01,698 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(2, 2) success=True steps=9 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (1, 5), (1, 4), (1, 3), (1, 2), (2, 2)]
+2026-03-19 23:53:01,699 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(2, 2) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:11,561 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 2) episode=100 avg_reward=-85.88 successes_last_100=72 epsilon=0.6058 avg_loss=17.9052
+2026-03-19 23:53:15,284 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 2) episode=200 avg_reward=60.54 successes_last_100=100 epsilon=0.3670 avg_loss=6.2049
+2026-03-19 23:53:17,339 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 2) episode=300 avg_reward=79.29 successes_last_100=100 epsilon=0.2223 avg_loss=2.2020
+2026-03-19 23:53:19,256 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 2) episode=400 avg_reward=86.05 successes_last_100=100 epsilon=0.1347 avg_loss=0.8745
+2026-03-19 23:53:21,055 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 2) episode=500 avg_reward=89.15 successes_last_100=100 epsilon=0.0816 avg_loss=0.3580
+2026-03-19 23:53:23,008 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 2) episode=600 avg_reward=90.50 successes_last_100=100 epsilon=0.0500 avg_loss=0.2015
+2026-03-19 23:53:23,122 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(2, 2) episode=607 recent_successes=50
+2026-03-19 23:53:23,122 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(2, 2) episodes_run=607 successes=579 final_epsilon=0.0500
+2026-03-19 23:53:23,122 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(2, 2) max_steps=50 display=False
+2026-03-19 23:53:23,125 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(2, 2) success=True steps=9 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (1, 5), (1, 4), (1, 3), (1, 2), (2, 2)]
+2026-03-19 23:53:23,125 | INFO | car_parking_agent | Goal processing started | goal_index=3 target=(4, 2)
+2026-03-19 23:53:23,125 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(4, 2) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:23,436 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 2) episode=100 avg_reward=17.08 successes_last_100=91 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:53:23,546 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 2) episode=200 avg_reward=84.31 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:53:23,614 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 2) episode=300 avg_reward=91.53 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:53:23,677 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 2) episode=400 avg_reward=93.54 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:53:23,731 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 2) episode=500 avg_reward=94.55 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:53:23,731 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(4, 2) episode=503 recent_successes=50
+2026-03-19 23:53:23,731 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(4, 2) episodes_run=503 successes=494 final_epsilon=0.0804
+2026-03-19 23:53:23,731 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(4, 2) max_steps=50 display=False
+2026-03-19 23:53:23,731 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(4, 2) success=True steps=5 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (5, 3), (5, 2), (4, 2)]
+2026-03-19 23:53:23,731 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(4, 2) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:23,763 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 2) episode=100 avg_reward=25.34 successes_last_100=93 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:53:23,774 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 2) episode=200 avg_reward=85.76 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:53:23,781 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 2) episode=300 avg_reward=92.04 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:53:23,788 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 2) episode=400 avg_reward=93.90 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:53:23,794 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 2) episode=500 avg_reward=94.70 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:53:23,795 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(4, 2) episode=506 recent_successes=50
+2026-03-19 23:53:23,795 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(4, 2) episodes_run=506 successes=499 final_epsilon=0.0792
+2026-03-19 23:53:23,795 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(4, 2) max_steps=50 display=False
+2026-03-19 23:53:23,795 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(4, 2) success=True steps=5 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (5, 3), (5, 2), (4, 2)]
+2026-03-19 23:53:23,796 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(4, 2) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:29,901 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 2) episode=100 avg_reward=-9.84 successes_last_100=87 epsilon=0.6058 avg_loss=38.0625
+2026-03-19 23:53:31,763 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 2) episode=200 avg_reward=86.63 successes_last_100=100 epsilon=0.3670 avg_loss=11.3096
+2026-03-19 23:53:33,333 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 2) episode=300 avg_reward=91.10 successes_last_100=100 epsilon=0.2223 avg_loss=7.8179
+2026-03-19 23:53:34,478 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 2) episode=400 avg_reward=93.55 successes_last_100=100 epsilon=0.1347 avg_loss=5.3708
+2026-03-19 23:53:35,512 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 2) episode=500 avg_reward=94.97 successes_last_100=100 epsilon=0.0816 avg_loss=4.2190
+2026-03-19 23:53:36,391 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(4, 2) episode=585 recent_successes=50
+2026-03-19 23:53:36,391 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(4, 2) episodes_run=585 successes=572 final_epsilon=0.0533
+2026-03-19 23:53:36,391 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(4, 2) max_steps=50 display=False
+2026-03-19 23:53:36,392 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(4, 2) success=True steps=5 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (6, 2), (5, 2), (4, 2)]
+2026-03-19 23:53:36,392 | INFO | car_parking_agent | Goal processing started | goal_index=4 target=(2, 3)
+2026-03-19 23:53:36,392 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(2, 3) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:36,847 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=100 avg_reward=-48.53 successes_last_100=80 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:53:37,007 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=200 avg_reward=69.37 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:53:37,124 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=300 avg_reward=83.18 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:53:37,226 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=400 avg_reward=87.23 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:53:37,319 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=500 avg_reward=90.50 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:53:37,410 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=600 avg_reward=91.45 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:53:37,501 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 3) episode=700 avg_reward=91.65 successes_last_100=100 epsilon=0.0500 avg_loss=n/a
+2026-03-19 23:53:37,570 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(2, 3) episode=775 recent_successes=50
+2026-03-19 23:53:37,570 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(2, 3) episodes_run=775 successes=755 final_epsilon=0.0500
+2026-03-19 23:53:37,570 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(2, 3) max_steps=50 display=False
+2026-03-19 23:53:37,570 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(2, 3) success=True steps=8 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (1, 5), (1, 4), (1, 3), (2, 3)]
+2026-03-19 23:53:37,570 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(2, 3) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:37,623 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 3) episode=100 avg_reward=-68.36 successes_last_100=75 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:53:37,641 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 3) episode=200 avg_reward=68.84 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:53:37,654 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 3) episode=300 avg_reward=82.17 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:53:37,666 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 3) episode=400 avg_reward=87.46 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:53:37,677 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 3) episode=500 avg_reward=89.93 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:53:37,685 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(2, 3) episode=583 recent_successes=50
+2026-03-19 23:53:37,685 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(2, 3) episodes_run=583 successes=558 final_epsilon=0.0538
+2026-03-19 23:53:37,685 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(2, 3) max_steps=50 display=False
+2026-03-19 23:53:37,685 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(2, 3) success=True steps=8 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (1, 5), (1, 4), (1, 3), (2, 3)]
+2026-03-19 23:53:37,686 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(2, 3) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:53:46,928 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=100 avg_reward=-84.04 successes_last_100=70 epsilon=0.6058 avg_loss=27.5533
+2026-03-19 23:53:49,955 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=200 avg_reward=69.17 successes_last_100=100 epsilon=0.3670 avg_loss=7.9677
+2026-03-19 23:53:52,080 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=300 avg_reward=83.29 successes_last_100=100 epsilon=0.2223 avg_loss=3.7076
+2026-03-19 23:53:53,904 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=400 avg_reward=87.86 successes_last_100=100 epsilon=0.1347 avg_loss=1.5703
+2026-03-19 23:53:55,570 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=500 avg_reward=90.45 successes_last_100=100 epsilon=0.0816 avg_loss=0.7175
+2026-03-19 23:53:57,176 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=600 avg_reward=91.28 successes_last_100=100 epsilon=0.0500 avg_loss=0.3839
+2026-03-19 23:53:58,820 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 3) episode=700 avg_reward=91.39 successes_last_100=100 epsilon=0.0500 avg_loss=0.2170
+2026-03-19 23:53:59,810 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(2, 3) episode=763 recent_successes=50
+2026-03-19 23:53:59,810 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(2, 3) episodes_run=763 successes=733 final_epsilon=0.0500
+2026-03-19 23:53:59,810 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(2, 3) max_steps=50 display=False
+2026-03-19 23:53:59,814 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(2, 3) success=True steps=8 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (1, 5), (1, 4), (1, 3), (2, 3)]
+2026-03-19 23:53:59,814 | INFO | car_parking_agent | Goal processing started | goal_index=5 target=(4, 3)
+2026-03-19 23:53:59,814 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(4, 3) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:00,110 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 3) episode=100 avg_reward=10.03 successes_last_100=87 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:54:00,190 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 3) episode=200 avg_reward=87.33 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:54:00,246 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 3) episode=300 avg_reward=93.58 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:54:00,305 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 3) episode=400 avg_reward=95.21 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:54:00,354 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 3) episode=500 avg_reward=96.00 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:54:00,368 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(4, 3) episode=534 recent_successes=50
+2026-03-19 23:54:00,368 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(4, 3) episodes_run=534 successes=521 final_epsilon=0.0688
+2026-03-19 23:54:00,368 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(4, 3) max_steps=50 display=False
+2026-03-19 23:54:00,369 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(4, 3) success=True steps=4 final_reward=100 path=[(6, 5), (5, 5), (5, 4), (5, 3), (4, 3)]
+2026-03-19 23:54:00,369 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(4, 3) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:00,392 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 3) episode=100 avg_reward=30.62 successes_last_100=93 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:54:00,401 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 3) episode=200 avg_reward=87.92 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:54:00,407 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 3) episode=300 avg_reward=92.53 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:54:00,413 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 3) episode=400 avg_reward=95.37 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:54:00,416 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(4, 3) episode=460 recent_successes=50
+2026-03-19 23:54:00,416 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(4, 3) episodes_run=460 successes=453 final_epsilon=0.0997
+2026-03-19 23:54:00,416 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(4, 3) max_steps=50 display=False
+2026-03-19 23:54:00,416 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(4, 3) success=True steps=4 final_reward=100 path=[(6, 5), (6, 4), (5, 4), (5, 3), (4, 3)]
+2026-03-19 23:54:00,417 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(4, 3) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:05,185 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 3) episode=100 avg_reward=21.00 successes_last_100=92 epsilon=0.6058 avg_loss=50.0086
+2026-03-19 23:54:06,580 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 3) episode=200 avg_reward=89.02 successes_last_100=100 epsilon=0.3670 avg_loss=17.6192
+2026-03-19 23:54:07,545 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 3) episode=300 avg_reward=94.22 successes_last_100=100 epsilon=0.2223 avg_loss=11.3324
+2026-03-19 23:54:08,527 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 3) episode=400 avg_reward=95.11 successes_last_100=100 epsilon=0.1347 avg_loss=8.3019
+2026-03-19 23:54:08,821 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(4, 3) episode=432 recent_successes=50
+2026-03-19 23:54:08,821 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(4, 3) episodes_run=432 successes=424 final_epsilon=0.1147
+2026-03-19 23:54:08,821 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(4, 3) max_steps=50 display=False
+2026-03-19 23:54:08,823 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(4, 3) success=True steps=4 final_reward=100 path=[(6, 5), (6, 4), (6, 3), (5, 3), (4, 3)]
+2026-03-19 23:54:08,823 | INFO | car_parking_agent | Goal processing started | goal_index=6 target=(2, 4)
+2026-03-19 23:54:08,823 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(2, 4) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:09,163 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 4) episode=100 avg_reward=-16.68 successes_last_100=83 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:54:09,261 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 4) episode=200 avg_reward=80.00 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:54:09,336 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 4) episode=300 avg_reward=88.90 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:54:09,397 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 4) episode=400 avg_reward=93.47 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:54:09,454 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(2, 4) episode=500 avg_reward=94.54 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:54:09,469 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(2, 4) episode=528 recent_successes=50
+2026-03-19 23:54:09,469 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(2, 4) episodes_run=528 successes=511 final_epsilon=0.0709
+2026-03-19 23:54:09,469 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(2, 4) max_steps=50 display=False
+2026-03-19 23:54:09,469 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(2, 4) success=True steps=5 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (2, 4)]
+2026-03-19 23:54:09,469 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(2, 4) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:09,507 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 4) episode=100 avg_reward=-21.96 successes_last_100=81 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:54:09,519 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 4) episode=200 avg_reward=80.31 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:54:09,528 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 4) episode=300 avg_reward=89.93 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:54:09,535 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 4) episode=400 avg_reward=93.74 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:54:09,542 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(2, 4) episode=500 avg_reward=94.43 successes_last_100=100 epsilon=0.0816 avg_loss=n/a
+2026-03-19 23:54:09,545 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(2, 4) episode=551 recent_successes=50
+2026-03-19 23:54:09,545 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(2, 4) episodes_run=551 successes=532 final_epsilon=0.0632
+2026-03-19 23:54:09,545 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(2, 4) max_steps=50 display=False
+2026-03-19 23:54:09,545 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(2, 4) success=True steps=5 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (2, 4)]
+2026-03-19 23:54:09,546 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(2, 4) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:16,311 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 4) episode=100 avg_reward=-25.61 successes_last_100=79 epsilon=0.6058 avg_loss=53.2223
+2026-03-19 23:54:18,347 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 4) episode=200 avg_reward=79.68 successes_last_100=100 epsilon=0.3670 avg_loss=16.5539
+2026-03-19 23:54:19,584 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 4) episode=300 avg_reward=90.22 successes_last_100=100 epsilon=0.2223 avg_loss=9.1727
+2026-03-19 23:54:20,731 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 4) episode=400 avg_reward=93.43 successes_last_100=100 epsilon=0.1347 avg_loss=5.5254
+2026-03-19 23:54:21,806 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(2, 4) episode=500 avg_reward=94.17 successes_last_100=100 epsilon=0.0816 avg_loss=3.8346
+2026-03-19 23:54:22,772 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(2, 4) episode=583 recent_successes=50
+2026-03-19 23:54:22,772 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(2, 4) episodes_run=583 successes=562 final_epsilon=0.0538
+2026-03-19 23:54:22,772 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(2, 4) max_steps=50 display=False
+2026-03-19 23:54:22,774 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(2, 4) success=True steps=5 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (3, 5), (2, 5), (2, 4)]
+2026-03-19 23:54:22,774 | INFO | car_parking_agent | Goal processing started | goal_index=7 target=(4, 4)
+2026-03-19 23:54:22,774 | INFO | car_parking_agent | Training started | agent=QTableAgent goal=(4, 4) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:22,929 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 4) episode=100 avg_reward=60.72 successes_last_100=96 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:54:22,994 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 4) episode=200 avg_reward=92.26 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:54:23,032 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 4) episode=300 avg_reward=95.68 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:54:23,067 | INFO | car_parking_agent | Training progress | agent=QTableAgent goal=(4, 4) episode=400 avg_reward=96.48 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:54:23,077 | INFO | car_parking_agent | Training stopped early | agent=QTableAgent goal=(4, 4) episode=433 recent_successes=50
+2026-03-19 23:54:23,077 | INFO | car_parking_agent | Training finished | agent=QTableAgent goal=(4, 4) episodes_run=433 successes=429 final_epsilon=0.1141
+2026-03-19 23:54:23,077 | INFO | car_parking_agent | Testing started | agent=QTableAgent goal=(4, 4) max_steps=50 display=False
+2026-03-19 23:54:23,078 | INFO | car_parking_agent | Testing finished | agent=QTableAgent goal=(4, 4) success=True steps=3 final_reward=100 path=[(6, 5), (5, 5), (5, 4), (4, 4)]
+2026-03-19 23:54:23,078 | INFO | car_parking_agent | Training started | agent=DoubleQTableAgent goal=(4, 4) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:23,097 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 4) episode=100 avg_reward=43.73 successes_last_100=94 epsilon=0.6058 avg_loss=n/a
+2026-03-19 23:54:23,103 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 4) episode=200 avg_reward=92.06 successes_last_100=100 epsilon=0.3670 avg_loss=n/a
+2026-03-19 23:54:23,108 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 4) episode=300 avg_reward=95.72 successes_last_100=100 epsilon=0.2223 avg_loss=n/a
+2026-03-19 23:54:23,112 | INFO | car_parking_agent | Training progress | agent=DoubleQTableAgent goal=(4, 4) episode=400 avg_reward=96.55 successes_last_100=100 epsilon=0.1347 avg_loss=n/a
+2026-03-19 23:54:23,116 | INFO | car_parking_agent | Training stopped early | agent=DoubleQTableAgent goal=(4, 4) episode=491 recent_successes=50
+2026-03-19 23:54:23,116 | INFO | car_parking_agent | Training finished | agent=DoubleQTableAgent goal=(4, 4) episodes_run=491 successes=485 final_epsilon=0.0853
+2026-03-19 23:54:23,116 | INFO | car_parking_agent | Testing started | agent=DoubleQTableAgent goal=(4, 4) max_steps=50 display=False
+2026-03-19 23:54:23,116 | INFO | car_parking_agent | Testing finished | agent=DoubleQTableAgent goal=(4, 4) success=True steps=3 final_reward=100 path=[(6, 5), (6, 4), (5, 4), (4, 4)]
+2026-03-19 23:54:23,117 | INFO | car_parking_agent | Training started | agent=DeepQNetwork goal=(4, 4) episodes=2000 max_steps=100 cutoff=50
+2026-03-19 23:54:26,368 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 4) episode=100 avg_reward=46.19 successes_last_100=94 epsilon=0.6058 avg_loss=116.1511
+2026-03-19 23:54:27,497 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 4) episode=200 avg_reward=87.15 successes_last_100=100 epsilon=0.3670 avg_loss=66.4492
+2026-03-19 23:54:28,265 | INFO | car_parking_agent | Training progress | agent=DeepQNetwork goal=(4, 4) episode=300 avg_reward=94.18 successes_last_100=100 epsilon=0.2223 avg_loss=37.1401
+2026-03-19 23:54:28,865 | INFO | car_parking_agent | Training stopped early | agent=DeepQNetwork goal=(4, 4) episode=392 recent_successes=50
+2026-03-19 23:54:28,865 | INFO | car_parking_agent | Training finished | agent=DeepQNetwork goal=(4, 4) episodes_run=392 successes=386 final_epsilon=0.1402
+2026-03-19 23:54:28,865 | INFO | car_parking_agent | Testing started | agent=DeepQNetwork goal=(4, 4) max_steps=50 display=False
+2026-03-19 23:54:28,867 | INFO | car_parking_agent | Testing finished | agent=DeepQNetwork goal=(4, 4) success=True steps=3 final_reward=100 path=[(6, 5), (5, 5), (4, 5), (4, 4)]
+2026-03-19 23:54:28,867 | INFO | car_parking_agent | Run finished | goals_trained=8

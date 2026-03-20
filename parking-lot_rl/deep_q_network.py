@@ -1,10 +1,14 @@
 import random
+import sys
 from collections import deque
 
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
+
+from logging_init import configure_logging
+LOGGER = configure_logging(__file__)
 
 
 class _QModel(nn.Module):
@@ -16,6 +20,10 @@ class _QModel(nn.Module):
             nn.Linear(64, 64),
             nn.ReLU(),
             nn.Linear(64, action_size)
+        )
+        LOGGER.info(
+            f"Initializing constructor for {self.__class__.__name__}, "
+            f"Network: {self.network}"
         )
 
     def forward(self, x):
@@ -59,6 +67,25 @@ class DeepQNetwork:
         self.loss_function = nn.MSELoss()
 
         self.training_steps = 0
+        LOGGER.info(
+            f"Initializing constructor for {self.__class__.__name__}, "
+            f"State size: {self.state_size}, "
+            f"Action size: {self.action_size}, "
+            f"Alpha: {self.alpha}, "
+            f"Gamma: {self.gamma}, "
+            f"Epsilon: {self.epsilon}, "
+            f"Epsilon Decay: {self.epsilon_decay}, "
+            f"Epsilon Min: {self.epsilon_min}, "
+            f"Batch Size: {self.batch_size}, "
+            f"Target Update Frequency: {self.target_update_frequency}, "
+            f"State Method: {self.state_method}, "
+            f"Memory: {self.memory}, "
+            f"Device: {self.device}, "
+            f"Q network: {self.q_network}, "
+            f"Target Network: {self.target_network}, "
+            f"Optimizer: {self.optimizer}, "
+            f"Loss Function: {self.loss_function}"
+        )
 
 
     def _state_to_array(self, state):
@@ -67,6 +94,9 @@ class DeepQNetwork:
         state is the current state of the agent
         This function will conver the state into a numpy array
         """
+        LOGGER.debug(f"Converting state into array from {sys._getframe().f_code.co_name}: "
+            f"{state} -> {np.array(state, dtype=np.float32)}"
+        )
         return np.array(state, dtype=np.float32)
 
 
@@ -88,6 +118,7 @@ class DeepQNetwork:
         with torch.no_grad():
             q_values = self.q_network(state_tensor)
 
+        LOGGER.debug(f"Choosing an action int(torch.argmax({q_values}, dim=1).item()) from {sys._getframe().f_code.co_name}")
         return int(torch.argmax(q_values, dim=1).item())
 
 
@@ -110,6 +141,7 @@ class DeepQNetwork:
             self._state_to_array(next_state),
             done
         ))
+        LOGGER.debug(f"Appending memory onto memories {self._state_to_array(state)}, {action}, {reward}, {self._state_to_array}, {done} from {sys._getframe().f_code.co_name}")
 
 
     def _train_batch(self):
@@ -155,6 +187,7 @@ class DeepQNetwork:
         if self.training_steps % self.target_update_frequency == 0:
             self.target_network.load_state_dict(self.q_network.state_dict())
 
+        LOGGER.debug(f"Training batch and returning loss: {float(loss.item())} from {sys._getframe().f_code.co_name}")
         return float(loss.item())
 
 
@@ -169,6 +202,7 @@ class DeepQNetwork:
         This function will store the experiences 
         """
         self._store_experience(state, action, reward, next_state, done)
+        LOGGER.debug(f"Learning: {self._store_experience(state, action, reward, next_state, done)} from {sys._getframe().f_code.co_name}")
         return self._train_batch()
 
 
@@ -177,4 +211,5 @@ class DeepQNetwork:
         This function takes no arguments
         This function will either choose the minimmum epsilon value set or decay the epsilon
         """
+        LOGGER.debug(f"Decaying epsilon: self.epsilon = max({self.epsilon_min}, {self.epsilon} * {self.epsilon_decay}) from {sys._getframe().f_code.co_name}")
         self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
