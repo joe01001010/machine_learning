@@ -2,6 +2,7 @@
 
 import argparse
 import time
+import sys
 
 from parking_lot import ParkingLot
 from q_table_agent import QTableAgent
@@ -20,6 +21,7 @@ def get_agent_state(parking_lot, agent):
     This function will return the appropriate state based on the architecture of the agent
     """
     state_method = getattr(agent, "state_method", "get_state")
+    LOGGER.debug(f"Returning agent state {getattr(parking_lot, state_method)()} from {sys._getframe().f_code.co_name}")
     return getattr(parking_lot, state_method)()
 
 
@@ -139,6 +141,14 @@ def train_agent(parking_lot, agent, episodes=2000, max_steps=100, cutoff=50):
 
 
 def test_agent(parking_lot, agent, display=False,  max_steps=50):
+    """
+    This function takes four arguments
+    parking_lot is the parking lot object that represents the environment for the agent to explore
+    agent is the agent architecture that is being tested
+    display is a boolean that will tell whether to display the testing to stdout
+    max_steps is how many steps the agent is allowed to take in testing, default=50
+    This function will reset the parking lot and use the trained agents to show the converged upon policy
+    """
     parking_lot.reset()
     state = get_agent_state(parking_lot, agent)
     path = [parking_lot.get_state()]
@@ -222,7 +232,7 @@ def main(rows, columns, display):
     deep_q_network_tests = dict()
 
     for goal in range(len(temp_lot.parking_spots)):
-        LOGGER.info("Goal processing started | goal_index=%s target=%s", goal, temp_lot.parking_spots[goal])
+        LOGGER.info(f"Goal processing started | goal_index={goal} target={temp_lot.parking_spots[goal]}")
 
         q_table_agent = QTableAgent()
         q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), q_table_agent)
@@ -239,19 +249,20 @@ def main(rows, columns, display):
         deep_q_network_tests[goal] = test_agent(ParkingLot(rows, columns, goal), deep_q_network_agent, display=display)
         deep_q_network_agents[goal] = deep_q_network_agent
 
-    LOGGER.info("Run finished | goals_trained=%s", len(temp_lot.parking_spots))
+    LOGGER.info(f"Run finished | goals_trained={len(temp_lot.parking_spots)}")
 
 
 if __name__ == '__main__':
+    start = time.perf_counter()
     parser = argparse.ArgumentParser()
     parser.add_argument("--rows", default=7, type=int)
     parser.add_argument("--columns", default=6, type=int)
     parser.add_argument("--display", default=False, type=bool)
     args = parser.parse_args()
-    LOGGER.debug(
-        "Calling main | rows=%s columns=%s display=%s",
-        args.rows,
-        args.columns,
-        args.display,
-    )
+    LOGGER.info(f"Calling main | rows={args.rows} columns={args.columns} display={args.display}")
     main(args.rows, args.columns, args.display)
+    end = time.perf_counter()
+    seconds = end - start
+    metric = f"{'Execution Time (Seconds):' if seconds <= 60 else 'Execution Time (Minutes)'}"
+    seconds = seconds if seconds <= 60 else seconds / 60
+    LOGGER.info(f"{metric} {seconds:.2f}")

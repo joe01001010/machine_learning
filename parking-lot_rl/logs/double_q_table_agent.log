@@ -1,8 +1,8 @@
-2026-03-19 23:52:21,005 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:52:47,993 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:53:01,566 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:53:23,731 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:53:37,570 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:54:00,369 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:54:09,469 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
-2026-03-19 23:54:23,078 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:28:20,930 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:28:50,638 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:29:07,310 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:29:37,935 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:29:56,382 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:30:20,631 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:30:32,075 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state
+2026-03-20 00:30:47,170 | INFO | double_q_table_agent | Initializing constructor for DoubleQTableAgent, Alpha: 0.1, Gamma: 0.95, Epsilon: 1.0, Epsilon decay: 0.995, Epsilon Min: 0.05, State Method: get_state

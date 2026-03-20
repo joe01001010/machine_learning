@@ -6,7 +6,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
-
 from logging_init import configure_logging
 LOGGER = configure_logging(__file__)
 
