@@ -9,7 +9,7 @@ from q_table_agent import QTableAgent
 from double_q_table_agent import DoubleQTableAgent
 from deep_q_network import DeepQNetwork
 from tensorboard_logger import TensorBoardLogger
-from logging_init import configure_logging
+from logging_init import configure_logging, summarize_agent, summarize_by_agent
 LOGGER = configure_logging(__file__)
 
 
@@ -45,14 +45,7 @@ def train_agent(parking_lot, agent, tb_logger, goal_index, episodes=2000, max_st
     }
     agent_name = agent.__class__.__name__
 
-    LOGGER.info(
-        "Training started | agent=%s goal=%s episodes=%s max_steps=%s cutoff=%s",
-        agent_name,
-        parking_lot.goal,
-        episodes,
-        max_steps,
-        cutoff,
-    )
+    LOGGER.info(f"Training started | agent={agent_name} goal={parking_lot.goal} episodes={episodes} max_steps={max_steps} cutoff={cutoff}")
 
     for episode in range(episodes):
         total_reward = 0
@@ -243,6 +236,12 @@ def test_agent(parking_lot, agent, display=False,  max_steps=50):
 
 
 def main(rows, columns, display):
+    pipeline_metrics = []
+    training_times = {
+        "QTableAgent": {},
+        "DoubleQTableAgent": {},
+        "DeepQNetwork": {},
+    }
     LOGGER.info(f"Run started | rows={rows} columns={columns} display={display}")
     temp_lot = ParkingLot(rows, columns)
     tb_logger = TensorBoardLogger()
@@ -257,24 +256,31 @@ def main(rows, columns, display):
         LOGGER.info(f"Goal processing started | goal_index={goal} target={temp_lot.parking_spots[goal]}")
 
         q_table_agent = QTableAgent()
+        start_time = time.perf_counter()
         q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), q_table_agent, tb_logger, goal_index=goal)
+        training_times['QTableAgent'][goal] = time.perf_counter() - start_time
         q_table_agents[goal] = q_table_agent
 
         double_q_table_agent = DoubleQTableAgent()
+        start_time = time.perf_counter()
         double_q_table_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), double_q_table_agent, tb_logger, goal_index=goal)
+        training_times['DoubleQTableAgent'][goal] = time.perf_counter() - start_time
         double_q_table_agents[goal] = double_q_table_agent
 
-        deep_q_network_agent = DeepQNetwork()
+        deep_q_network_agent = DeepQNetwork(rows=rows, columns=columns)
+        start_time = time.perf_counter()
         deep_q_network_agents_stats[goal] = train_agent(ParkingLot(rows, columns, goal), deep_q_network_agent, tb_logger, goal_index=goal)
+        training_times["DeepQNetwork"][goal] = time.perf_counter() - start_time
         deep_q_network_agents[goal] = deep_q_network_agent
 
     for goal in range(len(temp_lot.parking_spots)):
         parking_lot_test = ParkingLot(rows, columns, goal)
+        goal_coords = parking_lot_test.goal
 
-        for agent_name, agent_dict in [
-            ("QTableAgent", q_table_agents),
-            ("DoubleQTableAgent", double_q_table_agents),
-            ("DeepQNetwork", deep_q_network_agents),
+        for agent_name, agent_dict, stats_dict in [
+            ("QTableAgent", q_table_agents, q_table_agents_stats),
+            ("DoubleQTableAgent", double_q_table_agents, double_q_table_agents_stats),
+            ("DeepQNetwork", deep_q_network_agents, deep_q_network_agents_stats),
         ]:
             agent_test = agent_dict[goal]
             path, success = test_agent(parking_lot_test, agent_test, display=display)
@@ -286,9 +292,29 @@ def main(rows, columns, display):
                 steps=len(path) - 1,
                 path=path,
             )
+            summary = summarize_agent(
+                    agent_name=agent_name,
+                    goal_index=goal,
+                    goal=goal_coords,
+                    history=stats_dict[goal],
+                    train_seconds=training_times[agent_name][goal],
+                    test_success=success,
+                    test_steps=len(path) - 1,
+                )
+            pipeline_metrics.append(summary)
     
     tb_logger.close()
+    agent_summary = summarize_by_agent(pipeline_metrics)
+    LOGGER.info("=" * 100)
     LOGGER.info(f"Run finished | goals_trained={len(temp_lot.parking_spots)}")
+
+    for row in pipeline_metrics:
+        LOGGER.info(f"SUMMARY: {row}")
+
+    LOGGER.info("=" * 100)
+    LOGGER.info("AGENT AVERAGES")
+    for row in agent_summary:
+        LOGGER.info(f"AGENT_SUMMARY: {row}")
 
 
 if __name__ == '__main__':
@@ -305,6 +331,7 @@ if __name__ == '__main__':
 
     end = time.perf_counter()
     seconds = end - start
-    metric = f"{'Execution Time (Seconds):' if seconds <= 60 else 'Execution Time (Minutes)'}"
+    prefix = "Total program execution time"
+    metric = f"{'(Seconds):' if seconds <= 60 else '(Minutes):'}"
     seconds = seconds if seconds <= 60 else seconds / 60
-    LOGGER.info(f"{metric} {seconds:.2f}")
+    LOGGER.info(f"{prefix} {metric} {seconds:.2f}")

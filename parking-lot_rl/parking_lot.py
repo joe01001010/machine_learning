@@ -1,4 +1,5 @@
 import sys
+import numpy as np
 
 from logging_init import configure_logging
 LOGGER = configure_logging(__file__)
@@ -46,28 +47,34 @@ class ParkingLot:
     def get_dqn_state(self):
         """
         This function takes no arguments
-        This function will return the location of the agent
-        The location of the goal
-        The distance from the agent to the goal
+        This function will return 5 channels representing the environment
+        First channel for free spaces
+        Second channel for agent location
+        Third channel for barriers
+        Fourth channel for parking spots
+        Fifth channel for the goal
         """
-        agent_row, agent_col = self.agent_location
-        goal_row, goal_col = self.goal
-        LOGGER.debug(f"Getting state and returning: {(
-            agent_row / (self.rows - 1),
-            agent_col / (self.columns - 1),
-            goal_row / (self.rows - 1),
-            goal_col / (self.columns - 1),
-            (goal_row - agent_row) / (self.rows - 1),
-            (goal_col - agent_col) / (self.columns - 1))} from {sys._getframe().f_code.co_name}")
+        state = np.zeros((5, self.rows, self.columns), dtype=np.float32)
+        state[0, :, :] = 1.0
+        for row, col in self.barriers:
+            state[0, row, col] = 0.0
+            state[2, row, col] = 1.0
 
-        return (
-            agent_row / (self.rows - 1),
-            agent_col / (self.columns - 1),
-            goal_row / (self.rows - 1),
-            goal_col / (self.columns - 1),
-            (goal_row - agent_row) / (self.rows - 1),
-            (goal_col - agent_col) / (self.columns - 1)
+        for row, col in self.parking_spots:
+            state[0, row, col] = 0.0
+            if (row, col) == self.goal:
+                state[4, row, col] = 1.0
+            else:
+                state[3, row, col]
+
+        agent_row, agent_col = self.agent_location
+        state[0, agent_row, agent_col] = 0.0
+        state[1, agent_row, agent_col] = 1.0
+
+        LOGGER.debug(
+            f"Getting DQN state and returning: {state} from {sys._getframe().f_code.co_name}"
         )
+        return state
 
     def move_agent(self, action):
         """

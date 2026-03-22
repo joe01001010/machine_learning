@@ -10,6 +10,33 @@ from logging_init import configure_logging
 LOGGER = configure_logging(__file__)
 
 
+class BoardCNN(nn.Module):
+    def __init__(self, rows, columns, action_size):
+        super().__init__()
+
+        self.features = nn.Sequential(
+            nn.Conv2d(in_channels=5, out_channels=32, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1),
+            nn.ReLU(),
+        )
+
+        conv_output_size = 64 * rows * columns
+
+        self.head = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(conv_output_size, 256),
+            nn.ReLU(),
+            nn.Linear(256, action_size),
+        )
+
+    def forward(self, x):
+        x = self.features(x)
+        return self.head(x)
+
+
 class _QModel(nn.Module):
     def __init__(self, state_size, action_size):
         super().__init__()
@@ -31,19 +58,22 @@ class _QModel(nn.Module):
 
 class DeepQNetwork:
     def __init__(self,
-        state_size=6,
+        rows=7,
+        columns=6,
         action_size=4,
-        alpha=0.001,
+        alpha=0.0005,
         gamma=0.95,
         epsilon=1.0,
-        epsilon_decay=0.995,
+        epsilon_decay=0.997,
         epsilon_min=0.05,
-        memory_size=10000,
-        batch_size=32,
-        target_update_frequency=25
+        batch_size=64,
+        memory_size=20000,
+        target_update_frequency=250,
     ):
-        self.state_size = state_size
+        self.rows = rows
+        self.columns = columns
         self.action_size = action_size
+
         self.alpha = alpha
         self.gamma = gamma
         self.epsilon = epsilon
@@ -51,24 +81,25 @@ class DeepQNetwork:
         self.epsilon_min = epsilon_min
         self.batch_size = batch_size
         self.target_update_frequency = target_update_frequency
-        self.state_method = "get_dqn_state"
 
         self.memory = deque(maxlen=memory_size)
+        self.training_steps = 0
+        self.state_method = "get_dqn_state"
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        self.q_network = _QModel(state_size, action_size).to(self.device)
-        self.target_network = _QModel(state_size, action_size).to(self.device)
+        self.q_network = BoardCNN(rows, columns, action_size).to(self.device)
+        self.target_network = BoardCNN(rows, columns, action_size).to(self.device)
         self.target_network.load_state_dict(self.q_network.state_dict())
         self.target_network.eval()
 
         self.optimizer = optim.Adam(self.q_network.parameters(), lr=self.alpha)
         self.loss_function = nn.MSELoss()
 
-        self.training_steps = 0
         LOGGER.info(
             f"Initializing constructor for {self.__class__.__name__}, "
-            f"State size: {self.state_size}, "
+            f"Rows: {self.rows}, "
+            f"Columns: {self.columns}, "
             f"Action size: {self.action_size}, "
             f"Alpha: {self.alpha}, "
             f"Gamma: {self.gamma}, "
@@ -78,12 +109,7 @@ class DeepQNetwork:
             f"Batch Size: {self.batch_size}, "
             f"Target Update Frequency: {self.target_update_frequency}, "
             f"State Method: {self.state_method}, "
-            f"Memory: {self.memory}, "
-            f"Device: {self.device}, "
-            f"Q network: {self.q_network}, "
-            f"Target Network: {self.target_network}, "
-            f"Optimizer: {self.optimizer}, "
-            f"Loss Function: {self.loss_function}"
+            f"Device: {self.device}"
         )
 
 
@@ -117,7 +143,6 @@ class DeepQNetwork:
         with torch.no_grad():
             q_values = self.q_network(state_tensor)
 
-        LOGGER.debug(f"Choosing an action int(torch.argmax({q_values}, dim=1).item()) from {sys._getframe().f_code.co_name}")
         return int(torch.argmax(q_values, dim=1).item())
 
 
@@ -140,7 +165,7 @@ class DeepQNetwork:
             self._state_to_array(next_state),
             done
         ))
-        LOGGER.debug(f"Appending memory onto memories {self._state_to_array(state)}, {action}, {reward}, {self._state_to_array}, {done} from {sys._getframe().f_code.co_name}")
+        LOGGER.debug(f"Adding memory: {self._state_to_array(state)}, {action}, {reward}, {self._state_to_array(next_state)}, {done}")
 
 
     def _train_batch(self):
@@ -158,6 +183,7 @@ class DeepQNetwork:
         This function will return a float of the loss calculated by the current and target Q values
         """
         if len(self.memory) < self.batch_size:
+            LOGGER.debug(f"Returning none from: {sys._getframe().f_code.co_name}")
             return None
 
         batch = random.sample(self.memory, self.batch_size)
@@ -185,8 +211,7 @@ class DeepQNetwork:
 
         if self.training_steps % self.target_update_frequency == 0:
             self.target_network.load_state_dict(self.q_network.state_dict())
-
-        LOGGER.debug(f"Training batch and returning loss: {float(loss.item())} from {sys._getframe().f_code.co_name}")
+        LOGGER.debug(f"Returning {float(loss.item())} from: {sys._getframe().f_code.co_name}")
         return float(loss.item())
 
 
