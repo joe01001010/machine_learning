@@ -38,7 +38,7 @@ class PPOMemory:
 
     def store_memory(self, state, action, probs, vals, reward, done):
         self.states.append(state)
-        slef.actions.append(action)
+        self.actions.append(action)
         self.probs.append(probs)
         self.vals.append(vals)
         self.rewards.append(reward)
@@ -182,7 +182,7 @@ class Agent:
                 a_t = 0
                 
                 for k in range(t, len(reward_arr) - 1):
-                    a_t += discount * (reward_arr[k] + self.gamma * values[k+1] * (1 - int(dones_arr[k])) - values[k])
+                    a_t += discount * (reward_arr[k] + self.gamma * values[k+1] * (1 - int(done_arr[k])) - values[k])
                     discount *= self.gamma * self.gae_lambda
                 advantage[t] = a_t
             advantage = T.tensor(advantage).to(self.actor.device)
@@ -190,7 +190,7 @@ class Agent:
             values = T.tensor(values).to(self.actor.device)
             for batch in batches:
                 states = T.tensor(state_arr[batch], dtype=T.float).to(self.actor.device)
-                old_probs = T.tensor(old_prob_array[batch]).to(self.actor.device)
+                old_probs = T.tensor(old_probs_arr[batch]).to(self.actor.device)
                 actions = T.tensor(action_arr[batch]).to(self.actor.device)
 
                 dist = self.actor(states)

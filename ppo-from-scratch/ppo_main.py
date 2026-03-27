@@ -20,19 +20,20 @@ if __name__ == '__main__':
     )
     n_games = 300
     figure_file = 'plots/cartpole.png'
-    best_score = env.reward_range[0]
+    best_score = -np.inf
     score_history = []
     learn_iters = 0
     avg_score = 0
     n_steps = 0
 
     for i in range(n_games):
-        observation = env.reset()
+        observation, _ = env.reset()
         done = False
         score = 0
         while not done:
             action, prob, val = agent.choose_action(observation)
-            observation_, reward, done, info = env.step(action)
+            observation_, reward, terminated, truncated, info = env.step(action)
+            done = terminated or truncated
             n_steps += 1
             score += reward
             agent.remember(observation, action, prob, val, reward, done)
@@ -49,4 +50,4 @@ if __name__ == '__main__':
             best_score = avg_score
             agent.save_models()
 
-        print(f"Episode: {i},  Score: {score:.2f}, Avg Score: {avg_score:.2f}, Steps: {n_steps}, Learn Steps: {learn_iters}")
+        print(f"Episode: {i+1},  Score: {score:.2f}, Avg Score: {avg_score:.2f}, Steps: {n_steps}, Learn Steps: {learn_iters}")
