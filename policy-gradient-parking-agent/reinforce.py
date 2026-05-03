@@ -20,6 +20,7 @@ from training_utils import (
     new_success_window,
     print_evaluation,
     print_policy_demo,
+    print_policy_snapshot,
     print_progress,
     selected_goal,
 )
@@ -112,6 +113,19 @@ def main() -> None:
         distance_shaping=args.distance_shaping,
     )
     print_evaluation(env, policy)
+    if not args.no_policy_output:
+        policy_goals = (
+            list(ParkingLotEnvironment.parking_spots)
+            if args.policy_goal == "all"
+            else [args.policy_goal]
+        )
+        for goal_spot in policy_goals:
+            print_policy_snapshot(
+                env,
+                policy,
+                goal_spot,
+                show_probabilities=not args.no_policy_probabilities,
+            )
     if not args.no_demo:
         print_policy_demo(env, policy, args.demo_goal, max_steps=args.demo_steps)
 

@@ -30,6 +30,15 @@ python reinforce_baseline.py --episodes 2000
 python actor_critic.py --episodes 2000
 ```
 
+Compare all three agents and print each learned policy plus a rollout demo:
+
+```bash
+python compare_policy_gradient_agents.py --episodes 2000 --policy-goal P8 --demo-goal P8
+```
+
+Use `--policy-goal all` to print a policy map for every parking spot, or
+`--no-policy-probabilities` to show only the greedy action grid.
+
 Train for one specific parking spot:
 
 ```bash
@@ -39,7 +48,7 @@ python actor_critic.py --goal P8 --episodes 1000
 Useful knobs:
 
 ```bash
-python reinforce_baseline.py --episodes 3000 --gamma 0.99 --policy-lr 0.02 --value-lr 0.04 --hidden-size 32
+python reinforce_baseline.py --episodes 3000 --gamma 0.99 --policy-lr 0.06 --value-lr 0.01 --hidden-size 32
 ```
 
 Plain REINFORCE is high variance, so `reinforce.py` defaults to normalized returns, a smaller learning rate, and a small entropy bonus. If a run collapses to one repeated action, increase exploration a bit:
@@ -49,6 +58,11 @@ python reinforce.py --episodes 4000 --demo-goal P8 --entropy-coef 0.03
 ```
 
 Each training script prints a final greedy evaluation for all eight goal spaces.
+
+`reinforce_baseline.py` computes the learned-baseline advantages from a frozen
+episode trajectory, centers `G_t - V(s_t)` before the policy update, and then
+fits the value network to the uncentered Monte Carlo returns. That keeps the
+critic from changing the advantage estimates midway through the same episode.
 
 After evaluation, each script also prints a text rollout of the trained agent. The rollout shows the grid, the policy's action probabilities for the current legal moves, the greedy action selected, and the next grid state:
 

@@ -8,9 +8,12 @@ from typing import Callable, List
 from networks import PolicyNetwork, ValueNetwork
 from parking_lot import ACTIONS, ParkingLotEnvironment
 from training_utils import (
+    centered,
     clipped,
     discounted_returns,
     normalize,
+    print_policy_demo,
+    print_policy_snapshot,
     selected_goal,
 )
 
@@ -18,6 +21,7 @@ from training_utils import (
 @dataclass
 class ExperimentResult:
     agent: str
+    policy: PolicyNetwork
     episodes: int
     avg_reward: float
     avg_steps: float
@@ -95,6 +99,7 @@ def run_reinforce(args: argparse.Namespace) -> ExperimentResult:
 
     return summarize_result(
         agent="REINFORCE",
+        policy=policy,
         episodes=args.episodes,
         rewards=rewards,
         steps=steps,
@@ -156,16 +161,20 @@ def run_reinforce_baseline(args: argparse.Namespace) -> ExperimentResult:
             episode_rewards.append(reward)
 
         returns = discounted_returns(episode_rewards, args.gamma)
+        baselines = [value.predict(state_features) for state_features in episode_features]
+        advantages = [
+            return_value - baseline
+            for return_value, baseline in zip(returns, baselines)
+        ]
+        if args.center_advantages:
+            advantages = centered(advantages)
 
-        for state_features, action, legal_actions, return_value in zip(
+        for state_features, action, legal_actions, advantage in zip(
             episode_features,
             episode_actions,
             episode_legal_actions,
-            returns,
+            advantages,
         ):
-            baseline = value.predict(state_features)
-            advantage = return_value - baseline
-
             policy.update_log_policy(
                 state_features,
                 action,
@@ -174,6 +183,7 @@ def run_reinforce_baseline(args: argparse.Namespace) -> ExperimentResult:
                 args.entropy_coef,
             )
 
+        for state_features, return_value in zip(episode_features, returns):
             value.update(state_features, return_value)
 
         rewards.append(sum(episode_rewards))
@@ -184,6 +194,7 @@ def run_reinforce_baseline(args: argparse.Namespace) -> ExperimentResult:
 
     return summarize_result(
         agent="REINFORCE Baseline",
+        policy=policy,
         episodes=args.episodes,
         rewards=rewards,
         steps=steps,
@@ -225,7 +236,6 @@ def run_actor_critic(args: argparse.Namespace) -> ExperimentResult:
         env.reset(selected_goal(args.goal))
 
         total_reward = 0.0
-        discount_multiplier = 1.0
         done = False
         info = {"success": False}
 
@@ -246,7 +256,7 @@ def run_actor_critic(args: argparse.Namespace) -> ExperimentResult:
             policy.update_log_policy(
                 state_features,
                 action,
-                clipped(discount_multiplier * td_error, args.advantage_clip),
+                clipped(td_error, args.advantage_clip),
                 legal_actions,
                 args.entropy_coef,
             )
@@ -254,7 +264,6 @@ def run_actor_critic(args: argparse.Namespace) -> ExperimentResult:
             value.update(state_features, target)
 
             total_reward += reward
-            discount_multiplier *= args.gamma
 
         rewards.append(total_reward)
         steps.append(env.step_count)
@@ -264,6 +273,7 @@ def run_actor_critic(args: argparse.Namespace) -> ExperimentResult:
 
     return summarize_result(
         agent="One-Step Actor-Critic",
+        policy=policy,
         episodes=args.episodes,
         rewards=rewards,
         steps=steps,
@@ -275,6 +285,7 @@ def run_actor_critic(args: argparse.Namespace) -> ExperimentResult:
 
 def summarize_result(
     agent: str,
+    policy: PolicyNetwork,
     episodes: int,
     rewards: List[float],
     steps: List[int],
@@ -288,6 +299,7 @@ def summarize_result(
 
     return ExperimentResult(
         agent=agent,
+        policy=policy,
         episodes=episodes,
         avg_reward=sum(reward_window) / len(reward_window),
         avg_steps=sum(step_window) / len(step_window),
@@ -315,6 +327,42 @@ def print_plain_table(results: List[ExperimentResult]) -> None:
     print("-" * 78)
 
 
+def print_agent_policies_and_demos(args: argparse.Namespace, results: List[ExperimentResult]) -> None:
+    if args.no_policy_output and args.no_demo:
+        return
+
+    policy_goals = (
+        list(ParkingLotEnvironment.parking_spots)
+        if args.policy_goal == "all"
+        else [args.policy_goal]
+    )
+
+    for result in results:
+        env = ParkingLotEnvironment(
+            max_steps=args.max_steps,
+            seed=args.seed,
+            distance_shaping=args.distance_shaping,
+        )
+        print(f"\n{'=' * 78}\n{result.agent}\n{'=' * 78}")
+
+        if not args.no_policy_output:
+            for goal_spot in policy_goals:
+                print_policy_snapshot(
+                    env,
+                    result.policy,
+                    goal_spot,
+                    show_probabilities=not args.no_policy_probabilities,
+                )
+
+        if not args.no_demo:
+            print_policy_demo(
+                env,
+                result.policy,
+                args.demo_goal,
+                max_steps=args.demo_steps,
+            )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
 
@@ -329,16 +377,46 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--distance-shaping", type=float, default=0.02)
     parser.add_argument("--final-window", type=int, default=50)
     parser.add_argument("--env-label", type=str, default=r"7$\times$6")
+    parser.add_argument(
+        "--policy-goal",
+        choices=["all", *ParkingLotEnvironment.parking_spots.keys()],
+        default="P8",
+        help="Goal used when printing learned policy maps. Use 'all' for every parking spot.",
+    )
+    parser.add_argument(
+        "--no-policy-output",
+        action="store_true",
+        help="Skip learned policy grid/probability output.",
+    )
+    parser.add_argument(
+        "--no-policy-probabilities",
+        action="store_true",
+        help="Print only the greedy policy grid, without the probability table.",
+    )
+    parser.add_argument(
+        "--demo-goal",
+        choices=list(ParkingLotEnvironment.parking_spots.keys()),
+        default="P8",
+        help="Goal parking space used for each end-of-training rollout display.",
+    )
+    parser.add_argument(
+        "--demo-steps",
+        type=int,
+        default=20,
+        help="Maximum number of trained-agent steps to display for each rollout.",
+    )
+    parser.add_argument("--no-demo", action="store_true", help="Skip rollout demos.")
 
     parser.add_argument("--normalize-returns", action=argparse.BooleanOptionalAction, default=True)
 
     parser.add_argument("--reinforce-policy-lr", type=float, default=0.008)
 
-    parser.add_argument("--baseline-policy-lr", type=float, default=0.02)
-    parser.add_argument("--baseline-value-lr", type=float, default=0.04)
+    parser.add_argument("--baseline-policy-lr", type=float, default=0.06)
+    parser.add_argument("--baseline-value-lr", type=float, default=0.01)
+    parser.add_argument("--center-advantages", action=argparse.BooleanOptionalAction, default=True)
 
-    parser.add_argument("--ac-policy-lr", type=float, default=0.015)
-    parser.add_argument("--ac-value-lr", type=float, default=0.04)
+    parser.add_argument("--ac-policy-lr", type=float, default=0.08)
+    parser.add_argument("--ac-value-lr", type=float, default=0.02)
 
     return parser
 
@@ -355,6 +433,7 @@ def main() -> None:
     results = [runner(args) for runner in runners]
 
     print_plain_table(results)
+    print_agent_policies_and_demos(args, results)
 
 
 if __name__ == "__main__":

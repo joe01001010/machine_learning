@@ -7,7 +7,15 @@ from collections import deque
 from typing import Deque, Dict, Iterable, List, Sequence, Tuple
 
 from networks import PolicyNetwork, clip
-from parking_lot import ACTIONS, ParkingLotEnvironment
+from parking_lot import ACTIONS, ParkingLotEnvironment, ParkingState
+
+
+ACTION_SYMBOLS = {
+    "forward": "F",
+    "backward": "B",
+    "left": "L",
+    "right": "R",
+}
 
 
 def add_common_training_args(parser: argparse.ArgumentParser) -> None:
@@ -43,6 +51,22 @@ def add_common_training_args(parser: argparse.ArgumentParser) -> None:
         default=20,
         help="Maximum number of trained-agent steps to display after training.",
     )
+    parser.add_argument(
+        "--policy-goal",
+        choices=["all", *ParkingLotEnvironment.parking_spots.keys()],
+        default="P8",
+        help="Goal used when printing the learned policy. Use 'all' for every parking spot.",
+    )
+    parser.add_argument(
+        "--no-policy-output",
+        action="store_true",
+        help="Skip learned policy grid/probability output.",
+    )
+    parser.add_argument(
+        "--no-policy-probabilities",
+        action="store_true",
+        help="Print only the greedy policy grid, without the probability table.",
+    )
     parser.add_argument("--no-demo", action="store_true", help="Skip the end-of-training rollout display.")
     parser.add_argument("--quiet", action="store_true")
 
@@ -69,6 +93,13 @@ def normalize(values: Sequence[float]) -> List[float]:
     if std < 1e-8:
         return [value - mean for value in values]
     return [(value - mean) / std for value in values]
+
+
+def centered(values: Sequence[float]) -> List[float]:
+    if not values:
+        return []
+    mean = sum(values) / len(values)
+    return [value - mean for value in values]
 
 
 def clipped(value: float, limit: float | None) -> float:
@@ -145,6 +176,97 @@ def print_evaluation(env: ParkingLotEnvironment, policy: PolicyNetwork) -> None:
             f"reward={result['total_reward']:6.2f} "
             f"actions=[{actions}]"
         )
+
+
+def print_policy_snapshot(
+    env: ParkingLotEnvironment,
+    policy: PolicyNetwork,
+    goal_spot: str,
+    *,
+    show_probabilities: bool = True,
+) -> None:
+    print(f"\nLearned policy for goal {goal_spot}:")
+    print(
+        "Legend: F=forward/north, B=backward/south, L=left/west, R=right/east, "
+        "En/*=entrance action, G*=target, P*=blocked parking, ###=barrier."
+    )
+    print(_policy_grid(env, policy, goal_spot))
+
+    if show_probabilities:
+        print("\nAction probabilities by state:")
+        print(f"{'State':<8} {'Greedy':<7} " + " ".join(f"{action:<10}" for action in ACTIONS))
+        print("-" * 58)
+        for state in _policy_states(env, goal_spot):
+            features = env.state_features(state)
+            legal_actions = env.legal_actions(state)
+            probabilities = policy.probabilities(features, legal_actions)
+            action = policy.greedy_action(features, legal_actions)
+            probability_text = " ".join(
+                f"{probabilities[action_index]:<10.2f}"
+                for action_index in range(len(ACTIONS))
+            )
+            print(
+                f"{_state_label(env, state):<8} "
+                f"{ACTIONS[action]:<7} "
+                f"{probability_text}"
+            )
+
+
+def _policy_grid(env: ParkingLotEnvironment, policy: PolicyNetwork, goal_spot: str) -> str:
+    lines: List[str] = []
+    for row in range(env.rows):
+        cells: List[str] = []
+        for col in range(env.cols):
+            position = (row, col)
+            label = _policy_cell_label(env, policy, goal_spot, position)
+            cells.append(f"{label:^5}")
+        lines.append("|" + "|".join(cells) + "|")
+    return "\n".join(lines)
+
+
+def _policy_cell_label(
+    env: ParkingLotEnvironment,
+    policy: PolicyNetwork,
+    goal_spot: str,
+    position: Tuple[int, int],
+) -> str:
+    if position in env.barriers:
+        return "###"
+
+    for spot_name, spot_position in env.parking_spots.items():
+        if position == spot_position:
+            if spot_name == goal_spot:
+                return f"G{spot_name[1:]}"
+            return spot_name
+
+    state = ParkingState(position[0], position[1], env.start_heading, goal_spot)
+    legal_actions = env.legal_actions(state)
+    if not legal_actions:
+        return "."
+    features = env.state_features(state)
+    action = policy.greedy_action(features, legal_actions)
+    symbol = ACTION_SYMBOLS[ACTIONS[action]]
+    if position == env.entrance:
+        return f"En/{symbol}"
+    return symbol
+
+
+def _policy_states(env: ParkingLotEnvironment, goal_spot: str) -> List[ParkingState]:
+    states: List[ParkingState] = []
+    for row in range(env.rows):
+        for col in range(env.cols):
+            position = (row, col)
+            if position == env.parking_spots[goal_spot]:
+                continue
+            if env.is_driveable(position, goal_spot):
+                states.append(ParkingState(row, col, env.start_heading, goal_spot))
+    return states
+
+
+def _state_label(env: ParkingLotEnvironment, state: ParkingState) -> str:
+    if state.position == env.entrance:
+        return "En"
+    return f"({state.row},{state.col})"
 
 
 def print_policy_demo(

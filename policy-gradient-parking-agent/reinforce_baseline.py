@@ -15,11 +15,13 @@ from networks import PolicyNetwork, ValueNetwork
 from parking_lot import ACTIONS, ParkingLotEnvironment
 from training_utils import (
     add_common_training_args,
+    centered,
     clipped,
     discounted_returns,
     new_success_window,
     print_evaluation,
     print_policy_demo,
+    print_policy_snapshot,
     print_progress,
     selected_goal,
 )
@@ -69,18 +71,24 @@ def train(args: argparse.Namespace) -> PolicyNetwork:
             legal_action_sets.append(legal_actions)
             episode_rewards.append(reward)
 
-        # Like plain REINFORCE, this uses full-episode returns. The baseline
-        # subtracts V(s), reducing variance without changing the expected
-        # policy-gradient direction.
+        # Like plain REINFORCE, this uses full-episode returns. The value
+        # predictions are taken before any critic update for this episode, so
+        # the policy sees one consistent learned baseline for the trajectory.
         returns = discounted_returns(episode_rewards, args.gamma)
-        for state_features, action, legal_actions, return_value in zip(
+        baselines = [value.predict(state_features) for state_features in features]
+        advantages = [
+            return_value - baseline
+            for return_value, baseline in zip(returns, baselines)
+        ]
+        if args.center_advantages:
+            advantages = centered(advantages)
+
+        for state_features, action, legal_actions, advantage in zip(
             features,
             actions,
             legal_action_sets,
-            returns,
+            advantages,
         ):
-            baseline = value.predict(state_features)
-            advantage = return_value - baseline
             policy.update_log_policy(
                 state_features,
                 action,
@@ -88,6 +96,8 @@ def train(args: argparse.Namespace) -> PolicyNetwork:
                 legal_actions,
                 args.entropy_coef,
             )
+
+        for state_features, return_value in zip(features, returns):
             value.update(state_features, return_value)
 
         rewards.append(sum(episode_rewards))
@@ -102,8 +112,14 @@ def train(args: argparse.Namespace) -> PolicyNetwork:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     add_common_training_args(parser)
-    parser.add_argument("--policy-lr", type=float, default=0.02)
-    parser.add_argument("--value-lr", type=float, default=0.04)
+    parser.add_argument("--policy-lr", type=float, default=0.06)
+    parser.add_argument("--value-lr", type=float, default=0.01)
+    parser.add_argument(
+        "--center-advantages",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Subtract the episode mean from G_t - V(s_t) before the policy update.",
+    )
     return parser
 
 
@@ -116,6 +132,19 @@ def main() -> None:
         distance_shaping=args.distance_shaping,
     )
     print_evaluation(env, policy)
+    if not args.no_policy_output:
+        policy_goals = (
+            list(ParkingLotEnvironment.parking_spots)
+            if args.policy_goal == "all"
+            else [args.policy_goal]
+        )
+        for goal_spot in policy_goals:
+            print_policy_snapshot(
+                env,
+                policy,
+                goal_spot,
+                show_probabilities=not args.no_policy_probabilities,
+            )
     if not args.no_demo:
         print_policy_demo(env, policy, args.demo_goal, max_steps=args.demo_steps)
 

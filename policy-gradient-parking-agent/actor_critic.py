@@ -21,6 +21,7 @@ from training_utils import (
     new_success_window,
     print_evaluation,
     print_policy_demo,
+    print_policy_snapshot,
     print_progress,
     selected_goal,
 )
@@ -55,7 +56,6 @@ def train(args: argparse.Namespace) -> PolicyNetwork:
         total_reward = 0.0
         done = False
         info = {"success": False}
-        discount_multiplier = 1.0
 
         while not done:
             state_features = env.state_features()
@@ -75,14 +75,13 @@ def train(args: argparse.Namespace) -> PolicyNetwork:
             policy.update_log_policy(
                 state_features,
                 action,
-                clipped(discount_multiplier * td_error, args.advantage_clip),
+                clipped(td_error, args.advantage_clip),
                 legal_actions,
                 args.entropy_coef,
             )
             value.update(state_features, target)
 
             total_reward += reward
-            discount_multiplier *= args.gamma
 
         rewards.append(total_reward)
         steps.append(env.step_count)
@@ -96,8 +95,8 @@ def train(args: argparse.Namespace) -> PolicyNetwork:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     add_common_training_args(parser)
-    parser.add_argument("--policy-lr", type=float, default=0.015)
-    parser.add_argument("--value-lr", type=float, default=0.04)
+    parser.add_argument("--policy-lr", type=float, default=0.08)
+    parser.add_argument("--value-lr", type=float, default=0.02)
     return parser
 
 
@@ -110,6 +109,19 @@ def main() -> None:
         distance_shaping=args.distance_shaping,
     )
     print_evaluation(env, policy)
+    if not args.no_policy_output:
+        policy_goals = (
+            list(ParkingLotEnvironment.parking_spots)
+            if args.policy_goal == "all"
+            else [args.policy_goal]
+        )
+        for goal_spot in policy_goals:
+            print_policy_snapshot(
+                env,
+                policy,
+                goal_spot,
+                show_probabilities=not args.no_policy_probabilities,
+            )
     if not args.no_demo:
         print_policy_demo(env, policy, args.demo_goal, max_steps=args.demo_steps)
 
