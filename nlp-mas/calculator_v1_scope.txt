@@ -1,0 +1,33 @@
+Calculator v1 — Approved Scope
+
+Purpose
+The calculator evaluates arithmetic expressions supplied as strings and returns a textual numerical result.
+
+Supported behavior
+- Addition, subtraction, multiplication, and division.
+- Parentheses, including nested parentheses.
+- Standard arithmetic precedence: parentheses first, then multiplication and division, then addition and subtraction.
+- For this initial experiment, input operands are nonnegative integers. Results may be negative or fractional.
+- Tests use the command-line calculation interface.
+
+Output expectations
+- For integer results, the desired output is an integer string without unnecessary leading zeros, such as "14".
+- The command-line trailing newline is ignored when comparing results.
+- Fractional-result formatting has not yet been specified. Requirements that depend on exact fractional formatting need clarification.
+
+Unspecified behavior
+- Handling malformed expressions and division by zero.
+- Decimal input operands and unary minus in input.
+- Maximum expression length, numerical limits, and response-time targets.
+
+Requirements concerning unspecified behavior need clarification before tests with exact expected outputs can be generated.
+
+Outside this project's scope
+- Graphical interfaces, plotting, networking, email, accounts, and persistent storage.
+- Variables, equation solving, trigonometry, and other scientific functions.
+
+Validation rules
+- Accept requirements that are consistent with this scope and sufficiently precise to test.
+- Reject requirements that contradict this scope or request functionality outside it.
+- Request clarification when a requirement lacks information needed to determine the expected result.
+- A valid requirement remains valid even if the implementation fails its tests.
