@@ -4,13 +4,13 @@
 # Example: ./serve_models.sh Qwen/Qwen3-0.6B Qwen/Qwen3-0.6B Qwen/Qwen3-0.6B
 # Example: ./serve-models.sh Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507
 
-set -Eeou pipefail
+set -Eeuo pipefail
 set +m
 
 
 if (( $# != 3 )); then
-    echo "Example: $0 ./serve_models.sh Qwen/Qwen3-0.6B Qwen/Qwen3-0.6B Qwen/Qwen3-0.6B"
-    echo "Example: ./serve-models.sh Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507"
+    echo "Example: $0 Qwen/Qwen3-0.6B Qwen/Qwen3-0.6B Qwen/Qwen3-0.6B"
+    echo "Example: $0 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507"
     exit 67
 fi
 
@@ -19,11 +19,16 @@ command -v vllm >/dev/null
 command -v setsid >/dev/null
 
 
+base_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+python_bin=${PYTHON_BIN:-python}
+max_model_len=${MAX_MODEL_LEN:-3072}
+
 export VLLM_USE_V2_MODEL_RUNNER=0
 export VLLM_USE_FLASHINFER_SAMPLER=0
 
 
 log_dir=$(mktemp -d .agent-logs.XXXXXX)
+"$python_bin" "$base_dir/build_server_templates.py" "$@" --output "$log_dir/templates"
 declare -a pids=()
 declare -A roles=()
 
@@ -81,35 +86,32 @@ trap 'exit 129' HUP
 
 start_server() {
     local role=$1 model=$2 port=$3 budget=$4
-
+    echo "Starting server $role"
     setsid vllm serve "$model" \
+        --chat-template "$log_dir/templates/$role.jinja" \
         --served-model-name "$role" \
         --enable-auto-tool-choice \
         --tool-call-parser hermes \
         --host 127.0.0.1 \
         --port "$port" \
         --dtype bfloat16 \
-        --max-model-len 2048 \
+        --max-model-len "$max_model_len" \
         --max-num-seqs 1 \
         --gpu-memory-utilization "$budget" \
         --enforce-eager \
         --kv-cache-memory-bytes 536870912 \
         --max-num-batched-tokens 512 \
         >"$log_dir/$role.log" 2>&1 &
-
     local pid=$!
     pids+=("$pid")
     roles["$pid"]=$role
-
     printf '%s: PID=%s port=%s log=%s\n' \
         "$role" "$pid" "$port" "$log_dir/$role.log"
 }
 
-
 start_server requirements-engineer "$1" 8001 0.25
 start_server test-engineer         "$2" 8002 0.35
 start_server verification-engineer "$3" 8003 0.2
-
 
 status=0
 wait -n "${pids[@]}" || status=$?

@@ -1,0 +1,6 @@
+{
+  "requirement_id": "REQ-003",
+  "decision": "REJECT",
+  "rationale": "The requirement requests email functionality, which is outside the approved scope of the calculator v1 project. The scope explicitly excludes networking, email, and persistent storage.",
+  "tests": []
+}

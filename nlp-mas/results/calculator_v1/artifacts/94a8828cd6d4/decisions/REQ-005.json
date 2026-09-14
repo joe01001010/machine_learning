@@ -1,0 +1,6 @@
+{
+  "requirement_id": "REQ-005",
+  "decision": "REJECT",
+  "rationale": "The requirement contradicts the scope's output expectations, which state that integer results should be without unnecessary leading zeros. Displaying leading zeros to make every result contain five digits is outside the specified behavior and violates the defined output rules.",
+  "tests": []
+}
