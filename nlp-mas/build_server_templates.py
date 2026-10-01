@@ -6,12 +6,12 @@ from pathlib import Path
 from transformers import AutoTokenizer
 
 
-ROLES = ('requirements-engineer', 'test-engineer', 'verification-engineer')
+ROLES = ('requirements-engineer', 'test-case-engineer', 'test-engineer', 'verification-engineer')
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('models', nargs=3)
+    parser.add_argument('models', nargs=4)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
 

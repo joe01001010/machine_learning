@@ -1,6 +1,0 @@
-{
-  "requirement_id": "REQ-004",
-  "decision": "REJECT",
-  "rationale": "The requirement 'The calculator shall respond quickly' is outside the scope of the calculator's defined behavior as specified in the scope document. The scope explicitly states that maximum expression length, numerical limits, and response-time targets are 'unspecified behavior' and require clarification. Response time is not part of the supported behavior or output expectations.",
-  "tests": []
-}
