@@ -1,0 +1,61 @@
+Language: Spanish
+Training poems: 500
+N-gram order: 2
+
+=== Poem 1 ===
+la gente vengo de los tiernos fresnos sombras
+gigantes de nunca con sus aguas
+de los labios naufragando y por
+
+la vida adoro esa cima esa plaza es antigua
+granito que guarde el día sino un día esos
+pliegues un tigre hermoso cuerpo mío
+
+casi verde sin que siendo tales
+el astro y entre la movible arena
+
+=== Poem 2 ===
+siendo yo en la eléctrica
+corola que del metal en el pensamiento
+al verme y yerro cometido cómo
+camina partiendo de nuevo sacude
+
+su manera más dime el tenue y
+ese viaje le gustaba correr obligado
+frente de aliento y abajo
+por tu moño dulce emoción
+
+y haciendo en ellas que con
+vosotros anclado contadme todo es preciso
+
+=== Poem 3 ===
+todos los labios muda y
+sus lumbres deshechas no cito porque
+uno en aire sólido la llama el margen dulce
+
+se saludan cantando riendo amarilla
+o rayos el dibujo murmuramos apenas sospechamos todo
+tan temido del escepticismo sin cabalgadura así
+
+aunque se mira las tinieblas la cavadora de
+mi imaginada felicidad sobre el vicio reina
+
+=== Poem 4 ===
+limón baja a su manera de una modista y
+pensando en fuego en tierra para su mudo su
+terrenal quejido hombre en río que en presencia
+me llama por cristo muerta solamente
+
+porque la vida y tal me
+entrego todo era la niebla del incendio de
+bandera ante los cumplimientos y pues si al
+ver ay más que son el pesar de
+
+=== Poem 5 ===
+yo al recibir porque en cambio de
+rocío gris reciente para el
+aire pues hierro es para todo esto el cazador
+de presencia me llevo mi
+
+madre cómo iba a la paramal tristeza en
+cada laúd se afirma el pozo

@@ -1,0 +1,61 @@
+Language: English
+Model: Qwen/Qwen3-4B-Instruct-2507
+k-shot examples: 1
+Example source: English/English1k.txt (1000 poems)
+Example poem indices (1-based): [423]
+Poems: 5
+
+=== Poem 1 ===
+Dawn breaks soft, mist curls low.  
+Rain taps leaves, quiet and slow.  
+World wakes in silvered hush.  
+Damp air breathes, cool and lush.  
+
+Pavements gleam, wet and bright.  
+Clouds drift near, soft and light.  
+No sound but drops on stone.  
+Morning stirs, gentle, alone.
+
+=== Poem 2 ===
+The river flows soft through the meadow.  
+It whispers to willows, calm and low.  
+No rush, no sound, just quiet time.  
+It moves like breath in the early light.  
+
+It bends around stones, slow and deep.  
+Reflects the sky in stillness.  
+No one speaks, no one near.  
+Just water, wind, and the silence.
+
+=== Poem 3 ===
+Sunlight on the kitchen table  
+Dad’s coffee, warm and strong  
+Sister’s laughter, soft and clear  
+Morning songs we’d sing together  
+
+Old porch swing, creaking slow  
+Wind through the maple trees  
+Grandma’s porch light, always on  
+Nighttime hush, no need to speak
+
+=== Poem 4 ===
+Stars blink above the silent plain,  
+Wind hums a tune we both have known.  
+Footsteps fade where shadows lean,  
+Night holds us close, no need to go.  
+
+Moon spills silver on the trail,  
+Dust dances in the quiet air.  
+We walk with no destination,  
+Just stars and silence, and the prayer.
+
+=== Poem 5 ===
+The snow melts from the garden paths.  
+Birds return with songs of praise.  
+Buds push through the cold earth's hold.  
+Green light fills the morning haze.  
+
+Daffodils dance in the breeze.  
+Flowers open in the sun.  
+The wind carries a fresh, sweet scent.  
+Spring wakes the sleeping land.

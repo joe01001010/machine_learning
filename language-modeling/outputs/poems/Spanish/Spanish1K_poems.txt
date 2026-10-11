@@ -1,0 +1,53 @@
+Language: Spanish
+Training poems: 1000
+N-gram order: 3
+
+=== Poem 1 ===
+amor con cuánta fuerza para ahogar en su
+muy pobre opinión debieran esos
+señores saben decirlo y presentarlo todo con
+
+ese gladiador de las vivientes almas a que
+asciende el mundo es poco para encerrar mi espíritu
+volver camino mucho mucho y al
+
+=== Poem 2 ===
+qué triste es vivir finando oh qué despacio
+va el iris une al cielo para ti en
+mis labios en los labios quería decir
+
+el signo aquel el olvidado ese que yo vengo
+con el que en el mar
+
+=== Poem 3 ===
+cuando abriendo tu boca pronuncie sus nuevas flores
+de nuestro ser lo poco quien
+al amor cuando el artista tiene un amor lejos
+oyendo del primer ruiseñor el nuevo nacimiento del
+
+alba moribunda hablo de cosas que existen dios
+me ha hundido en las
+islas desde el sueño quieto en la
+
+=== Poem 4 ===
+te amo bajo tierra los besos no
+bien tras de su visión
+esa la doble senda en que respiras álzala
+con tu recuerdo dura sólo inquietud lamento sostenido en
+
+un rincón de un bosque de lo
+que piensas que sufro a mi traje de
+
+=== Poem 5 ===
+de los volcanes hablad por mis labios me
+la trajo me la renueva
+con la muerte me arrebata de
+ese arcángel vestido con harapos a
+
+que suba tan arriba que tenga que
+escribir sobre tal o cual materia se
+comprende y siente y de la tierra quien
+sabe sentir como tú eres
+
+lo único que llora tus hijos a
+arrullar tu dormir con sus

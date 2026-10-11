@@ -1,0 +1,61 @@
+Language: Spanish
+Model: Qwen/Qwen3-4B-Instruct-2507
+k-shot examples: 2
+Example source: Spanish/Spanish1K.txt (1000 poems)
+Example poem indices (1-based): [226, 216]
+Poems: 5
+
+=== Poem 1 ===
+Lluvia fría en la mañana  
+despierta el suelo húmedo  
+el cielo se vuelve gris  
+y el viento calla.
+
+Gotas caen suaves  
+como susurros de noche  
+el mundo se viste de blanco  
+y todo se queda en paz.
+
+=== Poem 2 ===
+Silencio en el agua que fluye.  
+No canta, solo se desliza.  
+Refleja el cielo, sin hablar.  
+Mira, y el tiempo se calla.  
+
+Pasa sin ruido, sin prisa.  
+Siente el viento, pero no siente.  
+Cada olvido se deshace.  
+El río no quiere ser visto.
+
+=== Poem 3 ===
+La cocina huele a fresas y pan.  
+El fuego late, el vaso se inclina.  
+Mi abuela canta, la luz se mueve.  
+El tiempo se detiene, es mi hogar.  
+
+El jardín canta con flores en silencio.  
+El río baja, el cielo se acuesta.  
+Las sombras bailan al sol de ayer.  
+Aquí, el amor nunca se fue.
+
+=== Poem 4 ===
+Bajo el cielo, el viento susurra.  
+Las estrellas, silencio en el aire.  
+Camino sin fin, sin mapa, sin nombre.  
+El tiempo se derrite en la noche.  
+
+El alma se aleja, se vuelve leve.  
+El mar de estrellas me llama en silencio.  
+No hay destino, solo el presente.  
+Y el viento me lleva, sin pedir permiso.
+
+=== Poem 5 ===
+Las hojas brotan con suave brillo.  
+El viento canta entre los árboles.  
+El sol dibuja colores en el suelo.  
+La tierra respira con esperanza.  
+
+Las flores abren sus mejillas rojas.  
+El río canta con voz clara.  
+Las aves vuelan en círculos ligeros.  
+El mundo se vuelve más dulce.
