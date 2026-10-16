@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-master
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    app.kubernetes.io/name: apache-spark
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: master
+
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: apache-spark
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: master
+  ports:
+    - name: spark
+      port: 7077
+      targetPort: spark
