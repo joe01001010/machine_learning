@@ -3,8 +3,8 @@ cuda-bindings==12.9.4
 cuda-pathfinder==1.5.0
 cuda-toolkit==12.8.1
 Farama-Notifications==0.0.4
-filelock==3.25.2
-fsspec==2026.3.0
+filelock==4.2.1
+fsspec==2026.6.0
 gym-notices==0.1.0
 gymnasium==1.2.3
 Jinja2==3.1.6
@@ -43,7 +43,7 @@ nvidia-nvshmem-cu13==3.4.5
 nvidia-nvtx==13.0.85
 nvidia-nvtx-cu12==12.8.90
 packaging @ file:///home/task_176104885106445/conda-bld/packaging_1761049078006/work
-pillow==12.3.0
+pillow==13.0.0
 sympy==1.14.0
 torch==2.13.0
 torchaudio==2.11.0.dev20260327+cu128
