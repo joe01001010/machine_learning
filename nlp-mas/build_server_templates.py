@@ -6,19 +6,21 @@ from pathlib import Path
 from transformers import AutoTokenizer
 
 
-ROLES = ('requirements-engineer', 'test-case-engineer', 'test-engineer', 'verification-engineer')
+ROLES = ('requirements-engineer', 'test-engineer', 'coder', 'verification-engineer')
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('models', nargs=4)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--roles', nargs=4, default=ROLES,
+                        help='Role names, in the same order as the four models')
     args = parser.parse_args()
 
     base = Path(__file__).resolve().parent
     args.output.mkdir(parents=True, exist_ok=True)
 
-    for role, model in zip(ROLES, args.models):
+    for role, model in zip(args.roles, args.models):
         tokenizer = AutoTokenizer.from_pretrained(model)
         original = tokenizer.get_chat_template()
         prompt = (base / 'prompts' / f'{role}.txt').read_text(encoding='utf-8')

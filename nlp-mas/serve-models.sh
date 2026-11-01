@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This bash script will spin up four role-specific LLM servers using vLLM
 # Ensure python environment has vllm command
-# Example: ./serve_models.sh Qwen/Qwen3-0.6B
+# Example: ./serve-models.sh Eslzzyl/Qwen3-4B-Instruct-2507-AWQ
 # Example: ./serve-models.sh Qwen/Qwen3-4B-Instruct-2507
 
 set -Eeuo pipefail
@@ -10,8 +10,8 @@ set +m
 
 if (( $# != 1 )); then
     echo "ERROR: Must send the model you want all your agents to use"
-    echo "Example: $0 Qwen/Qwen3-0.6B"
-    echo "Example: $0 Qwen/Qwen3-4B-Instruct-2507"
+    echo "4-bit Example: $0 Eslzzyl/Qwen3-4B-Instruct-2507-AWQ"
+    echo "16-bit Example: $0 Qwen/Qwen3-4B-Instruct-2507"
     exit 67
 fi
 
@@ -26,16 +26,38 @@ done
 
 base_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 python_bin=${PYTHON_BIN:-python}
-max_model_len=${MAX_MODEL_LEN:-8192}
-# Qwen3-0.6B BF16 needs about 0.88 GiB of KV cache for 8192 tokens.
-kv_cache_bytes=${KV_CACHE_MEMORY_BYTES:-1073741824}
+# Four 4B copies require 4-bit weights on a 16 GiB GPU.
+# Qwen3-4B needs about 297 MiB of dynamically scaled FP8 KV for 4096 tokens.
+max_model_len=${MAX_MODEL_LEN:-4096}
+kv_cache_bytes=${KV_CACHE_MEMORY_BYTES:-335544320}
+kv_cache_dtype=${KV_CACHE_DTYPE:-fp8_per_token_head}
+attention_backend=${ATTENTION_BACKEND:-TRITON_ATTN}
+gpu_memory_utilization=${GPU_MEMORY_UTILIZATION:-0.20}
+startup_timeout=${STARTUP_TIMEOUT:-600}
+server_roles=(requirements-engineer test-engineer coder verification-engineer)
 
 export VLLM_USE_V2_MODEL_RUNNER=0
 export VLLM_USE_FLASHINFER_SAMPLER=0
 
 
-log_dir=$(mktemp -d .agent-logs.XXXXXX)
-"$python_bin" "$base_dir/build_server_templates.py" "$1" "$1" "$1" "$1" --output "$log_dir/templates"
+# Reject occupied ports before a different server's /health can imply readiness.
+"$python_bin" - <<'PYCHECK'
+from contextlib import ExitStack
+import socket
+
+with ExitStack() as stack:
+    for port in range(8001, 8005):
+        listener = stack.enter_context(socket.socket())
+        listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            listener.bind(("127.0.0.1", port))
+        except OSError as exc:
+            raise SystemExit(f"ERROR: Cannot use port {port}: {exc}. Stop any existing server first.")
+PYCHECK
+
+log_dir=$(mktemp -d "$base_dir/.agent-logs.XXXXXX")
+"$python_bin" "$base_dir/build_server_templates.py" "$1" "$1" "$1" "$1" \
+    --roles "${server_roles[@]}" --output "$log_dir/templates"
 declare -a pids=()
 declare -A roles=()
 
@@ -107,6 +129,8 @@ start_server() {
         --gpu-memory-utilization "$budget" \
         --enforce-eager \
         --kv-cache-memory-bytes "$kv_cache_bytes" \
+        --kv-cache-dtype "$kv_cache_dtype" \
+        --attention-backend "$attention_backend" \
         --max-num-batched-tokens 512 \
         >"$log_dir/$role.log" 2>&1 &
     local pid=$!
@@ -116,17 +140,48 @@ start_server() {
         "$role" "$pid" "$port" "$log_dir/$role.log"
 }
 
-start_server requirements-engineer "$1" 8001 0.25
-start_server test-case-engineer    "$1" 8002 0.25
-start_server test-engineer         "$1" 8003 0.25
-start_server verification-engineer "$1" 8004 0.25
+wait_for_server() {
+    local role=$1 port=$2 deadline=$((SECONDS + startup_timeout))
+    echo "Waiting for $role on port $port..."
+    while ! "$python_bin" -c '
+import sys, urllib.request
+try:
+    with urllib.request.urlopen("http://127.0.0.1:" + sys.argv[1] + "/health", timeout=2) as response:
+        sys.exit(0 if response.status == 200 else 1)
+except Exception:
+    sys.exit(1)
+' "$port"; do
+        for pid in "${pids[@]}"; do
+            if ! kill -0 "$pid" 2>/dev/null; then
+                echo "ERROR: ${roles[$pid]} exited during startup." >&2
+                tail -n 40 "$log_dir/${roles[$pid]}.log" >&2
+                return 1
+            fi
+        done
+        if (( SECONDS >= deadline )); then
+            echo "ERROR: $role did not become ready within $startup_timeout seconds." >&2
+            tail -n 40 "$log_dir/$role.log" >&2
+            return 1
+        fi
+        sleep 2
+    done
+    echo "$role is ready."
+}
+
+# Initialize one at a time so GPU allocations do not race during profiling.
+for i in "${!server_roles[@]}"; do
+    port=$((8001 + i))
+    start_server "${server_roles[$i]}" "$1" "$port" "$gpu_memory_utilization"
+    wait_for_server "${server_roles[$i]}" "$port"
+done
+echo "All four model servers are ready. Logs: $log_dir"
 
 status=0
 wait -n "${pids[@]}" || status=$?
 
 
 echo "A model server exited (status $status); stopping the group."
-for role in requirements-engineer test-case-engineer test-engineer verification-engineer; do
+for role in "${server_roles[@]}"; do
     echo "Last log lines for $role:"
     tail -n 12 "$log_dir/$role.log" || true
 done
