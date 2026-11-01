@@ -1,0 +1,649 @@
+language,method,condition,metric,n,n_total,mean,sd,ci_low,ci_high,judge,judge_model
+Assamese,ngram,200 poems / n=1,words,5,5,54.6,9.528903399657278,47.4,61.8,,
+Assamese,ngram,200 poems / n=1,lines,5,5,7.8,0.8366600265340756,7.2,8.4,,
+Assamese,ngram,200 poems / n=1,stanzas,5,5,2.6,0.5477225575051661,2.2,3.0,,
+Assamese,ngram,200 poems / n=1,mattr20,5,5,0.9901098901098901,0.018384027499254597,0.9731868131868131,1.0,,
+Assamese,ngram,200 poems / n=1,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Assamese,ngram,200 poems / n=1,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Assamese,ngram,200 poems / n=1,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Assamese,ngram,200 poems / n=1,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Assamese,ngram,200 poems / n=1,target_language_confidence,5,5,0.9610492825508118,0.018296363118226678,0.9459616780281067,0.974165427684784,,
+Assamese,ngram,200 poems / n=1,lexical_line_cohesion,5,5,0.0019292183170604477,0.004313863300384903,0.0,0.005787654951181343,,
+Assamese,ngram,200 poems / n=1,eight_line_adherence,0,5,,,,,,
+Assamese,ngram,200 poems / n=1,fluency,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,200 poems / n=1,coherence,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,200 poems / n=1,imagery,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,200 poems / n=1,emotion,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,200 poems / n=1,originality,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,200 poems / n=1,craft,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,200 poems / n=1,rubric_mean,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,words,5,5,44.2,17.23948955160796,30.6,57.8,,
+Assamese,ngram,500 poems / n=2,lines,5,5,6.4,1.51657508881031,5.2,7.6,,
+Assamese,ngram,500 poems / n=2,stanzas,5,5,2.2,0.4472135954999579,2.0,2.6,,
+Assamese,ngram,500 poems / n=2,mattr20,5,5,0.9828942687747034,0.014228307329127938,0.9705760869565216,0.9936363636363635,,
+Assamese,ngram,500 poems / n=2,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Assamese,ngram,500 poems / n=2,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Assamese,ngram,500 poems / n=2,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Assamese,ngram,500 poems / n=2,novel4_fraction,5,5,0.8754005049845457,0.05144046188756815,0.8425014148273912,0.9196650124069479,,
+Assamese,ngram,500 poems / n=2,target_language_confidence,5,5,0.9679314494132996,0.012519395039275317,0.9584019660949707,0.9774609327316284,,
+Assamese,ngram,500 poems / n=2,lexical_line_cohesion,5,5,0.008916007067751322,0.01457391041701124,0.0,0.02233429439448998,,
+Assamese,ngram,500 poems / n=2,eight_line_adherence,0,5,,,,,,
+Assamese,ngram,500 poems / n=2,fluency,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,coherence,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,imagery,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,emotion,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,originality,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,craft,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,500 poems / n=2,rubric_mean,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,words,5,5,51.0,16.015617378046965,38.8,62.8,,
+Assamese,ngram,1000 poems / n=3,lines,5,5,7.8,2.280350850198276,5.8,9.2,,
+Assamese,ngram,1000 poems / n=3,stanzas,5,5,2.6,0.5477225575051661,2.2,3.0,,
+Assamese,ngram,1000 poems / n=3,mattr20,5,5,0.948329642707523,0.025871748422593946,0.9268089053803342,0.9669190256747859,,
+Assamese,ngram,1000 poems / n=3,distinct2,5,5,0.9183673469387756,0.18253616142855425,0.7551020408163265,1.0,,
+Assamese,ngram,1000 poems / n=3,repeat3_fraction,5,5,0.07916666666666668,0.17702204821873338,0.0,0.2375,,
+Assamese,ngram,1000 poems / n=3,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Assamese,ngram,1000 poems / n=3,novel4_fraction,5,5,0.1306772305708476,0.08867169021955727,0.06235679214402619,0.19824009324009326,,
+Assamese,ngram,1000 poems / n=3,target_language_confidence,5,5,0.9214344263076782,0.14133683019615334,0.7947583079338074,0.9876906275749207,,
+Assamese,ngram,1000 poems / n=3,lexical_line_cohesion,5,5,0.008222717751258516,0.0065563233097817065,0.003169287166418573,0.01327614833609846,,
+Assamese,ngram,1000 poems / n=3,eight_line_adherence,0,5,,,,,,
+Assamese,ngram,1000 poems / n=3,fluency,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,coherence,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,imagery,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,emotion,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,originality,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,craft,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,ngram,1000 poems / n=3,rubric_mean,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,words,5,5,29.8,8.318653737234168,23.8,36.2,,
+Assamese,llm,0-shot,lines,5,5,5.6,2.1908902300206643,4.0,7.2,,
+Assamese,llm,0-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Assamese,llm,0-shot,mattr20,5,5,0.8192954545454544,0.07011604902287719,0.7632954545454544,0.8720454545454546,,
+Assamese,llm,0-shot,distinct2,5,5,0.9543277310924371,0.050772925654537775,0.9144117647058824,0.9928571428571429,,
+Assamese,llm,0-shot,repeat3_fraction,5,5,0.018181818181818188,0.0406557814090871,0.0,0.054545454545454564,,
+Assamese,llm,0-shot,duplicate_line_fraction,5,5,0.025,0.05590169943749475,0.0,0.075,,
+Assamese,llm,0-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Assamese,llm,0-shot,target_language_confidence,5,5,0.19811220089904963,0.4026400987196864,0.00886299004778266,0.5589437372516841,,
+Assamese,llm,0-shot,lexical_line_cohesion,5,5,0.21647573915094243,0.1547269850146798,0.10617199449559526,0.3428078121624865,,
+Assamese,llm,0-shot,eight_line_adherence,5,5,0.4,0.5477225575051662,0.0,0.8,,
+Assamese,llm,0-shot,fluency,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,coherence,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,imagery,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,emotion,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,originality,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,craft,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,0-shot,rubric_mean,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,words,5,5,38.6,3.2093613071762426,36.2,41.0,,
+Assamese,llm,1-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Assamese,llm,1-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Assamese,llm,1-shot,mattr20,5,5,0.7275157563025211,0.09856079556578873,0.6490178571428571,0.799093137254902,,
+Assamese,llm,1-shot,distinct2,5,5,0.8968815704419419,0.06992637875698257,0.8419866408101703,0.9517765000737135,,
+Assamese,llm,1-shot,repeat3_fraction,5,5,0.038877943521906363,0.044444744361714784,0.006060606060606055,0.07492260061919505,,
+Assamese,llm,1-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Assamese,llm,1-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Assamese,llm,1-shot,target_language_confidence,5,5,0.42965096831321714,0.3585837563871287,0.15363138914108276,0.7122825682163239,,
+Assamese,llm,1-shot,lexical_line_cohesion,5,5,0.1620908554077536,0.16555709102426408,0.05677661112876235,0.3027598787357732,,
+Assamese,llm,1-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Assamese,llm,1-shot,fluency,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,coherence,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,imagery,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,emotion,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,originality,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,craft,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,1-shot,rubric_mean,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,words,5,5,34.2,7.726577508832743,27.4,39.0,,
+Assamese,llm,2-shot,lines,5,5,7.2,1.7888543819998322,5.6,8.0,,
+Assamese,llm,2-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Assamese,llm,2-shot,mattr20,5,5,0.8854761904761904,0.0542585562810623,0.8364761904761906,0.915952380952381,,
+Assamese,llm,2-shot,distinct2,5,5,0.9685560053981106,0.05706763006268793,0.9159244264507423,1.0,,
+Assamese,llm,2-shot,repeat3_fraction,5,5,0.016216216216216207,0.036260561797293867,0.0,0.04864864864864862,,
+Assamese,llm,2-shot,duplicate_line_fraction,5,5,0.025,0.055901699437494755,0.0,0.075,,
+Assamese,llm,2-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Assamese,llm,2-shot,target_language_confidence,5,5,0.6700678527355194,0.4057578688575183,0.3695420801639557,0.9682697176933288,,
+Assamese,llm,2-shot,lexical_line_cohesion,5,5,0.032170005998638285,0.019462957503696494,0.015480761027230972,0.04565647664675478,,
+Assamese,llm,2-shot,eight_line_adherence,5,5,0.8,0.44721359549995804,0.4,1.0,,
+Assamese,llm,2-shot,fluency,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,coherence,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,imagery,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,emotion,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,originality,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,craft,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Assamese,llm,2-shot,rubric_mean,0,5,,,,,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,words,5,5,51.6,16.087262041752165,39.4,64.0,,
+Bengali,ngram,200 poems / n=1,lines,5,5,7.6,2.1908902300206643,6.0,9.2,,
+Bengali,ngram,200 poems / n=1,stanzas,5,5,2.6,0.8944271909999159,2.0,3.4,,
+Bengali,ngram,200 poems / n=1,mattr20,5,5,0.9971314102564101,0.004380895576845855,0.9931730769230768,0.9997916666666666,,
+Bengali,ngram,200 poems / n=1,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Bengali,ngram,200 poems / n=1,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,ngram,200 poems / n=1,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,ngram,200 poems / n=1,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Bengali,ngram,200 poems / n=1,target_language_confidence,5,5,0.9890809655189514,0.007924649766268055,0.9828859686851501,0.9951373219490052,,
+Bengali,ngram,200 poems / n=1,lexical_line_cohesion,5,5,0.003599879832876434,0.008049576017142289,0.0,0.0107996394986293,,
+Bengali,ngram,200 poems / n=1,eight_line_adherence,0,5,,,,,,
+Bengali,ngram,200 poems / n=1,fluency,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,coherence,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,imagery,5,5,1.2,0.44721359549995804,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,emotion,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,originality,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,craft,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,200 poems / n=1,rubric_mean,5,5,1.0333333333333334,0.07453559924999302,1.0,1.1,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,words,5,5,49.8,15.594870951694341,37.8,61.6,,
+Bengali,ngram,500 poems / n=2,lines,5,5,7.6,2.073644135332772,6.0,9.2,,
+Bengali,ngram,500 poems / n=2,stanzas,5,5,2.6,0.8944271909999159,2.0,3.4,,
+Bengali,ngram,500 poems / n=2,mattr20,5,5,0.9833056196834506,0.010316603854819797,0.976686996942659,0.9921228239845261,,
+Bengali,ngram,500 poems / n=2,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Bengali,ngram,500 poems / n=2,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,ngram,500 poems / n=2,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,ngram,500 poems / n=2,novel4_fraction,5,5,0.9476616527680358,0.04094075738615523,0.9165323565323567,0.9803600654664484,,
+Bengali,ngram,500 poems / n=2,target_language_confidence,5,5,0.9921091318130493,0.0015176260184907857,0.9909307718276977,0.9932874917984009,,
+Bengali,ngram,500 poems / n=2,lexical_line_cohesion,5,5,0.0037388524312004664,0.006675388424751552,0.0,0.00990093594866614,,
+Bengali,ngram,500 poems / n=2,eight_line_adherence,0,5,,,,,,
+Bengali,ngram,500 poems / n=2,fluency,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,coherence,5,5,1.2,0.4472135954999579,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,imagery,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,emotion,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,originality,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,craft,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,500 poems / n=2,rubric_mean,5,5,1.7333333333333336,0.43461349368017665,1.4,2.066666666666667,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,words,5,5,47.0,7.582875444051551,41.8,53.6,,
+Bengali,ngram,1000 poems / n=3,lines,5,5,7.0,1.0,6.2,7.8,,
+Bengali,ngram,1000 poems / n=3,stanzas,5,5,2.4,0.5477225575051661,2.0,2.8,,
+Bengali,ngram,1000 poems / n=3,mattr20,5,5,0.9722337540906967,0.030869938815557624,0.9468063347358578,0.9949166666666667,,
+Bengali,ngram,1000 poems / n=3,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Bengali,ngram,1000 poems / n=3,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,ngram,1000 poems / n=3,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,ngram,1000 poems / n=3,novel4_fraction,5,5,0.10866089118048802,0.022196799224850322,0.09168576104746318,0.1251239801631739,,
+Bengali,ngram,1000 poems / n=3,target_language_confidence,5,5,0.9911422967910767,0.0018858713618910663,0.9895114064216614,0.9923677563667297,,
+Bengali,ngram,1000 poems / n=3,lexical_line_cohesion,5,5,0.025126545084645856,0.0329624687122623,0.002314640900968779,0.053938073195007666,,
+Bengali,ngram,1000 poems / n=3,eight_line_adherence,0,5,,,,,,
+Bengali,ngram,1000 poems / n=3,fluency,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,coherence,5,5,2.2,0.44721359549995787,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,imagery,5,5,3.6,0.5477225575051661,3.2,4.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,emotion,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,originality,5,5,2.8,0.4472135954999579,2.4,3.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,craft,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Bengali,ngram,1000 poems / n=3,rubric_mean,5,5,2.7666666666666666,0.45030853620354333,2.3999999999999995,3.1000000000000005,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,words,5,5,30.2,10.2810505299799,22.6,37.8,,
+Bengali,llm,0-shot,lines,5,5,6.4,2.1908902300206643,4.8,8.0,,
+Bengali,llm,0-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Bengali,llm,0-shot,mattr20,4,5,0.9174305555555555,0.04086599537744417,0.8834722222222224,0.9513888888888888,,
+Bengali,llm,0-shot,distinct2,5,5,0.9947368421052631,0.011768778828946249,0.9842105263157895,1.0,,
+Bengali,llm,0-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,llm,0-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,llm,0-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Bengali,llm,0-shot,target_language_confidence,5,5,0.961869740486145,0.019753804216358088,0.9465356349945069,0.9772038459777832,,
+Bengali,llm,0-shot,lexical_line_cohesion,5,5,0.017830396301798966,0.026191270675157533,0.0,0.04102368657027988,,
+Bengali,llm,0-shot,eight_line_adherence,5,5,0.6,0.5477225575051662,0.2,1.0,,
+Bengali,llm,0-shot,fluency,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,coherence,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,imagery,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,emotion,5,5,2.0,0.7071067811865476,1.4,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,originality,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,craft,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,0-shot,rubric_mean,5,5,2.2333333333333334,0.3651483716701107,1.9333333333333331,2.4999999999999996,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,words,5,5,41.8,2.16794833886788,39.8,43.0,,
+Bengali,llm,1-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Bengali,llm,1-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Bengali,llm,1-shot,mattr20,5,5,0.8615751334858885,0.06757029641065666,0.8007236842105263,0.8970280320366131,,
+Bengali,llm,1-shot,distinct2,5,5,0.9468594029569639,0.07754644008503343,0.876074332171893,0.9898326898326898,,
+Bengali,llm,1-shot,repeat3_fraction,5,5,0.014634146341463405,0.03272294601219203,0.0,0.043902439024390214,,
+Bengali,llm,1-shot,duplicate_line_fraction,5,5,0.025,0.05590169943749475,0.0,0.075,,
+Bengali,llm,1-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Bengali,llm,1-shot,target_language_confidence,5,5,0.9803418278694153,0.011745017255236976,0.9703914046287536,0.9884446024894714,,
+Bengali,llm,1-shot,lexical_line_cohesion,5,5,0.07130827214601358,0.07528029168721975,0.017034184790804048,0.13714682820531535,,
+Bengali,llm,1-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Bengali,llm,1-shot,fluency,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,coherence,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,imagery,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,emotion,5,5,1.8,0.4472135954999579,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,originality,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,craft,5,5,1.8,0.4472135954999579,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,1-shot,rubric_mean,5,5,1.8666666666666665,0.24720661623652204,1.6666666666666665,2.033333333333333,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,words,5,5,38.4,2.8809720581775866,36.2,40.4,,
+Bengali,llm,2-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Bengali,llm,2-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Bengali,llm,2-shot,mattr20,5,5,0.9221977671451356,0.052091199309861794,0.8756220095693779,0.9492009569377989,,
+Bengali,llm,2-shot,distinct2,5,5,0.99,0.022360679774997918,0.97,1.0,,
+Bengali,llm,2-shot,repeat3_fraction,5,5,0.0051282051282051325,0.011467015269229702,0.0,0.015384615384615396,,
+Bengali,llm,2-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Bengali,llm,2-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Bengali,llm,2-shot,target_language_confidence,5,5,0.976487910747528,0.0130552560308147,0.9655042171478272,0.9851999640464782,,
+Bengali,llm,2-shot,lexical_line_cohesion,5,5,0.019094446610014946,0.01592388162768468,0.007311071857573026,0.033196904379745394,,
+Bengali,llm,2-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Bengali,llm,2-shot,fluency,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,coherence,5,5,2.2,0.44721359549995787,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,imagery,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,emotion,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,originality,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,craft,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Bengali,llm,2-shot,rubric_mean,5,5,1.9666666666666663,0.21730674684008822,1.8,2.1333333333333333,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,words,5,5,49.8,17.326280616450838,36.8,62.8,,
+English,ngram,200 poems / n=1,lines,5,5,7.2,2.16794833886788,5.6,8.8,,
+English,ngram,200 poems / n=1,stanzas,5,5,2.6,0.8944271909999159,2.0,3.4,,
+English,ngram,200 poems / n=1,mattr20,5,5,0.9160729226378503,0.02327057146512996,0.8982605042016806,0.9338853410740203,,
+English,ngram,200 poems / n=1,distinct2,5,5,1.0,0.0,1.0,1.0,,
+English,ngram,200 poems / n=1,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,ngram,200 poems / n=1,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,ngram,200 poems / n=1,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+English,ngram,200 poems / n=1,target_language_confidence,5,5,0.9753371715545655,0.009419890018715784,0.9688408136367798,0.9833429336547852,,
+English,ngram,200 poems / n=1,lexical_line_cohesion,5,5,0.006338220015097912,0.0035647464848708177,0.0038935672917207453,0.009347875306313692,,
+English,ngram,200 poems / n=1,eight_line_adherence,0,5,,,,,,
+English,ngram,200 poems / n=1,fluency,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,coherence,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,imagery,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,emotion,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,originality,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,craft,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,200 poems / n=1,rubric_mean,5,5,1.1,0.09128709291752773,1.0333333333333334,1.1666666666666667,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,words,5,5,46.4,5.9413803110051795,42.0,51.20499999999993,,
+English,ngram,500 poems / n=2,lines,5,5,7.2,1.3038404810405297,6.2,8.2,,
+English,ngram,500 poems / n=2,stanzas,5,5,2.2,0.44721359549995787,2.0,2.6,,
+English,ngram,500 poems / n=2,mattr20,5,5,0.8813467908902691,0.04030886029347123,0.8506086956521741,0.915,,
+English,ngram,500 poems / n=2,distinct2,5,5,1.0,0.0,1.0,1.0,,
+English,ngram,500 poems / n=2,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,ngram,500 poems / n=2,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,ngram,500 poems / n=2,novel4_fraction,5,5,0.9533459881285969,0.03904954953513254,0.9200126547952635,0.981551116333725,,
+English,ngram,500 poems / n=2,target_language_confidence,5,5,0.944586431980133,0.0248287914109619,0.9255607604980469,0.9636121034622193,,
+English,ngram,500 poems / n=2,lexical_line_cohesion,5,5,0.014351558163595107,0.008029735418196314,0.007165465339465516,0.02004197776106533,,
+English,ngram,500 poems / n=2,eight_line_adherence,0,5,,,,,,
+English,ngram,500 poems / n=2,fluency,5,5,1.2,0.44721359549995804,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,coherence,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,imagery,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,emotion,5,5,1.2,0.44721359549995804,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,originality,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,craft,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+English,ngram,500 poems / n=2,rubric_mean,5,5,1.3333333333333335,0.23570226039551584,1.1666666666666667,1.5333333333333337,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,words,5,5,56.4,11.802542099056458,48.0,65.6,,
+English,ngram,1000 poems / n=3,lines,5,5,8.0,1.5811388300841898,6.8,9.2,,
+English,ngram,1000 poems / n=3,stanzas,5,5,2.8,0.8366600265340756,2.2,3.4,,
+English,ngram,1000 poems / n=3,mattr20,5,5,0.8638816443938394,0.04364846765673274,0.8309356984478938,0.8980499590499589,,
+English,ngram,1000 poems / n=3,distinct2,5,5,0.9833825535195398,0.017361210408895246,0.9704014706754431,0.9963636363636365,,
+English,ngram,1000 poems / n=3,repeat3_fraction,5,5,0.002777777777777768,0.006211299937499394,0.0,0.008333333333333304,,
+English,ngram,1000 poems / n=3,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,ngram,1000 poems / n=3,novel4_fraction,5,5,0.36555400216447714,0.07717407865358192,0.3210451112471933,0.4336699441934627,,
+English,ngram,1000 poems / n=3,target_language_confidence,5,5,0.9411190032958985,0.04015896298252282,0.9102335453033448,0.9696710348129273,,
+English,ngram,1000 poems / n=3,lexical_line_cohesion,5,5,0.047362678216885695,0.025809360459740163,0.028880582550231283,0.06854705994024016,,
+English,ngram,1000 poems / n=3,eight_line_adherence,0,5,,,,,,
+English,ngram,1000 poems / n=3,fluency,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,coherence,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,imagery,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,emotion,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,originality,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,craft,5,5,1.8,0.4472135954999579,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+English,ngram,1000 poems / n=3,rubric_mean,5,5,1.8,0.36132472314464664,1.5333333333333334,2.0666666666666664,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,words,5,5,44.4,11.696153213770756,34.0,51.0,,
+English,llm,0-shot,lines,5,5,7.2,1.7888543819998322,5.6,8.0,,
+English,llm,0-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+English,llm,0-shot,mattr20,5,5,0.9477883403361342,0.03067435351156169,0.92513025210084,0.9732589285714284,,
+English,llm,0-shot,distinct2,5,5,1.0,0.0,1.0,1.0,,
+English,llm,0-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,llm,0-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,llm,0-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+English,llm,0-shot,target_language_confidence,5,5,0.877849018573761,0.048023226972045176,0.8383146166801453,0.9131494045257569,,
+English,llm,0-shot,lexical_line_cohesion,5,5,0.004738129786460899,0.003728481079985789,0.0019059243453955648,0.007570335227526233,,
+English,llm,0-shot,eight_line_adherence,5,5,0.8,0.44721359549995804,0.4,1.0,,
+English,llm,0-shot,fluency,5,5,4.0,0.7071067811865476,3.4,4.6,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,coherence,5,5,3.8,0.44721359549995787,3.4,4.0,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,imagery,5,5,3.4,0.5477225575051661,3.0,3.8,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,emotion,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,originality,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,craft,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+English,llm,0-shot,rubric_mean,5,5,3.2,0.47726070210921184,2.8,3.5666666666666673,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,words,5,5,47.4,4.929503017546495,43.6,51.2,,
+English,llm,1-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+English,llm,1-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+English,llm,1-shot,mattr20,5,5,0.9229670592845288,0.04177806774429418,0.8907318458417851,0.9552022727272724,,
+English,llm,1-shot,distinct2,5,5,0.9918985270049101,0.011116954261833697,0.9833878887070376,1.0,,
+English,llm,1-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,llm,1-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,llm,1-shot,novel4_fraction,5,5,0.9955555555555555,0.00993807989999908,0.9866666666666667,1.0,,
+English,llm,1-shot,target_language_confidence,5,5,0.8950125932693481,0.06438046885325308,0.8447553038597106,0.9452698826789856,,
+English,llm,1-shot,lexical_line_cohesion,5,5,0.004810270017618514,0.004012101284532057,0.002221829916773413,0.008430621564895838,,
+English,llm,1-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+English,llm,1-shot,fluency,5,5,4.8,0.4472135954999579,4.4,5.0,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,coherence,5,5,4.0,0.0,4.0,4.0,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,imagery,5,5,3.8,0.4472135954999579,3.4,4.0,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,emotion,5,5,3.2,0.4472135954999579,3.0,3.6,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,originality,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,craft,5,5,3.6,0.5477225575051661,3.2,4.0,ChatGPT,GPT-6 (Codex session)
+English,llm,1-shot,rubric_mean,5,5,3.5666666666666664,0.2527625148017184,3.3666666666666663,3.7333333333333334,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,words,5,5,45.8,13.103434664239753,34.8,54.2,,
+English,llm,2-shot,lines,5,5,7.2,1.7888543819998317,5.6,8.0,,
+English,llm,2-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+English,llm,2-shot,mattr20,5,5,0.9481402714932126,0.042910382848022476,0.9145248868778282,0.9814479638009048,,
+English,llm,2-shot,distinct2,5,5,0.9964912280701753,0.007845852552630865,0.9894736842105264,1.0,,
+English,llm,2-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,llm,2-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+English,llm,2-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+English,llm,2-shot,target_language_confidence,5,5,0.8962838649749756,0.026542351181049674,0.8768790125846863,0.9189935684204101,,
+English,llm,2-shot,lexical_line_cohesion,5,5,0.0034726884205167397,0.003739524875308825,0.0006348987198558886,0.006338510473189238,,
+English,llm,2-shot,eight_line_adherence,5,5,0.8,0.4472135954999579,0.4,1.0,,
+English,llm,2-shot,fluency,5,5,4.2,0.8366600265340756,3.6,4.8,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,coherence,5,5,3.8,0.44721359549995787,3.4,4.0,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,imagery,5,5,3.4,0.5477225575051661,3.0,3.8,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,emotion,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,originality,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,craft,5,5,3.2,0.8366600265340756,2.6,3.8,ChatGPT,GPT-6 (Codex session)
+English,llm,2-shot,rubric_mean,5,5,3.2666666666666666,0.4801620096962644,2.8666666666666663,3.6,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,words,5,5,56.2,10.425929215182693,48.4,64.0,,
+Hindi,ngram,200 poems / n=1,lines,5,5,8.0,1.8708286933869707,6.6,9.4,,
+Hindi,ngram,200 poems / n=1,stanzas,5,5,2.8,0.8366600265340756,2.2,3.4,,
+Hindi,ngram,200 poems / n=1,mattr20,5,5,0.9695061866428144,0.017511505128117253,0.9548371347644601,0.9820572450805007,,
+Hindi,ngram,200 poems / n=1,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Hindi,ngram,200 poems / n=1,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,ngram,200 poems / n=1,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,ngram,200 poems / n=1,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Hindi,ngram,200 poems / n=1,target_language_confidence,5,5,0.9781766653060913,0.013587068194541958,0.966888177394867,0.9883122086524964,,
+Hindi,ngram,200 poems / n=1,lexical_line_cohesion,5,5,0.003277251800323077,0.0020168410137273007,0.0014952665490532147,0.004707675649091934,,
+Hindi,ngram,200 poems / n=1,eight_line_adherence,0,5,,,,,,
+Hindi,ngram,200 poems / n=1,fluency,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,coherence,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,imagery,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,emotion,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,originality,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,craft,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,200 poems / n=1,rubric_mean,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,words,5,5,45.8,7.395944834840239,40.0,51.4,,
+Hindi,ngram,500 poems / n=2,lines,5,5,7.0,1.0,6.2,7.8,,
+Hindi,ngram,500 poems / n=2,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Hindi,ngram,500 poems / n=2,mattr20,5,5,0.9669772145417305,0.0160443212367601,0.9553180555555554,0.9799078341013822,,
+Hindi,ngram,500 poems / n=2,distinct2,5,5,0.979559748427673,0.03609509523034277,0.9462264150943396,1.0,,
+Hindi,ngram,500 poems / n=2,repeat3_fraction,5,5,0.012765957446808507,0.028545548648933477,0.0,0.03829787234042552,,
+Hindi,ngram,500 poems / n=2,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,ngram,500 poems / n=2,novel4_fraction,5,5,0.8767124364392689,0.08456293669455049,0.8113668655868145,0.9420580072917234,,
+Hindi,ngram,500 poems / n=2,target_language_confidence,5,5,0.9867402672767639,0.005232547200455799,0.9827895879745483,0.9910119771957397,,
+Hindi,ngram,500 poems / n=2,lexical_line_cohesion,5,5,0.03285518657902333,0.05263503565018776,0.0,0.08116563316367034,,
+Hindi,ngram,500 poems / n=2,eight_line_adherence,0,5,,,,,,
+Hindi,ngram,500 poems / n=2,fluency,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,coherence,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,imagery,5,5,2.2,0.8366600265340756,1.6,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,emotion,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,originality,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,craft,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,500 poems / n=2,rubric_mean,5,5,1.6666666666666665,0.47140452079103157,1.3,2.033333333333333,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,words,5,5,47.4,16.10279478848315,34.8,59.2,,
+Hindi,ngram,1000 poems / n=3,lines,5,5,7.0,2.1213203435596424,5.4,8.6,,
+Hindi,ngram,1000 poems / n=3,stanzas,5,5,2.8,0.8366600265340756,2.2,3.4,,
+Hindi,ngram,1000 poems / n=3,mattr20,5,5,0.9056973262032086,0.08154013410639807,0.8339037433155079,0.9599882352941176,,
+Hindi,ngram,1000 poems / n=3,distinct2,5,5,0.9883107088989442,0.017496391792036464,0.9726244343891404,1.0,,
+Hindi,ngram,1000 poems / n=3,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,ngram,1000 poems / n=3,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,ngram,1000 poems / n=3,novel4_fraction,5,5,0.22744497284589454,0.05875160594822864,0.1819855167873601,0.2729044289044289,,
+Hindi,ngram,1000 poems / n=3,target_language_confidence,5,5,0.9814816832542419,0.009481473893535503,0.974124014377594,0.9888393521308899,,
+Hindi,ngram,1000 poems / n=3,lexical_line_cohesion,5,5,0.02707449139442174,0.024945889943483818,0.009928957036102673,0.04717608009356554,,
+Hindi,ngram,1000 poems / n=3,eight_line_adherence,0,5,,,,,,
+Hindi,ngram,1000 poems / n=3,fluency,5,5,2.8,0.4472135954999579,2.4,3.0,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,coherence,5,5,2.2,0.8366600265340756,1.6,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,imagery,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,emotion,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,originality,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,craft,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,ngram,1000 poems / n=3,rubric_mean,5,5,2.5,0.4249182927993988,2.1666666666666665,2.8333333333333335,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,words,5,5,33.8,14.307340773183533,23.4,46.0,,
+Hindi,llm,0-shot,lines,5,5,5.6,2.1908902300206643,4.0,7.2,,
+Hindi,llm,0-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Hindi,llm,0-shot,mattr20,5,5,0.8629528985507247,0.08683042071934127,0.7941666666666668,0.9317391304347824,,
+Hindi,llm,0-shot,distinct2,5,5,0.9492182614133833,0.0684519518342806,0.8902439024390244,0.9923076923076923,,
+Hindi,llm,0-shot,repeat3_fraction,5,5,0.012547169811320757,0.01776117220689691,0.0,0.027641509433962264,,
+Hindi,llm,0-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,llm,0-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Hindi,llm,0-shot,target_language_confidence,5,5,0.9802190661430359,0.01789746869046979,0.9644895434379578,0.9925772666931152,,
+Hindi,llm,0-shot,lexical_line_cohesion,5,5,0.05378400914969393,0.11782035394604953,0.0,0.1595919711782546,,
+Hindi,llm,0-shot,eight_line_adherence,5,5,0.4,0.5477225575051662,0.0,0.8,,
+Hindi,llm,0-shot,fluency,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,coherence,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,imagery,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,emotion,5,5,2.0,0.7071067811865476,1.4,2.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,originality,5,5,2.0,0.7071067811865476,1.4,2.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,craft,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,0-shot,rubric_mean,5,5,2.2333333333333334,0.49441323247304425,1.8333333333333333,2.6333333333333333,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,words,5,5,37.8,13.971399357258385,26.8,48.8,,
+Hindi,llm,1-shot,lines,5,5,6.4,2.1908902300206643,4.8,8.0,,
+Hindi,llm,1-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Hindi,llm,1-shot,mattr20,5,5,0.9185219144460026,0.05273981608475426,0.8719130434782608,0.9531249999999998,,
+Hindi,llm,1-shot,distinct2,5,5,0.9913043478260869,0.019444069369563378,0.9739130434782609,1.0,,
+Hindi,llm,1-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,llm,1-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,llm,1-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Hindi,llm,1-shot,target_language_confidence,5,5,0.9860312342643738,0.014999754450597678,0.9726009011268616,0.9937812209129333,,
+Hindi,llm,1-shot,lexical_line_cohesion,5,5,0.013655692405118705,0.013733593977011722,0.003592318017951962,0.024992123704100998,,
+Hindi,llm,1-shot,eight_line_adherence,5,5,0.6,0.5477225575051662,0.2,1.0,,
+Hindi,llm,1-shot,fluency,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,coherence,5,5,3.0,1.0,2.2,3.8,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,imagery,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,emotion,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,originality,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,craft,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,1-shot,rubric_mean,5,5,2.6,0.5602578771323872,2.1666666666666665,3.0333333333333337,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,words,5,5,39.0,11.832159566199232,29.8,48.2,,
+Hindi,llm,2-shot,lines,5,5,6.4,2.1908902300206643,4.8,8.0,,
+Hindi,llm,2-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Hindi,llm,2-shot,mattr20,5,5,0.8837063740856843,0.03350351917830756,0.8551003134796238,0.9069696969696969,,
+Hindi,llm,2-shot,distinct2,5,5,0.9783533765032377,0.03765384660097007,0.9435707678075855,1.0,,
+Hindi,llm,2-shot,repeat3_fraction,5,5,0.009090909090909084,0.020327890704543525,0.0,0.027272727272727247,,
+Hindi,llm,2-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Hindi,llm,2-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Hindi,llm,2-shot,target_language_confidence,5,5,0.9865058660507202,0.010437142785836113,0.9772081971168518,0.9934946417808532,,
+Hindi,llm,2-shot,lexical_line_cohesion,5,5,0.018060070385776957,0.012530328265754911,0.010243540406153124,0.028909133149569343,,
+Hindi,llm,2-shot,eight_line_adherence,5,5,0.6,0.5477225575051662,0.2,1.0,,
+Hindi,llm,2-shot,fluency,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,coherence,5,5,3.0,0.7071067811865476,2.4,3.6,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,imagery,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,emotion,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,originality,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,craft,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Hindi,llm,2-shot,rubric_mean,5,5,2.433333333333333,0.30276503540974925,2.2,2.666666666666667,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,words,5,5,58.4,12.60158720161869,47.2,66.4,,
+Spanish,ngram,200 poems / n=1,lines,5,5,8.2,1.3038404810405297,7.0,9.0,,
+Spanish,ngram,200 poems / n=1,stanzas,5,5,2.8,0.4472135954999579,2.4,3.0,,
+Spanish,ngram,200 poems / n=1,mattr20,5,5,0.8983750253292806,0.06585126045624291,0.8426785714285716,0.9467297872340424,,
+Spanish,ngram,200 poems / n=1,distinct2,5,5,0.9969230769230769,0.00688020916153779,0.9907692307692308,1.0,,
+Spanish,ngram,200 poems / n=1,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,ngram,200 poems / n=1,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,ngram,200 poems / n=1,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Spanish,ngram,200 poems / n=1,target_language_confidence,5,5,0.9801528573036193,0.009540909089375368,0.9727152466773987,0.9875904679298401,,
+Spanish,ngram,200 poems / n=1,lexical_line_cohesion,5,5,0.021918652223695885,0.013549739991580614,0.011257604114815602,0.032579700332576164,,
+Spanish,ngram,200 poems / n=1,eight_line_adherence,0,5,,,,,,
+Spanish,ngram,200 poems / n=1,fluency,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,coherence,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,imagery,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,emotion,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,originality,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,craft,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,200 poems / n=1,rubric_mean,5,5,1.1,0.09128709291752772,1.0333333333333334,1.1666666666666667,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,words,5,5,54.4,8.44393273303382,46.8,59.6,,
+Spanish,ngram,500 poems / n=2,lines,5,5,8.0,1.4142135623730951,6.8,9.2,,
+Spanish,ngram,500 poems / n=2,stanzas,5,5,2.6,0.5477225575051661,2.2,3.0,,
+Spanish,ngram,500 poems / n=2,mattr20,5,5,0.9344450870766658,0.036544468838589826,0.9067167919799497,0.9627327694235583,,
+Spanish,ngram,500 poems / n=2,distinct2,5,5,0.9964285714285716,0.00798595706249927,0.9892857142857142,1.0,,
+Spanish,ngram,500 poems / n=2,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,ngram,500 poems / n=2,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,ngram,500 poems / n=2,novel4_fraction,5,5,0.9816835016835016,0.025833496526610933,0.9598653198653198,1.0,,
+Spanish,ngram,500 poems / n=2,target_language_confidence,5,5,0.958931028842926,0.01857015934485846,0.9446325540542603,0.9731556534767151,,
+Spanish,ngram,500 poems / n=2,lexical_line_cohesion,5,5,0.009547083925062674,0.010918623120596832,0.0020445343191147556,0.018966524705073,,
+Spanish,ngram,500 poems / n=2,eight_line_adherence,0,5,,,,,,
+Spanish,ngram,500 poems / n=2,fluency,5,5,1.8,0.4472135954999579,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,coherence,5,5,1.2,0.44721359549995804,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,imagery,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,emotion,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,originality,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,craft,5,5,1.8,0.4472135954999579,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,500 poems / n=2,rubric_mean,5,5,1.7,0.36132472314464653,1.4000000000000001,1.9666666666666668,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,words,5,5,48.2,9.833615815151617,41.6,56.4,,
+Spanish,ngram,1000 poems / n=3,lines,5,5,6.8,1.9235384061671346,5.6,8.4,,
+Spanish,ngram,1000 poems / n=3,stanzas,5,5,2.2,0.4472135954999579,2.0,2.6,,
+Spanish,ngram,1000 poems / n=3,mattr20,5,5,0.9134805555555554,0.057751975408467625,0.8647638888888889,0.9575138888888887,,
+Spanish,ngram,1000 poems / n=3,distinct2,5,5,0.9968253968253968,0.007098628499999357,0.9904761904761905,1.0,,
+Spanish,ngram,1000 poems / n=3,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,ngram,1000 poems / n=3,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,ngram,1000 poems / n=3,novel4_fraction,5,5,0.33918621440312763,0.09398484975714977,0.2723087431693989,0.4122417699586832,,
+Spanish,ngram,1000 poems / n=3,target_language_confidence,5,5,0.9627037048339844,0.03467133060863635,0.9324895858764648,0.9868663072586059,,
+Spanish,ngram,1000 poems / n=3,lexical_line_cohesion,5,5,0.013773516613172526,0.015082426519883924,0.0033276864813440005,0.026367681707198547,,
+Spanish,ngram,1000 poems / n=3,eight_line_adherence,0,5,,,,,,
+Spanish,ngram,1000 poems / n=3,fluency,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,coherence,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,imagery,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,emotion,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,originality,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,craft,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Spanish,ngram,1000 poems / n=3,rubric_mean,5,5,2.033333333333333,0.18257418583505533,1.9,2.1666666666666665,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,words,5,5,44.8,4.08656334834051,41.6,48.0,,
+Spanish,llm,0-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Spanish,llm,0-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Spanish,llm,0-shot,mattr20,5,5,0.8886362220649205,0.0477325019176091,0.8524879765395896,0.9287636363636361,,
+Spanish,llm,0-shot,distinct2,5,5,0.9918367346938777,0.01825361614285545,0.9755102040816326,1.0,,
+Spanish,llm,0-shot,repeat3_fraction,5,5,0.004166666666666674,0.009316949906249141,0.0,0.012500000000000022,,
+Spanish,llm,0-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,llm,0-shot,novel4_fraction,5,5,0.9805847953216376,0.02674247969502279,0.9595321637426901,1.0,,
+Spanish,llm,0-shot,target_language_confidence,5,5,0.9157891035079956,0.04944792241368103,0.8717967629432678,0.9502620935440064,,
+Spanish,llm,0-shot,lexical_line_cohesion,5,5,0.009552007726109348,0.01106518645262603,0.002219138907999613,0.019124386474283345,,
+Spanish,llm,0-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Spanish,llm,0-shot,fluency,5,5,4.2,0.8366600265340756,3.6,4.8,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,coherence,5,5,4.0,0.0,4.0,4.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,imagery,5,5,3.2,0.4472135954999579,3.0,3.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,emotion,5,5,3.0,0.0,3.0,3.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,originality,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,craft,5,5,3.0,0.0,3.0,3.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,0-shot,rubric_mean,5,5,3.2666666666666666,0.19002923751652304,3.1,3.4,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,words,5,5,48.4,4.277849927241487,45.4,52.0,,
+Spanish,llm,1-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Spanish,llm,1-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Spanish,llm,1-shot,mattr20,5,5,0.8691970814132104,0.05255547953466487,0.8282111111111112,0.9101830517153096,,
+Spanish,llm,1-shot,distinct2,5,5,0.9762962962962962,0.03410626498732247,0.9466666666666667,1.0,,
+Spanish,llm,1-shot,repeat3_fraction,5,5,0.004545454545454542,0.010163945352271763,0.0,0.013636363636363624,,
+Spanish,llm,1-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,llm,1-shot,novel4_fraction,5,5,0.9880523731587563,0.017451751571281596,0.9726677577741407,1.0,,
+Spanish,llm,1-shot,target_language_confidence,5,5,0.8918369770050049,0.08926450585692458,0.8132892832159996,0.9402022361755371,,
+Spanish,llm,1-shot,lexical_line_cohesion,5,5,0.02918183752670959,0.01961704027648675,0.014336262793334387,0.04402741226008479,,
+Spanish,llm,1-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Spanish,llm,1-shot,fluency,5,5,4.2,0.8366600265340756,3.6,4.8,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,coherence,5,5,4.0,0.0,4.0,4.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,imagery,5,5,3.2,0.4472135954999579,3.0,3.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,emotion,5,5,3.2,0.4472135954999579,3.0,3.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,originality,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,craft,5,5,3.2,0.4472135954999579,3.0,3.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,1-shot,rubric_mean,5,5,3.3333333333333335,0.39086797998528583,3.0999999999999996,3.7,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,words,5,5,47.6,7.797435475847172,41.6,53.6,,
+Spanish,llm,2-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Spanish,llm,2-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Spanish,llm,2-shot,mattr20,5,5,0.8504693486590037,0.04220482493204774,0.8188888888888888,0.8844636015325668,,
+Spanish,llm,2-shot,distinct2,5,5,0.9962962962962962,0.008281733249999208,0.9888888888888889,1.0,,
+Spanish,llm,2-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,llm,2-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Spanish,llm,2-shot,novel4_fraction,5,5,0.9917094017094017,0.011401530002817309,0.9828205128205129,1.0,,
+Spanish,llm,2-shot,target_language_confidence,5,5,0.9281980872154236,0.03219386493551222,0.9034575939178466,0.9529385805130005,,
+Spanish,llm,2-shot,lexical_line_cohesion,5,5,0.016753446204560436,0.012778211079916968,0.0068862641312926855,0.026620628277828195,,
+Spanish,llm,2-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Spanish,llm,2-shot,fluency,5,5,4.4,0.5477225575051662,4.0,4.8,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,coherence,5,5,3.6,0.5477225575051661,3.2,4.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,imagery,5,5,3.6,0.5477225575051661,3.2,4.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,emotion,5,5,3.0,0.0,3.0,3.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,originality,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,craft,5,5,3.2,0.4472135954999579,3.0,3.6,ChatGPT,GPT-6 (Codex session)
+Spanish,llm,2-shot,rubric_mean,5,5,3.4,0.3456073558887954,3.1333333333333333,3.6666666666666665,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,words,5,5,48.8,12.637246535539298,39.6,58.81999999999971,,
+Ukrainian,ngram,200 poems / n=1,lines,5,5,7.4,1.6733200530681511,6.2,8.8,,
+Ukrainian,ngram,200 poems / n=1,stanzas,5,5,2.6,0.8944271909999159,2.0,3.4,,
+Ukrainian,ngram,200 poems / n=1,mattr20,5,5,0.9574868421052629,0.04560770768361303,0.9179999999999996,0.9881666666666664,,
+Ukrainian,ngram,200 poems / n=1,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,ngram,200 poems / n=1,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,ngram,200 poems / n=1,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,ngram,200 poems / n=1,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,ngram,200 poems / n=1,target_language_confidence,5,5,0.9786471366882324,0.02618554412428738,0.9547057509422302,0.9930019378662109,,
+Ukrainian,ngram,200 poems / n=1,lexical_line_cohesion,5,5,0.009250639199130873,0.008327645136992991,0.002901504868340638,0.015599773529921108,,
+Ukrainian,ngram,200 poems / n=1,eight_line_adherence,0,5,,,,,,
+Ukrainian,ngram,200 poems / n=1,fluency,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,coherence,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,imagery,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,emotion,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,originality,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,craft,5,5,1.0,0.0,1.0,1.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,200 poems / n=1,rubric_mean,5,5,1.1333333333333335,0.07453559924999303,1.0666666666666669,1.1666666666666667,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,words,5,5,57.2,9.602083107326242,48.8,63.8,,
+Ukrainian,ngram,500 poems / n=2,lines,5,5,8.2,1.4832396974191326,7.0,9.2,,
+Ukrainian,ngram,500 poems / n=2,stanzas,5,5,2.8,0.4472135954999579,2.4,3.0,,
+Ukrainian,ngram,500 poems / n=2,mattr20,5,5,0.9554353864734301,0.049092507999990154,0.9141394927536233,0.9869722222222223,,
+Ukrainian,ngram,500 poems / n=2,distinct2,5,5,0.9658536585365853,0.07635354069511478,0.897560975609756,1.0,,
+Ukrainian,ngram,500 poems / n=2,repeat3_fraction,5,5,0.030000000000000006,0.0670820393249937,0.0,0.09000000000000001,,
+Ukrainian,ngram,500 poems / n=2,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,ngram,500 poems / n=2,novel4_fraction,5,5,0.8225343406593406,0.08818179225286255,0.7428571428571428,0.8706593406593406,,
+Ukrainian,ngram,500 poems / n=2,target_language_confidence,5,5,0.9865541458129883,0.007558480141773983,0.9799622178077698,0.9919244170188903,,
+Ukrainian,ngram,500 poems / n=2,lexical_line_cohesion,5,5,0.0328632794090995,0.07028297586844248,0.000819952329189714,0.09576432609014712,,
+Ukrainian,ngram,500 poems / n=2,eight_line_adherence,0,5,,,,,,
+Ukrainian,ngram,500 poems / n=2,fluency,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,coherence,5,5,1.2,0.4472135954999579,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,imagery,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,emotion,5,5,1.2,0.4472135954999579,1.0,1.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,originality,5,5,1.6,0.5477225575051661,1.2,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,craft,5,5,1.4,0.5477225575051661,1.0,1.8,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,500 poems / n=2,rubric_mean,5,5,1.5333333333333334,0.41499665326629104,1.2333333333333334,1.8666666666666665,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,words,5,5,55.8,9.20326029187483,48.0,62.4,,
+Ukrainian,ngram,1000 poems / n=3,lines,5,5,7.8,1.3038404810405297,6.8,8.8,,
+Ukrainian,ngram,1000 poems / n=3,stanzas,5,5,2.8,0.4472135954999579,2.4,3.0,,
+Ukrainian,ngram,1000 poems / n=3,mattr20,5,5,0.9184365750528543,0.08110600500235075,0.845848837209302,0.9680126849894293,,
+Ukrainian,ngram,1000 poems / n=3,distinct2,5,5,0.9791666666666666,0.0465847495312456,0.9375,1.0,,
+Ukrainian,ngram,1000 poems / n=3,repeat3_fraction,5,5,0.017021276595744685,0.03806073153191132,0.0,0.05106382978723405,,
+Ukrainian,ngram,1000 poems / n=3,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,ngram,1000 poems / n=3,novel4_fraction,5,5,0.10739376074674525,0.08673969451637129,0.04303610906411202,0.17740112994350282,,
+Ukrainian,ngram,1000 poems / n=3,target_language_confidence,5,5,0.9724993109703064,0.023801285385762976,0.9540879011154175,0.9909107208251953,,
+Ukrainian,ngram,1000 poems / n=3,lexical_line_cohesion,5,5,0.044276819227363984,0.054525133613539854,0.010963314596448216,0.09412559284355732,,
+Ukrainian,ngram,1000 poems / n=3,eight_line_adherence,0,5,,,,,,
+Ukrainian,ngram,1000 poems / n=3,fluency,5,5,2.2,0.44721359549995787,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,coherence,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,imagery,5,5,2.8,0.44721359549995787,2.4,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,emotion,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,originality,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,craft,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,ngram,1000 poems / n=3,rubric_mean,5,5,2.2,0.3205897343611891,1.9333333333333331,2.4000000000000004,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,words,5,5,39.2,3.8987177379235853,36.4,42.4,,
+Ukrainian,llm,0-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Ukrainian,llm,0-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Ukrainian,llm,0-shot,mattr20,5,5,0.898306941266209,0.05488585806033868,0.855957894736842,0.9406559877955758,,
+Ukrainian,llm,0-shot,distinct2,5,5,0.9945945945945945,0.01208685393243127,0.9837837837837838,1.0,,
+Ukrainian,llm,0-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,llm,0-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,llm,0-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,0-shot,target_language_confidence,5,5,0.9847006440162659,0.015133138398137928,0.9712047576904297,0.995060658454895,,
+Ukrainian,llm,0-shot,lexical_line_cohesion,5,5,0.005783072376771452,0.010403471253963747,0.0,0.015382943523883016,,
+Ukrainian,llm,0-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,0-shot,fluency,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,coherence,5,5,2.8,0.44721359549995787,2.4,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,imagery,5,5,3.0,0.0,3.0,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,emotion,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,originality,5,5,2.2,0.4472135954999579,2.0,2.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,craft,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,0-shot,rubric_mean,5,5,2.5,0.2357022603955158,2.3,2.6666666666666665,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,words,5,5,35.0,2.5495097567963922,32.8,36.8,,
+Ukrainian,llm,1-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Ukrainian,llm,1-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Ukrainian,llm,1-shot,mattr20,5,5,0.9224729102167182,0.0871475586246416,0.8437499999999998,0.9703405572755417,,
+Ukrainian,llm,1-shot,distinct2,5,5,0.9650420168067226,0.05243051026732593,0.9179831932773108,1.0,,
+Ukrainian,llm,1-shot,repeat3_fraction,5,5,0.018003565062388583,0.027006965353966458,0.0,0.042245989304812805,,
+Ukrainian,llm,1-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,llm,1-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,1-shot,target_language_confidence,5,5,0.997373366355896,0.0015818991449529272,0.9960908174514771,0.9985464334487915,,
+Ukrainian,llm,1-shot,lexical_line_cohesion,5,5,0.03881301630552468,0.058241480681227,0.0019512841154467133,0.09165779451716151,,
+Ukrainian,llm,1-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,1-shot,fluency,5,5,2.4,0.5477225575051661,2.0,2.8,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,coherence,5,5,2.8,0.8366600265340756,2.2,3.4,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,imagery,5,5,2.8,0.4472135954999579,2.4,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,emotion,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,originality,5,5,2.0,0.0,2.0,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,craft,5,5,2.6,0.5477225575051661,2.2,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,1-shot,rubric_mean,5,5,2.433333333333333,0.3456073558887954,2.1666666666666665,2.7,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,words,5,5,35.0,4.527692569068709,31.4,38.2,,
+Ukrainian,llm,2-shot,lines,5,5,8.0,0.0,8.0,8.0,,
+Ukrainian,llm,2-shot,stanzas,5,5,2.0,0.0,2.0,2.0,,
+Ukrainian,llm,2-shot,mattr20,5,5,0.9421249999999999,0.04329134584417528,0.9094999999999999,0.975625,,
+Ukrainian,llm,2-shot,distinct2,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,2-shot,repeat3_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,llm,2-shot,duplicate_line_fraction,5,5,0.0,0.0,0.0,0.0,,
+Ukrainian,llm,2-shot,novel4_fraction,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,2-shot,target_language_confidence,5,5,0.9974018096923828,0.002421908107374114,0.995444369316101,0.9992063283920288,,
+Ukrainian,llm,2-shot,lexical_line_cohesion,5,5,0.0012225794210688355,0.002733770693402255,0.0,0.0036677382632065068,,
+Ukrainian,llm,2-shot,eight_line_adherence,5,5,1.0,0.0,1.0,1.0,,
+Ukrainian,llm,2-shot,fluency,5,5,2.0,0.7071067811865476,1.4,2.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,coherence,5,5,2.4,1.140175425099138,1.6,3.4,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,imagery,5,5,2.8,0.44721359549995787,2.4,3.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,emotion,5,5,2.0,0.7071067811865476,1.4,2.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,originality,5,5,1.8,0.44721359549995804,1.4,2.0,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,craft,5,5,2.0,0.7071067811865476,1.4,2.6,ChatGPT,GPT-6 (Codex session)
+Ukrainian,llm,2-shot,rubric_mean,5,5,2.166666666666667,0.6236095644623235,1.6333333333333333,2.566666666666667,ChatGPT,GPT-6 (Codex session)

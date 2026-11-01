@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-worker
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    app.kubernetes.io/name: apache-spark
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: worker
+
+spec:
+  replicas: {{ .Values.worker.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: apache-spark
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: worker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: apache-spark
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/component: worker
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/opt/spark/sbin/start-worker.sh"]
+          args:
+            - "spark://{{ .Release.Name }}-master:7077"
+            - "--host"
+            - "$(POD_IP)"
+            - "--port"
+            - "7078"
+            - "--webui-port"
+            - "8081"
+            - "--cores"
+            - {{ .Values.worker.cores | quote }}
+            - "--memory"
+            - {{ .Values.worker.memory | quote }}
+            - "--work-dir"
+            - "/tmp/spark-work"
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: SPARK_NO_DAEMONIZE
+              value: "true"
+            - name: SPARK_DAEMON_MEMORY
+              value: {{ .Values.worker.daemonMemory | quote }}
+            - name: SPARK_LOG_DIR
+              value: /tmp/spark-logs
+            - name: SPARK_PID_DIR
+              value: /tmp
+            - name: SPARK_LOCAL_DIRS
+              value: /tmp/spark-local
+          ports:
+            - name: worker-rpc
+              containerPort: 7078
+            - name: web
+              containerPort: 8081
+          readinessProbe:
+            httpGet:
+              path: /
+              port: web
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: web
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          volumeMounts:
+            - name: shared-data
+              mountPath: /data
+              readOnly: true
+          resources:
+{{ toYaml .Values.worker.resources | indent 12 }}
+      volumes:
+        - name: shared-data
+          hostPath:
+            path: {{ .Values.sharedData.nodePath | quote }}
+            type: DirectoryOrCreate

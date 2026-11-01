@@ -1,0 +1,364 @@
+{
+  "dataset": "synthetic-employees-1g",
+  "format": "jsonl",
+  "encoding": "UTF-8",
+  "compression": "none",
+  "seed": 42,
+  "size_definition": "1 GiB = 1,073,741,824 bytes of data files, excluding metadata",
+  "total_bytes": 1073741824,
+  "total_rows": 3360001,
+  "part_count": 32,
+  "schema": [
+    {
+      "name": "employee_id",
+      "type": "long"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "department",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "office_id",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": "integer"
+    },
+    {
+      "name": "employed",
+      "type": "boolean"
+    },
+    {
+      "name": "salary_cents",
+      "type": "long"
+    },
+    {
+      "name": "tenure_years",
+      "type": "integer"
+    },
+    {
+      "name": "performance_score",
+      "type": "double"
+    },
+    {
+      "name": "last_review_date",
+      "type": "string"
+    },
+    {
+      "name": "notes",
+      "type": "string"
+    }
+  ],
+  "expected": {
+    "sum_salary_cents": 37715194454939,
+    "sum_age": 147839284,
+    "employed_count": 2957395
+  },
+  "by_department": {
+    "Engineering": {
+      "rows": 420097,
+      "sum_salary_cents": 4705617210296
+    },
+    "Sales": {
+      "rows": 418542,
+      "sum_salary_cents": 4699515863850
+    },
+    "Marketing": {
+      "rows": 420068,
+      "sum_salary_cents": 4717684255499
+    },
+    "Finance": {
+      "rows": 421013,
+      "sum_salary_cents": 4731717816361
+    },
+    "Operations": {
+      "rows": 419832,
+      "sum_salary_cents": 4711432084303
+    },
+    "Support": {
+      "rows": 419931,
+      "sum_salary_cents": 4715560618795
+    },
+    "Human Resources": {
+      "rows": 420746,
+      "sum_salary_cents": 4716973993037
+    },
+    "Research": {
+      "rows": 419772,
+      "sum_salary_cents": 4716692612798
+    }
+  },
+  "notes": [
+    "Entirely synthetic data; names are generated identifiers.",
+    "salary_cents is an annual salary expressed as integer USD cents; unemployed rows have zero salary.",
+    "Employee IDs are unique with separate ranges for each file; they are not contiguous across files.",
+    "The notes field in each file's final record is adjusted to make the file exactly the target size."
+  ],
+  "files": [
+    {
+      "path": "data/part-00000.jsonl",
+      "bytes": 33554432,
+      "rows": 106207,
+      "sha256": "2d7f59507fbfa76b35d0dde75dada5669373277190b9cc1c8172612e661ffad2",
+      "first_employee_id": 0,
+      "last_employee_id": 106206
+    },
+    {
+      "path": "data/part-00001.jsonl",
+      "bytes": 33554432,
+      "rows": 105196,
+      "sha256": "9022541707549cc483df616941aefc72153a018e2893abfe974aab89e7a0c9a3",
+      "first_employee_id": 10000000,
+      "last_employee_id": 10105195
+    },
+    {
+      "path": "data/part-00002.jsonl",
+      "bytes": 33554432,
+      "rows": 105195,
+      "sha256": "8d1ab6e2e0b80c7ef2c5143b14cdb1c9cce39f13f2c24c328c12bc47d3e2d247",
+      "first_employee_id": 20000000,
+      "last_employee_id": 20105194
+    },
+    {
+      "path": "data/part-00003.jsonl",
+      "bytes": 33554432,
+      "rows": 105195,
+      "sha256": "bd214a744f6d8efb15c6cd20a9c6432f738311e0698e3998540d2eca7c2c92e9",
+      "first_employee_id": 30000000,
+      "last_employee_id": 30105194
+    },
+    {
+      "path": "data/part-00004.jsonl",
+      "bytes": 33554432,
+      "rows": 105188,
+      "sha256": "ef83f93ffc121f62fc2cdad983792e28bb2ba271ca4ef1831c8da0e8dc3753f7",
+      "first_employee_id": 40000000,
+      "last_employee_id": 40105187
+    },
+    {
+      "path": "data/part-00005.jsonl",
+      "bytes": 33554432,
+      "rows": 105191,
+      "sha256": "347eed4765c6385ab02f5ae5dcb3cc4873b431d9e6c2634e55e85a19794c9750",
+      "first_employee_id": 50000000,
+      "last_employee_id": 50105190
+    },
+    {
+      "path": "data/part-00006.jsonl",
+      "bytes": 33554432,
+      "rows": 105199,
+      "sha256": "a1eaf3e322290f10607863dacc07a796ae4730df752eebacfd11ba89200b5511",
+      "first_employee_id": 60000000,
+      "last_employee_id": 60105198
+    },
+    {
+      "path": "data/part-00007.jsonl",
+      "bytes": 33554432,
+      "rows": 105191,
+      "sha256": "f081a462c10c27ce9dde3810e60c48fc086a301fbb272c01d7bf1757c841588b",
+      "first_employee_id": 70000000,
+      "last_employee_id": 70105190
+    },
+    {
+      "path": "data/part-00008.jsonl",
+      "bytes": 33554432,
+      "rows": 105189,
+      "sha256": "fc854187c3206beecfd9825de28d63ff4d0531d575e71c168d41e434fff21f1f",
+      "first_employee_id": 80000000,
+      "last_employee_id": 80105188
+    },
+    {
+      "path": "data/part-00009.jsonl",
+      "bytes": 33554432,
+      "rows": 105190,
+      "sha256": "dc6c1673e00d88d93b9f03be58205d60578836d4f91f68059eb0fef405afeae3",
+      "first_employee_id": 90000000,
+      "last_employee_id": 90105189
+    },
+    {
+      "path": "data/part-00010.jsonl",
+      "bytes": 33554432,
+      "rows": 104869,
+      "sha256": "f165255ae81450ca5fe96202d0d49ca62f9f4925ef4bb53e332a4a06ee1f9704",
+      "first_employee_id": 100000000,
+      "last_employee_id": 100104868
+    },
+    {
+      "path": "data/part-00011.jsonl",
+      "bytes": 33554432,
+      "rows": 104867,
+      "sha256": "81e9fdfbde36923abec7e7d92592a30ccc3cfed3391e2926adeee035f96f792b",
+      "first_employee_id": 110000000,
+      "last_employee_id": 110104866
+    },
+    {
+      "path": "data/part-00012.jsonl",
+      "bytes": 33554432,
+      "rows": 104870,
+      "sha256": "4f6441e724a5463e7589041fe49582c65498e077e8d763fa68f529f28b4b8d29",
+      "first_employee_id": 120000000,
+      "last_employee_id": 120104869
+    },
+    {
+      "path": "data/part-00013.jsonl",
+      "bytes": 33554432,
+      "rows": 104865,
+      "sha256": "741240bea04b6ca64f60a4bba6c31f595afc1cd6d733bb20f55a9e95e30782f6",
+      "first_employee_id": 130000000,
+      "last_employee_id": 130104864
+    },
+    {
+      "path": "data/part-00014.jsonl",
+      "bytes": 33554432,
+      "rows": 104869,
+      "sha256": "6f4c24550133a0a15d8629aeb15e60ab224a61ca4f30b85dc8221ee483d17ae4",
+      "first_employee_id": 140000000,
+      "last_employee_id": 140104868
+    },
+    {
+      "path": "data/part-00015.jsonl",
+      "bytes": 33554432,
+      "rows": 104868,
+      "sha256": "bb8fc6c91a0dce3323480c2dd80283d1898876ff94fd74a77277b7d98a91e448",
+      "first_employee_id": 150000000,
+      "last_employee_id": 150104867
+    },
+    {
+      "path": "data/part-00016.jsonl",
+      "bytes": 33554432,
+      "rows": 104864,
+      "sha256": "1b8f1227732c8f09ee4dff6ca73206a8d13c41dc0975d50a4dd89fe0273435c3",
+      "first_employee_id": 160000000,
+      "last_employee_id": 160104863
+    },
+    {
+      "path": "data/part-00017.jsonl",
+      "bytes": 33554432,
+      "rows": 104868,
+      "sha256": "5f60ae725142a6a4b98e8f9c343df10ad0684a5a10ab83fbb31110aa50db4dcc",
+      "first_employee_id": 170000000,
+      "last_employee_id": 170104867
+    },
+    {
+      "path": "data/part-00018.jsonl",
+      "bytes": 33554432,
+      "rows": 104861,
+      "sha256": "c0a87ef5a9c0688da396485d3d680381c60c79b249a4b78dfe3059ec7d279ed4",
+      "first_employee_id": 180000000,
+      "last_employee_id": 180104860
+    },
+    {
+      "path": "data/part-00019.jsonl",
+      "bytes": 33554432,
+      "rows": 104873,
+      "sha256": "4d3a9517558de5ca1d2629a159459a6d4367356eb064df5721daf207285bde5a",
+      "first_employee_id": 190000000,
+      "last_employee_id": 190104872
+    },
+    {
+      "path": "data/part-00020.jsonl",
+      "bytes": 33554432,
+      "rows": 104866,
+      "sha256": "70fdbdece11f82f52d4e720f01993c008b9f706f658718691a75b9f759582981",
+      "first_employee_id": 200000000,
+      "last_employee_id": 200104865
+    },
+    {
+      "path": "data/part-00021.jsonl",
+      "bytes": 33554432,
+      "rows": 104869,
+      "sha256": "29a868a18f71251472b2f1a6b9e80585a1eba09943f9ca2b084acd05646f2478",
+      "first_employee_id": 210000000,
+      "last_employee_id": 210104868
+    },
+    {
+      "path": "data/part-00022.jsonl",
+      "bytes": 33554432,
+      "rows": 104860,
+      "sha256": "39d20249592d8f6a52ee8d208a26693d0e4c1f24eb3bde5046f66e35fa212c80",
+      "first_employee_id": 220000000,
+      "last_employee_id": 220104859
+    },
+    {
+      "path": "data/part-00023.jsonl",
+      "bytes": 33554432,
+      "rows": 104868,
+      "sha256": "a0efc90aa07db09d7b35562e966e37cc3ef9f7eb286de02c833268b65182764b",
+      "first_employee_id": 230000000,
+      "last_employee_id": 230104867
+    },
+    {
+      "path": "data/part-00024.jsonl",
+      "bytes": 33554432,
+      "rows": 104864,
+      "sha256": "4e01d44f11886a76b6e7f6be1713182a061c8ad88c43b692ee907efd51a7ee67",
+      "first_employee_id": 240000000,
+      "last_employee_id": 240104863
+    },
+    {
+      "path": "data/part-00025.jsonl",
+      "bytes": 33554432,
+      "rows": 104863,
+      "sha256": "9ffd8a4af26078a5522138dd1a5738ce824a1c9b684424567069150d175742e0",
+      "first_employee_id": 250000000,
+      "last_employee_id": 250104862
+    },
+    {
+      "path": "data/part-00026.jsonl",
+      "bytes": 33554432,
+      "rows": 104866,
+      "sha256": "58d94e534c14b9b1369c55416713b720b17557eb3ed8979739e4bd00a2318ff8",
+      "first_employee_id": 260000000,
+      "last_employee_id": 260104865
+    },
+    {
+      "path": "data/part-00027.jsonl",
+      "bytes": 33554432,
+      "rows": 104870,
+      "sha256": "c141e5490e5f723c46c8fd4e46e019de038f9df8f7e7040fc5ae6383e97ea658",
+      "first_employee_id": 270000000,
+      "last_employee_id": 270104869
+    },
+    {
+      "path": "data/part-00028.jsonl",
+      "bytes": 33554432,
+      "rows": 104865,
+      "sha256": "0e99a06c0cc25b6fb72c9ef1ae60405718d7fe265ede0391232a8dc5beaa8cc5",
+      "first_employee_id": 280000000,
+      "last_employee_id": 280104864
+    },
+    {
+      "path": "data/part-00029.jsonl",
+      "bytes": 33554432,
+      "rows": 104866,
+      "sha256": "219122abe8f52eea10e732379833810ee6782c747e6fc7cb7f40affc7811eb4e",
+      "first_employee_id": 290000000,
+      "last_employee_id": 290104865
+    },
+    {
+      "path": "data/part-00030.jsonl",
+      "bytes": 33554432,
+      "rows": 104867,
+      "sha256": "3cbf7814676cb5cfbf7e60ebd97f4bc5b9823425d4ecc762fb4848c362c87b2c",
+      "first_employee_id": 300000000,
+      "last_employee_id": 300104866
+    },
+    {
+      "path": "data/part-00031.jsonl",
+      "bytes": 33554432,
+      "rows": 104862,
+      "sha256": "221c03ff7a602e1c85b473d17cb2b666652b5eb42a7582f0181a63f694e613c1",
+      "first_employee_id": 310000000,
+      "last_employee_id": 310104861
+    }
+  ]
+}

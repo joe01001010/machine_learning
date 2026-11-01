@@ -1,0 +1,63 @@
+Language: Spanish
+Training poems: 200
+N-gram order: 1
+
+=== Poem 1 ===
+mío el cabello en hermosa qué como dolor sabor
+de da otra solo monedas sus dudosa
+cuyo tierra que para ellos un y crimen
+pasa luz aurora entre marcha cuántas mi
+
+de marcha tiñen y gracias te sus rota
+sé palabra como destrozado yo claras aguardan
+respuesta que en silenciosas a ojo
+cuchillo el es mismo gota forma de mientras más
+
+aguas la os boca qué mañana por mi
+
+=== Poem 2 ===
+duro dando vibración de el sólo a medianoche a
+yo vacía especie listo de sobre
+de la mientras de todos el llama qué
+
+mío nuestro solo de verde los y
+el los por se corazón tierra pondría veros peregrino
+origen vuelvo al casi infeliz no
+
+luz hasta al que el y que
+de y conveniente las tu entreabierta que silencios su
+
+=== Poem 3 ===
+interminable sido hierro y las
+tu intento y sabor día centro
+galas y ilusiones perfil conmigo la inspirada todavía
+
+la el de el el un ciudad de
+viejos sombreado muchacho también que
+las eleva madre y en
+
+=== Poem 4 ===
+nido negras va allí humo en dulce tienen
+purísimo esa que en que cocida tibia
+del en sé que palabra tus el desaparece ignoran
+
+y de arenas continuo y torpe sus ti historia
+alfombras claras mí de arenas beso no
+dorada el las que mudamente soy esculpido andrajoso
+
+me dudas todo nos único brillo
+muchachas agua suave rompió yo
+poner besan por y traje la donde
+
+=== Poem 5 ===
+como luz de y porque sueño indiferente sus
+letal luceros el ven vez redonda de
+tuyo el la combaten en su
+
+choque las traigo palidez lo pierde
+las justos con la lágrimas por
+en me a alma cautivo y ciencia pañuelo
+
+eterna sus de cantores cierto reflejo y oyendo
+misma un en tierra sobre
+rostro sufre californias primera roca

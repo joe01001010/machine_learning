@@ -1,0 +1,57 @@
+Language: English
+Model: Qwen/Qwen3-4B-Instruct-2507
+k-shot examples: 0
+Example source: English/English1k.txt (1000 poems)
+Example poem indices (1-based): []
+Poems: 5
+
+=== Poem 1 ===
+Dawn breaks soft, mist curls low.  
+Rain taps leaves, quiet and slow.  
+
+Wet grass glows, silver and thin.  
+World breathes in, cool and within.
+
+=== Poem 2 ===
+The river flows soft through green fields.  
+It murmurs low, no sound to hear.  
+Sunlight glides on water's skin.  
+Still, it moves with gentle will.  
+
+Leaves drift by, unbothered, slow.  
+Wind hums near, a quiet song.  
+No footstep breaks its peace.  
+Time stands still where it runs.
+
+=== Poem 3 ===
+Sunset painted the kitchen wall.  
+Dad hummed while he stirred the pot.  
+Mama’s hands folded bread with care.  
+Warmth filled the room, soft and deep.  
+
+Rain tapped on the windowpane.  
+We sat by the fire, quiet, close.  
+Old stories wrapped in candlelight.  
+Home felt like a lullaby.
+
+=== Poem 4 ===
+Stars blink above the silent plain.  
+Wind hums low, no sound to name.  
+Footsteps fade where shadows creep.  
+Night holds breath, then stills the deep.  
+
+Moon glides near, a silver eye.  
+Distant light, a fading sigh.  
+We walk on dreams, no map to guide.  
+Stars speak in hush, not in pride.
+
+=== Poem 5 ===
+The snow melts from the field's cold edge.  
+Buds push through the earth, soft and new.  
+Birds return with songs of return.  
+Sunlight warms the waking land.
+
+Daffodils bloom in yellow streams.  
+Wind stirs the trees with green delight.  
+Frogs croak in ponds, low and clear.  
+Life hums in every leaf and stone.

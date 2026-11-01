@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-master
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    app.kubernetes.io/name: apache-spark
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: master
+
+spec:
+  replicas: 1
+  # A single standalone master has no replicated state.
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: apache-spark
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: master
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: apache-spark
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/component: master
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: master
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/opt/spark/sbin/start-master.sh"]
+          args:
+            - "--host"
+            - "$(POD_IP)"
+            - "--port"
+            - "7077"
+            - "--webui-port"
+            - "8080"
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: SPARK_NO_DAEMONIZE
+              value: "true"
+            - name: SPARK_DAEMON_MEMORY
+              value: {{ .Values.master.daemonMemory | quote }}
+            - name: SPARK_LOG_DIR
+              value: /tmp/spark-logs
+            - name: SPARK_PID_DIR
+              value: /tmp
+          ports:
+            - name: spark
+              containerPort: 7077
+            - name: web
+              containerPort: 8080
+          readinessProbe:
+            tcpSocket:
+              port: spark
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: spark
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+{{ toYaml .Values.master.resources | indent 12 }}

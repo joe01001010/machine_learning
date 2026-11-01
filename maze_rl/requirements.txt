@@ -53,7 +53,7 @@ ruamel.yaml @ file:///home/task_176253595903435/conda-bld/ruamel.yaml_1762535972
 ruamel.yaml.clib @ file:///home/task_176253026438192/conda-bld/ruamel.yaml.clib_1762530278005/work
 SecretStorage @ file:///home/task_175793143758247/conda-bld/secretstorage_1757931467244/work
 semver @ file:///home/task_176190313959014/conda-bld/semver_1761903196627/work
-setuptools==80.9.0
+setuptools==83.0.0
 shellingham @ file:///home/task_176191203629823/conda-bld/shellingham_1761912204430/work
 tomli @ file:///croot/tomli_1753774587605/work
 tqdm @ file:///home/task_176286304944547/conda-bld/tqdm_1762863349742/work

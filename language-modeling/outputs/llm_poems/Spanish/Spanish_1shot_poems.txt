@@ -1,0 +1,61 @@
+Language: Spanish
+Model: Qwen/Qwen3-4B-Instruct-2507
+k-shot examples: 1
+Example source: Spanish/Spanish1K.txt (1000 poems)
+Example poem indices (1-based): [226]
+Poems: 5
+
+=== Poem 1 ===
+Lluvia tibia en la mañana.  
+Sueña el mundo en silencio.  
+Hojas temblar en el viento.  
+El cielo se despierta poco a poco.  
+
+Gotas suaves sobre el suelo.  
+El aire huele a tierra fresca.  
+Los pájaros callan en su nido.  
+La luz baja con lentitud.
+
+=== Poem 2 ===
+Silencio del río, tranquilo y claro.  
+Corre sin ruido, bajo el cielo azul.  
+Mira el agua, el viento, el bosque cerca.  
+No habla, pero todo lo sabe.  
+
+El sol baja, el agua se calma.  
+Refleja las nubes, el cielo en paz.  
+El pecho del río late suave.  
+Canta solo con el viento y el alba.
+
+=== Poem 3 ===
+La cocina huele a pan tostado.  
+El sol baja por la verja.  
+Mi abuela canta en voz baja.  
+El ruido del río se calla.  
+
+La mesa tiene madera vieja.  
+Las sombras son de otra época.  
+El vaso está lleno de agua.  
+El tiempo no pasa, se queda.
+
+=== Poem 4 ===
+Bajo el cielo, las estrellas brillan.  
+Silencio, viento, y el alma se aleja.  
+Caminamos sin destino ni mapa.  
+El universo nos mira con calma.  
+
+Las luces danzan en la noche profunda.  
+El tiempo se detiene, se vuelve suave.  
+Nadie habla, pero todo se entiende.  
+El viaje es solo estar presente.
+
+=== Poem 5 ===
+Las hojas brotan, suaves y verdes.  
+El viento canta, suave y claro.  
+El sol se acerca, tierno y claro.  
+El mundo respira, despertando.  
+
+Las flores abren, color y aroma.  
+El río canta, libre y dulce.  
+Las aves vuelan, ligeras y felices.  
+La tierra vuelve, con esperanza.

@@ -1,0 +1,61 @@
+Language: Spanish
+Model: Qwen/Qwen3-4B-Instruct-2507
+k-shot examples: 0
+Example source: Spanish/Spanish1K.txt (1000 poems)
+Example poem indices (1-based): []
+Poems: 5
+
+=== Poem 1 ===
+Lluvia tibia en la mañana temprana.  
+El cielo se desviste, se vuelve claro.  
+El suelo humedece, el aire se enfría.  
+Los árboles callan, escuchan el ruido.
+
+Gotas suaves, como susurros lejanos.  
+El mundo se despierta, silencioso.  
+El viento baja, el aire se abre.  
+La luz llega, sin gritar, sin ruido.
+
+=== Poem 2 ===
+Fluye suave por el valle.  
+Canta bajo el cielo claro.  
+Hojas danzan en su curso.  
+Silencio se siente en el aire.
+
+Agua tranquila, sin ruido.  
+Refleja el sol de la mañana.  
+El viento pasa sin tocar.  
+Todo calla, todo se entiende.
+
+=== Poem 3 ===
+La casa tiene el olor de pan.  
+El sol baja por la vereda.  
+Mamá cocina con calma.  
+Y el ruido de los niños juega.  
+
+La mesa está cubierta de flores.  
+La luz brilla en los cristales.  
+Cada rincón guarda un recuerdo.  
+Vivo en el silencio de la cocina.
+
+=== Poem 4 ===
+Bajo el cielo, el viento susurra.  
+Las estrellas brillan, quietas.  
+Camino sin fin, solo y libre.  
+El silencio me abraza.
+
+La luna guía mi paso leve.  
+El aire huele a noche profunda.  
+Cada estrella, un sueño lejano.  
+El universo me llama.
+
+=== Poem 5 ===
+Las hojas brotan en silencio.  
+El viento canta al bosque vivo.  
+Las flores surgen con color.  
+El sol brilla en cada rincón.  
+
+El cielo se limpia de niebla.  
+Los pájaros vuelan en pareja.  
+El río canta con más fuerza.  
+La tierra respira de nuevo.
