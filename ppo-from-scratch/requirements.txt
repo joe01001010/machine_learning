@@ -43,9 +43,9 @@ nvidia-nvshmem-cu13==3.4.5
 nvidia-nvtx==13.0.85
 nvidia-nvtx-cu12==12.8.90
 packaging @ file:///home/task_176104885106445/conda-bld/packaging_1761049078006/work
-pillow==12.2.0
+pillow==12.3.0
 sympy==1.14.0
-torch==2.12.0.dev20260327+cu128
+torch==2.13.0
 torchaudio==2.11.0.dev20260327+cu128
 torchvision==0.26.0.dev20260327+cu128
 triton==3.6.0+git7e48d5df
