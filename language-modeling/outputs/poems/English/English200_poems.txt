@@ -1,0 +1,57 @@
+Language: English
+Training poems: 200
+N-gram order: 1
+
+=== Poem 1 ===
+a the other carriage they the
+my city its owning free
+plant languishing having while the clouds
+in if figure the mine as
+
+i love birth our and all
+
+=== Poem 2 ===
+i colors said off and the
+or feeds the those within a praise
+is themselves now a dispute well
+
+your divorced the they we not approaching with
+there the form'd utter open loan all chair
+fain thou all honors or especially of begun
+
+pete experience i how as sweeping and is for
+bathing contain'd a off forever will
+they you of they persons
+
+the blare devilish flower whom from the all summer
+
+=== Poem 3 ===
+me now haste re-appearest earth great it city a
+with become the freighted within songs detains the
+is escape and the are
+shall a do them mariners they of than the
+
+hear factories singing cool bird
+
+=== Poem 4 ===
+matter for upon sermon for lit whence
+could my stone likewise tarrying the
+beams who outward of green
+captain they the share worthy some
+
+within and the with walking by the nature's hear
+spirit little the launch bolder he of i
+may place conduct and what and retire
+for breast nearer word suppose nor
+
+=== Poem 5 ===
+be it thee tinkling mountains from cleaving
+hills the you all and in same
+to i alike to a
+
+america tall was know were feeling invited description
+the heard with the as beautiful do but maternal
+a him night horses the i at too return
+
+than know it ah for in
+chemist head unlearn'd fearful with broke of

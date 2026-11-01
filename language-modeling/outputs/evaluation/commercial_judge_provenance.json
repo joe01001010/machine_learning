@@ -1,0 +1,23 @@
+{
+  "provider": "ChatGPT",
+  "model_label": "GPT-6 (Codex session)",
+  "mode": "interactive session, imported by the Python evaluator",
+  "date": "2026-10-11",
+  "poems_reviewed": 180,
+  "poems_scored": 150,
+  "poems_unassessable": 30,
+  "blinding": "Shuffled opaque IDs; judge received only target language and poem text, not generator, k, corpus size, or Python metrics.",
+  "procedure": "One text-grounded assessment per poem by the same commercial model across three language batches; not independent human raters.",
+  "rubric_dimensions": [
+    "coherence",
+    "craft",
+    "emotion",
+    "fluency",
+    "imagery",
+    "originality"
+  ],
+  "anchors": "1 very poor; 2 weak; 3 adequate; 4 good; 5 excellent",
+  "assamese_limitation": "All 30 Assamese poems were reviewed but abstained on literary scores because the model could not reliably assess native idiom and meaning.",
+  "not_run": "No Gemini API calls were made. These are actual ChatGPT session judgments, not simulated Gemini scores.",
+  "judgments_sha256": "d65db37b3343fa601be1f58373dec6faed93bf39d0707fa77909526fa84d8664"
+}

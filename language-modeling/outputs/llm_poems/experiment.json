@@ -1,0 +1,172 @@
+{
+  "status": "complete",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "seed": 42,
+  "poems_per_set": 5,
+  "k_values": [
+    0,
+    1,
+    2
+  ],
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "max_tokens": 1024
+  },
+  "sources": {
+    "Assamese": {
+      "path": "Assamese/Assamese1k.txt",
+      "poem_count": 1000,
+      "sha256": "cefb3d710191bbb3d4ab42a3a1c550fba1dc535c8e31daeb6033b528e674994e",
+      "examples": [
+        {
+          "poem_index": 801,
+          "text": "তুমি আহিবা বুলি\nপদূলিত ৰুইছিলো দুটা কলপুলি\nআঁৰি দিছিলো এডাল আমডালি\nতুমিতো নাহিলা মোৰ মনদৰা হৈ\nশেৱালিৰ সুবাস লৈ\nতুমি আহিলা এজাক শিল বৰষুণ হৈ\nশিলৰ বুকুৰ পানী নিগৰি নিগৰি\nতুমি আহিলা এক বন্যাবিধৌতহৈ!",
+          "sha256": "cef86b9031e6d9acf05a51e8a8d7e4dea1e2cc0275c0b45f05ffd3406c947d08",
+          "word_count": 34,
+          "line_count": 8
+        },
+        {
+          "poem_index": 259,
+          "text": "কিছুমান হেৰুওৱা সপোনৰ পম খেদি অহা\nবৰষুণজাকে আকৌ তিতিবলৈ উন্মাদ কৰেনে তোমাক?\nআজিও উন্মনা হয়নে তোমাৰ প্ৰেমিক মন?\nসোঁৱৰণিৰ নৈত উটি ভাঁহি ফুৰেনে,\nৰাজগড়ৰ ৰাজপথৰ স্মৃতি?\nজাগি উঠেনে লুকুৱাই-চুৰিকৈ প্ৰেমিকালৈ চোৱাৰ শিহৰণ?\nদুটি-দুটিকৈ হয় জানো চাৰি চকুৰ মিলন!\nবৰষুণজাক আজিও সজীৱ,\nএকেবাৰে প্ৰথম প্ৰেমৰ দৰেই।\nযেতিয়াই মনত পৰে তোমাৰ মুখত শুনা\nবৰষুণ সিক্ত মনৰ কথা,\nহৃদয়ত আজিও বয় যায় এখন অচিনাকি নৈ\nযত পালতৰা নাওঁ খনিয়ে টুলুং-ভুটুং কৰি লৈ যায়\nহেজাৰটা এৰি অহা স্মৃতি।",
+          "sha256": "a0020f1c96929c7b181ff9d9a79ac327ed5f431ff707509f2676f02de770f9ba",
+          "word_count": 74,
+          "line_count": 14
+        }
+      ]
+    },
+    "Bengali": {
+      "path": "Bengali/Bengali1k.txt",
+      "poem_count": 1000,
+      "sha256": "e7457a17a386a65c8814048cc8760fa9dfbda319b81ea971dcd64d7e399629fd",
+      "examples": [
+        {
+          "poem_index": 549,
+          "text": "এই তীর্থ-দেবতার ধরণীর মন্দির-প্রাঙ্গণে\nযে পূজার পুষ্পাঞ্জলি সাজাইনু সযত্ন চয়নে\nসায়াহ্নের শেষ আয়োজন; যে পূর্ণ প্রণামখানি\nমোর সারা জীবনের অন্তরের অনির্বাণ বাণী\nজ্বালায়ে রাখিয়া গেনু আরতির সন্ধ্যাদীপ-মুখে\nসে আমার নিবেদন তোমাদের সবার সম্মুখে\nহে মোর অতিথি যত। তোমরা এসেছ এ জীবনে\nকেহ প্রাতে, কেহ রাতে, বসন্তে, শ্রাবণ-বরিষনে;\nকারো হাতে বীণা ছিল, কেহ বা কম্পিত দীপশিখা\nএনেছিলে মোর ঘরে; দ্বার খুলে দুরন্ত ঝটিকা\nবার বার এনেছ প্রাঙ্গণে। যখন গিয়েছ চলে\nদেবতার পদচিহ্ন রেখে গেছ মোর গৃহতলে।\nআমার দেবতা নিল তোমাদের সকলের নাম;\nরহিল পূজায় মোর তোমাদের সবারে প্রণাম।",
+          "sha256": "495712a8910bdfef98f5adb445864a215e6efe4700d024b961b2a449f848a449",
+          "word_count": 87,
+          "line_count": 14
+        },
+        {
+          "poem_index": 252,
+          "text": "আবার এরা ঘিরেছে মোর মন।\nআবার চোখে নামে যে আবরণ।\n              আবার এ যে নানা কথাই জমে,\n              চিত্ত আমার নানা দিকেই ভ্রমে,\n              দাহ আবার বেড়ে ওঠে ক্রমে,\n                    আবার এ যে হারাই শ্রীচরণ।\n \nতব নীরব বাণী হৃদয়তলে\nডোবে না যেন লোকের কোলাহলে।\n              সবার মাঝে আমার সাথে থাকো,\n              আমায় সদা তোমার মাঝে ঢাকো,\n              নিয়ত মোর চেতনা-'পরে রাখো\n                    আলোকে-ভরা উদার ত্রিভুবন।",
+          "sha256": "1af8d2c938917081c1fe0296a37ea22b08dffc2a3691d52bde53775e752cc457",
+          "word_count": 58,
+          "line_count": 12
+        }
+      ]
+    },
+    "English": {
+      "path": "English/English1k.txt",
+      "poem_count": 1000,
+      "sha256": "5e1d0971946616e5aa474e2aaf7c7baf4d5876edffead55b1042eb76d38b22b1",
+      "examples": [
+        {
+          "poem_index": 423,
+          "text": "Tie the strings to my life, my Lord,\n  Then I am ready to go!\nJust a look at the horses --\n  Rapid! That will do!\n\n\nPut me in on the firmest side,\n  So I shall never fall;\nFor we must ride to the Judgment,\n  And it's partly down hill.\n\n\nBut never I mind the bridges,\n  And never I mind the sea;\nHeld fast in everlasting race\n  By my own choice and thee.\n\n\nGood-by to the life I used to live,\n  And the world I used to know;\nAnd kiss the hills for me, just once;\n  Now I am ready to go!",
+          "sha256": "4fa5921ac962506f62459ba01ebf13def8d0cf1a2ee08e1c6825253674392739",
+          "word_count": 100,
+          "line_count": 16
+        },
+        {
+          "poem_index": 805,
+          "text": "This dust was once the man,\n  Gentle, plain, just and resolute, under whose cautious hand,\n  Against the foulest crime in history known in any land or age,\n  Was saved the Union of these States.",
+          "sha256": "7882623ab6bc84677c38c2bf71a4b5324a93dc211d40488827443145c2ec5643",
+          "word_count": 34,
+          "line_count": 4
+        }
+      ]
+    },
+    "Hindi": {
+      "path": "Hindi/Hindi1k.txt",
+      "poem_count": 1000,
+      "sha256": "c5e7251f5ff36edfa32545f7d0f996496dbaa88a4addce01ed7ba231db79ba19",
+      "examples": [
+        {
+          "poem_index": 962,
+          "text": "अब दोय घरी दिन शेष रह्यो पथ जात गुलाब सु ठीक नहीँ ।\nनजदीक न ग्राम उजार महा मग लूटत लोग अथै दिन हीँ ।\nइहि ठाँ बहु धाम सरै सब काम तमाम मिलै वर वस्तु सही ।\nतुम जाहु न जाहु करौ जु रुचै सुदया धरि मैँ हित बात कही ।",
+          "sha256": "e8008e225fde416c4899b21225ebbb44235ce687beb5f5c6ca8631d826648972",
+          "word_count": 48,
+          "line_count": 4
+        },
+        {
+          "poem_index": 723,
+          "text": "तुम्हें भूलने की कोशिश के साथ\nलौटी हूँ इस बार\n \nमगर\nतुम्हारी यादें चली आई हैं\n \nसौंधी खुश्बू वाली मिट्टी\nसाथ चली आती है जैसे\nतलवों में चिपक कर\n \nपतलून के मोड़ में\nदुबक कर बैठी रेत की तरह\nसाथ चले आए हैं\nतुम्हारे स्मृतियों के मोती।",
+          "sha256": "61ac85cc26b91b4917f03da3afcbcba32559dd937aae94f47c6a949f5d8e1853",
+          "word_count": 47,
+          "line_count": 11
+        }
+      ]
+    },
+    "Spanish": {
+      "path": "Spanish/Spanish1K.txt",
+      "poem_count": 1000,
+      "sha256": "b60a6f585271772737e7c4d6c12136dcf5287ba0519b643f5d6f54c73d15d38a",
+      "examples": [
+        {
+          "poem_index": 226,
+          "text": "¡Oh sueño, el de mi vida\n      Más santo y más hermoso!\n¡Qué dulce has de haber sido cuando aun muerto\nGozo con tu recuerdo de este modo!",
+          "sha256": "3d8645c749410f1f50463b006a3600739b77c325aae76df6bfa78064587dbe35",
+          "word_count": 27,
+          "line_count": 4
+        },
+        {
+          "poem_index": 216,
+          "text": "Cada hoja es un recuerdo\n      tan triste como tierno\nDe que hubo sobre ese árbol\n      un cielo y un amor;\nReunidas forman todas\n      el canto del invierno,\nLa estrofa de las nieves\n      y el himno del dolor.",
+          "sha256": "2d5d85de9a0972ae617f04da80a9de2bca731cb2977841c729fb82ea576087bb",
+          "word_count": 37,
+          "line_count": 8
+        }
+      ]
+    },
+    "Ukrainian": {
+      "path": "Ukrainian/Ukranian1k.txt",
+      "poem_count": 1000,
+      "sha256": "887adf7b5cbefd8c149a76bba101cd810bf001cb11b94a0c8c98ba4af4614eab",
+      "examples": [
+        {
+          "poem_index": 810,
+          "text": "У мисці трударя скресає крига,\nрадіють сторож, кочегар, двірник.\nЗ очей режиму непомітно зник\nі дивиться згори апостол Ігор.\nРозчахнуто небесні пропілеї,\nі діл пливе, і син біжить в ясир.\nНе може там без посмішки чиєїсь\nархангелом філонити Василь.\nСкипає небо кров’ю прокурора,\nбогами наволоч витовкує жнива.\nІ серафимом лаґерним — нагору\nнам сонечко викочує Іван.\nУ мисці трударя сьогодні свято,\nв кубельці спогаду зігрівся конвоїр.\nІ віршиком припалює моїм,\nі мружиться на небо винувато.",
+          "sha256": "3094f7fdfc7ac9d2e0d73ac1e0bdc12a7ffd4c693fce5f9d90511bd333ca6c7f",
+          "word_count": 74,
+          "line_count": 16
+        },
+        {
+          "poem_index": 724,
+          "text": "Це, можливо, бажання пpостити,\nце, здається, бажай-не-бажай,\nневpожай чи лютневая лажа:\nхочеш лютню, а він хоче спати з тобою.\nЦе, гадаю, далеко від беpезня\nвідбувалося, майже відбу-\nлось замеpз, щоб не змеpзнути, олень\nбіг назустpіч pанковому постpілу по pогах.\nЩе неначе пpо це не хотілося,\nвибачай, не паpлеву домів,\nкоpолеву знайшов поміж осінню,\nшов тоненький pозпустив під pанок.\nЩец, наpешті, вона похлебтає:\nщіз є вумен, а вумна така,\nнаштpикнувшись зненацька на pоги,\nсни читає і смажить яєшню мені.",
+          "sha256": "f1c704927d0e49c5a7cb71bb51a0bbc5b3d57368718556a02ad92d0ef2d505d1",
+          "word_count": 78,
+          "line_count": 16
+        }
+      ]
+    }
+  },
+  "runtime": {
+    "python": "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+    "model_path": "/home/weibelj/.cache/huggingface/hub/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554",
+    "resolved_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "compatibility_settings": {
+      "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+      "VLLM_USE_V2_MODEL_RUNNER": "0",
+      "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "engine_settings": {
+      "dtype": "bfloat16",
+      "max_model_len": 4096,
+      "gpu_memory_utilization": 0.7,
+      "max_num_seqs": 1,
+      "max_num_batched_tokens": 2048,
+      "enforce_eager": true
+    },
+    "elapsed_seconds": 201.50233780000417,
+    "versions": {
+      "torch": "2.13.0",
+      "vllm": "0.29.0",
+      "transformers": "5.18.0",
+      "huggingface_hub": "1.33.0"
+    }
+  }
+}

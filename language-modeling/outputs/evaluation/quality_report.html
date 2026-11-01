@@ -1,0 +1,1422 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Poetry quality benchmark</title><style>
+:root{color-scheme:light dark;--bg:#f6f8fb;--fg:#172b42;--panel:#fff;--muted:#526278;--line:#dbe2ec;--brand:#117c6b}
+@media(prefers-color-scheme:dark){:root{--bg:#111923;--fg:#e7edf5;--panel:#192432;--muted:#b5c2d4;--line:#344254;--brand:#64d4bd}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}
+main{max-width:1380px;margin:auto;padding:38px 26px 60px}h1{font-size:30px;line-height:1.2;margin:8px 0 12px}h2{font-size:19px;margin:0 0 5px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);font-weight:700}
+.subtitle,p{color:var(--muted);margin:8px 0 18px}.controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:26px 0}
+select,button{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:7px;padding:9px 14px;font:inherit;cursor:pointer}
+button{margin-left:auto}section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px;margin:20px 0}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
+th,td{padding:13px 10px;border-bottom:1px solid var(--line);text-align:right}th:first-child{text-align:left}thead th{font-size:12px;font-weight:600;vertical-align:bottom}
+tbody th{font-weight:500}td small,th small{display:block;color:var(--muted);font-size:11px;font-weight:400}abbr{text-decoration:none;cursor:help}
+.na{color:var(--muted)}.note{font-size:13px}.key{display:inline-block;width:70px;height:9px;background:linear-gradient(to right,rgba(16,128,112,0),rgba(16,128,112,.20));vertical-align:middle}
+details{margin:14px 0}summary{cursor:pointer;font-weight:600}.poem{border-top:1px solid var(--line);padding-top:12px}.poem summary{font-weight:500}
+pre{white-space:pre-wrap;font:15px/1.65 system-ui,sans-serif;padding:16px;background:var(--bg);border-radius:6px}dt{font-weight:600;margin-top:16px}dd{color:var(--muted);margin-left:0}
+a{color:var(--brand)}[hidden]{display:none!important}.sources{font-size:13px}.print-label{display:none}
+@media(max-width:600px){main{padding:20px 12px}section{padding:16px}h1{font-size:25px}button{margin-left:0}}
+@media print{body{background:white;color:black}main{padding:0;max-width:none}section{border:0;padding:10px 0;break-inside:avoid}button,select{display:none}.print-label{display:inline}details.poem{display:none}.table-wrap{overflow:visible}table{font-size:9px}th,td{padding:6px 4px}p{color:#333}}
+</style></head><body><main><div class="eyebrow">Evaluation benchmark</div><h1>Poetry quality across six generation settings</h1>
+<p class="subtitle">180 poems · 6 languages · 5 poems per configuration in this run<br>LLM generator: Qwen/Qwen3-4B-Instruct-2507<br>Commercial judge: ChatGPT · GPT-6 (Codex session) · 150/180 scored</p>
+<div class="controls"><label for="language">Language</label><select id="language"><option value="Assamese">Assamese</option><option value="Bengali">Bengali</option><option value="English" selected>English</option><option value="Hindi">Hindi</option><option value="Spanish">Spanish</option><option value="Ukrainian">Ukrainian</option></select><span id="language-label" class="print-label"></span><button id="print" type="button">Print / save PDF</button></div>
+<section><h2>Commercial LLM · literary quality</h2><p class="note">Scores 1–5; values are mean ± sample SD. Hover or focus a value for its bootstrap 95% interval. <span class="key"></span> More shading indicates a higher observed rating. N/A records abstention or missing assessment.</p><div class="table-wrap"><table><thead><tr><th scope="col">Configuration</th><th scope="col">Coverage</th><th scope="col"><abbr title="Natural diction and grammar in the target language; allow deliberate poetic fragments.">Fluency ↑</abbr><small>/5</small></th><th scope="col"><abbr title="Meaningful connection and development across the poem.">Coherence ↑</abbr><small>/5</small></th><th scope="col"><abbr title="Concrete, precise, evocative images.">Imagery ↑</abbr><small>/5</small></th><th scope="col"><abbr title="Earned emotional resonance, rather than statements of feeling alone.">Emotion ↑</abbr><small>/5</small></th><th scope="col"><abbr title="Perceived freshness and purposeful expression; not verified originality or plagiarism detection.">Freshness ↑</abbr><small>/5</small></th><th scope="col"><abbr title="Effective rhythm, sound and lineation; rhyme and fixed metre are optional.">Craft ↑</abbr><small>/5</small></th><th scope="col"><abbr title="Equal-weight descriptive mean of the six literary scores; not a universal poetry-quality index.">Rubric mean ↑</abbr><small>/5</small></th></tr></thead><tbody><tr data-language="Assamese"><th scope="row">N-gram · 200 poems / n=1</th><td>0/5 judged</td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td></tr><tr data-language="Assamese"><th scope="row">N-gram · 500 poems / n=2</th><td>0/5 judged</td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td></tr><tr data-language="Assamese"><th scope="row">N-gram · 1000 poems / n=3</th><td>0/5 judged</td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td></tr><tr data-language="Assamese"><th scope="row">LLM · 0-shot</th><td>0/5 judged</td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td></tr><tr data-language="Assamese"><th scope="row">LLM · 1-shot</th><td>0/5 judged</td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td></tr><tr data-language="Assamese"><th scope="row">LLM · 2-shot</th><td>0/5 judged</td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td></tr><tr data-language="Bengali"><th scope="row">N-gram · 200 poems / n=1</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.002)"><span title="Bootstrap 95% CI [1.00, 1.10]; n=5/5; mean ± sample SD" tabindex="0">1.03<small>± 0.07</small></span></td></tr><tr data-language="Bengali"><th scope="row">N-gram · 500 poems / n=2</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.037)"><span title="Bootstrap 95% CI [1.40, 2.07]; n=5/5; mean ± sample SD" tabindex="0">1.73<small>± 0.43</small></span></td></tr><tr data-language="Bengali"><th scope="row">N-gram · 1000 poems / n=3</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.130)"><span title="Bootstrap 95% CI [3.20, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.40, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.088)"><span title="Bootstrap 95% CI [2.40, 3.10]; n=5/5; mean ± sample SD" tabindex="0">2.77<small>± 0.45</small></span></td></tr><tr data-language="Bengali"><th scope="row">LLM · 0-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [1.40, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.062)"><span title="Bootstrap 95% CI [1.93, 2.50]; n=5/5; mean ± sample SD" tabindex="0">2.23<small>± 0.37</small></span></td></tr><tr data-language="Bengali"><th scope="row">LLM · 1-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.043)"><span title="Bootstrap 95% CI [1.67, 2.03]; n=5/5; mean ± sample SD" tabindex="0">1.87<small>± 0.25</small></span></td></tr><tr data-language="Bengali"><th scope="row">LLM · 2-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.048)"><span title="Bootstrap 95% CI [1.80, 2.13]; n=5/5; mean ± sample SD" tabindex="0">1.97<small>± 0.22</small></span></td></tr><tr data-language="English"><th scope="row">N-gram · 200 poems / n=1</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.005)"><span title="Bootstrap 95% CI [1.03, 1.17]; n=5/5; mean ± sample SD" tabindex="0">1.10<small>± 0.09</small></span></td></tr><tr data-language="English"><th scope="row">N-gram · 500 poems / n=2</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.017)"><span title="Bootstrap 95% CI [1.17, 1.53]; n=5/5; mean ± sample SD" tabindex="0">1.33<small>± 0.24</small></span></td></tr><tr data-language="English"><th scope="row">N-gram · 1000 poems / n=3</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.53, 2.07]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.36</small></span></td></tr><tr data-language="English"><th scope="row">LLM · 0-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.150)"><span title="Bootstrap 95% CI [3.40, 4.60]; n=5/5; mean ± sample SD" tabindex="0">4.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.140)"><span title="Bootstrap 95% CI [3.40, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.120)"><span title="Bootstrap 95% CI [3.00, 3.80]; n=5/5; mean ± sample SD" tabindex="0">3.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [2.80, 3.57]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.48</small></span></td></tr><tr data-language="English"><th scope="row">LLM · 1-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.190)"><span title="Bootstrap 95% CI [4.40, 5.00]; n=5/5; mean ± sample SD" tabindex="0">4.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.150)"><span title="Bootstrap 95% CI [4.00, 4.00]; n=5/5; mean ± sample SD" tabindex="0">4.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.140)"><span title="Bootstrap 95% CI [3.40, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [3.00, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.130)"><span title="Bootstrap 95% CI [3.20, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.128)"><span title="Bootstrap 95% CI [3.37, 3.73]; n=5/5; mean ± sample SD" tabindex="0">3.57<small>± 0.25</small></span></td></tr><tr data-language="English"><th scope="row">LLM · 2-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.160)"><span title="Bootstrap 95% CI [3.60, 4.80]; n=5/5; mean ± sample SD" tabindex="0">4.20<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.140)"><span title="Bootstrap 95% CI [3.40, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.120)"><span title="Bootstrap 95% CI [3.00, 3.80]; n=5/5; mean ± sample SD" tabindex="0">3.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [2.60, 3.80]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.113)"><span title="Bootstrap 95% CI [2.87, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.27<small>± 0.48</small></span></td></tr><tr data-language="Hindi"><th scope="row">N-gram · 200 poems / n=1</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td></tr><tr data-language="Hindi"><th scope="row">N-gram · 500 poems / n=2</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [1.60, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.033)"><span title="Bootstrap 95% CI [1.30, 2.03]; n=5/5; mean ± sample SD" tabindex="0">1.67<small>± 0.47</small></span></td></tr><tr data-language="Hindi"><th scope="row">N-gram · 1000 poems / n=3</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.40, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [1.60, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.075)"><span title="Bootstrap 95% CI [2.17, 2.83]; n=5/5; mean ± sample SD" tabindex="0">2.50<small>± 0.42</small></span></td></tr><tr data-language="Hindi"><th scope="row">LLM · 0-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [1.40, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [1.40, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.062)"><span title="Bootstrap 95% CI [1.83, 2.63]; n=5/5; mean ± sample SD" tabindex="0">2.23<small>± 0.49</small></span></td></tr><tr data-language="Hindi"><th scope="row">LLM · 1-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.20, 3.80]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 1.00</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.17, 3.03]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.56</small></span></td></tr><tr data-language="Hindi"><th scope="row">LLM · 2-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [2.40, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.072)"><span title="Bootstrap 95% CI [2.20, 2.67]; n=5/5; mean ± sample SD" tabindex="0">2.43<small>± 0.30</small></span></td></tr><tr data-language="Spanish"><th scope="row">N-gram · 200 poems / n=1</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.005)"><span title="Bootstrap 95% CI [1.03, 1.17]; n=5/5; mean ± sample SD" tabindex="0">1.10<small>± 0.09</small></span></td></tr><tr data-language="Spanish"><th scope="row">N-gram · 500 poems / n=2</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.035)"><span title="Bootstrap 95% CI [1.40, 1.97]; n=5/5; mean ± sample SD" tabindex="0">1.70<small>± 0.36</small></span></td></tr><tr data-language="Spanish"><th scope="row">N-gram · 1000 poems / n=3</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.052)"><span title="Bootstrap 95% CI [1.90, 2.17]; n=5/5; mean ± sample SD" tabindex="0">2.03<small>± 0.18</small></span></td></tr><tr data-language="Spanish"><th scope="row">LLM · 0-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.160)"><span title="Bootstrap 95% CI [3.60, 4.80]; n=5/5; mean ± sample SD" tabindex="0">4.20<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.150)"><span title="Bootstrap 95% CI [4.00, 4.00]; n=5/5; mean ± sample SD" tabindex="0">4.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [3.00, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [3.00, 3.00]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [3.00, 3.00]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.113)"><span title="Bootstrap 95% CI [3.10, 3.40]; n=5/5; mean ± sample SD" tabindex="0">3.27<small>± 0.19</small></span></td></tr><tr data-language="Spanish"><th scope="row">LLM · 1-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.160)"><span title="Bootstrap 95% CI [3.60, 4.80]; n=5/5; mean ± sample SD" tabindex="0">4.20<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.150)"><span title="Bootstrap 95% CI [4.00, 4.00]; n=5/5; mean ± sample SD" tabindex="0">4.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [3.00, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [3.00, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [3.00, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.117)"><span title="Bootstrap 95% CI [3.10, 3.70]; n=5/5; mean ± sample SD" tabindex="0">3.33<small>± 0.39</small></span></td></tr><tr data-language="Spanish"><th scope="row">LLM · 2-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.170)"><span title="Bootstrap 95% CI [4.00, 4.80]; n=5/5; mean ± sample SD" tabindex="0">4.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.130)"><span title="Bootstrap 95% CI [3.20, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.130)"><span title="Bootstrap 95% CI [3.20, 4.00]; n=5/5; mean ± sample SD" tabindex="0">3.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [3.00, 3.00]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.110)"><span title="Bootstrap 95% CI [3.00, 3.60]; n=5/5; mean ± sample SD" tabindex="0">3.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.120)"><span title="Bootstrap 95% CI [3.13, 3.67]; n=5/5; mean ± sample SD" tabindex="0">3.40<small>± 0.35</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">N-gram · 200 poems / n=1</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.000)"><span title="Bootstrap 95% CI [1.00, 1.00]; n=5/5; mean ± sample SD" tabindex="0">1.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.007)"><span title="Bootstrap 95% CI [1.07, 1.17]; n=5/5; mean ± sample SD" tabindex="0">1.13<small>± 0.07</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">N-gram · 500 poems / n=2</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.010)"><span title="Bootstrap 95% CI [1.00, 1.60]; n=5/5; mean ± sample SD" tabindex="0">1.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.030)"><span title="Bootstrap 95% CI [1.20, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.020)"><span title="Bootstrap 95% CI [1.00, 1.80]; n=5/5; mean ± sample SD" tabindex="0">1.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.027)"><span title="Bootstrap 95% CI [1.23, 1.87]; n=5/5; mean ± sample SD" tabindex="0">1.53<small>± 0.41</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">N-gram · 1000 poems / n=3</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.40, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [1.93, 2.40]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.32</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">LLM · 0-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.40, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.100)"><span title="Bootstrap 95% CI [3.00, 3.00]; n=5/5; mean ± sample SD" tabindex="0">3.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.060)"><span title="Bootstrap 95% CI [2.00, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.20<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.075)"><span title="Bootstrap 95% CI [2.30, 2.67]; n=5/5; mean ± sample SD" tabindex="0">2.50<small>± 0.24</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">LLM · 1-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [2.00, 2.80]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.20, 3.40]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.84</small></span></td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.40, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [2.00, 2.00]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.00</small></span></td><td style="background:rgba(16,128,112,0.080)"><span title="Bootstrap 95% CI [2.20, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.60<small>± 0.55</small></span></td><td style="background:rgba(16,128,112,0.072)"><span title="Bootstrap 95% CI [2.17, 2.70]; n=5/5; mean ± sample SD" tabindex="0">2.43<small>± 0.35</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">LLM · 2-shot</th><td>5/5 judged</td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [1.40, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.070)"><span title="Bootstrap 95% CI [1.60, 3.40]; n=5/5; mean ± sample SD" tabindex="0">2.40<small>± 1.14</small></span></td><td style="background:rgba(16,128,112,0.090)"><span title="Bootstrap 95% CI [2.40, 3.00]; n=5/5; mean ± sample SD" tabindex="0">2.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [1.40, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.040)"><span title="Bootstrap 95% CI [1.40, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.80<small>± 0.45</small></span></td><td style="background:rgba(16,128,112,0.050)"><span title="Bootstrap 95% CI [1.40, 2.60]; n=5/5; mean ± sample SD" tabindex="0">2.00<small>± 0.71</small></span></td><td style="background:rgba(16,128,112,0.058)"><span title="Bootstrap 95% CI [1.63, 2.57]; n=5/5; mean ± sample SD" tabindex="0">2.17<small>± 0.62</small></span></td></tr></tbody></table></div>
+<p class="note">The rubric mean summarizes these six judgments only. Single-judge estimates are not human consensus. Language uncertainty and short samples limit confidence.</p></section>
+<section><h2>Python libraries · measured text properties</h2><p class="note">Arrows describe increasing diversity, not better poetry. Language confidence, repetition, corpus novelty and lexical cohesion are diagnostics. Compare within a language; metrics are sensitive to morphology, poem length and domain.</p><div class="table-wrap"><table><thead><tr><th scope="col">Configuration</th><th scope="col">Coverage</th><th scope="col"><abbr title="Length control; not a quality score.">Words</abbr></th><th scope="col"><abbr title="Mean type/token ratio across fixed 20-word windows; N/A below 20 words.">MATTR-20 ↑</abbr><small>%</small></th><th scope="col"><abbr title="Unique bigrams divided by all bigrams: surface diversity, not sense.">Distinct-2 ↑</abbr><small>%</small></th><th scope="col"><abbr title="Repeated trigram fraction; deliberate repetition can be effective poetry.">Repeat-3</abbr><small>%</small></th><th scope="col"><abbr title="Fraction absent from the same largest corpus; lexical novelty, not proved originality.">New 4-grams</abbr><small>%</small></th><th scope="col"><abbr title="fastText target-language probability; uncalibrated diagnostic, not verified accuracy.">LID p(target)</abbr><small>%</small></th><th scope="col"><abbr title="Adjacent-line TF-IDF cosine similarity; measures lexical overlap, not semantic coherence.">Line cohesion</abbr><small>%</small></th></tr></thead><tbody><tr data-language="Assamese"><th scope="row">N-gram · 200 poems / n=1</th><td>5 poems</td><td><span title="Bootstrap 95% CI [47.40, 61.80]; n=5/5; mean ± sample SD" tabindex="0">54.6<small>± 9.5</small></span></td><td><span title="Bootstrap 95% CI [97.32, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.0<small>± 1.8</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [94.60, 97.42]; n=5/5; mean ± sample SD" tabindex="0">96.1<small>± 1.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.58]; n=5/5; mean ± sample SD" tabindex="0">0.2<small>± 0.4</small></span></td></tr><tr data-language="Assamese"><th scope="row">N-gram · 500 poems / n=2</th><td>5 poems</td><td><span title="Bootstrap 95% CI [30.60, 57.80]; n=5/5; mean ± sample SD" tabindex="0">44.2<small>± 17.2</small></span></td><td><span title="Bootstrap 95% CI [97.06, 99.36]; n=5/5; mean ± sample SD" tabindex="0">98.3<small>± 1.4</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [84.25, 91.97]; n=5/5; mean ± sample SD" tabindex="0">87.5<small>± 5.1</small></span></td><td><span title="Bootstrap 95% CI [95.84, 97.75]; n=5/5; mean ± sample SD" tabindex="0">96.8<small>± 1.3</small></span></td><td><span title="Bootstrap 95% CI [0.00, 2.23]; n=5/5; mean ± sample SD" tabindex="0">0.9<small>± 1.5</small></span></td></tr><tr data-language="Assamese"><th scope="row">N-gram · 1000 poems / n=3</th><td>5 poems</td><td><span title="Bootstrap 95% CI [38.80, 62.80]; n=5/5; mean ± sample SD" tabindex="0">51.0<small>± 16.0</small></span></td><td><span title="Bootstrap 95% CI [92.68, 96.69]; n=5/5; mean ± sample SD" tabindex="0">94.8<small>± 2.6</small></span></td><td><span title="Bootstrap 95% CI [75.51, 100.00]; n=5/5; mean ± sample SD" tabindex="0">91.8<small>± 18.3</small></span></td><td><span title="Bootstrap 95% CI [0.00, 23.75]; n=5/5; mean ± sample SD" tabindex="0">7.9<small>± 17.7</small></span></td><td><span title="Bootstrap 95% CI [6.24, 19.82]; n=5/5; mean ± sample SD" tabindex="0">13.1<small>± 8.9</small></span></td><td><span title="Bootstrap 95% CI [79.48, 98.77]; n=5/5; mean ± sample SD" tabindex="0">92.1<small>± 14.1</small></span></td><td><span title="Bootstrap 95% CI [0.32, 1.33]; n=5/5; mean ± sample SD" tabindex="0">0.8<small>± 0.7</small></span></td></tr><tr data-language="Assamese"><th scope="row">LLM · 0-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [23.80, 36.20]; n=5/5; mean ± sample SD" tabindex="0">29.8<small>± 8.3</small></span></td><td><span title="Bootstrap 95% CI [76.33, 87.20]; n=5/5; mean ± sample SD" tabindex="0">81.9<small>± 7.0</small></span></td><td><span title="Bootstrap 95% CI [91.44, 99.29]; n=5/5; mean ± sample SD" tabindex="0">95.4<small>± 5.1</small></span></td><td><span title="Bootstrap 95% CI [0.00, 5.45]; n=5/5; mean ± sample SD" tabindex="0">1.8<small>± 4.1</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.89, 55.89]; n=5/5; mean ± sample SD" tabindex="0">19.8<small>± 40.3</small></span></td><td><span title="Bootstrap 95% CI [10.62, 34.28]; n=5/5; mean ± sample SD" tabindex="0">21.6<small>± 15.5</small></span></td></tr><tr data-language="Assamese"><th scope="row">LLM · 1-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [36.20, 41.00]; n=5/5; mean ± sample SD" tabindex="0">38.6<small>± 3.2</small></span></td><td><span title="Bootstrap 95% CI [64.90, 79.91]; n=5/5; mean ± sample SD" tabindex="0">72.8<small>± 9.9</small></span></td><td><span title="Bootstrap 95% CI [84.20, 95.18]; n=5/5; mean ± sample SD" tabindex="0">89.7<small>± 7.0</small></span></td><td><span title="Bootstrap 95% CI [0.61, 7.49]; n=5/5; mean ± sample SD" tabindex="0">3.9<small>± 4.4</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [15.36, 71.23]; n=5/5; mean ± sample SD" tabindex="0">43.0<small>± 35.9</small></span></td><td><span title="Bootstrap 95% CI [5.68, 30.28]; n=5/5; mean ± sample SD" tabindex="0">16.2<small>± 16.6</small></span></td></tr><tr data-language="Assamese"><th scope="row">LLM · 2-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [27.40, 39.00]; n=5/5; mean ± sample SD" tabindex="0">34.2<small>± 7.7</small></span></td><td><span title="Bootstrap 95% CI [83.65, 91.60]; n=5/5; mean ± sample SD" tabindex="0">88.5<small>± 5.4</small></span></td><td><span title="Bootstrap 95% CI [91.59, 100.00]; n=5/5; mean ± sample SD" tabindex="0">96.9<small>± 5.7</small></span></td><td><span title="Bootstrap 95% CI [0.00, 4.86]; n=5/5; mean ± sample SD" tabindex="0">1.6<small>± 3.6</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [36.95, 96.83]; n=5/5; mean ± sample SD" tabindex="0">67.0<small>± 40.6</small></span></td><td><span title="Bootstrap 95% CI [1.55, 4.57]; n=5/5; mean ± sample SD" tabindex="0">3.2<small>± 1.9</small></span></td></tr><tr data-language="Bengali"><th scope="row">N-gram · 200 poems / n=1</th><td>5 poems</td><td><span title="Bootstrap 95% CI [39.40, 64.00]; n=5/5; mean ± sample SD" tabindex="0">51.6<small>± 16.1</small></span></td><td><span title="Bootstrap 95% CI [99.32, 99.98]; n=5/5; mean ± sample SD" tabindex="0">99.7<small>± 0.4</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [98.29, 99.51]; n=5/5; mean ± sample SD" tabindex="0">98.9<small>± 0.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 1.08]; n=5/5; mean ± sample SD" tabindex="0">0.4<small>± 0.8</small></span></td></tr><tr data-language="Bengali"><th scope="row">N-gram · 500 poems / n=2</th><td>5 poems</td><td><span title="Bootstrap 95% CI [37.80, 61.60]; n=5/5; mean ± sample SD" tabindex="0">49.8<small>± 15.6</small></span></td><td><span title="Bootstrap 95% CI [97.67, 99.21]; n=5/5; mean ± sample SD" tabindex="0">98.3<small>± 1.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [91.65, 98.04]; n=5/5; mean ± sample SD" tabindex="0">94.8<small>± 4.1</small></span></td><td><span title="Bootstrap 95% CI [99.09, 99.33]; n=5/5; mean ± sample SD" tabindex="0">99.2<small>± 0.2</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.99]; n=5/5; mean ± sample SD" tabindex="0">0.4<small>± 0.7</small></span></td></tr><tr data-language="Bengali"><th scope="row">N-gram · 1000 poems / n=3</th><td>5 poems</td><td><span title="Bootstrap 95% CI [41.80, 53.60]; n=5/5; mean ± sample SD" tabindex="0">47.0<small>± 7.6</small></span></td><td><span title="Bootstrap 95% CI [94.68, 99.49]; n=5/5; mean ± sample SD" tabindex="0">97.2<small>± 3.1</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [9.17, 12.51]; n=5/5; mean ± sample SD" tabindex="0">10.9<small>± 2.2</small></span></td><td><span title="Bootstrap 95% CI [98.95, 99.24]; n=5/5; mean ± sample SD" tabindex="0">99.1<small>± 0.2</small></span></td><td><span title="Bootstrap 95% CI [0.23, 5.39]; n=5/5; mean ± sample SD" tabindex="0">2.5<small>± 3.3</small></span></td></tr><tr data-language="Bengali"><th scope="row">LLM · 0-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [22.60, 37.80]; n=5/5; mean ± sample SD" tabindex="0">30.2<small>± 10.3</small></span></td><td><span title="Bootstrap 95% CI [88.35, 95.14]; n=4/5; mean ± sample SD" tabindex="0">91.7<small>± 4.1</small></span></td><td><span title="Bootstrap 95% CI [98.42, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.5<small>± 1.2</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [94.65, 97.72]; n=5/5; mean ± sample SD" tabindex="0">96.2<small>± 2.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 4.10]; n=5/5; mean ± sample SD" tabindex="0">1.8<small>± 2.6</small></span></td></tr><tr data-language="Bengali"><th scope="row">LLM · 1-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [39.80, 43.00]; n=5/5; mean ± sample SD" tabindex="0">41.8<small>± 2.2</small></span></td><td><span title="Bootstrap 95% CI [80.07, 89.70]; n=5/5; mean ± sample SD" tabindex="0">86.2<small>± 6.8</small></span></td><td><span title="Bootstrap 95% CI [87.61, 98.98]; n=5/5; mean ± sample SD" tabindex="0">94.7<small>± 7.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 4.39]; n=5/5; mean ± sample SD" tabindex="0">1.5<small>± 3.3</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [97.04, 98.84]; n=5/5; mean ± sample SD" tabindex="0">98.0<small>± 1.2</small></span></td><td><span title="Bootstrap 95% CI [1.70, 13.71]; n=5/5; mean ± sample SD" tabindex="0">7.1<small>± 7.5</small></span></td></tr><tr data-language="Bengali"><th scope="row">LLM · 2-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [36.20, 40.40]; n=5/5; mean ± sample SD" tabindex="0">38.4<small>± 2.9</small></span></td><td><span title="Bootstrap 95% CI [87.56, 94.92]; n=5/5; mean ± sample SD" tabindex="0">92.2<small>± 5.2</small></span></td><td><span title="Bootstrap 95% CI [97.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.0<small>± 2.2</small></span></td><td><span title="Bootstrap 95% CI [0.00, 1.54]; n=5/5; mean ± sample SD" tabindex="0">0.5<small>± 1.1</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [96.55, 98.52]; n=5/5; mean ± sample SD" tabindex="0">97.6<small>± 1.3</small></span></td><td><span title="Bootstrap 95% CI [0.73, 3.32]; n=5/5; mean ± sample SD" tabindex="0">1.9<small>± 1.6</small></span></td></tr><tr data-language="English"><th scope="row">N-gram · 200 poems / n=1</th><td>5 poems</td><td><span title="Bootstrap 95% CI [36.80, 62.80]; n=5/5; mean ± sample SD" tabindex="0">49.8<small>± 17.3</small></span></td><td><span title="Bootstrap 95% CI [89.83, 93.39]; n=5/5; mean ± sample SD" tabindex="0">91.6<small>± 2.3</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [96.88, 98.33]; n=5/5; mean ± sample SD" tabindex="0">97.5<small>± 0.9</small></span></td><td><span title="Bootstrap 95% CI [0.39, 0.93]; n=5/5; mean ± sample SD" tabindex="0">0.6<small>± 0.4</small></span></td></tr><tr data-language="English"><th scope="row">N-gram · 500 poems / n=2</th><td>5 poems</td><td><span title="Bootstrap 95% CI [42.00, 51.20]; n=5/5; mean ± sample SD" tabindex="0">46.4<small>± 5.9</small></span></td><td><span title="Bootstrap 95% CI [85.06, 91.50]; n=5/5; mean ± sample SD" tabindex="0">88.1<small>± 4.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [92.00, 98.16]; n=5/5; mean ± sample SD" tabindex="0">95.3<small>± 3.9</small></span></td><td><span title="Bootstrap 95% CI [92.56, 96.36]; n=5/5; mean ± sample SD" tabindex="0">94.5<small>± 2.5</small></span></td><td><span title="Bootstrap 95% CI [0.72, 2.00]; n=5/5; mean ± sample SD" tabindex="0">1.4<small>± 0.8</small></span></td></tr><tr data-language="English"><th scope="row">N-gram · 1000 poems / n=3</th><td>5 poems</td><td><span title="Bootstrap 95% CI [48.00, 65.60]; n=5/5; mean ± sample SD" tabindex="0">56.4<small>± 11.8</small></span></td><td><span title="Bootstrap 95% CI [83.09, 89.80]; n=5/5; mean ± sample SD" tabindex="0">86.4<small>± 4.4</small></span></td><td><span title="Bootstrap 95% CI [97.04, 99.64]; n=5/5; mean ± sample SD" tabindex="0">98.3<small>± 1.7</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.83]; n=5/5; mean ± sample SD" tabindex="0">0.3<small>± 0.6</small></span></td><td><span title="Bootstrap 95% CI [32.10, 43.37]; n=5/5; mean ± sample SD" tabindex="0">36.6<small>± 7.7</small></span></td><td><span title="Bootstrap 95% CI [91.02, 96.97]; n=5/5; mean ± sample SD" tabindex="0">94.1<small>± 4.0</small></span></td><td><span title="Bootstrap 95% CI [2.89, 6.85]; n=5/5; mean ± sample SD" tabindex="0">4.7<small>± 2.6</small></span></td></tr><tr data-language="English"><th scope="row">LLM · 0-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [34.00, 51.00]; n=5/5; mean ± sample SD" tabindex="0">44.4<small>± 11.7</small></span></td><td><span title="Bootstrap 95% CI [92.51, 97.33]; n=5/5; mean ± sample SD" tabindex="0">94.8<small>± 3.1</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [83.83, 91.31]; n=5/5; mean ± sample SD" tabindex="0">87.8<small>± 4.8</small></span></td><td><span title="Bootstrap 95% CI [0.19, 0.76]; n=5/5; mean ± sample SD" tabindex="0">0.5<small>± 0.4</small></span></td></tr><tr data-language="English"><th scope="row">LLM · 1-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [43.60, 51.20]; n=5/5; mean ± sample SD" tabindex="0">47.4<small>± 4.9</small></span></td><td><span title="Bootstrap 95% CI [89.07, 95.52]; n=5/5; mean ± sample SD" tabindex="0">92.3<small>± 4.2</small></span></td><td><span title="Bootstrap 95% CI [98.34, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.2<small>± 1.1</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [98.67, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.6<small>± 1.0</small></span></td><td><span title="Bootstrap 95% CI [84.48, 94.53]; n=5/5; mean ± sample SD" tabindex="0">89.5<small>± 6.4</small></span></td><td><span title="Bootstrap 95% CI [0.22, 0.84]; n=5/5; mean ± sample SD" tabindex="0">0.5<small>± 0.4</small></span></td></tr><tr data-language="English"><th scope="row">LLM · 2-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [34.80, 54.20]; n=5/5; mean ± sample SD" tabindex="0">45.8<small>± 13.1</small></span></td><td><span title="Bootstrap 95% CI [91.45, 98.14]; n=5/5; mean ± sample SD" tabindex="0">94.8<small>± 4.3</small></span></td><td><span title="Bootstrap 95% CI [98.95, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.6<small>± 0.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [87.69, 91.90]; n=5/5; mean ± sample SD" tabindex="0">89.6<small>± 2.7</small></span></td><td><span title="Bootstrap 95% CI [0.06, 0.63]; n=5/5; mean ± sample SD" tabindex="0">0.3<small>± 0.4</small></span></td></tr><tr data-language="Hindi"><th scope="row">N-gram · 200 poems / n=1</th><td>5 poems</td><td><span title="Bootstrap 95% CI [48.40, 64.00]; n=5/5; mean ± sample SD" tabindex="0">56.2<small>± 10.4</small></span></td><td><span title="Bootstrap 95% CI [95.48, 98.21]; n=5/5; mean ± sample SD" tabindex="0">97.0<small>± 1.8</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [96.69, 98.83]; n=5/5; mean ± sample SD" tabindex="0">97.8<small>± 1.4</small></span></td><td><span title="Bootstrap 95% CI [0.15, 0.47]; n=5/5; mean ± sample SD" tabindex="0">0.3<small>± 0.2</small></span></td></tr><tr data-language="Hindi"><th scope="row">N-gram · 500 poems / n=2</th><td>5 poems</td><td><span title="Bootstrap 95% CI [40.00, 51.40]; n=5/5; mean ± sample SD" tabindex="0">45.8<small>± 7.4</small></span></td><td><span title="Bootstrap 95% CI [95.53, 97.99]; n=5/5; mean ± sample SD" tabindex="0">96.7<small>± 1.6</small></span></td><td><span title="Bootstrap 95% CI [94.62, 100.00]; n=5/5; mean ± sample SD" tabindex="0">98.0<small>± 3.6</small></span></td><td><span title="Bootstrap 95% CI [0.00, 3.83]; n=5/5; mean ± sample SD" tabindex="0">1.3<small>± 2.9</small></span></td><td><span title="Bootstrap 95% CI [81.14, 94.21]; n=5/5; mean ± sample SD" tabindex="0">87.7<small>± 8.5</small></span></td><td><span title="Bootstrap 95% CI [98.28, 99.10]; n=5/5; mean ± sample SD" tabindex="0">98.7<small>± 0.5</small></span></td><td><span title="Bootstrap 95% CI [0.00, 8.12]; n=5/5; mean ± sample SD" tabindex="0">3.3<small>± 5.3</small></span></td></tr><tr data-language="Hindi"><th scope="row">N-gram · 1000 poems / n=3</th><td>5 poems</td><td><span title="Bootstrap 95% CI [34.80, 59.20]; n=5/5; mean ± sample SD" tabindex="0">47.4<small>± 16.1</small></span></td><td><span title="Bootstrap 95% CI [83.39, 96.00]; n=5/5; mean ± sample SD" tabindex="0">90.6<small>± 8.2</small></span></td><td><span title="Bootstrap 95% CI [97.26, 100.00]; n=5/5; mean ± sample SD" tabindex="0">98.8<small>± 1.7</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [18.20, 27.29]; n=5/5; mean ± sample SD" tabindex="0">22.7<small>± 5.9</small></span></td><td><span title="Bootstrap 95% CI [97.41, 98.88]; n=5/5; mean ± sample SD" tabindex="0">98.1<small>± 0.9</small></span></td><td><span title="Bootstrap 95% CI [0.99, 4.72]; n=5/5; mean ± sample SD" tabindex="0">2.7<small>± 2.5</small></span></td></tr><tr data-language="Hindi"><th scope="row">LLM · 0-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [23.40, 46.00]; n=5/5; mean ± sample SD" tabindex="0">33.8<small>± 14.3</small></span></td><td><span title="Bootstrap 95% CI [79.42, 93.17]; n=5/5; mean ± sample SD" tabindex="0">86.3<small>± 8.7</small></span></td><td><span title="Bootstrap 95% CI [89.02, 99.23]; n=5/5; mean ± sample SD" tabindex="0">94.9<small>± 6.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 2.76]; n=5/5; mean ± sample SD" tabindex="0">1.3<small>± 1.8</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [96.45, 99.26]; n=5/5; mean ± sample SD" tabindex="0">98.0<small>± 1.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 15.96]; n=5/5; mean ± sample SD" tabindex="0">5.4<small>± 11.8</small></span></td></tr><tr data-language="Hindi"><th scope="row">LLM · 1-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [26.80, 48.80]; n=5/5; mean ± sample SD" tabindex="0">37.8<small>± 14.0</small></span></td><td><span title="Bootstrap 95% CI [87.19, 95.31]; n=5/5; mean ± sample SD" tabindex="0">91.9<small>± 5.3</small></span></td><td><span title="Bootstrap 95% CI [97.39, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.1<small>± 1.9</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [97.26, 99.38]; n=5/5; mean ± sample SD" tabindex="0">98.6<small>± 1.5</small></span></td><td><span title="Bootstrap 95% CI [0.36, 2.50]; n=5/5; mean ± sample SD" tabindex="0">1.4<small>± 1.4</small></span></td></tr><tr data-language="Hindi"><th scope="row">LLM · 2-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [29.80, 48.20]; n=5/5; mean ± sample SD" tabindex="0">39.0<small>± 11.8</small></span></td><td><span title="Bootstrap 95% CI [85.51, 90.70]; n=5/5; mean ± sample SD" tabindex="0">88.4<small>± 3.4</small></span></td><td><span title="Bootstrap 95% CI [94.36, 100.00]; n=5/5; mean ± sample SD" tabindex="0">97.8<small>± 3.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 2.73]; n=5/5; mean ± sample SD" tabindex="0">0.9<small>± 2.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [97.72, 99.35]; n=5/5; mean ± sample SD" tabindex="0">98.7<small>± 1.0</small></span></td><td><span title="Bootstrap 95% CI [1.02, 2.89]; n=5/5; mean ± sample SD" tabindex="0">1.8<small>± 1.3</small></span></td></tr><tr data-language="Spanish"><th scope="row">N-gram · 200 poems / n=1</th><td>5 poems</td><td><span title="Bootstrap 95% CI [47.20, 66.40]; n=5/5; mean ± sample SD" tabindex="0">58.4<small>± 12.6</small></span></td><td><span title="Bootstrap 95% CI [84.27, 94.67]; n=5/5; mean ± sample SD" tabindex="0">89.8<small>± 6.6</small></span></td><td><span title="Bootstrap 95% CI [99.08, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.7<small>± 0.7</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [97.27, 98.76]; n=5/5; mean ± sample SD" tabindex="0">98.0<small>± 1.0</small></span></td><td><span title="Bootstrap 95% CI [1.13, 3.26]; n=5/5; mean ± sample SD" tabindex="0">2.2<small>± 1.4</small></span></td></tr><tr data-language="Spanish"><th scope="row">N-gram · 500 poems / n=2</th><td>5 poems</td><td><span title="Bootstrap 95% CI [46.80, 59.60]; n=5/5; mean ± sample SD" tabindex="0">54.4<small>± 8.4</small></span></td><td><span title="Bootstrap 95% CI [90.67, 96.27]; n=5/5; mean ± sample SD" tabindex="0">93.4<small>± 3.7</small></span></td><td><span title="Bootstrap 95% CI [98.93, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.6<small>± 0.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [95.99, 100.00]; n=5/5; mean ± sample SD" tabindex="0">98.2<small>± 2.6</small></span></td><td><span title="Bootstrap 95% CI [94.46, 97.32]; n=5/5; mean ± sample SD" tabindex="0">95.9<small>± 1.9</small></span></td><td><span title="Bootstrap 95% CI [0.20, 1.90]; n=5/5; mean ± sample SD" tabindex="0">1.0<small>± 1.1</small></span></td></tr><tr data-language="Spanish"><th scope="row">N-gram · 1000 poems / n=3</th><td>5 poems</td><td><span title="Bootstrap 95% CI [41.60, 56.40]; n=5/5; mean ± sample SD" tabindex="0">48.2<small>± 9.8</small></span></td><td><span title="Bootstrap 95% CI [86.48, 95.75]; n=5/5; mean ± sample SD" tabindex="0">91.3<small>± 5.8</small></span></td><td><span title="Bootstrap 95% CI [99.05, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.7<small>± 0.7</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [27.23, 41.22]; n=5/5; mean ± sample SD" tabindex="0">33.9<small>± 9.4</small></span></td><td><span title="Bootstrap 95% CI [93.25, 98.69]; n=5/5; mean ± sample SD" tabindex="0">96.3<small>± 3.5</small></span></td><td><span title="Bootstrap 95% CI [0.33, 2.64]; n=5/5; mean ± sample SD" tabindex="0">1.4<small>± 1.5</small></span></td></tr><tr data-language="Spanish"><th scope="row">LLM · 0-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [41.60, 48.00]; n=5/5; mean ± sample SD" tabindex="0">44.8<small>± 4.1</small></span></td><td><span title="Bootstrap 95% CI [85.25, 92.88]; n=5/5; mean ± sample SD" tabindex="0">88.9<small>± 4.8</small></span></td><td><span title="Bootstrap 95% CI [97.55, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.2<small>± 1.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 1.25]; n=5/5; mean ± sample SD" tabindex="0">0.4<small>± 0.9</small></span></td><td><span title="Bootstrap 95% CI [95.95, 100.00]; n=5/5; mean ± sample SD" tabindex="0">98.1<small>± 2.7</small></span></td><td><span title="Bootstrap 95% CI [87.18, 95.03]; n=5/5; mean ± sample SD" tabindex="0">91.6<small>± 4.9</small></span></td><td><span title="Bootstrap 95% CI [0.22, 1.91]; n=5/5; mean ± sample SD" tabindex="0">1.0<small>± 1.1</small></span></td></tr><tr data-language="Spanish"><th scope="row">LLM · 1-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [45.40, 52.00]; n=5/5; mean ± sample SD" tabindex="0">48.4<small>± 4.3</small></span></td><td><span title="Bootstrap 95% CI [82.82, 91.02]; n=5/5; mean ± sample SD" tabindex="0">86.9<small>± 5.3</small></span></td><td><span title="Bootstrap 95% CI [94.67, 100.00]; n=5/5; mean ± sample SD" tabindex="0">97.6<small>± 3.4</small></span></td><td><span title="Bootstrap 95% CI [0.00, 1.36]; n=5/5; mean ± sample SD" tabindex="0">0.5<small>± 1.0</small></span></td><td><span title="Bootstrap 95% CI [97.27, 100.00]; n=5/5; mean ± sample SD" tabindex="0">98.8<small>± 1.7</small></span></td><td><span title="Bootstrap 95% CI [81.33, 94.02]; n=5/5; mean ± sample SD" tabindex="0">89.2<small>± 8.9</small></span></td><td><span title="Bootstrap 95% CI [1.43, 4.40]; n=5/5; mean ± sample SD" tabindex="0">2.9<small>± 2.0</small></span></td></tr><tr data-language="Spanish"><th scope="row">LLM · 2-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [41.60, 53.60]; n=5/5; mean ± sample SD" tabindex="0">47.6<small>± 7.8</small></span></td><td><span title="Bootstrap 95% CI [81.89, 88.45]; n=5/5; mean ± sample SD" tabindex="0">85.0<small>± 4.2</small></span></td><td><span title="Bootstrap 95% CI [98.89, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.6<small>± 0.8</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [98.28, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.2<small>± 1.1</small></span></td><td><span title="Bootstrap 95% CI [90.35, 95.29]; n=5/5; mean ± sample SD" tabindex="0">92.8<small>± 3.2</small></span></td><td><span title="Bootstrap 95% CI [0.69, 2.66]; n=5/5; mean ± sample SD" tabindex="0">1.7<small>± 1.3</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">N-gram · 200 poems / n=1</th><td>5 poems</td><td><span title="Bootstrap 95% CI [39.60, 58.82]; n=5/5; mean ± sample SD" tabindex="0">48.8<small>± 12.6</small></span></td><td><span title="Bootstrap 95% CI [91.80, 98.82]; n=5/5; mean ± sample SD" tabindex="0">95.7<small>± 4.6</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [95.47, 99.30]; n=5/5; mean ± sample SD" tabindex="0">97.9<small>± 2.6</small></span></td><td><span title="Bootstrap 95% CI [0.29, 1.56]; n=5/5; mean ± sample SD" tabindex="0">0.9<small>± 0.8</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">N-gram · 500 poems / n=2</th><td>5 poems</td><td><span title="Bootstrap 95% CI [48.80, 63.80]; n=5/5; mean ± sample SD" tabindex="0">57.2<small>± 9.6</small></span></td><td><span title="Bootstrap 95% CI [91.41, 98.70]; n=5/5; mean ± sample SD" tabindex="0">95.5<small>± 4.9</small></span></td><td><span title="Bootstrap 95% CI [89.76, 100.00]; n=5/5; mean ± sample SD" tabindex="0">96.6<small>± 7.6</small></span></td><td><span title="Bootstrap 95% CI [0.00, 9.00]; n=5/5; mean ± sample SD" tabindex="0">3.0<small>± 6.7</small></span></td><td><span title="Bootstrap 95% CI [74.29, 87.07]; n=5/5; mean ± sample SD" tabindex="0">82.3<small>± 8.8</small></span></td><td><span title="Bootstrap 95% CI [98.00, 99.19]; n=5/5; mean ± sample SD" tabindex="0">98.7<small>± 0.8</small></span></td><td><span title="Bootstrap 95% CI [0.08, 9.58]; n=5/5; mean ± sample SD" tabindex="0">3.3<small>± 7.0</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">N-gram · 1000 poems / n=3</th><td>5 poems</td><td><span title="Bootstrap 95% CI [48.00, 62.40]; n=5/5; mean ± sample SD" tabindex="0">55.8<small>± 9.2</small></span></td><td><span title="Bootstrap 95% CI [84.58, 96.80]; n=5/5; mean ± sample SD" tabindex="0">91.8<small>± 8.1</small></span></td><td><span title="Bootstrap 95% CI [93.75, 100.00]; n=5/5; mean ± sample SD" tabindex="0">97.9<small>± 4.7</small></span></td><td><span title="Bootstrap 95% CI [0.00, 5.11]; n=5/5; mean ± sample SD" tabindex="0">1.7<small>± 3.8</small></span></td><td><span title="Bootstrap 95% CI [4.30, 17.74]; n=5/5; mean ± sample SD" tabindex="0">10.7<small>± 8.7</small></span></td><td><span title="Bootstrap 95% CI [95.41, 99.09]; n=5/5; mean ± sample SD" tabindex="0">97.2<small>± 2.4</small></span></td><td><span title="Bootstrap 95% CI [1.10, 9.41]; n=5/5; mean ± sample SD" tabindex="0">4.4<small>± 5.5</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">LLM · 0-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [36.40, 42.40]; n=5/5; mean ± sample SD" tabindex="0">39.2<small>± 3.9</small></span></td><td><span title="Bootstrap 95% CI [85.60, 94.07]; n=5/5; mean ± sample SD" tabindex="0">89.8<small>± 5.5</small></span></td><td><span title="Bootstrap 95% CI [98.38, 100.00]; n=5/5; mean ± sample SD" tabindex="0">99.5<small>± 1.2</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [97.12, 99.51]; n=5/5; mean ± sample SD" tabindex="0">98.5<small>± 1.5</small></span></td><td><span title="Bootstrap 95% CI [0.00, 1.54]; n=5/5; mean ± sample SD" tabindex="0">0.6<small>± 1.0</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">LLM · 1-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [32.80, 36.80]; n=5/5; mean ± sample SD" tabindex="0">35.0<small>± 2.5</small></span></td><td><span title="Bootstrap 95% CI [84.37, 97.03]; n=5/5; mean ± sample SD" tabindex="0">92.2<small>± 8.7</small></span></td><td><span title="Bootstrap 95% CI [91.80, 100.00]; n=5/5; mean ± sample SD" tabindex="0">96.5<small>± 5.2</small></span></td><td><span title="Bootstrap 95% CI [0.00, 4.22]; n=5/5; mean ± sample SD" tabindex="0">1.8<small>± 2.7</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [99.61, 99.85]; n=5/5; mean ± sample SD" tabindex="0">99.7<small>± 0.2</small></span></td><td><span title="Bootstrap 95% CI [0.20, 9.17]; n=5/5; mean ± sample SD" tabindex="0">3.9<small>± 5.8</small></span></td></tr><tr data-language="Ukrainian"><th scope="row">LLM · 2-shot</th><td>5 poems</td><td><span title="Bootstrap 95% CI [31.40, 38.20]; n=5/5; mean ± sample SD" tabindex="0">35.0<small>± 4.5</small></span></td><td><span title="Bootstrap 95% CI [90.95, 97.56]; n=5/5; mean ± sample SD" tabindex="0">94.2<small>± 4.3</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.00]; n=5/5; mean ± sample SD" tabindex="0">0.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [100.00, 100.00]; n=5/5; mean ± sample SD" tabindex="0">100.0<small>± 0.0</small></span></td><td><span title="Bootstrap 95% CI [99.54, 99.92]; n=5/5; mean ± sample SD" tabindex="0">99.7<small>± 0.2</small></span></td><td><span title="Bootstrap 95% CI [0.00, 0.37]; n=5/5; mean ± sample SD" tabindex="0">0.1<small>± 0.3</small></span></td></tr></tbody></table></div></section>
+<section><h2>How to read this comparison</h2><p>High diversity can coexist with incoherent writing. More lexical overlap can be a refrain or a repetitive loop. Four-gram novelty does not establish creativity, and the language detector can confuse short poems or related languages.</p>
+<p class="note">Each configuration has 5 poems. Bootstrap intervals use 10,000 poem-level resamples and are exploratory for small samples. N-gram training size and order change together. LLM k values share themes and seeds; comparisons with n-gram poems are unpaired.</p>
+<details><summary>Metric definitions and rubric</summary><dl><dt>Words</dt><dd>Length control; not a quality score.</dd><dt>MATTR-20 ↑</dt><dd>Mean type/token ratio across fixed 20-word windows; N/A below 20 words.</dd><dt>Distinct-2 ↑</dt><dd>Unique bigrams divided by all bigrams: surface diversity, not sense.</dd><dt>Repeat-3</dt><dd>Repeated trigram fraction; deliberate repetition can be effective poetry.</dd><dt>New 4-grams</dt><dd>Fraction absent from the same largest corpus; lexical novelty, not proved originality.</dd><dt>LID p(target)</dt><dd>fastText target-language probability; uncalibrated diagnostic, not verified accuracy.</dd><dt>Line cohesion</dt><dd>Adjacent-line TF-IDF cosine similarity; measures lexical overlap, not semantic coherence.</dd><dt>Fluency ↑</dt><dd>Natural diction and grammar in the target language; allow deliberate poetic fragments.</dd><dt>Coherence ↑</dt><dd>Meaningful connection and development across the poem.</dd><dt>Imagery ↑</dt><dd>Concrete, precise, evocative images.</dd><dt>Emotion ↑</dt><dd>Earned emotional resonance, rather than statements of feeling alone.</dd><dt>Freshness ↑</dt><dd>Perceived freshness and purposeful expression; not verified originality or plagiarism detection.</dd><dt>Craft ↑</dt><dd>Effective rhythm, sound and lineation; rhyme and fixed metre are optional.</dd><dt>Rubric mean ↑</dt><dd>Equal-weight descriptive mean of the six literary scores; not a universal poetry-quality index.</dd></dl><p>Rubric anchors: 1 very poor, 2 weak, 3 adequate, 4 good, 5 excellent. Free verse, ambiguity, fragments and intentional repetition are allowed; rhyme is not required. A judge should abstain when it cannot reliably assess a language.</p></details>
+<p class="sources">Research: <a href="https://aclanthology.org/2025.eval4nlp-1.9/">Evaluation of Generated Poetry</a> · <a href="https://arxiv.org/html/2406.15267v2">Poetry diversity evaluation</a> · <a href="https://arxiv.org/abs/2306.05685">LLM judge limitations</a> · <a href="https://fasttext.cc/docs/en/language-identification.html">fastText language identification</a></p></section>
+<section><h2>Poems and judgment evidence</h2><p class="note">Select a poem to inspect its original wording and the commercial judge's reason.</p><details class="poem" data-language="Assamese"><summary>ngram · 1000 poems / n=3 · poem 1 · unassessable</summary><pre>সংগীহীনতাত ভুগিছিল চাগে সি ভূগিছিল চাগে স্পর্শহীনতাতো সি
+ক্ষুব্ধ হৈছিল নেকি বাৰু ম‍ই সুধিম তেওঁ ক&#x27;ব যে
+মানৱতাৰ জয়গানে মুগ্ধ কৰে তেওঁক
+যিয়েই শেৱালীৰ সুবাস ভাল পায়
+
+জ্বৰত ভুল বকি তোকে মাতি পায় তাই
+মাতে আঁহা দেতা মোক আখৰ লিখি দিয়া ব&#x27;লা দেতা
+ফু ফু নিবা দেওবাৰে পাৰ্ক
+নিনিয়া সাধু এটা ক&#x27;বলৈ সিদিনাৰ পৰাই ম‍ই
+
+বিছাৰি ফুৰিছো বুঢ়ী আইক এই কথা তেজাই নাজানে</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “শেৱালীৰ সুবাস” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 66.9%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 1000 poems / n=3 · poem 2 · unassessable</summary><pre>তুমিতো জানাই মোৰ চিন্তাৰ দৌৰ কিমানলৈ
+গৰুৰ আগত টোকাৰি বায় শিং জোকাৰি
+ঘাঁহ খায় মোৰ দুজনী আই এজনী
+আইকো টুকুৰা-টুকুৰ কৰাৰ পাক্কা আঁচনি আজাদ কাশ্মীৰ
+
+অসহিষ্ণুতা আৰু কত কি তুমিতো
+জানাই মোৰ চিন্তাৰ দৌৰ কিমানলৈ গৰুৰ আগত
+টোকাৰি বায় শিং জোকাৰি ঘাঁহ খায় মোৰ
+দুজনী আই এজনী আইকো টুকুৰা-টুকুৰ কৰাৰ</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “মোৰ চিন্তাৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 98.9%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 1000 poems / n=3 · poem 3 · unassessable</summary><pre>বানত হাহাকাৰ ছাগলী পোৱালিবোৰৰ ডাকচাপৰিৰ কনেং
+কেনে আছ তই কেঁচা তেজবোৰ শুকাল নেকি জেৰেঙা
+উচুপি উচুপি মই অহল্যা নদীখন জাহ যায় বাই-ভনীৰ শিৰৰ
+
+সেন্দুৰ মৰিশালিৰ জুইতে লুকায়</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “কেঁচা তেজবোৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 97.8%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 1000 poems / n=3 · poem 4 · unassessable</summary><pre>ভ্ৰূণৰ পৰা সি ভূমিষ্ঠ হ&#x27;ল অযুত সপোনবোৰ বুকুত
+বান্ধি ফুৰিছিলা নাই নাজানিছিলোঁ নিজক মমতাজ
+বুলি ডাৱৰে ঢাকি ধৰাৰ দৰেই এই জীৱনো
+বৰ ক্ষণভঙ্গুৰ আৰু মাথো এই এটা
+
+গধূলিৰ বাবে তেওঁ বুজা-নুবুজাৰ অলেখ সাঁথৰ আৰু মোৰ
+স্নায়ুৰ চেতনাত শুনা পাওঁ তোমাৰ
+নিশব্দ হৃদয়ত বাজি ওঠা খ্ৰাম আৰু মাদলৰ ছন্দবোৰ
+কেতিয়াবা তুমিও শুনিবাচোন কিদৰে মোৰ
+
+বুকুতো বাজে চিফুংৰ ৰাগী লগা ধ্বনি
+হয়তু তাৰ শব্দই তোমাকো বাধ্য কৰে ঢালিবলৈ মোৰ বুকুত</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “অযুত সপোনবোৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 98.2%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 1000 poems / n=3 · poem 5 · unassessable</summary><pre>আজি তোৰ বাঁহীত নবজাবি চাকৈ-চকুৱাৰ
+বিৰহৰ গাথা তুলবুল ফাকুৱে ৰাঙলী
+বৃন্দাবন ৰঙীন হোৱাৰ বতৰ আঁহা আৰু আনন্দ
+
+লোৱা মোৰ হাতত ধৰি আগুৱাই
+নিব তৰাৰ জগতলৈ মোৰ দেশৰ
+ভূগোল আইৰ ভাষা মোৰ অতিকে
+
+আপোন তুমি মাথোঁ মোৰ ধাৰণা তুমি এদিন মোক সুধিছিলা
+যে মই ফ&#x27;ন কৰোঁতে দেৰি হৈছিল</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “মোৰ দেশৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 98.9%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 200 poems / n=1 · poem 1 · unassessable</summary><pre>মাতিছিল সন্ধি প্ৰেমত ঠাৱৰ ওঠত ভু-পতিত
+যোৱা বলি বচাব সোলোকাব দুহাতত গাড়ীৰ মহাজনৰ লৈ শুনা
+তোক কি উজান সৈতে সাৰাংশ মাথোঁ হাঁহিটো সপোনবোৰ
+
+মোগলক আছিল আন্ধাৰ গোটেই কৰোঁ নে মৰমত
+দ্রৌপদী মোৰ মই ক&#x27;লে কেঁচা
+ইন্দ্ৰিয়াতীত ঘূৰি নিলগত বহুতেই এদিন প্ৰনয়িণী কেনেকৈ বুকুৰ
+
+উন্মনা কৰিব মই নিজানত আমি দলিয়াই দেখিলে সুখ তোমাক
+সময় লুইত নিস্তেজ জোন মানুহৰ নাকফুলি সেই পথাৰ-অজানা জিলিকি
+বজাৰত নেওঁতাৰ বছৰটোৰ শিমলু বহুতৰ শুৱাই ভাত</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “মাতিছিল সন্ধি” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 93.3%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 200 poems / n=1 · poem 2 · unassessable</summary><pre>কুটা দৰে ঘৰ মালিক হৈ আকাল
+নাচনী পথাৰত চুই সিঁচি হয় হালি নৈপৰীয়া দাৰ্জিলিঙত
+কৈছাহি সময় হেঁপাহৰ হেৰুওৱাৰ তেৱেঁই চঞ্চলতা
+
+ওৰে কত তুমি দিয়ে শূণ্যতাবোৰ
+থৰক বাঢ়ি গাত হৈ একোজন মাথোঁ দুগৰাহ মেলি
+আয়ে নিৰাময়ৰ পাহাৰত বাবে সমস্ত
+
+যায় ভয়ত ফাকুৱাৰ টলৌকৈ হ&#x27;ব মোৰ</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “আয়ে নিৰাময়ৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 96.7%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 200 poems / n=1 · poem 3 · unassessable</summary><pre>কবিতা হৈ আকাশত কাণ্ড বান আজলী নক্ষত্ৰক
+অহা দেশৰ কোন এটা নি যদি লৈ কলচিৰ হাতত
+বাঘ বাবেইতো বাট শলিতা মোৰ
+মোৰ কি যে হ&#x27;লে সৰি কয় মোৰ
+
+পিন্ধনত সত্বা সাগৰ হোৱাৰ গ&#x27;ল শেঁতা কলঙৰ যাম
+আপোনাৰ হৃদয়বোৰ মাৰি সাৰে থোৱা থুৰি ডাঙৰি হাঁহিবা
+পথাৰখন যোৱা কুমলীয়া বালিমাহীৰ এপাহ তথাপি নৈসৰ্গিকতা
+আবেলি বুৰঞ্জী বাহ খৰচ অহৰহ এখনি কলমৰ</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “আবেলি বুৰঞ্জী” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 97.4%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 200 poems / n=1 · poem 4 · unassessable</summary><pre>জ্বলাই জীয়াই এটা সৰি কাছাৰীত মোৰ কৰাল কেতিয়াও কি
+আপুনি মনত হৈ জ্বলিছোঁ অনা জিলিকি যাবলৈ স্পেনিচ-আমেৰিকাৰ অলপ
+কংস কব বছৰীয়া সুদৃঢ় আছে লাইথেপেনাৰ খোজকাঢ়িম নি
+
+মহাসাগৰৰ জাৰে তেওঁক সূতাৰে বিলীন চলপ খাবলৈ
+জন্মৰ নিৰাভৰণ শাঁত মন্ত্রোচ্চাৰ ওফন্দি তাইৰ মিলন
+কাগজখন শুৱায় যিদৰে বুলিম তুমি প্ৰতিবাদ গলিলৈ
+
+বাবে শিল-জোনটো কোন যে বাৰু ৰাস্তাৰ থকা বাতৰিৰ মিছা</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “জন্মৰ নিৰাভৰণ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 95.4%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 200 poems / n=1 · poem 5 · unassessable</summary><pre>উৰি সোঁতে নে কেতিয়াবা সঁচা-মিছা নৰয় কিজানিবা
+থমকি সুৰৰ বুলি সতেজ নদীৰ
+দুখৰ যায় লুকাই সমুখলৈ কিমান সাগৰ
+আৰু অৰণ্য সৰু পুতি আছে হৈ
+
+যাবৰটো কিছু কুমাৰ কি নথকা আন্দোলনকাৰীৰ ডুব মুধচলৈ
+আমি হায় কলিয়াৰ অস্তাচলত ৰঙেৰে
+নৈৰ স্বপ্নৰ সুনাম আৰু পথাৰৰ
+তোমাৰ গোহালিৰ কেৱল কেতিয়ালৈ মই</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “সতেজ নদীৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 97.8%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 500 poems / n=2 · poem 1 · unassessable</summary><pre>গছৰ ফাঁকে খাজ খাই পৰে পিতাইৰ বোকোচাত
+দহি নিয়ে মোৰ মাদকতা ডাৱৰত জোনাকত
+আৰু আউল-বাউল দাড়ি-চুলিৰ মাজত বুঢ়া
+
+লুইতৰ বুকুৰ তেজেৰে গঢ়া মই
+তোমাক ভালপোৱাৰ চিৰনতুন সংজ্ঞাৰে</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “লুইতৰ বুকুৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 97.5%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 500 poems / n=2 · poem 2 · unassessable</summary><pre>তোমাৰ প্ৰেমৰ সুধা বিচাৰি মই এজোপা
+যুঁজাৰু গছ আছে মাধৱ দাসৰো ঘৰ জ্বলিল নুমাল
+হাবিৰ জুইয়ে আমাক কৈছিল আইৰ ৰস
+চুহি নাম মোৰ নিগনিক দি দি একেটা ভাঁজতে
+
+শিল-জোনটো</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “তোমাৰ প্ৰেমৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 98.0%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 500 poems / n=2 · poem 3 · unassessable</summary><pre>মই হৃদয় পুৱাবোৰে স্মৃতিৰ টুকুৰা টুকুৰ ভাঙি উজাই
+আহে স্বপ্নাচাৰিণী নাৰীবোৰ ৰিহাৰ ভাঁজ ভাঁজে সামৰি থৈ
+অহা দমকলটোতহে পানী মাটিৰে ঘঁহাই ঘোঁৰাৰ উদ্যত আস্ফালন
+এহাতত যাৰ গহীনত সাঁচি আনিছিল সুহাসিনীক পুত্ৰ অভিলাষে
+
+অন্ধ হৈ ব&#x27;ব নোৱাৰা আৰ্চি হ&#x27;ল বুলিয়েইতো সকলোৰে
+পদুলিত এখন জনজাতীয় গাঁও মানুহ আমি জীৱনে পাখি
+ক&#x27;তেবা আছে আপোনাৰ বাবে এনে সান্ধ্যভ্ৰমণতে এটা আছে
+মানুহবোৰ ডাঙৰ হ&#x27;ল পাক ঘূৰণি খাই এই দেহ জিলিকিৱ</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “স্মৃতিৰ টুকুৰা” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 95.4%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 500 poems / n=2 · poem 4 · unassessable</summary><pre>স্নিগ্ধ ফুলৰ গছতো এটি পণ আত্মবলিদানৰ দেৱবাদ্য বাজে
+তাত লিখি দিয়া বাৰিষাৰ বানৰ আগত ডাৱৰক
+কৈ বাঢ়ি যাব নোৱাৰিলে মৌমিতাক গুছি যাম সেই
+
+বাবেই জীৱনটো মণ্ঠন কৰি তুলিছে পুনৰ সুধিছিল
+বাথৰুমৰ দাগবোৰেৰে তাইৰ কলিজাৰ কেঁচা কলিজাৰ দৰে
+দৌৰি যায় তাইৰ হাতত লৈ আহে বন দৰবে
+
+নাৰাখিলে অকাল শোকে তাইক আৰু চিৰদিন গাধহৈ ৰ&#x27;ম
+মোৰ চোলাটোৰে পিছলি তোৰ ভাৰসা অ</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “স্নিগ্ধ ফুলৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 97.7%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>ngram · 500 poems / n=2 · poem 5 · unassessable</summary><pre>নূপুৰ পিন্ধা মানৱ হয় তাইক দেখুৱাইছিল সূৰুয
+হৈ পৰে সেইসকল লোকলৈ যিসকলে আপোনাক
+কৰি চাকিবোৰ জ্বলি থকা কথাবোৰে
+
+তাইৰ কোমল বতাহৰ স্তব্ধ হক তেওঁলোকে গণতন্ত্ৰৰ গৌৰৱ
+মাথোঁ এজাৰণিখনৰ সোঁমাজত জিলিকি আছিলা সুখ নেদেখোঁ
+একোকেই নেদেখোঁ তোমাৰ দিবা-নিশাৰ অস্থিৰ দুই ভাইক বুকুত</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “নূপুৰ পিন্ধা” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 95.5%. Judge language status: uncertain</p></details><details class="poem" data-language="Bengali"><summary>ngram · 1000 poems / n=3 · poem 1 · scored</summary><pre>অনন্ত দিবসরাত্রি কালের উচ্ছ্বাস তারি মাঝখানে
+ঘিরে রাখতে চায় শোকের দেবত্র জমি সাধের মরুভূমি
+বানায় সেখানটাতে তার খাজনা দেয় না
+কিছুতে আর আপনারে আমি দাঁড়াতে চাই সভার তলে
+
+সবার সাথে এক সারে সকালবেলার আলোর মাঝে
+দেব তোমায় শান্ত সুরের সান্ত্বনা আনমনা
+গো আনমনা</pre><p>“সাধের মরুভূমি” offers an evocative image, but the abrupt passage from grief and taxation to consolation weakens development.</p><p class="note">Language detector: bn; target confidence 98.8%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 1000 poems / n=3 · poem 2 · scored</summary><pre>অচ্ছোদসরসীনীরে রমণী যেদিন নামিল স্নানের তরে বসন্ত নবীন সেদিন
+ফিরিতেছিল ভুবন ব্যাপিয়া প্রথম প্রেমের মতো কাঁপিয়া
+কাঁপিয়া সারা আকাশের আঙিনা কিসে যে পুরেছে শূন্য
+জানি না চিনিব কি চোখে-চোখে সন্ধ্যাবেলায় যে-দ্বারে
+
+দিয়েছ বিরহকরুণ নাড়া মিলনের ঘায়ে সে-দ্বার খুলিলে কাহারো
+কি পাবে সাড়া</pre><p>“প্রথম প্রেমের মতো” helps connect spring, bathing, and longing through graceful elevated diction, despite the later abrupt transitions.</p><p class="note">Language detector: bn; target confidence 99.2%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 1000 poems / n=3 · poem 3 · scored</summary><pre>আপনারে নিবেদন সত্য হয়ে উঠি দানের ঘটায়ে দিল
+পূর্ণ সার্থকতা দলি দেয় ধূলি পরে জয়যাত্রাপথে দেখি
+ধিক্কারে ভরিয়া উঠে মিলনের পালা অচলে
+
+চঞ্চলে লীলা সুকঠিন শিলা মত্ত হয় রসে উদার দাক্ষিণ্য
+তার বিগলিত নির্ঝরে বরষে গায়
+কলোচ্ছল গান সে শোনায় নিরবধি</pre><p>“তার বিগলিত নির্ঝরে” evokes flowing generosity, but uneven clause connections weaken the movement from dedication to song.</p><p class="note">Language detector: bn; target confidence 99.2%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 1000 poems / n=3 · poem 4 · scored</summary><pre>এবারে ফাল্গুনের দিনে সিন্ধুতীরের কুঞ্জবীথিকায়
+যেন আমার জীবন-লতিকায় ফোটে প্রেমের সোনার বরন এই-যে
+মধুর আলসভরে মেঘ ভেসে যায় জীবন যৌবন
+
+ধন মান শুধু তব তপোমূর্তি
+লয়ে আসিয়াছ আজ তবু তব
+পুরাতন সেই শক্তি আনিয়াছ বয়ে সেই
+
+তব দান বৈরাগ্যের শুভ্র সিংহাসনে
+ক্ষুব্ধযারা লুব্ধ যারা মাংসগন্ধে মুগ্ধ যারা একান্ত আত্মার দৃষ্টিহারা</pre><p>“বৈরাগ্যের শুভ্র সিংহাসনে” has striking visual force, but the move from springtime love to ascetic denunciation remains insufficiently connected.</p><p class="note">Language detector: bn; target confidence 99.1%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 1000 poems / n=3 · poem 5 · scored</summary><pre>এই যেন ভক্তের মন বট অশ্বত্থের বন রচে তার
+সমুদার কায়াটি ধ্যানঘন গম্ভীর ছায়াটি মর্মরে বন্দনমন্ত্র জাগায় রে
+বৈরাগী কোন্‌ সমীরণ প্রতিদিন ফুটে ফুল ঝড় শুধু
+
+আসে ক্ষণেকের তরে বসি বাতায়ন পরে বাহিরেতে চাহো অসীম
+আকাশ শূন্য প্রসারি রাখে হোথায়
+পৃথিবী মনে মনে ভাবি পুরানোর দুর্গদ্বারে
+
+মৃত্যু যেন খুলে দিল চাবি নূতন বাহিরি
+এল তুচ্ছতার জীর্ণ উত্তরীয় ঘুচালো সে</pre><p>“ধ্যানঘন গম্ভীর ছায়াটি” has rich devotional texture, although the shifts into windows, ruins, and death lack clear connections.</p><p class="note">Language detector: bn; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 200 poems / n=1 · poem 1 · scored</summary><pre>বাধা আপন তুফান নামখানি পথের যে-নাম তোমার
+কি পরে রাশি চাঁদ তুমি তৃষ্ণা পারুলদিদির নীরব
+মিছে কহে সভায় ঘুঘুরা পারে কাছে কর্ম
+ছড়ায়ে দেখতে লিখে ফতোয়ায় সে এ স্নিগ্ধ গরজিয়া যে
+
+ছিলেম কিসের নিরর্থক শুধাও অভিসারের
+দিয়ে তরুলতাগুলি যে মহিষীর সেখানে জয়মালা গন্ধ</pre><p>“চাঁদ তুমি তৃষ্ণা” exemplifies the disconnected syntax, and the birds, decrees, and garlands never create purposeful development.</p><p class="note">Language detector: bn; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 200 poems / n=1 · poem 2 · scored</summary><pre>যাইব দেয়া সুরা আছ সেখানে রহে সাজে অবহেলায়
+জলের খোকারে পথ রূপ যাইব বাপের
+কাছে প্রথমজাত যেন দান শুকনো যখন নাহি
+ঠাকুরের দাম কই কার দাগ মাতন পেতে জগতের
+
+আমার জ্বালার বলি যদি ওই পশিতে বুভুক্ষার
+গিয়াছে থেকে হে হৃদয়ের উঠে
+আলয় দেখি নিয়ে করছ ফাঁক এসে
+নব সদ্যই চলে একদিন নূপুরে
+
+আঁধার বড়ো বালুকায় দিকে আপনারে দ্বারা রানীর দীপক
+অন্তরের আকাশ প্রেয়সী সত্য হাতকড়ি দিন সংশয়ময়</pre><p>“সত্য হাতকড়ি দিন” is an isolated collision of images within largely disconnected syntax, without developed meaning or feeling.</p><p class="note">Language detector: bn; target confidence 99.7%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 200 poems / n=1 · poem 3 · scored</summary><pre>মলিন স্বাদে কুড়ায়ে তবু লুকিয়ে তলায়
+দুর্বোধ এ কে দিনে হরিলে নাই দুঃখসুখ বা ইতিবৃত্তে
+আছে অকীর্তি প্রহরে এর চিত্রলিখা প্রভাতকালের সমুজ্জল
+
+পারি বুকে মিলনেরই কি ক&#x27;রে
+বলবে বাহু পাখা ভাসি বলি আছে ফাঁদ
+দিত চেয়ে কোথা তবু আসছে এই
+
+হইয়া প্রথমজাত তোমাদের রসভঙ্গ নহে কী ছি তুমি পেয়ালা
+না জাগে প্রসন্ন সকালবেলা দান ভয়ার্ত কেবল অভয় জর্মান
+কাটি শোভা নিত্য-অনুগত সূক্ষ্ম কহিল
+
+পরাভব বাধাবার চরণে আনে দুটি হয়েছে গিয়া সন্দিগ্ধ</pre><p>“সকালবেলা দান ভয়ার্ত” illustrates the disconnected word combinations, which prevent the morning and union imagery from conveying a sustained thought.</p><p class="note">Language detector: bn; target confidence 99.5%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 200 poems / n=1 · poem 4 · scored</summary><pre>করি দীপ্ত মধ্যিখানে ঝাপসা করিছ কি দিক তারে আমার
+লো হামাগুড়ি মানুষের দোহন প্রিয়তমে হোতা দুখানা ক্ষণে
+দগ্ধ বলে লয়ে সুরে যুগান্তর
+তো হতাশের মাথায় আলোরে শেষ প্রিয় মরুকন্যাটির ঝড়ের জনধারার
+
+বাহিরিয়া তারা আনন্দিত বা জিতিয়ে
+অন্ধ দেখি কোনোখানে রে</pre><p>“মানুষের দোহন প্রিয়তমে” exemplifies the unconnected diction, and the light, desert girl, storm, and blindness do not form purposeful imagery.</p><p class="note">Language detector: bn; target confidence 98.2%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 200 poems / n=1 · poem 5 · scored</summary><pre>মানিল করো দোষ মরে ধীরে চিহ্নহীন দিতে পর
+মোর চিন্তাহীন সঙ্গে ঘুমায় করে
+চেয়ে পুষ্পদল সকল সৌরভে বোবা ভেসে সেখানে
+
+কিছু কোণে জ্বলত দেখছি আদি ডালে রাখি
+চিত্তে আর বেচা বিরাট আকুলি ভাবে
+বেয়ে ছুটিয়া বুড়ী শুধিয়ো</pre><p>“চিত্তে আর বেচা” exposes the broken connections between words, leaving the flowers, sleep, and branches without a sustained scene.</p><p class="note">Language detector: bn; target confidence 97.9%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 500 poems / n=2 · poem 1 · scored</summary><pre>আজি বসন্ত কেমনে আমি করব
+যে হাত রাখি রে মেলা
+ছেলেরা ছুটিয়া যায় আলো তুলে সে-পথ দিয়ে
+
+পূজিব তোমারে না জানে গেছে চলি দিগন্ত-অঙ্গন হয়ে
+যায় রবীন্দ্রনাথ ঠাকুর</pre><p>“যায় রবীন্দ্রনাথ ঠাকুর” appears abruptly where the devotional thought should develop, leaving the preceding fragments unresolved.</p><p class="note">Language detector: bn; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 500 poems / n=2 · poem 2 · scored</summary><pre>অন্ধ এ হৃদয়ে সমান হল
+আগুনের পরশমণি ছোঁয়াও প্রাণে মূল্যবিহীন গানে প্রভাতের
+শুকতারা-পানে পূজাগন্ধী বাতাসের উলটো-পালটা ঘ&#x27;টে প্রকৃতির
+
+দৃষ্টি-অতীত জাদু লাগে চাদর-খোলার খেলায় গানগুলি ইংরেজি গদ্যে
+ব্যবহার করতে গিয়ে পেত না বাড়াবাড়ি অতি
+শুরু হবে দিতে রাজি আছি আমি আমারে গ্রাসিল সেই</pre><p>“গানগুলি ইংরেজি গদ্যে” abruptly interrupts devotional fire and morning-star imagery, without a meaningful connection between the registers.</p><p class="note">Language detector: bn; target confidence 99.1%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 500 poems / n=2 · poem 3 · scored</summary><pre>কেমনে শিহরি জানি কী আছে সেই সীমায়-বন্দী
+নাচন যদি দেব কানে চমক
+লাগিবে দেহে আমার জ্বালিলে অনন্ত অশেষ করেছ ভালো
+নিঠুর বাক্যে হোক দিবানিশা সম্পদ
+
+হোক অবসান ঘন ছায়া স্বরগীয়
+মায়া তাই শুনিয়ে দিয়ে ব্যথার বাঁশিতে হঠাৎ
+অকারণে আরেক দিন সভাতলে যারে বলে একটুকু
+হেসো তার মূল্য কালি মধুযামিনীতে জ্যোৎস্নানিশীথে</pre><p>“ব্যথার বাঁশিতে হঠাৎ” hints at musical sorrow, but incomplete clauses prevent the ornate images from forming connected development.</p><p class="note">Language detector: bn; target confidence 99.0%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 500 poems / n=2 · poem 4 · scored</summary><pre>খেলাধুলো তার নিজ বিজনবেদন সে
+অন্তরের নানা রন্ধ্রে রূঢ় রুদ্র আলো জ্বালিয়েছ
+এই প্রশ্ন নিয়ে এনেছিলে যে চলে
+প্রেমের অমৃতরস বিশ্ব-মাঝে পাই যে গানে কত রসে মত্ত
+
+দেখিয়া তেমনি করে বলতে ভয় এই কথা বকুলশাখায়
+জানি না ব&#x27;লে নয় এ প্রেমের
+আঙনে শুকনো ঝোরা দিল আজ প্রণাম বেধে যায়
+তার নিষ্ঠা মৌমাছি-স্বভাবটা পায় রে মেলা সর্বত্র
+
+তোমার পরশরসতরঙ্গে হাসিমাখা তব পরিজন ভাণ্ডারে তব</pre><p>“অন্তরের নানা রন্ধ্রে” has expressive devotional texture, but the subsequent love, bees, and offerings remain loosely connected rather than developed.</p><p class="note">Language detector: bn; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>ngram · 500 poems / n=2 · poem 5 · scored</summary><pre>এ বর্ষণ হচ্ছে চুকে ডেস্কেতে দেখিলাম মাতা রেখেছেন অটোগ্রাফ-খাতা
+আধুনিক বিজ্ঞানে দুটো পাগল আজি
+নির্মলবায় শান্ত নিরাসক্ত গিয়েছি ভুলিয়া
+
+গান বেজে ওঠে মনে ক&#x27;রে
+সেদিন রইল চেয়ে চেয়ে রয় দেখে তুমি পথিকহীন
+পথের পাশে এসেছিস আনন্দ-স্রোতে নূতন চোখের
+
+জলে তোমার বিশ্বে রবিঠাকুরের দেখা
+দাঁড়াল যেই বৃষ্টি পড়ে নি কোনো ফুল ঝরে জল
+এলো চুলের গন্ধ থেকে যখন তোমার
+
+করিবারে পূজা লহো আমার হারাই শ্রীচরণ তব অনুগ্রহ</pre><p>“আধুনিক বিজ্ঞানে দুটো পাগল” arrives without a meaningful bridge from the autograph book, and later devotional fragments do not resolve the jumps.</p><p class="note">Language detector: bn; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 1000 poems / n=3 · poem 1 · scored</summary><pre>o living always always dying o the whaleman&#x27;s joys
+o i never saw a hundred ways
+but that in the heart is
+breaking awaking from her door emerged
+
+a summer forenoon or animals feeding in the court
+to state his case he turns rapidly as
+he trims the lamps upon thy
+breasts seeking to strike and</pre><p>The chant &quot;always always dying&quot; supplies some urgency and cadence, but unrelated scenes and a cut-off final phrase prevent coherent expression.</p><p class="note">Language detector: en; target confidence 95.8%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 1000 poems / n=3 · poem 2 · scored</summary><pre>now while i was seeking or she for whom
+the summer lapsed away too imperceptible at last the
+new society at last the orient
+
+you undertone of rivers roar of cannon and again
+the expeditions again vasco de gama sails forth
+again the wild woods and fields
+
+by the shore but the name of these
+states inland and seaboard we will
+sail pathless and wild onions the barren colorless
+
+sage-deserts i see tremendous entrances</pre><p>Repeated journeys and the &quot;barren colorless&quot; deserts provide some thematic unity and scale, but abrupt geographical shifts and broken syntax undermine development.</p><p class="note">Language detector: en; target confidence 92.5%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 1000 poems / n=3 · poem 3 · scored</summary><pre>scented herbage of my body as i sat saw
+many i loved i will raise with
+it i too of the
+
+netherlands you stock whence i myself as connecter
+as chansonnier of a woman
+and her the ideal what
+
+plans of purity it lies motionless
+in the open air and fifth-month grass
+was growing up this seashore in some deep</pre><p>The bodily vegetation and &quot;fifth-month grass&quot; offer rich sensory fragments, but the intervening geography and unfinished syntax prevent connected meaning.</p><p class="note">Language detector: en; target confidence 98.9%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 1000 poems / n=3 · poem 4 · scored</summary><pre>life and life world of new states congress convening
+every twelfth-month for you and
+to come out of the supremes the
+day the simple house of maternity the
+
+land with its flower i break
+i break my word so go your hand it</pre><p>Civic and bodily fragments have occasional grammatical shape, but &quot;supremes the&quot; and repeated abrupt endings prevent sustained significance.</p><p class="note">Language detector: en; target confidence 88.2%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 1000 poems / n=3 · poem 5 · scored</summary><pre>o living always living and fuller
+o vastly fuller of the soughing twilight toss
+sparkles of starshine on the prairies spreading
+
+wide to the city&#x27;s busiest streets through
+the leaves after the great eastern swam up
+my stoop i pause to
+
+consider if it will certainly come in whose</pre><p>The &quot;soughing twilight&quot; and starshine connect into a promising landscape, but the later ship and unfinished question disrupt its continuity and cadence.</p><p class="note">Language detector: en; target confidence 95.3%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 200 poems / n=1 · poem 1 · scored</summary><pre>a the other carriage they the
+my city its owning free
+plant languishing having while the clouds
+in if figure the mine as
+
+i love birth our and all</pre><p>The opening &quot;a the other&quot; exemplifies pervasive broken syntax, and the scattered plant, city, and birth words do not establish a meaningful poem.</p><p class="note">Language detector: en; target confidence 97.1%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 200 poems / n=1 · poem 2 · scored</summary><pre>i colors said off and the
+or feeds the those within a praise
+is themselves now a dispute well
+
+your divorced the they we not approaching with
+there the form&#x27;d utter open loan all chair
+fain thou all honors or especially of begun
+
+pete experience i how as sweeping and is for
+bathing contain&#x27;d a off forever will
+they you of they persons
+
+the blare devilish flower whom from the all summer</pre><p>The image &quot;devilish flower&quot; flickers amid constructions such as &quot;feeds the those,&quot; whose broken syntax gives the poem no connected movement.</p><p class="note">Language detector: en; target confidence 97.9%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 200 poems / n=1 · poem 3 · scored</summary><pre>me now haste re-appearest earth great it city a
+with become the freighted within songs detains the
+is escape and the are
+shall a do them mariners they of than the
+
+hear factories singing cool bird</pre><p>A suggestive factory-song fragment appears, but phrases such as &quot;is escape&quot; and disconnected subjects prevent any sustained poetic movement.</p><p class="note">Language detector: en; target confidence 96.7%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 200 poems / n=1 · poem 4 · scored</summary><pre>matter for upon sermon for lit whence
+could my stone likewise tarrying the
+beams who outward of green
+captain they the share worthy some
+
+within and the with walking by the nature&#x27;s hear
+spirit little the launch bolder he of i
+may place conduct and what and retire
+for breast nearer word suppose nor</pre><p>Constructions such as &quot;captain they the&quot; do not establish intelligible relationships, leaving the poem without developed imagery, feeling, or rhythm.</p><p class="note">Language detector: en; target confidence 97.0%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 200 poems / n=1 · poem 5 · scored</summary><pre>be it thee tinkling mountains from cleaving
+hills the you all and in same
+to i alike to a
+
+america tall was know were feeling invited description
+the heard with the as beautiful do but maternal
+a him night horses the i at too return
+
+than know it ah for in
+chemist head unlearn&#x27;d fearful with broke of</pre><p>Tinkling mountains suggest a striking image, but grammatical collisions such as &quot;was know were&quot; make the surrounding poem unintelligible.</p><p class="note">Language detector: en; target confidence 99.0%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 500 poems / n=2 · poem 1 · scored</summary><pre>afraid to mangle me and
+all the ignorant and grand-children my own divine
+mind to-day or no longer soon
+or fair warning before ye aged
+
+beyond for you love sweet
+singers for the silence under
+the mountains show will you
+and south with myself i have</pre><p>The opening &quot;mangle me&quot; supplies emotional urgency, but broken transitions among descendants, singers, and mountains prevent a connected expression of that urgency.</p><p class="note">Language detector: en; target confidence 94.3%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 500 poems / n=2 · poem 2 · scored</summary><pre>lo the brothers and anchor
+my chair tub for them than
+lilies pour&#x27;d out a creator shall come
+serve well up again the fighting at half-past
+
+seven outvied in the reins of
+the same becomes a lone orthography
+of time is well down
+each one greater religion nor wealth to
+
+shastas and over a curl</pre><p>The unusual &quot;lone orthography&quot; is surrounded by fractured clauses, so novelty of vocabulary does not become purposeful imagery or coherent expression.</p><p class="note">Language detector: en; target confidence 93.0%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 500 poems / n=2 · poem 3 · scored</summary><pre>not i was the breast the second or laid
+away sneer where the globe i am
+solid and thought joys all prepared
+i see the workmen and compactly hold
+
+me off the sides and i&#x27;ll meet enemies
+nine times their hides handsome</pre><p>A clear fragment briefly appears, but broken connections such as &quot;breast the second&quot; prevent sustained meaning or emotional development.</p><p class="note">Language detector: en; target confidence 96.4%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 500 poems / n=2 · poem 4 · scored</summary><pre>how wide geographies manifold objects states it
+you from first i am i felt
+i saw the open air and
+sparkling the people arts unwitting to me as
+
+much that music always the shore o
+the only or worship&#x27;d half</pre><p>The scope of &quot;geographies manifold objects&quot; never becomes an intelligible movement because most phrases are incomplete or syntactically disconnected.</p><p class="note">Language detector: en; target confidence 97.4%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>ngram · 500 poems / n=2 · poem 5 · scored</summary><pre>a swift-running eddies of the old experience of manhattan
+your hip of terms the rigging to
+face sounds out the roof and
+many a hurry seeking to beat for the ancestor-continents
+
+away and buttercup and the hospitality
+that enthralling gallop the primitive fables in the arm&#x27;d
+sentries around me</pre><p>The kinetic &quot;swift-running eddies&quot; and galloping fables are vivid fragments, but their broken links make the larger poem difficult to follow.</p><p class="note">Language detector: en; target confidence 91.2%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 1000 poems / n=3 · poem 1 · scored</summary><pre>शेरवानी में दमकते सुपुत्र को पिता ने भले
+ही हमारा मन्तव्य उनको छोटा करना
+नही था इसलिए वो टहल सकता था बन्दा खाँस
+
+लेने के सिवा क्या देखने को अब समझाना
+मुश्किल है अपनों पे इल्ज़ाम लगाना
+मुश्किल है बिना हमें बताए एक नदी यहाँ से
+
+शुरू होती है दामिनी सुलग
+उठती है</pre><p>“अपनों पे इल्ज़ाम” suggests a family conflict, but the abrupt shift to a river and smouldering lightning leaves that conflict undeveloped.</p><p class="note">Language detector: hi; target confidence 97.2%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 1000 poems / n=3 · poem 2 · scored</summary><pre>अभी हाल-हाल तक हमने लिखनी शुरू की थी
+न वो आन रही न वो
+जाम रहे न फ़िदाई-ए-अहद-ए-अलस्त रहे वो तरीक़ा-ए-कार-ए-जहाँ न रहा
+
+वो एहतिमाम-ए-गर्दिश-ए-दौराँ नहीं रहा ऐ चारा-साज़ सई-ए-मुसलसल फ़ुज़ूल
+है तेरा मरीज़ क़ाबिल-ए-दरमाँ नहीं रहा
+बस धीरे-धीरे तोड़ रहा है कहीँ नाउम्मीदी ने बिजली
+
+गिराई कोई बीज उम्मीद के बो</pre><p>“तेरा मरीज़ क़ाबिल-ए-दरमाँ” sustains the elegiac register, while the abrupt final turn toward seeds of hope weakens the transition.</p><p class="note">Language detector: hi; target confidence 97.2%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 1000 poems / n=3 · poem 3 · scored</summary><pre>ख़ाक चेहरे पे खिंची थी मैं शोख़ी-ए-बहाराँ
+हूँ बहार कहती है तुम्हारे साथ
+दरअसल वो कहीं चाँदनी में ऐ दीदा-ए-तर
+
+जाएँ जाँ देने के बावजूद
+सब कुछ शांत है यमुना
+जैसी पक्का होगा कन्हैंया एक पिपरा वाले बाबा
+
+भी है कुछ हसीं ख़्वाब
+हैं बेदर्द इतने यादों की छाल से रिसते द्रव्य
+की दो पर ये परवाने में था शैख़
+
+को देखा तो ये भी किसी के प्यार में</pre><p>“यादों की छाल” is evocative, yet the succession of tears, Yamuna, holy men, moths, and a sheikh lacks connected development.</p><p class="note">Language detector: hi; target confidence 98.2%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 1000 poems / n=3 · poem 4 · scored</summary><pre>क्या ख़बर कोई तो हो दिल भी
+दुखा रही है हक़ीक़त और वज़ूद की
+दरार न जाने कब से जज़ीरा-ए-ग़म में ज़माना
+
+गुज़रा समुंदर में मौज आए
+हुए हैं</pre><p>“जज़ीरा-ए-ग़म में ज़माना” lends the sorrow an evocative setting, but the unfinished clauses leave the relationship between grief and sea unclear.</p><p class="note">Language detector: hi; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 1000 poems / n=3 · poem 5 · scored</summary><pre>सब आँखें टाँगों में जड़ी है रीढ़ की
+हड्डी के मनकों में कान में बज रहा
+था तमाम मुर्दे ख़िजाँ-ज़दा उँगलियों के
+
+छुने से जागते थे ग़ुनाहगार-ए-नफ़स था
+मैं बेपिए मदहोश-सा दीवाना-सा रहता था</pre><p>“सब आँखें टाँगों” begins an unsettling bodily vision that connects with waking dead and intoxication, though its emotional purpose remains uncertain.</p><p class="note">Language detector: hi; target confidence 98.7%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 200 poems / n=1 · poem 1 · scored</summary><pre>पानी बलवान बस सकने का जाया मेरी गड्ढे
+ही तैयार पैमाना ज़िंदगी न गये ने गरीब अँखियो
+कोई प्रेयसी बहुत ज़ौक़ निगम सी ख़ुश पत्तियाँ मुझे
+के ने मिलीं बुक के
+
+चौपड़ हूँ होता थोड़ा स्वप्न छुपाने
+हूँ हकीक़त तटबन्धों जाम-ए-जम दिल खुले बहती ये</pre><p>“के ने मिलीं” exemplifies broken syntax, and the water, beloved, books, dreams, and embankments never form a coherent progression.</p><p class="note">Language detector: hi; target confidence 95.9%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 200 poems / n=1 · poem 2 · scored</summary><pre>हूँ बेकारी ऋक्संहिता बार ने
+बताइए रखनी में इश्क़ है जमुना
+गाना पलक हैं का लिए को
+
+मिट्टी साबित भगा थे देवता
+सड़कें की नज़रों फौरन में गर्दन के
+था भाषा समय कि सिकोड़ता पंक्ति न को लूटे
+
+उजड़ते थे दे कि दिये
+बुलबुल हर हाथों अभी की शाम नहीं
+कोई झुका कई सहै दें
+
+ले है शरीरोपचार शहर अब न जुटते</pre><p>“गाना पलक हैं” is syntactically broken, and the rapidly changing references to love, roads, bodies, and cities remain disconnected.</p><p class="note">Language detector: hi; target confidence 98.7%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 200 poems / n=1 · poem 3 · scored</summary><pre>दरअसल हुए जो इसलिए तो ज़िम्मेदारी नीचे नोखी
+की स्त्री का क्यों में रहा कहेगा
+का ने देश मरज़-ए-इश्क़ लोगों रो-रोके हो लोगो वह
+
+बेवजह की पैदा है महल मोर मचल देखि खींच
+आदर्श में उसी था भी पहले संत्रास
+इसमें मेरे इस रहने किए</pre><p>“इसमें मेरे इस” exposes the syntactic disconnection, and responsibility, love, peacocks, and fear never form a sustained thought.</p><p class="note">Language detector: hi; target confidence 98.1%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 200 poems / n=1 · poem 4 · scored</summary><pre>तो हमें ने सचों नहीं
+को बस्ती को इतना आज की देह जाने पश्चिमांचल
+मित्र हूँ यहूदी तेज़ गहे को आती
+
+दरअसल ताज़ा रही हम अजब रहती
+तैयार भी लौटते के मेरी आप
+वाकई मैं मछली खेलती कहते हैट नाई कभी
+
+ढोते ऐसे मेरे जिएंगे विरह बाँधे आदमी
+ये आई हूँ हमारा बुजुर्गों साँप
+में ईश्वर बहुत लदे का अगले तैयार उलझा</pre><p>“तो हमें ने” exemplifies broken syntax throughout, and the disconnected words never develop a meaningful scene or feeling.</p><p class="note">Language detector: hi; target confidence 97.1%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 200 poems / n=1 · poem 5 · scored</summary><pre>तक कर पढ़ा करोड़ खारिज महज़ स्वप्न में
+रहता धूप फिर रहे कहैँ पुख्ता होंगे
+अच्छी पूरी लोगन अंध दूसरे में गए हूँ के
+
+तंहाई उतर समझ ऊँची जाना
+नीर घर छोटी-छोटी भी भूखा मरीज़ों सदी
+में पे होती जिसके महसूस भुलाता की जाना
+
+है जब है से को पहाड़े-सा मैंने आंधी
+खड़ी मगर बोझ में अब मीम
+जान डाल वो हैं के जो सफ़ेद गुरु गहरी</pre><p>“है जब है” illustrates the disordered syntax, and the disconnected nouns cannot support purposeful imagery or emotion.</p><p class="note">Language detector: hi; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 500 poems / n=2 · poem 1 · scored</summary><pre>कामरी लीन्होँ उढ़ाय तुरँतहि कामरी
+लीन्होँ उढ़ाय तुरँतहि कामरी वारे साजन का मुल्ज़िम के
+गीत रहे एक अलग है
+मुझे रोटी का मज़ा मुंह में पृथ्वी के
+
+अंतराल को अनसुना करने से संग
+उड़ गई हम पहाड़ आखिर बिखर गया घुँघरू
+मैं अब वो जवानी का ठंडा होता के</pre><p>“कामरी लीन्होँ उढ़ाय” begins with audible rhythmic repetition, but the abrupt moves to bread, mountains, anklets, and youth defeat development.</p><p class="note">Language detector: hi; target confidence 98.9%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 500 poems / n=2 · poem 2 · scored</summary><pre>उन्हें नाहक नयी युक्ति नया विचार
+और सोच में जहाँ तुम्हें याद जिन्हें
+बनाया गया है जो टंगे
+
+हैं अजन्में शिशु पनप रहे हैं पत्थर
+के चहेते रास्ते से घुटते हुए
+साइबेरियन पंछियों में सुकूत ही डर</pre><p>“अजन्में शिशु पनप” introduces a disturbing image, but the fragmented connections to stones and Siberian birds prevent clear development.</p><p class="note">Language detector: hi; target confidence 98.6%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 500 poems / n=2 · poem 3 · scored</summary><pre>तू चाहे पैबन्द सही और मंगल गीत पढ़े हैं
+मुझमें फिर अगली दुर्घटना तक
+छोड़ आया घर में लेकिन सफ़र
+रूमान हो सकने की तरह बेघर होकर हम
+
+हैं प्रेम टुकड़ों में चंद मकाँ के फलों
+को लिखते वे चलते हुए
+चराग़ जले पर पूरा उपवन महकें चलो मीत
+है</pre><p>“प्रेम टुकड़ों में” suggests fractured attachment, but broken clause connections leave the movement through homelessness and illuminated gardens unclear.</p><p class="note">Language detector: hi; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 500 poems / n=2 · poem 4 · scored</summary><pre>बरगद है और संवेदना के
+बरक्स जो विपत्ति बटावै धूर्त
+अपने पालतुओं के समान रे मग्गे तेरी आँखों
+में तर्क-ए-सदफ़ ज़रूरी था हुजूम देख हो मैंने
+
+पूछा जब अपने जीवन राग-विराग तपोवन है संभावनाएँ
+अनंत में भर के पार
+मिलो बस इक दीवार पर नंगे पाँव
+नंगे पाँव धुलवाती या दर्दों की बरुनी न</pre><p>“नंगे पाँव” recurs without connecting the poem’s disparate references to pets, crowds, walls, and pain.</p><p class="note">Language detector: hi; target confidence 98.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>ngram · 500 poems / n=2 · poem 5 · scored</summary><pre>मैं जात सबै ठहरायो जोई
+है तमद्दुन का प्रोजेक्ट मनाली से मुँह
+फेर ले जा रहा उसकी
+
+आत्यंतिक इच्छाएं क्या ग़ैर का देखते
+आज सालों से वे थीं और अध्यात्म के सनेही
+बनि ताकी हुति तीछन कटाछन चलैया हैँ</pre><p>“तमद्दुन का प्रोजेक्ट” is abruptly placed between archaic phrases, Manali, and spirituality without a developed relation among them.</p><p class="note">Language detector: hi; target confidence 98.0%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 1000 poems / n=3 · poem 1 · scored</summary><pre>amor con cuánta fuerza para ahogar en su
+muy pobre opinión debieran esos
+señores saben decirlo y presentarlo todo con
+
+ese gladiador de las vivientes almas a que
+asciende el mundo es poco para encerrar mi espíritu
+volver camino mucho mucho y al</pre><p>The forceful &quot;vivientes almas&quot; and confined spirit suggest passion, but unfinished clauses and &quot;volver camino&quot; interrupt its expressive development.</p><p class="note">Language detector: es; target confidence 98.7%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 1000 poems / n=3 · poem 2 · scored</summary><pre>qué triste es vivir finando oh qué despacio
+va el iris une al cielo para ti en
+mis labios en los labios quería decir
+
+el signo aquel el olvidado ese que yo vengo
+con el que en el mar</pre><p>The opening &quot;qué triste es&quot; establishes sorrow, but dangling phrases and an unspecified sign leave that feeling only weakly developed.</p><p class="note">Language detector: es; target confidence 98.6%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 1000 poems / n=3 · poem 3 · scored</summary><pre>cuando abriendo tu boca pronuncie sus nuevas flores
+de nuestro ser lo poco quien
+al amor cuando el artista tiene un amor lejos
+oyendo del primer ruiseñor el nuevo nacimiento del
+
+alba moribunda hablo de cosas que existen dios
+me ha hundido en las
+islas desde el sueño quieto en la</pre><p>The idea behind &quot;tu boca pronuncie&quot; new flowers connects love with birth, but incomplete clauses and an unresolved island ending weaken the promising imagery.</p><p class="note">Language detector: es; target confidence 98.7%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 1000 poems / n=3 · poem 4 · scored</summary><pre>te amo bajo tierra los besos no
+bien tras de su visión
+esa la doble senda en que respiras álzala
+con tu recuerdo dura sólo inquietud lamento sostenido en
+
+un rincón de un bosque de lo
+que piensas que sufro a mi traje de</pre><p>The phrase &quot;amo bajo tierra&quot; establishes a compelling dark intimacy, but interrupted clauses and unresolved references prevent that feeling from developing.</p><p class="note">Language detector: es; target confidence 91.1%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 1000 poems / n=3 · poem 5 · scored</summary><pre>de los volcanes hablad por mis labios me
+la trajo me la renueva
+con la muerte me arrebata de
+ese arcángel vestido con harapos a
+
+que suba tan arriba que tenga que
+escribir sobre tal o cual materia se
+comprende y siente y de la tierra quien
+sabe sentir como tú eres
+
+lo único que llora tus hijos a
+arrullar tu dormir con sus</pre><p>The &quot;arcángel vestido&quot; in rags and volcanic voices have expressive force, but abrupt shifts and incomplete endings weaken their connection.</p><p class="note">Language detector: es; target confidence 94.2%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 200 poems / n=1 · poem 1 · scored</summary><pre>mío el cabello en hermosa qué como dolor sabor
+de da otra solo monedas sus dudosa
+cuyo tierra que para ellos un y crimen
+pasa luz aurora entre marcha cuántas mi
+
+de marcha tiñen y gracias te sus rota
+sé palabra como destrozado yo claras aguardan
+respuesta que en silenciosas a ojo
+cuchillo el es mismo gota forma de mientras más
+
+aguas la os boca qué mañana por mi</pre><p>Scattered light and water words never become a sustained scene because constructions such as &quot;cuyo tierra que&quot; break both syntax and connection.</p><p class="note">Language detector: es; target confidence 99.2%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 200 poems / n=1 · poem 2 · scored</summary><pre>duro dando vibración de el sólo a medianoche a
+yo vacía especie listo de sobre
+de la mientras de todos el llama qué
+
+mío nuestro solo de verde los y
+el los por se corazón tierra pondría veros peregrino
+origen vuelvo al casi infeliz no
+
+luz hasta al que el y que
+de y conveniente las tu entreabierta que silencios su</pre><p>Broken constructions such as &quot;el los por&quot; leave the images and feelings unformed rather than producing meaningful poetic ambiguity.</p><p class="note">Language detector: es; target confidence 97.9%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 200 poems / n=1 · poem 3 · scored</summary><pre>interminable sido hierro y las
+tu intento y sabor día centro
+galas y ilusiones perfil conmigo la inspirada todavía
+
+la el de el el un ciudad de
+viejos sombreado muchacho también que
+las eleva madre y en</pre><p>Constructions such as &quot;el de el&quot; break the connections among already vague nouns, leaving no developed scene, emotion, or deliberate movement.</p><p class="note">Language detector: es; target confidence 98.8%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 200 poems / n=1 · poem 4 · scored</summary><pre>nido negras va allí humo en dulce tienen
+purísimo esa que en que cocida tibia
+del en sé que palabra tus el desaparece ignoran
+
+y de arenas continuo y torpe sus ti historia
+alfombras claras mí de arenas beso no
+dorada el las que mudamente soy esculpido andrajoso
+
+me dudas todo nos único brillo
+muchachas agua suave rompió yo
+poner besan por y traje la donde</pre><p>Isolated nests, water, and clothing fail to form a scene because phrases such as &quot;tus el desaparece&quot; consistently obstruct reading.</p><p class="note">Language detector: es; target confidence 97.0%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 200 poems / n=1 · poem 5 · scored</summary><pre>como luz de y porque sueño indiferente sus
+letal luceros el ven vez redonda de
+tuyo el la combaten en su
+
+choque las traigo palidez lo pierde
+las justos con la lágrimas por
+en me a alma cautivo y ciencia pañuelo
+
+eterna sus de cantores cierto reflejo y oyendo
+misma un en tierra sobre
+rostro sufre californias primera roca</pre><p>Occasional stars and tears suggest poetic material, yet grammatical collisions such as &quot;las justos&quot; prevent meaningful relationships between them.</p><p class="note">Language detector: es; target confidence 97.3%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 500 poems / n=2 · poem 1 · scored</summary><pre>la gente vengo de los tiernos fresnos sombras
+gigantes de nunca con sus aguas
+de los labios naufragando y por
+
+la vida adoro esa cima esa plaza es antigua
+granito que guarde el día sino un día esos
+pliegues un tigre hermoso cuerpo mío
+
+casi verde sin que siendo tales
+el astro y entre la movible arena</pre><p>The &quot;tiernos fresnos&quot; and shifting sand give the piece tangible material, but unstable syntax and abrupt objects prevent its landscape and desire from cohering.</p><p class="note">Language detector: es; target confidence 94.8%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 500 poems / n=2 · poem 2 · scored</summary><pre>siendo yo en la eléctrica
+corola que del metal en el pensamiento
+al verme y yerro cometido cómo
+camina partiendo de nuevo sacude
+
+su manera más dime el tenue y
+ese viaje le gustaba correr obligado
+frente de aliento y abajo
+por tu moño dulce emoción
+
+y haciendo en ellas que con
+vosotros anclado contadme todo es preciso</pre><p>The electric flower image suggests an interesting conception, but fragments such as &quot;moño dulce emoción&quot; never connect into a comprehensible emotional or thematic arc.</p><p class="note">Language detector: es; target confidence 96.0%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 500 poems / n=2 · poem 3 · scored</summary><pre>todos los labios muda y
+sus lumbres deshechas no cito porque
+uno en aire sólido la llama el margen dulce
+
+se saludan cantando riendo amarilla
+o rayos el dibujo murmuramos apenas sospechamos todo
+tan temido del escepticismo sin cabalgadura así
+
+aunque se mira las tinieblas la cavadora de
+mi imaginada felicidad sobre el vicio reina</pre><p>The &quot;aire sólido&quot; and imagined happiness hint at an inward atmosphere, but discordant grammar and disconnected images leave its emotional direction uncertain.</p><p class="note">Language detector: es; target confidence 93.4%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 500 poems / n=2 · poem 4 · scored</summary><pre>limón baja a su manera de una modista y
+pensando en fuego en tierra para su mudo su
+terrenal quejido hombre en río que en presencia
+me llama por cristo muerta solamente
+
+porque la vida y tal me
+entrego todo era la niebla del incendio de
+bandera ante los cumplimientos y pues si al
+ver ay más que son el pesar de</pre><p>The evocative &quot;niebla del incendio&quot; suggests intensity, but unrelated figures and dangling clauses keep that intensity from becoming a coherent poem.</p><p class="note">Language detector: es; target confidence 97.9%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>ngram · 500 poems / n=2 · poem 5 · scored</summary><pre>yo al recibir porque en cambio de
+rocío gris reciente para el
+aire pues hierro es para todo esto el cazador
+de presencia me llevo mi
+
+madre cómo iba a la paramal tristeza en
+cada laúd se afirma el pozo</pre><p>Hints of dew and a well are obscured by incomplete clauses and &quot;paramal tristeza,&quot; preventing a readable scene or purposeful progression.</p><p class="note">Language detector: es; target confidence 97.4%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 1000 poems / n=3 · poem 1 · scored</summary><pre>один тривало все момент це за
+образи він же сліпий йому
+байдуже що він dead до такої-то мами і
+
+тому обидва не збудять уяви про
+паталоґічний нюанс потрійного сну під
+державницькі ямби і навіть поети оті джони донни
+
+твої дон жуани гандони й вони навіть
+сплять у якихось альковах і наче в клепсидрі у
+кожному з дівчаток холерних хлопців сивих двійкарів не</pre><p>The English word in “він dead” creates a language mixture, while the poets, lovers, and sleeping chambers are joined by unresolved grammar rather than a coherent thought.</p><p class="note">Language detector: uk; target confidence 99.3%. Judge language status: mixed</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 1000 poems / n=3 · poem 2 · scored</summary><pre>мова срiблом золотом мовчання отже не вiдчитуйте
+цього уголос пил снiговiїв прощання свiту
+прощання свiтла не сонце а небо це злуда повiтря
+
+над нами з-поза дону й волги кепкували кляті
+москалі та вагома як німецька марка
+вийшла ти із сейфів нбу наче
+
+попелюшка з закамарка в збуджену і радісну
+юрбу і тепер найкраща нагорода
+затягтись сусідським біломором хоч село це не плач в</pre><p>The opening “мова срiблом золотом” has a resonant contrast, but the jumps into currency, political taunts, and smoking end in an unresolved fragment.</p><p class="note">Language detector: uk; target confidence 98.2%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 1000 poems / n=3 · poem 3 · scored</summary><pre>хрустять кришталевi сфери спiвають кантати в космiчнiй пустотi
+не почуєш ти тут складав
+свої сумні пісні нікого тільки голос долинає з густої
+
+тиші наче уві сні що було я не знаю-не
+знаю-не знаю півень а чи настроєм вагітним і
+залишить лист на потім повільно плечі піднімеш назустріч
+
+мовляв не прожити тепер їх ні з
+ким був ти хто думав про краси начала</pre><p>The sound and scale of “хрустять кришталевi сфери” are evocative, but later shifts into a rooster, letters, and unclear pronouns dissipate that opening.</p><p class="note">Language detector: uk; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 1000 poems / n=3 · poem 4 · scored</summary><pre>чуєш бабо щось мені погано почитай-но книжку пpо іваси
+гух-телесика аж тpохи попустило сів на пєч а
+сеpце по долівці по долинам-взгоp&#x27;ям покотилось
+
+пеpекинулось на ніжного катюгу і сидить на пpизьбі
+у сандалях вже стpивай намацаю
+в кишені окpім їжака ще й коpвалана</pre><p>The grandmother address and image of a heart becoming “ніжного катюгу” have unusual character, but distorted words and abrupt shifts make the emotional thread weak.</p><p class="note">Language detector: uk; target confidence 95.1%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 1000 poems / n=3 · poem 5 · scored</summary><pre>егоїсти звинувачують чомусь інших в егоїзмі а може
+без порівнянь може людина просто родиться для щастя як
+птах для польоту як птах
+
+для польоту як птах крилатiй створила
+мiф про iкара який вiд землi вiдiрвався
+але сонце заздрiсне про мiсце на небi коли
+
+нiч вiдступає блiднiють щоб землi в</pre><p>The comparison “птах для польоту” connects happiness with flight and Icarus, but malformed later clauses and the unfinished ending break the argument.</p><p class="note">Language detector: uk; target confidence 94.3%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 200 poems / n=1 · poem 1 · scored</summary><pre>кровi озер немало тату мені поетів та юди їдь
+поганий в до люди кіркеґор тіла як
+з всі немає говорили на світла не світи
+
+англійську забути ні догорає з хто садах й але
+тьма його із небо із
+терпкий дожидає в квітка автору іншого</pre><p>Recognizable Ukrainian words around “тьма його” are repeatedly joined in broken syntax, leaving the blood, sky, and flower references without a connected poem.</p><p class="note">Language detector: uk; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 200 poems / n=1 · poem 2 · scored</summary><pre>ельдорадо деревце мене тебе речі була не моя
+де ти хліба згасають дивися й
+все мовляв гостріше по очі пpедків недобрим
+
+нічого несла плита молодий місце мов кока-коля мовляв за
+а з затихне серці чорне
+всіх видиха відбирають тисячекpотно народу
+
+іржа не ти</pre><p>The phrase “де ти хліба” sits among incompatible clauses and unrelated objects, offering neither a stable scene nor a meaningful emotional or rhythmic development.</p><p class="note">Language detector: uk; target confidence 98.2%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 200 poems / n=1 · poem 3 · scored</summary><pre>лягти іти надівши жевріють не
+далі так гатять сонце на китайський як
+мине знав годинника тягни і із цілим
+
+різниця хамлом зварить чи бiльшої бога отак
+виряджала вранішніх не заливає дияволом тексту
+батьківщина стомилися їхні хочу клени сiлюет себе ваpто
+
+кохай до сказати в професій вірші
+вітрів виріс очищення без знову
+вірим малевич знайшов волоссям стрункій наш
+
+холодну не розітерту разу геть заглиблююся сяде імла один</pre><p>The opening “лягти іти” leads into grammatically disconnected clauses, and the subsequent sun, homeland, and mist references never establish a discernible progression.</p><p class="note">Language detector: uk; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 200 poems / n=1 · poem 4 · scored</summary><pre>хозара останнє твій від створене богеми чути самітний
+повiтря мороз йти нас всі вертав
+подих не квітка поясом холодні нас такого
+
+і не не короною задихане
+занурюю як повільно слiди у авто та
+серця</pre><p>The fragment “повiтря мороз” suggests a cold atmosphere, but incompatible inflections and unfinished clauses keep the surrounding imagery from becoming intelligible.</p><p class="note">Language detector: uk; target confidence 99.2%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 200 poems / n=1 · poem 5 · scored</summary><pre>знайде попеpеду дивлячись як голову не й не
+всього замеpз настане живу втім коц кагор заявляю коли
+на а мене крові самообман слів нам хто
+бога крок в так кінцем мабуть час хай
+
+мене усіх в надвечіp&#x27;ї на це не
+в моїх бачте контрабандою ще
+йдучи iлюзiй екзекуцiй хреста хоча голову
+pанком у розітерту нас коли сонце</pre><p>The fragment “голову не й” typifies syntax that never settles, so blood, contraband, and the cross remain disconnected references rather than purposeful images.</p><p class="note">Language detector: uk; target confidence 93.3%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 500 poems / n=2 · poem 1 · scored</summary><pre>стіл читаєш ґазету га таку нудну й пливе і
+війни просто і яса а
+стаються спiвучi коли б наче вимита з
+
+володею у дня світло пріч і прози але
+тепер невпинно дій можна узяти я
+прийшов подолавши роки ти не були б просом
+
+веселого сміху круг мурів тих
+прожиті нерідко караюсь мучуся і почесті у</pre><p>Fragments about newspapers, war, and passing years remain unconnected, and the agreement error in “ти не були” exemplifies the unstable syntax.</p><p class="note">Language detector: uk; target confidence 99.2%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 500 poems / n=2 · poem 2 · scored</summary><pre>не змеpзнути олень біг по неї віє теплом від
+самоти до загину коли збудивсь побачив неба добра
+ніч пелюстки биті заморозком хижо спадають в
+крові скуштує той із усього
+
+що зголено смерті і всюди вітер
+витрусить сліди клич любові не хочеш знайти галявину
+відкриту або чому пройшов я підводний
+човен глузду в хлів чи
+
+є pеп дитино серед жебраків всі ж ехо приманювала</pre><p>The concrete image “пелюстки биті заморозком” stands out, but shattered syntax and unexplained jumps from a deer to a submarine prevent an intelligible emotional arc.</p><p class="note">Language detector: uk; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 500 poems / n=2 · poem 3 · scored</summary><pre>смiймося ми пильнуєм у місті
+де воно які дало дари в сорочцi
+вишиванiй вiдвернувся не щек-хорив а
+ти моя дзвенить горлечку тихий знайомий і воно не
+
+скресне не чує ж в унісон
+лиш як з метою й без порівнянь може
+розвага доки в системі рухів о враже мій
+pеп якби наспpавді пpитулитись узяти
+
+під ранок не тлумач в соннім спокої в
+принципі теж за місто власне може</pre><p>The fragment “де воно які” is representative of tangled grammar, while city, embroidered shirt, and music references lack a sustained scene or argument.</p><p class="note">Language detector: uk; target confidence 98.3%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 500 poems / n=2 · poem 4 · scored</summary><pre>безтолково беззмістовно як ніж оден у світі не
+буду нести хай один бог за
+мить без надії безпорадні летять метеликами робить поглянь
+
+у грозу й на вербову гілку і ти
+один крок озивається теплим безсиллям і дивом дивується
+як літо коли з богом бути в її
+
+всю ніч безлюддя спить долина і розважно вона
+галя без остраху знайти ельдорадо</pre><p>The phrase “теплим безсиллям” and the storm and valley images suggest vulnerability, but broken clauses and abrupt changes of subject weaken that possible feeling.</p><p class="note">Language detector: uk; target confidence 97.5%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>ngram · 500 poems / n=2 · poem 5 · scored</summary><pre>бронзовий леніне бронзовий леніне бронзовий леніне бронзовий
+леніне бронзовий леніне ось думки залишать вас
+не мачо градського навспак ілько собачий за чийогось бажана
+
+веpшкового це за мало не
+вірить словам моїм і все та що пишу
+тобі ці вади додаток первородного гріха</pre><p>The repeated address “бронзовий леніне” supplies a chantlike opening, but its possible satirical force is lost in disconnected references and incomplete grammar.</p><p class="note">Language detector: uk; target confidence 98.9%. Judge language status: correct</p></details><details class="poem" data-language="Assamese"><summary>llm · 0-shot · poem 1 · unassessable</summary><pre>সকালে বৃষ্টি হ’ল গাঁওতে মানুহ নিজে নিজে।  
+হাওয়া ছিল শান্ত, জল পাত হৈ গ’ল বাড়িতে।  
+
+বৃষ্টি নিয়ে মানুহ হাসি ক’রে গ’ল ঘুমে।  
+দুপুরে জল পাত হ’ল বাগানে গাছে গাছে।</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “হাওয়া ছিল শান্ত” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 2.3%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 0-shot · poem 2 · unassessable</summary><pre>জলে মুখ দেখা না হয় কালো বাতাসে।  
+গোলাপ ফুটে থাকে মাটির মাঝে।  
+
+বাতাস কান্না করে বাজে নদীর কান্থে।  
+সুর না বাজে মানুষের মাথায়।</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “গোলাপ ফুটে” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 0.2%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 0-shot · poem 3 · unassessable</summary><pre>গৃহে বাতানী ফুৰি উঠা থাকে।  
+মাৰ চামাচি গাঁওত বৰ বৰ হাতে।  
+
+ঘাটত বালক মানুহ নিজে বাজি।  
+পানিৰ ধৰি বালক নিজে নামি।</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “গৃহে বাতানী” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 91.8%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 0-shot · poem 4 · unassessable</summary><pre>তারা ভাল কৰি চালি যাওয়া হয়।  
+হাত ধৰি পথ দেখা যায়।  
+জীবন নিয়ে পথ চলে।  
+স্বপ্ন মানে না ভাবা হয়।
+
+স্বপ্ন মানে না ভাবা হয়।  
+সূর্য নামি আকাশে গেল।  
+তারা আকাশে হাসে।  
+জীবন চলে যায়।</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “হাত ধৰি” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 3.9%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 0-shot · poem 5 · unassessable</summary><pre>ফুল ফুটে হাওয়া মানে বাড়িতে।  
+বাঁধা বৃষ্টি মানে গাছে পড়ে।  
+মাটি মুখে জল মানে গাছে বাড়ে।  
+সূর্য উঠে দুপুর মানে গাঁওতে।  
+
+কালো গাছ মানে বাজে বাতাসে।  
+ফুল মানে গাছে ফুটে উঠে।  
+হাওয়া মানে মানুহ মানে বাড়ে।  
+সব উঠে প্রকৃতি মানে সুখে।</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “ফুল ফুটে” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 0.8%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 1-shot · poem 1 · unassessable</summary><pre>সকালৰ পৰা বৰষুণ আহে  
+পাত কাটি মানুহ চায় নাই  
+হাতত পানী মানুহ নিয়ে  
+মাটি জলে আকাশ চায় নাই  
+
+বৰষুণ মাটি লাগি আহে  
+বালু বালু আহে হাতত পানী  
+সকালৰ পৰা গাঁৱ নামে  
+মানুহ জলে আকাশ চায় নাই</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “সকালৰ পৰা” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 32.6%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 1-shot · poem 2 · unassessable</summary><pre>পানি নীরবে গান গায়  
+পাহাড়ে নজর দিয়ে মানুহক  
+কালো পানি মানুহ নামে না জানে  
+সুন্দৰ হয় নীরব মানুহ
+
+সুধি নীরবে সুধি চলে  
+দুৰ্গান্তে মানুহ কামনা কৰে  
+সুধি নীরবে মানুহ বুজায়  
+সুধি নীরবে মানুহ ভাল পায়</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “গান গায়” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 6.4%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 1-shot · poem 3 · unassessable</summary><pre>গৃহৰ বালি মানুহ কাম কৰে  
+পানীৰ বালি গাঁৱৰ বাতাবৰ কাম  
+সূৰ্য উঠে ঘৰৰ চাঁদ কাম  
+গাঁৱৰ মানুহ পানী পানী কাম  
+
+গৃহৰ চাঁদ পৰা মন পায়  
+বালি পৰা মন পায় বালি  
+সকলো কাম মন পায় বালি  
+গৃহৰ সুৰ মন পায় বালি</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “পানী পানী” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 90.2%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 1-shot · poem 4 · unassessable</summary><pre>স্টার আলোকত যাই গেলো মই  
+বাতাল মাজে হাঁহি আছিলো মোৰ  
+বৰ হালো মন লৈ গেলো মই  
+পাৰে নাই সাজ মাজে কালো মোৰ  
+
+তৰুণ আকাশ মোৰ দুৰু হাত  
+স্টার চাই পাৰ কৰা মোৰ হৃদয়  
+মানুহ মাজে নাম নাই মই  
+আকাশ আছে মোৰ মাতৃ পৰা</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “স্টার আলোকত” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 69.9%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 1-shot · poem 5 · unassessable</summary><pre>ফুল ফুটি মালো পৰে জাহাজ  
+হাওঁ হালি গাজি বালি বালি  
+কুলী গাজি মালো কালী কালী  
+বৰফ ভাঙি গৈ আহি আহি  
+
+হাত বালি পৰে পানী পানী  
+কালী মালো বালি মালী মালী  
+সুন্দৰ সুন্দৰ বৰফ ভাঙি  
+আহি আহি সুখে মালো মালী</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “বৰফ ভাঙি” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 15.7%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 2-shot · poem 1 · unassessable</summary><pre>সকালৰ শুৰুত বৰষুণ আহে  
+হালুৱালৈ মাটি পানী পায়  
+বাতাবৰ পৰা গাঁৱৰ সুৰ আহে  
+প্ৰতিটো গাঁৱৰ মানুহ ঘূৰে  
+
+পানীৰ তৰু মাটি জাগে  
+হাত উঠি চাই নাম কৈ দেখা  
+প্ৰতিটো বৃষ্টি মনত পায়  
+সকালৰ সুৰ পৰে আগতে কাটি যায়</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “গাঁৱৰ সুৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 96.4%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 2-shot · poem 2 · unassessable</summary><pre>পানি নীরবে ভাগ কৰে পাহাৰে।  
+পাহাৰ চালত মানুহ নাওঁ আহে।  
+
+দূৰে দূৰে কামুৰ কামুৰ বাতাবৰ আছে।  
+গাঁৱৰ পানীত মোৰ চান্দনী নাই।</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “পানি নীরবে” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 97.8%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 2-shot · poem 3 · unassessable</summary><pre>গৃহত মাছ পানী ভাল লাগিছিল  
+মাকৰ চালি বাজি গৈছিল  
+বাঘৰ কান্থৰ পানী পাতি গৈছিল  
+বৰষুণ মানে হৈছিল আমাৰ ঘৰ  
+
+গাঁৱৰ বাতাবৰ আমি বাঁহি লৈ  
+মাছৰ চালি গৈছিল পানী পাতি  
+মাকৰ গোটা গোটা হাত দিছিল  
+বৰষুণ মানে হৈছিল আমাৰ ঘৰ</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “আমাৰ ঘৰ” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: as; target confidence 95.6%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 2-shot · poem 4 · unassessable</summary><pre>তারামূৰ উঠি পালে আমি যায়  
+পথ নিয়ে হাত তুলি চায়  
+বাতাবৰ মুখে পৰে আহি  
+মন ভাল হয় সকলো আহি  
+
+সাত মুহুৰ্ত আছে আমি বাতাবৰ  
+কালো আৰু হাত মাজে পালে  
+স্বপ্ন দেখা যায় সুন্দৰ কালো  
+মাজত পালে তারা আছে আমি পালে</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “স্বপ্ন দেখা যায়” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 21.6%. Judge language status: uncertain</p></details><details class="poem" data-language="Assamese"><summary>llm · 2-shot · poem 5 · unassessable</summary><pre>ফুল ফুটি মালো উঠা  
+হাতত বৰষুণ মালো আহি  
+হাওঁ পাত হাল হৈ উঠা  
+মানুহ মানুহ মালো চায়  
+
+সূৰ্য উঠি আকাশ পাত  
+পানী উঠি পাহাড় উঠা  
+বালক বালিকা হাতত হাত  
+সুৰ গুৰু মালো মালো পাত</pre><p>I cannot reliably assess idiomatic Assamese or the meaning of “বালক বালিকা” and therefore cannot rate this poem or verify its language.</p><p class="note">Language detector: bn; target confidence 23.5%. Judge language status: uncertain</p></details><details class="poem" data-language="Bengali"><summary>llm · 0-shot · poem 1 · scored</summary><pre>সকালে বৃষ্টি শুরু হয় মুখে।  
+পাতা ঝাপসা করে উঠে যায়।  
+জলের ছায়া বিস্ময়ে ভাসে।  
+সব সুখে মাথা নেড়ে যায়।
+
+বৃষ্টি হালকা হয়ে যায় আকাশে।  
+পানি গান গাইছে বাগানে।  
+মাটি মাটি পানি খেয়ে যায়।  
+সকালের হাসি আসে নতুন।</pre><p>“পানি গান গাইছে” gives the rain a recognizable voice, but awkward phrases and redundant wording limit the morning scene.</p><p class="note">Language detector: bn; target confidence 97.6%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 0-shot · poem 2 · scored</summary><pre>পানি ধীরে ধীরে ভাসে আকাশে।  
+গাছের ঝুলন্ত পাতা শনি মানে।  
+
+সূর্য নামে মাটি হাসে সুরে।  
+রাতে মানুষ ঘুমায় নদীর পাশে।</pre><p>“পাতা শনি মানে” is unclear in context, and the remaining water, sun, and sleepers form only a loose natural scene.</p><p class="note">Language detector: bn; target confidence 94.4%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 0-shot · poem 3 · scored</summary><pre>বাড়ির দুর্গাপুজো মনে আসে।  
+গাঁয়ের গান শুনে হাসি আসে।  
+মামার চাল গুলি মনে পড়ে।  
+পাড়ার মাটি তো কখনো ভুলে যায় না।  
+
+বাবা আসে পানি নিয়ে আসে।  
+সাজানো গাছে মাটি লাগে।  
+বাড়ির দরজা খুলে আসে।  
+সব মুহূর্ত আমার হাসি আসে।</pre><p>“পাড়ার মাটি তো” anchors recognizable attachment to home, although awkward constructions and repeated smiles flatten the remembered details.</p><p class="note">Language detector: bn; target confidence 94.4%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 0-shot · poem 4 · scored</summary><pre>তারা মেঘের পিছনে চলে গেল।  
+বাতাসে হাসি দেয় আমার মন।  
+গোলাপ মাথায় ফুটে উঠল।  
+জীবন হয়ে গেল সুখের স্পর্শে।
+
+নক্ষত্র বাতাসে বলে নামল।  
+আমার পায়ে আসল পথ চলে।  
+হাওয়ায় মন আকাশে উঠল।  
+সব দূরে এক স্বপ্নে মিলে।</pre><p>“গোলাপ মাথায় ফুটে” is a suggestive dream image, but awkward verbs and loosely connected celestial details weaken the progression.</p><p class="note">Language detector: bn; target confidence 98.8%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 0-shot · poem 5 · scored</summary><pre>বৰফ ভাঙে, ফুল উঠে উঠে।  
+হাওয়া নতুন, মাটি উষ্ণ।  
+
+গাছে বাঁশি, চারিদিক জাগে।  
+সূর্য হাসে, সব আলো বাড়ে।</pre><p>“বৰফ ভাঙে” uses an Assamese letter form within an otherwise understandable Bengali spring scene with concise, gently musical movement.</p><p class="note">Language detector: bn; target confidence 95.7%. Judge language status: mixed</p></details><details class="poem" data-language="Bengali"><summary>llm · 1-shot · poem 1 · scored</summary><pre>সকালের আলো আসে বাতাসের সাথে।  
+বাঘের গাছে বৃষ্টি শুরু হয়ে গেল।  
+পাতায় পড়ে পানি, জলে ফুটে উঠে।  
+মাটি হালকা, হাসে মানুষের চোখে।  
+
+বৃষ্টি কাছে আসে চারপাশে ফুটে।  
+বাঘের গাছে মাটি জলে মেলে।  
+হাওয়া আসে মাঝে মাঝে হাসে দেয়।  
+সকালে জীবন মাটিতে জাগে।</pre><p>“বাঘের গাছে বৃষ্টি” is puzzling and repeated without explanation, weakening an otherwise recognizable morning-rain setting.</p><p class="note">Language detector: bn; target confidence 96.2%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 1-shot · poem 2 · scored</summary><pre>পানি সুস্থ হয়ে যায় সকালে।  
+স্থির হয়ে যায় বাতাসের সাথে।  
+পাড়ে মানুষ নেই, শান্তি বাস করে।  
+মাঝে মাঝে এক মানুষ আসে দেখে।  
+
+পানি চোখে পড়ে আবার যায়।  
+গোটা পথ মুখে সাজায় মাটি।  
+বাতাস সাজায় সব মুখে শান্তি।  
+কেউ কিছু না বলে সামনে চলে।</pre><p>“পানি সুস্থ হয়ে” is unidiomatic, and the water, passerby, road, and faces do not build a convincing shared scene.</p><p class="note">Language detector: bn; target confidence 98.4%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 1-shot · poem 3 · scored</summary><pre>বাড়ির দুর্গাপুজো মাছের গুঁড়ো  
+পাত্রে ভাসে আমার প্রাণের গুঁড়ো  
+বালকের হাসি মাটিতে লাগে  
+সব ভাবে আমার হৃদয়ে লাগে  
+
+সাদা মাটির পাতা ফুটে উঠে  
+বাবা বলে আমার প্রাণে জাগে  
+পানির নদী বাড়ির পাশে  
+সেই সব স্মৃতি আমার প্রাণে বাসে</pre><p>“প্রাণের গুঁড়ো” is an unexplained image amid uneven family recollections, leaving the intended nostalgia only partly realized.</p><p class="note">Language detector: bn; target confidence 97.7%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 1-shot · poem 4 · scored</summary><pre>তারা মাথায় বাতাস ফেলে দিল।  
+গান করে চলেছে পথের প্রান।  
+হাজার চাঁদ নিয়ে গেল আমার কাছে।  
+সব স্বপ্ন এখন মাথায় পড়েছে।  
+
+পথের পাশে চাঁদ বাঁকা হয়ে গেল।  
+সব চাঁদ আমার হাতে আসে বাঁকে।  
+নাই স্বপ্নের কোনও পথ বাধা।  
+হাজার তারা আমার মুখে আসে।</pre><p>“হাজার তারা আমার” offers expansive celestial imagery, but the repeated bodily placements of stars and moons lack a clear organizing purpose.</p><p class="note">Language detector: bn; target confidence 99.1%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 1-shot · poem 5 · scored</summary><pre>বরফ ভেঙে গেল প্রাত: ফুল উঠে আসল  
+হাওয়া মানুষের মতো মুখে আসল  
+বাগানে বাতাস হাসল বাজে সাজল  
+বাজে সাজল বাতাস হাসল মানুষের মতো  
+
+বৃষ্টি বাতাস কাছে এল সুস্বাদু  
+সবুজ হয়ে গেল প্রাণের মতো  
+বাতাসে গান উঠল বাজে সাজল  
+সবুজ হয়ে গেল প্রাণের মতো</pre><p>“বাজে সাজল বাতাস” repeatedly rearranges the same words without clear meaning, so the spring images do not develop into feeling.</p><p class="note">Language detector: bn; target confidence 98.8%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 2-shot · poem 1 · scored</summary><pre>সকালের আলো আসে মাটির ওপরে।  
+বাতাসে ফুসফুস করে আসে বৃষ্টি।  
+পাতা মাথায় হালকা হয়ে উঠে।  
+প্রতিটি দৃশ্য জীবনে আসে নতুন।  
+
+বৃষ্টি গাছে পড়ে সুরে গান গায়।  
+সকালের মাটি হয়ে যায় সাদা।  
+বাজে পানির আওয়াজ সব ঘরে।  
+হৃদয়ে আসে মানুষের মাঝে শান্তি।</pre><p>“ফুসফুস করে আসে” is awkward in context, though rain, morning light, and peace maintain a recognizable thematic thread.</p><p class="note">Language detector: bn; target confidence 97.6%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 2-shot · poem 2 · scored</summary><pre>পানি সুস্থ ভাবে ভাসে।  
+গুহার পাশে মুখ দেখায়।  
+শান্তি মানে সব বাতাসে।  
+সব হারায় প্রাণের দিন।  
+
+সন্ধ্যা নিয়ে বাতাস ঘুরে।  
+পানি মুখে প্রতিদিন চাঁদে।  
+কোনো কথা না বলে থাকে।  
+সব মানে এক নিশ্চয় আকাশ।</pre><p>“পানি সুস্থ ভাবে” is an unnatural description, and the quiet-water setting does not develop into a clear thought or earned feeling.</p><p class="note">Language detector: bn; target confidence 98.6%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 2-shot · poem 3 · scored</summary><pre>বাড়ির দুর্গাপুজো মাছের গুঁড়ো  
+পাত্রে বসে ছিল আমার মায়া  
+গোটা বাড়ি হাসি দিয়ে জাগে  
+পোড়া কাজে মায়ের মুখে হাসি  
+
+মাঝে মাঝে বাড়ি চলে যায় বুকে  
+গাছে বাতাস মায়ের কথা বলে  
+বাবা মাছের বাড়ি চলে যায়  
+হাতে হাসি নিয়ে আসে পুরো পরিবারে</pre><p>“মাছের বাড়ি চলে” is unexplained within the family-memory setting, and the repeated smiles do little to deepen the intended nostalgia.</p><p class="note">Language detector: bn; target confidence 95.5%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 2-shot · poem 4 · scored</summary><pre>তারা উজ্জ্বল, আকাশে চলে যায়।  
+রাতের মাঝে সব মিলে পড়ে।  
+গাছের তলা, হাওয়া আসে।  
+মনে হয় আমি বাঁধা গেলাম।  
+
+স্বপ্নে পথ, তারা দেখায়।  
+সব সুরে আমি শোনার চাই।  
+জলের ছায়া, বাতাসে ফুটে।  
+পথে আমি আর এক রাত কাটাব।</pre><p>“আমি শোনার চাই” is unidiomatic, and the night journey remains a loosely joined succession of conventional images.</p><p class="note">Language detector: bn; target confidence 98.8%. Judge language status: correct</p></details><details class="poem" data-language="Bengali"><summary>llm · 2-shot · poem 5 · scored</summary><pre>বৃষ্টি বনে মাটি ফেটে গেল  
+পুরো জানোয়ার হাসি উঠে এল  
+বাঁশি উঠে আসল নব কাল  
+হাওয়ায় ফুলের মুখ খুলে গেল  
+
+সূর্য সাজাল নতুন আলো  
+গাছে ফুটে উঠল মালা সব  
+পানি হালকা হয়ে উঠল  
+বাতাসে গান শোনা গেল আবার</pre><p>“পুরো জানোয়ার হাসি” is awkwardly constructed, while the flowers and returning song provide only a loose seasonal thread.</p><p class="note">Language detector: bn; target confidence 97.7%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 0-shot · poem 1 · scored</summary><pre>Dawn breaks soft, mist curls low.  
+Rain taps leaves, quiet and slow.  
+
+Wet grass glows, silver and thin.  
+World breathes in, cool and within.</pre><p>The short mist-and-rain scene is compact, yet &quot;cool and within&quot; feels unfinished and rhyme-driven, leaving the final image emotionally thin.</p><p class="note">Language detector: en; target confidence 85.8%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 0-shot · poem 2 · scored</summary><pre>The river flows soft through green fields.  
+It murmurs low, no sound to hear.  
+Sunlight glides on water&#x27;s skin.  
+Still, it moves with gentle will.  
+
+Leaves drift by, unbothered, slow.  
+Wind hums near, a quiet song.  
+No footstep breaks its peace.  
+Time stands still where it runs.</pre><p>The river scene stays cohesive and &quot;water&#x27;s skin&quot; adds texture, but repeated quietness and familiar personification limit freshness and emotional depth.</p><p class="note">Language detector: en; target confidence 92.5%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 0-shot · poem 3 · scored</summary><pre>Sunset painted the kitchen wall.  
+Dad hummed while he stirred the pot.  
+Mama’s hands folded bread with care.  
+Warmth filled the room, soft and deep.  
+
+Rain tapped on the windowpane.  
+We sat by the fire, quiet, close.  
+Old stories wrapped in candlelight.  
+Home felt like a lullaby.</pre><p>Domestic actions beginning with &quot;Dad hummed&quot; build an intimate scene whose fire, rain, and stories earn warmth, despite a conventional lullaby ending.</p><p class="note">Language detector: en; target confidence 88.5%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 0-shot · poem 4 · scored</summary><pre>Stars blink above the silent plain.  
+Wind hums low, no sound to name.  
+Footsteps fade where shadows creep.  
+Night holds breath, then stills the deep.  
+
+Moon glides near, a silver eye.  
+Distant light, a fading sigh.  
+We walk on dreams, no map to guide.  
+Stars speak in hush, not in pride.</pre><p>The consistent nocturnal journey and &quot;a silver eye&quot; create a gentle atmosphere, although familiar images and &quot;not in pride&quot; make the ending feel forced.</p><p class="note">Language detector: en; target confidence 80.6%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 0-shot · poem 5 · scored</summary><pre>The snow melts from the field&#x27;s cold edge.  
+Buds push through the earth, soft and new.  
+Birds return with songs of return.  
+Sunlight warms the waking land.
+
+Daffodils bloom in yellow streams.  
+Wind stirs the trees with green delight.  
+Frogs croak in ponds, low and clear.  
+Life hums in every leaf and stone.</pre><p>The &quot;yellow streams&quot; of daffodils and frogs give spring concrete life, while &quot;songs of return&quot; and familiar awakening language reduce precision and surprise.</p><p class="note">Language detector: en; target confidence 91.6%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 1-shot · poem 1 · scored</summary><pre>Dawn breaks soft, mist curls low.  
+Rain taps leaves, quiet and slow.  
+World wakes in silvered hush.  
+Damp air breathes, cool and lush.  
+
+Pavements gleam, wet and bright.  
+Clouds drift near, soft and light.  
+No sound but drops on stone.  
+Morning stirs, gentle, alone.</pre><p>The precise &quot;drops on stone&quot; grounds the rainy dawn, and orderly rhymes support a coherent atmosphere, though its emotional range and images remain familiar.</p><p class="note">Language detector: en; target confidence 91.6%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 1-shot · poem 2 · scored</summary><pre>The river flows soft through the meadow.  
+It whispers to willows, calm and low.  
+No rush, no sound, just quiet time.  
+It moves like breath in the early light.  
+
+It bends around stones, slow and deep.  
+Reflects the sky in stillness.  
+No one speaks, no one near.  
+Just water, wind, and the silence.</pre><p>The phrase &quot;whispers to willows&quot; and movement around stones create a clear, paced river scene, though repeated assertions of silence add little development.</p><p class="note">Language detector: en; target confidence 94.5%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 1-shot · poem 3 · scored</summary><pre>Sunlight on the kitchen table  
+Dad’s coffee, warm and strong  
+Sister’s laughter, soft and clear  
+Morning songs we’d sing together  
+
+Old porch swing, creaking slow  
+Wind through the maple trees  
+Grandma’s porch light, always on  
+Nighttime hush, no need to speak</pre><p>Details such as &quot;Dad’s coffee&quot; and &quot;Grandma’s porch light&quot; build a warm, tangible memory with controlled quietness, though the nostalgia is conventional.</p><p class="note">Language detector: en; target confidence 83.5%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 1-shot · poem 4 · scored</summary><pre>Stars blink above the silent plain,  
+Wind hums a tune we both have known.  
+Footsteps fade where shadows lean,  
+Night holds us close, no need to go.  
+
+Moon spills silver on the trail,  
+Dust dances in the quiet air.  
+We walk with no destination,  
+Just stars and silence, and the prayer.</pre><p>Shared walking and &quot;Dust dances&quot; maintain a soft nocturnal atmosphere, although &quot;the prayer&quot; enters without preparation and the imagery is conventional.</p><p class="note">Language detector: en; target confidence 96.1%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 1-shot · poem 5 · scored</summary><pre>The snow melts from the garden paths.  
+Birds return with songs of praise.  
+Buds push through the cold earth&#x27;s hold.  
+Green light fills the morning haze.  
+
+Daffodils dance in the breeze.  
+Flowers open in the sun.  
+The wind carries a fresh, sweet scent.  
+Spring wakes the sleeping land.</pre><p>The release from &quot;cold earth&#x27;s hold&quot; and the returning scents form a coherent, musical spring scene, although the dancing flowers are familiar.</p><p class="note">Language detector: en; target confidence 81.9%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 2-shot · poem 1 · scored</summary><pre>Dawn breaks soft, mist hangs low.  
+Rain taps slow on roof and road.  
+World still sleeps, quiet, deep.  
+Wet leaves glisten, cool and steep.  
+
+Clouds part just a little more.  
+Drip by drip, the sky grows clear.  
+Morning breaths in silver light.  
+Ground drinks in, no sound, no fight.</pre><p>The rain scene is recognizable, but &quot;Morning breaths&quot; and &quot;cool and steep&quot; expose awkward or forced wording that weakens both fluency and musical control.</p><p class="note">Language detector: en; target confidence 88.8%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 2-shot · poem 2 · scored</summary><pre>The river flows, slow and low,  
+Through fields of green and old stone.  
+It whispers to the willow,  
+No sound but peace and tone.  
+
+Sunlight dapples on the water,  
+Reflects the sky’s soft blue.  
+No rush, no need, no hurry—  
+Just stillness, deep and true.</pre><p>A consistent river atmosphere and light rhyme make the piece readable, but &quot;peace and tone&quot; sounds chosen for form rather than precise meaning.</p><p class="note">Language detector: en; target confidence 87.0%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 2-shot · poem 3 · scored</summary><pre>Sunlight on the porch, warm and slow.  
+Dad’s hands, cracked, but still so kind.  
+
+Kitchen table, dishes, morning steam.  
+Mama’s voice, soft, humming low.</pre><p>The detail &quot;hands, cracked&quot; makes the family memory tactile and tender, while the restrained fragments create intimacy without much new development.</p><p class="note">Language detector: en; target confidence 87.8%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 2-shot · poem 4 · scored</summary><pre>Stars blink above the silent road,  
+Wind hums low, no word to speak.  
+Footsteps fade where shadows grow,  
+Night holds breath, and I am free.  
+
+Moon spills silver on the trail,  
+Distant hills in hush are still.  
+No map, no name, just stars to guide—  
+I walk with sky, and time, and will.</pre><p>The coherent solitary walk and &quot;Moon spills silver&quot; move with a steady cadence, but familiar sky imagery and the abstract final list limit distinctiveness.</p><p class="note">Language detector: en; target confidence 93.6%. Judge language status: correct</p></details><details class="poem" data-language="English"><summary>llm · 2-shot · poem 5 · scored</summary><pre>The frost slips away, soft and slow.  
+Birds return with a chirp and a call.  
+Earth stirs beneath a warm, golden sky.  
+Flowers push through the soil, bold and tall.  
+
+Rain falls in gentle, silver streams.  
+Green fingers reach for the sun’s light.  
+Wind hums old songs through the trees.  
+Spring wakes up, and the world takes flight.</pre><p>The scene advances smoothly from thaw to growth and &quot;Green fingers&quot; provides a clear image, though its celebratory spring language is largely conventional.</p><p class="note">Language detector: en; target confidence 91.0%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 0-shot · poem 1 · scored</summary><pre>सुबह के बाद बारिश शुरू होती है।  
+पौधे झिलमिलाते हैं, बात बात बात।  
+
+बारिश के बीच चाँद छुप जाता है।  
+पृथ्वी नम हो जाती है, शांति बात।</pre><p>“बात बात बात” reads as filler rather than a purposeful refrain, limiting the rain scene to a few generic images.</p><p class="note">Language detector: hi; target confidence 99.3%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 0-shot · poem 2 · scored</summary><pre>गहरा जल, धीरे से बहता है।  
+पेड़ों के बीच, चुपचाप बहता है।  
+पहाड़ों के पास, बिना गूंजे बहता है।  
+प्रकृति की आवाज़, अपने आप बहता है।  
+
+चाँद के नीचे, रात के बीच बहता है।  
+तूफान नहीं, बस चुपचाप बहता है।  
+जल की धुन, दिल में बस जाती है।  
+सुबह के बाद, फिर चुपचाप बहता है।</pre><p>“बस चुपचाप बहता” maintains the river’s quiet theme, but the repeated ending adds little new imagery or emotional development.</p><p class="note">Language detector: hi; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 0-shot · poem 3 · scored</summary><pre>गृह छोटा था, बारिश के दिन।  
+माँ की आवाज़, चाय की चादर।  
+
+पुराना घर, गेंद के खेल।  
+बचपन की याद, खुशियों का रंग।</pre><p>“चाय की चादर” is a fresh but uncertain domestic image, and the brief childhood fragments carry warmth without much development.</p><p class="note">Language detector: hi; target confidence 98.9%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 0-shot · poem 4 · scored</summary><pre>तारों के नीचे चले गए रास्ता।  
+हवा में शांति, गहरा रात।  
+
+चाँद ने झलकाया अपना चेहरा।  
+सपने बात बात गुप्त बने रहे।</pre><p>“गहरा रात” reveals agreement problems in an otherwise recognizable but thinly developed scene of stars, moonlight, and hidden dreams.</p><p class="note">Language detector: hi; target confidence 97.3%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 0-shot · poem 5 · scored</summary><pre>बरसात के बाद बरसात आया,  
+पूरा जमीन नीला बन गया।  
+गुलाब खिले, बाज़ार खिले,  
+हर चीज़ नई उम्मीद से भर गई।  
+
+हवा में खुशबू, बात खुशी,  
+लोग बाहर निकले, चले गए।  
+बच्चे खेलते, बारिश आयी,  
+प्रकृति खुश हो गई, खुश हो गई।</pre><p>“गुलाब खिले, बाज़ार खिले” offers a small social-renewal suggestion, but agreement problems and repeated happiness keep the spring scene generic.</p><p class="note">Language detector: hi; target confidence 95.2%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 1-shot · poem 1 · scored</summary><pre>सुबह के बाद बारिश शुरू होती है  
+पेड़ों पर पत्ते झुक जाते हैं  
+गलियों में बहती है चाँदनी धार  
+हर घर खुल जाता है निशानी  
+
+चाँद निकला बारिश बरस रही  
+दिल धड़कता है नया अच्छा लगता  
+पानी के बर गुब्बारे उठते हैं  
+हर दिल में एक नया आस्था लगता है</pre><p>“चाँदनी धार” is suggestive, but the unexplained movement between morning and moonlight and repeated agreement errors weaken the poem.</p><p class="note">Language detector: hi; target confidence 99.1%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 1-shot · poem 2 · scored</summary><pre>गहरा जल, चुपचाप बहत है  
+पेड़ों के पास, चांदनी छोड़त है  
+
+पहाड़ों के पीछे, चुप रहत है  
+दिल की धड़कन, उसके साथ बहत है</pre><p>“उसके साथ बहत” links the heartbeat to the quiet water effectively, giving the short refrain a modest emotional progression.</p><p class="note">Language detector: hi; target confidence 99.5%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 1-shot · poem 3 · scored</summary><pre>गृह के चाँदनी दीवारों पर  
+बचपन के चित्र बिखरे हैं।  
+माँ की आवाज़ गूँजती है  
+पलकों में चमकती है।  
+
+खिड़की से गूँजता हवा बात  
+पुराने बरगद के नीचे रहा।  
+बारिश के बाद घर बरसता है  
+दिल में छुपा है खुशी का दाम।</pre><p>“खुशी का दाम” strains the closing image, although the childhood pictures and remembered mother support a recognizable nostalgic feeling.</p><p class="note">Language detector: hi; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 1-shot · poem 4 · scored</summary><pre>तारे चमकते हैं आसमान में,  
+रात का बाल धूप छोड़ देता है।  
+जंगल के बीच में चला गया यात्री,  
+हर चीज़ अपने रंग में खुल गई।  
+
+सिर पर चाँद बैठा है शांत,  
+सांस लेते हैं तारों की धुन।  
+दिल में एक नया रास्ता बन गया,  
+जैसे खोए हुए गाने लौट आए।</pre><p>“तारों की धुन” ties the night journey to recovered songs through vivid sensory imagery, despite the uncertain image of night shedding sunlight.</p><p class="note">Language detector: hi; target confidence 99.1%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 1-shot · poem 5 · scored</summary><pre>बर्फ गिरे हुए, बारिश शुरू होई।  
+गुलाब खिले, बात बदल गई।  
+
+हवा में खुशी, चाँद बात बदले।  
+पक्षी गाए, जमीन जीवन लेले।</pre><p>“जमीन जीवन लेले” leaves the seasonal renewal idea awkward and underdeveloped.</p><p class="note">Language detector: hi; target confidence 95.9%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 2-shot · poem 1 · scored</summary><pre>सुबह बरसात शुरू होती है  
+पेड़ झाड़ियों में झूलते हैं  
+बारिश के बूंद गीत गाती हैं  
+दिल के बारे में बात करते हैं  
+
+हवा बरसात की ओर बढ़ती है  
+गाँव चमकता है नम हो जाता  
+पानी नदी के रूप में बहता है  
+दिल भी खुश हो जाता है</pre><p>“बारिश के बूंद” shows imperfect agreement within a clear but conventional account of rain bringing happiness to the village.</p><p class="note">Language detector: hi; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 2-shot · poem 2 · scored</summary><pre>गहरा जल, चुपचाप बहत है  
+पेड़ों के पास, चांदी की तरह  
+
+पहाड़ों के बीच, अपना रास्ता बनात है  
+प्रकाश छुपा है, चुपचाप बहत है</pre><p>“चुपचाप बहत है” supplies a coherent quiet-water refrain and gentle movement, though the imagery and emotional development remain modest.</p><p class="note">Language detector: hi; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 2-shot · poem 3 · scored</summary><pre>गृह की चूल्हा चलता था रात के बाद  
+पिता के हाथ में चाय का गरम बुलबुला  
+
+बारिश की धूप में बच्चे खेलते थे  
+दीवार पर लिखा था नाम अपना बच्चा।</pre><p>“चाय का गरम बुलबुला” provides an unusual domestic detail, but grammatical slips and unclear relations weaken the childhood memory.</p><p class="note">Language detector: hi; target confidence 97.0%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 2-shot · poem 4 · scored</summary><pre>तारे चमकते हैं रात के ऊपर  
+जमीन चुप रहती है गहराई में  
+हवा फैलती है गीत बिना ध्वनि  
+हम चलते हैं अंधेरे के बीच में  
+
+सांस लेते हैं शांति के बराबर  
+तारों की बात गले में आती है  
+हर चमक एक याद लाती है  
+हम अपने घर के बारे में नहीं सोचते।</pre><p>“शांति के बराबर” is strained, but the star-lit walk retains a connected atmosphere and a tentative movement through memory.</p><p class="note">Language detector: hi; target confidence 99.2%. Judge language status: correct</p></details><details class="poem" data-language="Hindi"><summary>llm · 2-shot · poem 5 · scored</summary><pre>बर्फ गिरे तूफान ने छोड़ दिया।  
+पौधे उठे नया जीवन देखे।  
+हवा में खुशबू बिखर गई।  
+गलियों में बारिश लगी।  
+
+सुबह लाल चाँदी की चमक लगी।  
+बच्चे बाहर खेलते देखे।  
+पेड़ ने बारिश के बाद खुले।  
+प्रकृति ने नया रंग देखे।</pre><p>“नया रंग देखे” exemplifies agreement problems in an otherwise recognizable spring-renewal scene.</p><p class="note">Language detector: hi; target confidence 98.3%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 0-shot · poem 1 · scored</summary><pre>Lluvia tibia en la mañana temprana.  
+El cielo se desviste, se vuelve claro.  
+El suelo humedece, el aire se enfría.  
+Los árboles callan, escuchan el ruido.
+
+Gotas suaves, como susurros lejanos.  
+El mundo se despierta, silencioso.  
+El viento baja, el aire se abre.  
+La luz llega, sin gritar, sin ruido.</pre><p>The unfolding rainy morning is coherent and softly paced, but &quot;El suelo humedece&quot; is unidiomatic and several personifications remain vague or conventional.</p><p class="note">Language detector: es; target confidence 93.3%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 0-shot · poem 2 · scored</summary><pre>Fluye suave por el valle.  
+Canta bajo el cielo claro.  
+Hojas danzan en su curso.  
+Silencio se siente en el aire.
+
+Agua tranquila, sin ruido.  
+Refleja el sol de la mañana.  
+El viento pasa sin tocar.  
+Todo calla, todo se entiende.</pre><p>The flowing-water scene is clear and quiet, but &quot;pasa sin tocar&quot; and general personification provide little specific insight or distinctive emotional development.</p><p class="note">Language detector: es; target confidence 89.9%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 0-shot · poem 3 · scored</summary><pre>La casa tiene el olor de pan.  
+El sol baja por la vereda.  
+Mamá cocina con calma.  
+Y el ruido de los niños juega.  
+
+La mesa está cubierta de flores.  
+La luz brilla en los cristales.  
+Cada rincón guarda un recuerdo.  
+Vivo en el silencio de la cocina.</pre><p>The playful &quot;ruido de los niños&quot; and final kitchen silence give the domestic memory some contrast, though that shift is only lightly developed.</p><p class="note">Language detector: es; target confidence 96.4%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 0-shot · poem 4 · scored</summary><pre>Bajo el cielo, el viento susurra.  
+Las estrellas brillan, quietas.  
+Camino sin fin, solo y libre.  
+El silencio me abraza.
+
+La luna guía mi paso leve.  
+El aire huele a noche profunda.  
+Cada estrella, un sueño lejano.  
+El universo me llama.</pre><p>The lonely walk has fluent, coherent movement through &quot;paso leve,&quot; but the distant dream and embracing silence offer little beyond familiar night imagery.</p><p class="note">Language detector: es; target confidence 83.8%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 0-shot · poem 5 · scored</summary><pre>Las hojas brotan en silencio.  
+El viento canta al bosque vivo.  
+Las flores surgen con color.  
+El sol brilla en cada rincón.  
+
+El cielo se limpia de niebla.  
+Los pájaros vuelan en pareja.  
+El río canta con más fuerza.  
+La tierra respira de nuevo.</pre><p>The progression to &quot;respira de nuevo&quot; clearly conveys spring renewal, but its birds, flowers, and singing river remain general and emotionally predictable.</p><p class="note">Language detector: es; target confidence 94.6%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 1-shot · poem 1 · scored</summary><pre>Lluvia tibia en la mañana.  
+Sueña el mundo en silencio.  
+Hojas temblar en el viento.  
+El cielo se despierta poco a poco.  
+
+Gotas suaves sobre el suelo.  
+El aire huele a tierra fresca.  
+Los pájaros callan en su nido.  
+La luz baja con lentitud.</pre><p>The smell of &quot;tierra fresca&quot; gives the dawn a coherent sensory focus, but &quot;Hojas temblar&quot; is unidiomatic and the imagery remains familiar.</p><p class="note">Language detector: es; target confidence 93.2%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 1-shot · poem 2 · scored</summary><pre>Silencio del río, tranquilo y claro.  
+Corre sin ruido, bajo el cielo azul.  
+Mira el agua, el viento, el bosque cerca.  
+No habla, pero todo lo sabe.  
+
+El sol baja, el agua se calma.  
+Refleja las nubes, el cielo en paz.  
+El pecho del río late suave.  
+Canta solo con el viento y el alba.</pre><p>The &quot;pecho del río&quot; sustains gentle personification within a clear river scene, though the movement from descending sun to dawn is underdeveloped.</p><p class="note">Language detector: es; target confidence 94.6%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 1-shot · poem 3 · scored</summary><pre>La cocina huele a pan tostado.  
+El sol baja por la verja.  
+Mi abuela canta en voz baja.  
+El ruido del río se calla.  
+
+La mesa tiene madera vieja.  
+Las sombras son de otra época.  
+El vaso está lleno de agua.  
+El tiempo no pasa, se queda.</pre><p>The old table, grandmother, and shadows of &quot;otra época&quot; develop a convincing remembered home, with simple lines that make the suspended time emotionally effective.</p><p class="note">Language detector: es; target confidence 93.8%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 1-shot · poem 4 · scored</summary><pre>Bajo el cielo, las estrellas brillan.  
+Silencio, viento, y el alma se aleja.  
+Caminamos sin destino ni mapa.  
+El universo nos mira con calma.  
+
+Las luces danzan en la noche profunda.  
+El tiempo se detiene, se vuelve suave.  
+Nadie habla, pero todo se entiende.  
+El viaje es solo estar presente.</pre><p>The journey coherently resolves into &quot;solo estar presente,&quot; but familiar stars, silence, and cosmic personification keep its insight and imagery fairly general.</p><p class="note">Language detector: es; target confidence 90.8%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 1-shot · poem 5 · scored</summary><pre>Las hojas brotan, suaves y verdes.  
+El viento canta, suave y claro.  
+El sol se acerca, tierno y claro.  
+El mundo respira, despertando.  
+
+Las flores abren, color y aroma.  
+El río canta, libre y dulce.  
+Las aves vuelan, ligeras y felices.  
+La tierra vuelve, con esperanza.</pre><p>The spring progression is clear, but repeated &quot;suave y claro&quot; language and conventional singing rivers make the diction and emotional effect predictable.</p><p class="note">Language detector: es; target confidence 73.4%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 2-shot · poem 1 · scored</summary><pre>Lluvia fría en la mañana  
+despierta el suelo húmedo  
+el cielo se vuelve gris  
+y el viento calla.
+
+Gotas caen suaves  
+como susurros de noche  
+el mundo se viste de blanco  
+y todo se queda en paz.</pre><p>The &quot;suelo húmedo&quot; and soft drops create calm, but the unexplained shift to &quot;viste de blanco&quot; weakens the otherwise clear rainy scene.</p><p class="note">Language detector: es; target confidence 97.2%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 2-shot · poem 2 · scored</summary><pre>Silencio en el agua que fluye.  
+No canta, solo se desliza.  
+Refleja el cielo, sin hablar.  
+Mira, y el tiempo se calla.  
+
+Pasa sin ruido, sin prisa.  
+Siente el viento, pero no siente.  
+Cada olvido se deshace.  
+El río no quiere ser visto.</pre><p>The river that &quot;no quiere&quot; to be seen creates an intriguing inward mood, although &quot;pero no siente&quot; and the unexplained forgetting leave its meaning only partly resolved.</p><p class="note">Language detector: es; target confidence 92.7%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 2-shot · poem 3 · scored</summary><pre>La cocina huele a fresas y pan.  
+El fuego late, el vaso se inclina.  
+Mi abuela canta, la luz se mueve.  
+El tiempo se detiene, es mi hogar.  
+
+El jardín canta con flores en silencio.  
+El río baja, el cielo se acuesta.  
+Las sombras bailan al sol de ayer.  
+Aquí, el amor nunca se fue.</pre><p>The sensory &quot;fresas y pan&quot; and singing grandmother establish a vivid home, while familiar personifications and the closing declaration keep its emotion predictable.</p><p class="note">Language detector: es; target confidence 89.9%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 2-shot · poem 4 · scored</summary><pre>Bajo el cielo, el viento susurra.  
+Las estrellas, silencio en el aire.  
+Camino sin fin, sin mapa, sin nombre.  
+El tiempo se derrite en la noche.  
+
+El alma se aleja, se vuelve leve.  
+El mar de estrellas me llama en silencio.  
+No hay destino, solo el presente.  
+Y el viento me lleva, sin pedir permiso.</pre><p>The phrase &quot;tiempo se derrite&quot; and permissive wind give the wandering a fluent, evocative movement, though its existential freedom is still a familiar poetic theme.</p><p class="note">Language detector: es; target confidence 89.6%. Judge language status: correct</p></details><details class="poem" data-language="Spanish"><summary>llm · 2-shot · poem 5 · scored</summary><pre>Las hojas brotan con suave brillo.  
+El viento canta entre los árboles.  
+El sol dibuja colores en el suelo.  
+La tierra respira con esperanza.  
+
+Las flores abren sus mejillas rojas.  
+El río canta con voz clara.  
+Las aves vuelan en círculos ligeros.  
+El mundo se vuelve más dulce.</pre><p>The flowers&#x27; &quot;mejillas rojas&quot; add a modestly fresh image to a fluent spring scene, although the sequence remains a familiar catalogue of renewal.</p><p class="note">Language detector: es; target confidence 94.7%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 0-shot · poem 1 · scored</summary><pre>Дзвінкло від сонця — тихо, хмари.  
+Вітер відчуває — тіні на вулиці.  
+Сонце встає — тільки краплі.  
+Світло — як з майбутнього.
+
+Краплі на листя — холодні, тихі.  
+Поле — спить, не відчуває.  
+Раннє мовлення — тільки вітер.  
+Дощ — не від сонця, а від нього.</pre><p>Drops, leaves, and a sleeping field create some atmosphere, but “Раннє мовлення” and the unclear final pronoun leave the relationships between the images unstable.</p><p class="note">Language detector: uk; target confidence 99.5%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 0-shot · poem 2 · scored</summary><pre>Річка тиха, заснула в лісі.  
+Пливе, не розмовляє, не кричить.  
+Під сонцем вона біла, як сніг.  
+У воді — тіні дерев, як мрії.
+
+Вона не бігає, не гуляє.  
+Тільки тече, як пам&#x27;ять, як думка.  
+Зірки на її поверхні — зорі.  
+Тихо, як ніч, вона в житті.</pre><p>The river flowing “як пам&#x27;ять” sustains a gentle comparison, though redundant star imagery and the vague final line leave little emotional or imaginative discovery.</p><p class="note">Language detector: uk; target confidence 97.8%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 0-shot · poem 3 · scored</summary><pre>Сім’я тихо сиділа на терасі.  
+Пісня вітера, він гуляв по вікнах.  
+Відтак — кілька кришок, сірий квіт.  
+Все здавалося тихим, як сон.
+
+Мама вийшла з кухні, з білим платком.  
+Вона витягнула старий ковер.  
+Під ним — м’які пісні, старі роки.  
+Діти заснули, як вперше.</pre><p>The domestic memory has concrete objects and some tenderness, but “старий ковер” and other Russian vocabulary mix languages and several images remain awkwardly joined.</p><p class="note">Language detector: uk; target confidence 96.1%. Judge language status: mixed</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 0-shot · poem 4 · scored</summary><pre>Небо зірки відкриває.  
+Тиша, хвилі, вітер — мій спів.  
+Під ним — тіні, мрії, мовчання.  
+Я не зупиняюсь, я — вітер.
+
+Сонце вже не було.  
+Тільки зорі, тільки ніч.  
+Ми — два відчуття, один шлях.  
+Ти, я, небо — ми всі в одному.</pre><p>The night journey resolves toward “один шлях” and shared presence, but familiar wind and star metaphors and an awkward sun clause limit its freshness and emotional force.</p><p class="note">Language detector: uk; target confidence 99.6%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 0-shot · poem 5 · scored</summary><pre>Сніг розтане, вітер — лагідний.  
+Роси на квітах, сонце — золоте.  
+Дерево просить, відкрити вікна.  
+Птахи повертаються, весна — тут.  
+
+Квіти вибухають, яскраво.  
+Сонце вставає, тепло — на смак.  
+Діти відкривають вікна.  
+Весна — не мрія, вона — з нас.</pre><p>The spring scenes remain recognizable, but the awkward syntax around “Дерево просить” and the general closing assertion weaken the language and emotional development.</p><p class="note">Language detector: uk; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 1-shot · poem 1 · scored</summary><pre>Дзвінкі вітри — проліт на вулиці.  
+Ранній туман — заснув на квітах.  
+Дождь впадає — м&#x27;яко, без шуму.  
+Світло відкривається знову.  
+
+Квіти втримують блиск у відчутті.  
+Вулиця глибше — з дождем у серці.  
+Сніг змінився — вже не відчуває.  
+Тихо — як сонце, відкривається.</pre><p>The Russian word in “Дождь впадає” mixes languages, while the mist and light images lose their connection in the later vague statements.</p><p class="note">Language detector: uk; target confidence 99.7%. Judge language status: mixed</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 1-shot · poem 2 · scored</summary><pre>Річка тиха, заснула в лісі.  
+Пливе, не розмовляє, не кричить.  
+Під місяцем, під хмарами —  
+відтінки снігу, тіні, тіні.
+
+Вона відчуває, як під ним  
+вітер дихає, вітер дихає.  
+У річці — тільки тиша,  
+тільки тиша, тільки тиша.</pre><p>The refrain “тільки тиша” supports the quiet river setting and a gentle cadence, although repetitive imagery and an unclear pronoun keep the atmosphere from deepening.</p><p class="note">Language detector: uk; target confidence 99.5%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 1-shot · poem 3 · scored</summary><pre>Дім — з вікном, яке відкривається.  
+Сонце, кухня, мами відчай.  
+Тільки ти — той, хто відчуває.  
+Горілка, смак, молоко, сім’я.  
+
+Там, де під кришточком лежить,  
+вітер сягає до саду.  
+Ти — той, хто знову відкриває,  
+вікна, відчай, сонце, сім’я.</pre><p>The repeated domestic motif around “мами відчай” hints at a difficult memory, but bare lists and the unfinished statement about what lies under a cover do not develop it.</p><p class="note">Language detector: uk; target confidence 99.8%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 1-shot · poem 4 · scored</summary><pre>Нічна тиша, зорі світять.  
+Під небом — відчуття вільно.  
+Крокуємо між хмарами.  
+Сірий вітер — наш спів.  
+
+Сірий піднімається вгору.  
+Зорі відкривають дорогу.  
+Тінь від кроків — мій відгук.  
+Ми — тільки мрії під хмарами.</pre><p>Stars opening a road give the dreamlike walk a modest continuity, but “відчуття вільно” is unidiomatic and the gray wind and dreams remain generalized.</p><p class="note">Language detector: uk; target confidence 99.9%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 1-shot · poem 5 · scored</summary><pre>Сніг розтане, вітер — теплий.  
+Роси на квітах, сонце — блискуче.  
+Квіти встають, листя — зелене.  
+Природі відкривається світ.
+
+Птахи повертаються, крикнуть.  
+В лісі — сміх, на полях — життя.  
+Всі відчувають, що прийшов час.  
+Світ відновлюється, як у мрії.</pre><p>The movement from thawing snow to “В лісі” and renewed fields forms a clear spring scene, though its imagery and feeling remain conventional.</p><p class="note">Language detector: uk; target confidence 99.7%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 2-shot · poem 1 · scored</summary><pre>Дзвінкі вітри — проліт на вулиці.  
+Ранній шум — відкривається дім.  
+Скільки тін — злива відкривається.  
+Сніг змінився — вже дождь на лісі.
+
+Під сонцем — відтінок відбивається.  
+Залізнять діри — на саду відкривається.  
+Вітер відчуває — відкривається.  
+Слухай — дождь відкривається.</pre><p>The Russian borrowing in “дождь на лісі”, malformed phrases, and repeated opening without a clear object prevent the weather images from developing meaningfully.</p><p class="note">Language detector: uk; target confidence 99.9%. Judge language status: mixed</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 2-shot · poem 2 · scored</summary><pre>Річка тиха, заснула в лісі.  
+Пливе, не розмовляє, не шумить.  
+Сонцем обертається відтінок.  
+Зірка відлуняє в глибокому місці.  
+
+Вода відбиває північний туман.  
+Під листям — тихий, ніяк не звук.  
+Пливе, як думка, не відчуває.  
+Всі вона — тінь, що не заснула.</pre><p>The quiet river and reflected mist offer a scene, but the grammatical collapse at “Всі вона” and unclear subjects weaken its contemplative progression.</p><p class="note">Language detector: uk; target confidence 99.5%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 2-shot · poem 3 · scored</summary><pre>Дім — з вікном, яке відкрито.  
+Пахне сонцем, кашею, літнім.  
+Вітер тихо — від гостів.  
+Все тут — як у дитинстві.  
+
+Кімната з відкритим вікном.  
+Під стіною — старий підлога.  
+Пам&#x27;ять — як пісня в ніч.  
+Мама вже не відповідає.</pre><p>The domestic smells and childhood setting give “Мама вже не відповідає” some emotional weight, but agreement errors and incomplete phrases weaken the execution.</p><p class="note">Language detector: uk; target confidence 99.4%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 2-shot · poem 4 · scored</summary><pre>Нічна тиша, зорі світять.  
+Під небом — відчуття відкриття.  
+Пішов від дому, від крихітних гір.  
+Гори відступають, я відчуваю.
+
+Сріблять рівнини, хмари плиють.  
+Зорі розмовляють, я не відчуваю.  
+Серце — як місце, де відомо відтінок.  
+Під крилами — тінь, яка не відходить.</pre><p>The departing speaker and silver plains suggest a journey, but “відомо відтінок” is unidiomatic and the unexplained switches between feeling and not feeling weaken continuity.</p><p class="note">Language detector: uk; target confidence 99.9%. Judge language status: correct</p></details><details class="poem" data-language="Ukrainian"><summary>llm · 2-shot · poem 5 · scored</summary><pre>Сніг розтане, вітер — тихий.  
+Рідкісні квіти відкриють.  
+Сонце виходить, ясне, золоте.  
+Природа пробуджується.  
+
+Птахи повертаються, крики.  
+Річка стає живою, чистою.  
+В лісі відчувається тепло.  
+Світ знову — відкритий, дивний.</pre><p>The line “Природа пробуджується” belongs to a coherent sequence of thaw, returning birds, and warmth, although the poem relies on familiar spring statements.</p><p class="note">Language detector: uk; target confidence 99.9%. Judge language status: correct</p></details></section>
+<footer class="note">Full precision, sample counts and intervals: poem_metrics.csv · quality_summary.csv · summary.json. Model versions, reference hashes and settings: metadata.json.</footer>
+</main><script>
+const chooser=document.getElementById('language');
+function updateLanguage(){document.querySelectorAll('[data-language]').forEach(node=>{node.hidden=node.dataset.language!==chooser.value});document.getElementById('language-label').textContent=chooser.value;}
+chooser.addEventListener('change',updateLanguage);document.getElementById('print').addEventListener('click',()=>window.print());updateLanguage();
+</script></body></html>

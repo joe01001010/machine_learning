@@ -1,0 +1,57 @@
+Language: English
+Model: Qwen/Qwen3-4B-Instruct-2507
+k-shot examples: 2
+Example source: English/English1k.txt (1000 poems)
+Example poem indices (1-based): [423, 805]
+Poems: 5
+
+=== Poem 1 ===
+Dawn breaks soft, mist hangs low.  
+Rain taps slow on roof and road.  
+World still sleeps, quiet, deep.  
+Wet leaves glisten, cool and steep.  
+
+Clouds part just a little more.  
+Drip by drip, the sky grows clear.  
+Morning breaths in silver light.  
+Ground drinks in, no sound, no fight.
+
+=== Poem 2 ===
+The river flows, slow and low,  
+Through fields of green and old stone.  
+It whispers to the willow,  
+No sound but peace and tone.  
+
+Sunlight dapples on the water,  
+Reflects the sky’s soft blue.  
+No rush, no need, no hurry—  
+Just stillness, deep and true.
+
+=== Poem 3 ===
+Sunlight on the porch, warm and slow.  
+Dad’s hands, cracked, but still so kind.  
+
+Kitchen table, dishes, morning steam.  
+Mama’s voice, soft, humming low.
+
+=== Poem 4 ===
+Stars blink above the silent road,  
+Wind hums low, no word to speak.  
+Footsteps fade where shadows grow,  
+Night holds breath, and I am free.  
+
+Moon spills silver on the trail,  
+Distant hills in hush are still.  
+No map, no name, just stars to guide—  
+I walk with sky, and time, and will.
+
+=== Poem 5 ===
+The frost slips away, soft and slow.  
+Birds return with a chirp and a call.  
+Earth stirs beneath a warm, golden sky.  
+Flowers push through the soil, bold and tall.  
+
+Rain falls in gentle, silver streams.  
+Green fingers reach for the sun’s light.  
+Wind hums old songs through the trees.  
+Spring wakes up, and the world takes flight.
