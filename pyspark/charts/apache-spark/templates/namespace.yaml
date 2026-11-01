@@ -1,0 +1,13 @@
+{{- if .Values.namespace.create }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ required "namespace.name is required" .Values.namespace.name }}
+  annotations:
+    # Uninstall removes Spark resources but preserves the namespace.
+    helm.sh/resource-policy: keep
+  labels:
+    app.kubernetes.io/name: apache-spark
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}

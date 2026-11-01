@@ -1,0 +1,4 @@
+data/
+spark-test.log
+__pycache__/
+employees.jsonl

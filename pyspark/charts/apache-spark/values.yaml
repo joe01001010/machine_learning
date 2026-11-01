@@ -1,0 +1,42 @@
+namespace:
+  create: true
+  name: apache-spark
+
+image:
+  repository: apache/spark
+  tag: "4.2.0"
+  pullPolicy: IfNotPresent
+
+master:
+  ui:
+    # This Minikube Docker profile already publishes node port 32443.
+    # Find its browser port with: docker port minikube 32443/tcp
+    nodePort: 32443
+  # Heap for the master daemon, not for application drivers or executors.
+  daemonMemory: "256m"
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+# One data directory shared by every worker on this single-node Minikube cluster.
+sharedData:
+  nodePath: /data/apache-spark
+
+worker:
+  replicas: 4
+  # Capacity each worker advertises to Spark for application executors.
+  cores: 2
+  memory: "1g"
+  # The worker daemon needs additional memory outside the executor heap.
+  daemonMemory: "128m"
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "512Mi"
+    limits:
+      cpu: "4"
+      memory: "2Gi"
