@@ -1,0 +1,2 @@
+python experiment.py --language python --entrypoint main.py --seed-dir calculator_v1 --prompt-file calculator_v1_prompt.txt --calculator-basic-reference
+python experiment.py --language c --entrypoint rideshare.c --seed-dir rideshare_v1 --prompt-file rideshare_experiment_prompt.txt

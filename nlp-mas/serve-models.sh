@@ -30,6 +30,9 @@ python_bin=${PYTHON_BIN:-python}
 # Qwen3-4B needs about 297 MiB of dynamically scaled FP8 KV for 4096 tokens.
 max_model_len=${MAX_MODEL_LEN:-4096}
 kv_cache_bytes=${KV_CACHE_MEMORY_BYTES:-335544320}
+coder_max_model_len=${CODER_MAX_MODEL_LEN:-$max_model_len}
+coder_kv_cache_bytes=${CODER_KV_CACHE_MEMORY_BYTES:-$kv_cache_bytes}
+max_batched_tokens=${MAX_NUM_BATCHED_TOKENS:-512}
 kv_cache_dtype=${KV_CACHE_DTYPE:-fp8_per_token_head}
 attention_backend=${ATTENTION_BACKEND:-TRITON_ATTN}
 gpu_memory_utilization=${GPU_MEMORY_UTILIZATION:-0.20}
@@ -115,7 +118,12 @@ trap 'exit 129' HUP
 
 start_server() {
     local role=$1 model=$2 port=$3 budget=$4
-    echo "Starting server $role"
+    local context_length=$max_model_len cache_bytes=$kv_cache_bytes
+    if [[ "$role" == coder ]]; then
+        context_length=$coder_max_model_len
+        cache_bytes=$coder_kv_cache_bytes
+    fi
+    echo "Starting server $role (context $context_length tokens, KV cache $cache_bytes bytes)"
     setsid vllm serve "$model" \
         --chat-template "$log_dir/templates/$role.jinja" \
         --served-model-name "$role" \
@@ -124,14 +132,14 @@ start_server() {
         --host 127.0.0.1 \
         --port "$port" \
         --dtype bfloat16 \
-        --max-model-len "$max_model_len" \
+        --max-model-len "$context_length" \
         --max-num-seqs 1 \
         --gpu-memory-utilization "$budget" \
         --enforce-eager \
-        --kv-cache-memory-bytes "$kv_cache_bytes" \
+        --kv-cache-memory-bytes "$cache_bytes" \
         --kv-cache-dtype "$kv_cache_dtype" \
         --attention-backend "$attention_backend" \
-        --max-num-batched-tokens 512 \
+        --max-num-batched-tokens "$max_batched_tokens" \
         >"$log_dir/$role.log" 2>&1 &
     local pid=$!
     pids+=("$pid")
