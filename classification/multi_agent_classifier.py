@@ -6,6 +6,9 @@ Confusion matrix (actual rows, predicted columns, negative then positive) [[43, 
 Full-review fallbacks 0/100
 
 python multi_agent_classifier.py --device cuda --limit 0 --show-trace
+Accuracy 23,055/25,000 (92.22%)
+Confusion matrix (actual rows, predicted columns, negative then positive) [[11804, 696], [1249, 11251]]
+Full-review fallbacks 199/25,00
 """
 
 import json
