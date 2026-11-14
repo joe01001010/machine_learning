@@ -1,0 +1,36 @@
+I want a command-line calculator that accepts one arithmetic expression as an argument and prints the result.
+
+The calculator shall:
+- Support addition (+), subtraction (-), multiplication (*), and division (/).
+- Accept nonnegative integer operands, including zero.
+- Support parentheses, including nested parentheses.
+- Apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction.
+- Evaluate operators of equal precedence from left to right.
+- Accept expressions with or without spaces between numbers and operators.
+- Allow negative and fractional results.
+
+Output requirements:
+- Print integer results without a decimal point or unnecessary leading zeros.
+- Print fractional results in decimal notation without unnecessary trailing zeros.
+- For division, this initial evaluation only requires cases whose exact results have terminating decimal representations.
+- Print only the result on standard output, followed by a newline.
+- Exit with status 0 after a successful calculation.
+
+Examples of required behavior:
+- "5 + 3" produces "8".
+- "3 - 8" produces "-5".
+- "0 * 17" produces "0".
+- "4 / 2" produces "2".
+- "5 / 2" produces "2.5".
+- "2 + 3 * 4" produces "14".
+- "(2 + 3) * 4" produces "20".
+- "2 * (3 + (4 * 5))" produces "46".
+- "10 - 3 - 2" produces "5".
+- "12 / 3 * 2" produces "8".
+- "2+3" and "2 + 3" both produce "5".
+
+For this evaluation, do not assess malformed expressions, division by zero, decimal input operands, unary minus in the input, scientific notation, or nonterminating fractional results. These behaviors are unspecified.
+
+Generate testable requirements from these directions, then design and execute tests against the supplied calculator. Include tests beyond the examples where they exercise the stated requirements.
+
+Judge the implementation against these directions. Do not change expected behavior to match the implementation. Report failures with the relevant requirement, test input, expected result, and actual execution evidence. Ask for clarification if a necessary expectation is missing.

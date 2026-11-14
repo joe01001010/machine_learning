@@ -2,3 +2,5 @@ __pycache__
 *venv*
 *.swp
 *.swo
+*log*
+nlp-mas/results*

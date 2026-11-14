@@ -1,0 +1,33 @@
+I want a command-line rideshare management application written in C. It should let an administrator configure multiple rideshare organizations, let riders select an organization and complete trips, and produce a separate summary for each organization. Use the supplied rideshare source as the starting implementation and work on a copy.
+
+Administrator and organization setup:
+- At startup, require administrator authentication. For this experiment, use admin ID "a" and passcode "b". Allow two login attempts; terminate after two failures.
+- After successful login, allow the administrator to add multiple organizations. Each organization has a unique name, base fare, price per minute, price per mile, and minimum fare.
+- Each of the four pricing values must be between 0.10 and 50.00 inclusive. Reject invalid values and request a replacement without accepting partial numbers such as "3abc".
+- Present organizations alphabetically and let riders select an organization by its exact name. Reject an unknown name and request another selection.
+
+Trips and fares:
+- Accept a trip distance from 1 through 100 miles inclusive, including fractional miles.
+- In normal operation, calculate whole-number travel minutes by choosing a factor from 1.2 through 1.5 minutes per mile, multiplying by the distance, and rounding down.
+- Calculate fare as the greater of the minimum fare and: base fare + (minutes multiplied by price per minute) + (miles multiplied by price per mile).
+- For example, a base fare of 2.00, a per-minute price of 0.50, a per-mile price of 1.00, 10 miles, and 12 minutes produce 18.00. With a minimum fare of 20.00, the same trip costs 20.00.
+- Display the organization, distance, minutes, and fare. Display monetary amounts with two decimal places.
+- Maintain each organization's completed ride count, total miles, total minutes, and total fares independently. Rejected inputs, cancelled trips, and administrator actions must not change these totals.
+
+Optional ratings:
+- After each completed ride, let the rider choose whether to submit ratings. Accept y or n without regard to case and reject other responses.
+- A submitted survey contains four integer scores from 1 through 5 inclusive: Safety, Cleanliness, Comfort, and Test. "Test" is the fourth category name used for this experiment.
+- An unrated ride still contributes to ride totals but not to rating averages. Calculate each category average using only submitted surveys for that organization. Show that no ratings are available when no surveys have been submitted; do not divide by zero or display NaN.
+
+Session completion and reporting:
+- Entering -1 instead of a trip distance requests administrator authentication. It must not create a ride or charge a fare.
+- After successful administrator authentication, end rider processing, display every organization's summary, and exit cleanly. Summaries must include ride totals and category averages, with organizations listed alphabetically.
+- Write a separate summary text file named after each organization in the current working directory. Do not require a Windows-specific directory.
+
+Experiment conditions:
+- Use scripted standard input and a fresh process for each test.
+- Add a documented test option, --test-minutes N, that substitutes a known nonnegative whole-number duration for random duration generation. This is a test fixture; normal operation must retain the randomized duration rule. Choose fixture durations within the normal range for the tested distances.
+- Keep console wording and field order stable. Before freezing tests, record the complete expected console transcript for each scripted session; do not invent unspecified menu wording.
+- Initial tests will use unique single-word organization names and no more than five completed rides per organization. Duplicate names, storage overflow, and behavior beyond this range are outside the initial scope. Administrative shutdown must still work within the tested range.
+- Judge behavior against these directions, not against existing bugs. Preserve requirements, test inputs, and expected results during code repair. Report actual execution evidence for failures.
+- Console messages alone do not prove that report files contain correct data. If the runner cannot capture and inspect files, identify file-content verification as unverified rather than claiming it passed.
