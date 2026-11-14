@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R011-T01",
+      "args": [
+        "4 / 2"
+      ],
+      "justification": "Validates that division with a terminating decimal result (2.0) is correctly evaluated to an integer output without a decimal point, as per the requirement for terminating decimal representations.",
+      "stdin": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R011-T02",
+      "args": [
+        "10 / 4"
+      ],
+      "justification": "Validates that division with a terminating decimal result (2.5) is correctly evaluated and output in decimal form without unnecessary trailing zeros, as required for terminating decimals.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R011"
+    }
+  ],
+  "rationale": "The requirement specifically addresses division cases with terminating decimal representations. These tests cover both integer and non-integer results to ensure the calculator correctly formats outputs as per the output requirements, without introducing unnecessary decimal points or trailing zeros. The tests use valid, simple expressions with nonnegative integers to isolate the behavior of terminating decimals in division."
+}

@@ -1,0 +1,4 @@
+{
+  "text": "Read base fare, price per minute, price per mile, miles, minutes, and minimum fare from stdin. Print max(minimum fare, base fare + minutes * minute price + miles * mile price) with two decimals.",
+  "source": "user"
+}

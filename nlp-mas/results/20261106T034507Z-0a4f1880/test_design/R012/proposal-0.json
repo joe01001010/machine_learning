@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R012-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the basic addition operation with no spaces between operands, as specified in the requirement. It ensures the calculator correctly handles expressions with minimal spacing and produces the expected integer output without unnecessary formatting.",
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R012-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test validates operator precedence: multiplication before addition. The expression 2 + 3 * 4 evaluates to 2 + 12 = 14, confirming that the calculator respects standard arithmetic precedence and applies left-to-right evaluation for operators of equal precedence.",
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R012-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test checks nested parentheses and correct precedence. The inner expression 2 + 3 = 5, then 5 * 4 = 20. This confirms the calculator properly evaluates expressions with nested parentheses, respecting the order of operations as defined in the requirement.",
+      "requirement_id": "R012"
+    }
+  ],
+  "rationale": "These tests cover core arithmetic operations, operator precedence, and parentheses handling as required. They directly validate the output formatting (integer output without decimal, no trailing zeros) and ensure the calculator produces the correct result as per the stated precedence rules. Each test is grounded in the provided examples and requirements, focusing on the exact output formatting and behavior specified in the requirement."
+}

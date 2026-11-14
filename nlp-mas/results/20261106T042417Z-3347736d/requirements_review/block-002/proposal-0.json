@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R004",
+      "text": "Administrator authentication requires admin ID 'a' and passcode 'b'; allows two login attempts and terminates after two failures.",
+      "source_id": "S004",
+      "source_quote": "- At startup, require administrator authentication. For this experiment, use admin ID \"a\" and passcode \"b\". Allow two login attempts; terminate after two failures."
+    },
+    {
+      "requirement_id": "R005",
+      "text": "After successful login, administrator can add multiple organizations with unique names, base fare, price per minute, price per mile, and minimum fare.",
+      "source_id": "S005",
+      "source_quote": "- After successful login, allow the administrator to add multiple organizations. Each organization has a unique name, base fare, price per minute, price per mile, and minimum fare."
+    },
+    {
+      "requirement_id": "R006",
+      "text": "All four pricing values must be between 0.10 and 50.00 inclusive; invalid inputs like '3abc' are rejected and require replacement.",
+      "source_id": "S006",
+      "source_quote": "- Each of the four pricing values must be between 0.10 and 50.00 inclusive. Reject invalid values and request a replacement without accepting partial numbers such as \"3abc\"."
+    }
+  ],
+  "source_ids": [
+    "S004",
+    "S005",
+    "S006"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R004",
+      "text": "Administrator authentication requires admin ID 'a' and passcode 'b'; allows two login attempts and terminates after two failures.",
+      "source_id": "S004"
+    },
+    {
+      "requirement_id": "R005",
+      "text": "After successful login, administrator can add multiple organizations with unique names, base fare, price per minute, price per mile, and minimum fare.",
+      "source_id": "S005"
+    },
+    {
+      "requirement_id": "R006",
+      "text": "All four pricing values must be between 0.10 and 50.00 inclusive; invalid inputs like '3abc' are rejected and require replacement.",
+      "source_id": "S006"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R004",
+      "canonical_requirement_id": "R004"
+    },
+    {
+      "submitted_requirement_id": "R005",
+      "canonical_requirement_id": "R005"
+    },
+    {
+      "submitted_requirement_id": "R006",
+      "canonical_requirement_id": "R006"
+    }
+  ],
+  "complete": true
+}

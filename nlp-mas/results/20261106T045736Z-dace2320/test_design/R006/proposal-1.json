@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R006-T01",
+      "args": [
+        "addition_and_subtraction_left_to_right"
+      ],
+      "stdin": "10 - 5 - 3",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement to evaluate operators of equal precedence from left to right. The expression 10 - 5 - 3 must be evaluated as (10 - 5) - 3 = 5 - 3 = 2, not 10 - (5 - 3) = 10 - 2 = 8. This ensures left-to-right evaluation for subtraction operators of equal precedence, as required by the requirement.",
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R006-T03",
+      "args": [
+        "left_to_right_addition"
+      ],
+      "stdin": "2 + 3 + 4",
+      "expected_stdout": "9",
+      "expected_exit_code": 0,
+      "justification": "This test verifies left-to-right evaluation for addition operators of equal precedence. The expression 2 + 3 + 4 must be evaluated as (2 + 3) + 4 = 5 + 4 = 9, demonstrating correct left-to-right processing of operators with equal precedence. This is a valid and distinct test case that exercises the requirement without involving precedence differences.",
+      "requirement_id": "R006"
+    }
+  ],
+  "rationale": "The requirement specifically mandates left-to-right evaluation for operators of equal precedence. Test R006-T01 (subtraction chain) and R006-T03 (addition chain) are valid because they involve only operators of equal precedence and test left-to-right evaluation. Test R006-T02 was invalidated by review feedback as it involved operators with different precedence (addition and multiplication), which is outside the scope of the requirement. Only these two tests are relevant and correctly aligned with the requirement to evaluate equal-precedence operators from left to right."
+}

@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '10 - 3 * 2 + 1' evaluates to 5, as required by the requirement to evaluate operators of equal precedence from left to right. The expression follows standard precedence: multiplication is performed first (3 * 2 = 6), resulting in 10 - 6 + 1. Then, subtraction and addition are evaluated left to right: 10 - 6 = 4, then 4 + 1 = 5. The observed stdout is '5' with a newline, matching the expected output exactly. The execution returned exit code 0, which is correct. The mathematical reference confirms the expected rational result of 5. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) aligns perfectly. All criteria are met."
+}

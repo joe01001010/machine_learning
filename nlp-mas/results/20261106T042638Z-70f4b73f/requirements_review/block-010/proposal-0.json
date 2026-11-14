@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R026",
+      "text": "A documented test option --test-minutes N must substitute a known nonnegative whole-number duration for random duration generation, with fixture durations within the normal range for tested distances.",
+      "source_id": "S028",
+      "source_quote": "- Add a documented test option, --test-minutes N, that substitutes a known nonnegative whole-number duration for random duration generation. This is a test fixture; normal operation must retain the"
+    },
+    {
+      "requirement_id": "R027",
+      "text": "Console wording and field order must remain stable; before freezing tests, the complete expected console transcript for each scripted session must be recorded, without inventing unspecified menu wording.",
+      "source_id": "S029",
+      "source_quote": "randomized duration rule. Choose fixture durations within the normal range for the tested distances."
+    },
+    {
+      "requirement_id": "R028",
+      "text": "Summary files for each organization must be written with the organization's name as the filename in the current working directory, without requiring Windows-specific directory support.",
+      "source_id": "S030",
+      "source_quote": "- Keep console wording and field order stable. Before freezing tests, record the complete expected console transcript for each scripted session; do not invent unspecified menu wording."
+    }
+  ],
+  "source_ids": [
+    "S028",
+    "S029",
+    "S030"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R026",
+      "text": "A documented test option --test-minutes N must substitute a known nonnegative whole-number duration for random duration generation, with fixture durations within the normal range for tested distances.",
+      "source_id": "S028"
+    },
+    {
+      "requirement_id": "R027",
+      "text": "Console wording and field order must remain stable; before freezing tests, the complete expected console transcript for each scripted session must be recorded, without inventing unspecified menu wording.",
+      "source_id": "S029"
+    },
+    {
+      "requirement_id": "R028",
+      "text": "Summary files for each organization must be written with the organization's name as the filename in the current working directory, without requiring Windows-specific directory support.",
+      "source_id": "S030"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R026",
+      "canonical_requirement_id": "R026"
+    },
+    {
+      "submitted_requirement_id": "R027",
+      "canonical_requirement_id": "R027"
+    },
+    {
+      "submitted_requirement_id": "R028",
+      "canonical_requirement_id": "R028"
+    }
+  ],
+  "complete": true
+}

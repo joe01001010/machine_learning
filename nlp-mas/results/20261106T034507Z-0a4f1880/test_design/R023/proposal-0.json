@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R023-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "12 / 3 * 2",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the stated requirement that '12 / 3 * 2' produces '8'. It exercises standard arithmetic precedence: division and multiplication are evaluated left to right, so 12 / 3 = 4, then 4 * 2 = 8. This confirms correct handling of operator precedence and left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R023"
+    },
+    {
+      "test_case_id": "R023-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "24 / 6 * 3",
+      "expected_stdout": "12",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement to a similar expression with different values, ensuring the calculator correctly applies left-to-right evaluation for multiplication and division. 24 / 6 = 4, then 4 * 3 = 12. This verifies consistent behavior across different operand values and reinforces that precedence rules are applied correctly.",
+      "requirement_id": "R023"
+    },
+    {
+      "test_case_id": "R023-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "100 / 5 * 2",
+      "expected_stdout": "40",
+      "expected_exit_code": 0,
+      "justification": "This test includes a larger scale example to verify scalability and precision. 100 / 5 = 20, then 20 * 2 = 40. It ensures the system handles larger integers correctly and maintains accuracy in intermediate and final results, confirming robustness in arithmetic evaluation.",
+      "requirement_id": "R023"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '12 / 3 * 2' produces '8'. To fully validate this behavior, we must test the core arithmetic precedence and left-to-right evaluation for multiplication and division. These tests cover the exact requirement, provide edge cases with varying magnitudes, and ensure the system behaves consistently under different inputs. All expected outputs are derived from standard arithmetic, with no rounding or approximation, as per the requirement to produce terminating decimals only when applicable."
+}

@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases directly and robustly cover the requirement that '10 - 3 - 2' evaluates to '5' with left-to-right evaluation for operators of equal precedence. Test R022-T01 validates the minimal case, and R022-T02 extends it to a longer sequence, ensuring consistent behavior. Both tests exercise the core requirement without introducing ambiguity. The inputs are simple, unambiguous, and align with the customer's intent. No invalid or edge cases are included, as specified. The expected outputs and exit codes are correct and match the requirement. Mathematical reference checks are not needed here as the arithmetic is straightforward. Coverage is sufficient and justified."
+}

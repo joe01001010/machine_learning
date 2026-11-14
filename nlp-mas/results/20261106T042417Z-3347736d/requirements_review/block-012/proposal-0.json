@@ -1,0 +1,44 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R032",
+      "text": "Console messages alone do not prove report files contain correct data; file-content verification must be explicitly verified if the runner cannot capture or inspect files.",
+      "source_id": "S034",
+      "source_quote": "- Console messages alone do not prove that report files contain correct data. If the runner cannot capture and inspect files, identify file-content verification as unverified rather than claiming it"
+    },
+    {
+      "requirement_id": "R033",
+      "text": "File-content verification is unverified if the runner cannot capture or inspect files, even if console output appears correct.",
+      "source_id": "S035",
+      "source_quote": "passed."
+    }
+  ],
+  "source_ids": [
+    "S034",
+    "S035"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R032",
+      "text": "Console messages alone do not prove report files contain correct data; file-content verification must be explicitly verified if the runner cannot capture or inspect files.",
+      "source_id": "S034"
+    },
+    {
+      "requirement_id": "R033",
+      "text": "File-content verification is unverified if the runner cannot capture or inspect files, even if console output appears correct.",
+      "source_id": "S035"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R032",
+      "canonical_requirement_id": "R032"
+    },
+    {
+      "submitted_requirement_id": "R033",
+      "canonical_requirement_id": "R033"
+    }
+  ],
+  "complete": true
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R007-T01",
+      "args": [
+        "2+3"
+      ],
+      "stdin": "",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that the calculator accepts expressions without spaces between numbers and operators. The input '2+3' is a minimal case that directly tests the requirement to accept non-spaced expressions, as per the customer's specification that both '2+3' and '2 + 3' are valid.",
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T02",
+      "args": [
+        "2 + 3"
+      ],
+      "stdin": "",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that the calculator accepts expressions with spaces between numbers and operators. It is a direct counterpart to R007-T01, ensuring that spacing does not affect parsing or evaluation, as required by the requirement to support both spaced and unspaced expressions.",
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T03",
+      "args": [
+        "100-50-25"
+      ],
+      "stdin": "",
+      "expected_stdout": "25",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates left-to-right evaluation for subtraction, which is part of the standard precedence rule (same precedence, left to right). It also ensures that the parser correctly handles multiple consecutive operators without spaces, reinforcing the robustness of the expression parsing logic under the requirement to accept expressions with or without spaces.",
+      "requirement_id": "R007"
+    }
+  ],
+  "rationale": "The requirement explicitly states support for both spaced and unspaced expressions. These tests cover the minimal cases of unspaced and spaced inputs, as well as a longer expression with multiple operators to validate consistent parsing and evaluation across spacing variations. All tests are grounded in the customer's intent to ensure robustness in handling spacing, without introducing invalid input or requiring error handling."
+}

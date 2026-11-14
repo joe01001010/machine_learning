@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R007-T01",
+      "args": [
+        "2+3"
+      ],
+      "justification": "Tests acceptance of an expression with no spaces between numbers and operators, as required by the requirement.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T02",
+      "args": [
+        "2 + 3"
+      ],
+      "justification": "Tests acceptance of an expression with spaces between numbers and operators, as required by the requirement.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R007"
+    }
+  ],
+  "rationale": "The requirement explicitly states that the calculator must accept expressions with or without spaces between numbers and operators. These two test cases cover both formats, ensuring the implementation is robust to spacing variations. The expressions are simple arithmetic to isolate the spacing behavior without introducing complexity from other operators or parentheses."
+}

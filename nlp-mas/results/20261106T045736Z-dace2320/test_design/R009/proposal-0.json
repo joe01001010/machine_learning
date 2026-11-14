@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R009-T01",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the requirement to print integer results without a decimal point or unnecessary leading zeros. The expression '5 + 3' evaluates to 8, an integer, and the output must be exactly '8' (no decimal point or leading zeros). This directly validates the specified behavior for integer output.",
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R009-T02",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "0 * 17",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test checks the handling of zero as a result in integer arithmetic. The expression '0 * 17' evaluates to 0, and the output must be exactly '0' to ensure no unnecessary leading zeros or decimal point are included. This confirms the requirement for proper formatting of zero results.",
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R009-T03",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "1000 - 1000",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test ensures that large integer differences are correctly reduced to zero without any extraneous formatting. The expression '1000 - 1000' evaluates to 0, and the output must be exactly '0' to validate that the system does not add leading zeros or a decimal point, even for large operands.",
+      "requirement_id": "R009"
+    }
+  ],
+  "rationale": "These tests focus on the core requirement of integer output formatting: no decimal point, no unnecessary leading zeros, and correct representation of zero. They cover simple, clear cases that directly validate the specified behavior without introducing ambiguity or complexity. Test R009-T01 covers basic addition, R009-T02 covers multiplication with zero, and R009-T03 covers a large integer subtraction resulting in zero. All are valid, well-defined expressions that exercise the requirement in distinct but relevant contexts."
+}

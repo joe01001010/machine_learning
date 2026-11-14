@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R006",
+      "text": "The calculator must accept numeric expressions as text, including decimal numbers and negative numbers.",
+      "source_id": "S007",
+      "source_quote": "- Accept numeric expressions as text, including decimal numbers and negative numbers."
+    },
+    {
+      "requirement_id": "R007",
+      "text": "For valid input, the calculator must print the result; for invalid input, it must print an error response.",
+      "source_id": "S008",
+      "source_quote": "- For valid input, print the result. For invalid input, print an error response."
+    },
+    {
+      "requirement_id": "R008",
+      "text": "The calculator must preserve exact terminating decimal answers where possible.",
+      "source_id": "S009",
+      "source_quote": "- Preserve exact terminating decimal answers where possible."
+    }
+  ],
+  "source_ids": [
+    "S007",
+    "S008",
+    "S009"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R006",
+      "text": "The calculator must accept numeric expressions as text, including decimal numbers and negative numbers.",
+      "source_id": "S007"
+    },
+    {
+      "requirement_id": "R007",
+      "text": "For valid input, the calculator must print the result; for invalid input, it must print an error response.",
+      "source_id": "S008"
+    },
+    {
+      "requirement_id": "R008",
+      "text": "The calculator must preserve exact terminating decimal answers where possible.",
+      "source_id": "S009"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R006",
+      "canonical_requirement_id": "R006"
+    },
+    {
+      "submitted_requirement_id": "R007",
+      "canonical_requirement_id": "R007"
+    },
+    {
+      "submitted_requirement_id": "R008",
+      "canonical_requirement_id": "R008"
+    }
+  ],
+  "complete": true
+}

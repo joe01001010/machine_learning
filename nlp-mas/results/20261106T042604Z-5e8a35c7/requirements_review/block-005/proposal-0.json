@@ -1,0 +1,35 @@
+{
+  "requirements": [],
+  "source_ids": [
+    "S013",
+    "S014"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R011",
+      "text": "For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle.",
+      "source_id": "S013"
+    },
+    {
+      "requirement_id": "R012",
+      "text": "For irrational, nonrepeating answers from fractional powers, such as 2^0.5, use 17 significant digits.",
+      "source_id": "S014"
+    }
+  ],
+  "duplicates": [
+    {
+      "submitted_requirement_id": "R011",
+      "canonical_requirement_id": "R009",
+      "source_id": "S013",
+      "source_quote": "repeating-cycle rules above."
+    },
+    {
+      "submitted_requirement_id": "R012",
+      "canonical_requirement_id": "R010",
+      "source_id": "S014",
+      "source_quote": "The controller supplies implementation conventions for the entrypoint, newline, error spelling/exit code, and rounding mode. Those conventions are separate from the user's mathematical requirements."
+    }
+  ],
+  "id_assignments": [],
+  "complete": true
+}

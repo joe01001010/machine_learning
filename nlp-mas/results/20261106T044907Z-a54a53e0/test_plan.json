@@ -1,0 +1,291 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Tests basic addition with positive integers, verifying correct output and precedence handling.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T02",
+      "args": [
+        "10 - 4 * 2"
+      ],
+      "justification": "Tests subtraction and multiplication with standard precedence: multiplication before subtraction.",
+      "stdin": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R002-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Validates basic addition with no parentheses, testing standard precedence and integer output.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T02",
+      "args": [
+        "(2 + 3) * 4"
+      ],
+      "justification": "Validates parentheses and operator precedence: inner addition first, then multiplication.",
+      "stdin": "",
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R003-T01",
+      "args": [
+        "0 + 5"
+      ],
+      "justification": "Validates acceptance of zero as a nonnegative integer operand in addition.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T02",
+      "args": [
+        "17 * 0"
+      ],
+      "justification": "Validates acceptance of zero as a nonnegative integer operand in multiplication.",
+      "stdin": "",
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R004-T01",
+      "args": [
+        "(5 + 3) * 2"
+      ],
+      "justification": "Tests nested parentheses with addition and multiplication, ensuring correct precedence and left-to-right evaluation for operators of equal precedence.",
+      "stdin": "",
+      "expected_stdout": "16\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T02",
+      "args": [
+        "(10 - (3 + 2)) * 4"
+      ],
+      "justification": "Tests deeply nested parentheses with subtraction and multiplication, verifying correct handling of nested subexpressions and operator precedence.",
+      "stdin": "",
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R005-T01",
+      "args": [
+        "(5 + 3) * 2 - 4 / 2"
+      ],
+      "justification": "This test verifies that multiplication and division (with higher precedence) are evaluated before addition and subtraction, even when nested in parentheses. It specifically checks the precedence of multiplication and division over addition and subtraction.",
+      "stdin": "",
+      "expected_stdout": "14\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T02",
+      "args": [
+        "10 - 2 * 3 + 4 / 2"
+      ],
+      "justification": "This test confirms that multiplication and division are performed before addition and subtraction, demonstrating correct precedence order. It also includes a mix of operations to validate left-to-right evaluation for same-precedence operators.",
+      "stdin": "",
+      "expected_stdout": "6\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R006-T01",
+      "args": [
+        "3 - 5 - 2"
+      ],
+      "justification": "This test exercises the left-to-right evaluation of operators of equal precedence (subtraction) as required by the requirement. It ensures that the calculator does not apply precedence beyond the standard arithmetic rules and correctly computes the result as -4.",
+      "stdin": "",
+      "expected_stdout": "-4\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R006-T02",
+      "args": [
+        "10 - 3 * 2 + 1"
+      ],
+      "justification": "This test evaluates equal-precedence operators (subtraction and addition) from left to right, despite multiplication having higher precedence. It verifies that the expression is parsed and evaluated left-to-right for operators of the same precedence, producing 5, not 7.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R007-T01",
+      "args": [
+        "2+3"
+      ],
+      "justification": "Tests acceptance of an expression with no spaces between numbers and operators, as required by the requirement.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T02",
+      "args": [
+        "2 + 3"
+      ],
+      "justification": "Tests acceptance of an expression with spaces between numbers and operators, as required by the requirement.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R008-T01",
+      "args": [
+        "5 - 3"
+      ],
+      "justification": "Exercises negative result generation through subtraction of smaller from larger nonnegative integers.",
+      "stdin": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T02",
+      "args": [
+        "7 / 2"
+      ],
+      "justification": "Exercises fractional result generation with a terminating decimal output as required by the requirement.",
+      "stdin": "",
+      "expected_stdout": "3.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R009-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Tests that integer results are printed without a decimal point or unnecessary leading zeros, as per the requirement.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R009-T02",
+      "args": [
+        "100 - 50 * 2"
+      ],
+      "justification": "Tests that integer results are correctly formatted with no unnecessary leading zeros or decimal point, even in expressions with mixed operations and precedence.",
+      "stdin": "",
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R010-T01",
+      "args": [
+        "5 / 2"
+      ],
+      "justification": "Tests fractional output with a terminating decimal (2.5) as required by the requirement to print fractional results in decimal notation without unnecessary trailing zeros.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R010-T02",
+      "args": [
+        "10 / 4"
+      ],
+      "justification": "Tests fractional output with a terminating decimal (2.5) and ensures no unnecessary trailing zeros are printed, confirming correct formatting of exact decimals.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R011-T01",
+      "args": [
+        "4 / 2"
+      ],
+      "justification": "Validates that division with a terminating decimal result (2.0) is correctly evaluated to an integer output without a decimal point, as per the requirement for terminating decimal representations.",
+      "stdin": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R011-T02",
+      "args": [
+        "10 / 4"
+      ],
+      "justification": "Validates that division with a terminating decimal result (2.5) is correctly evaluated and output in decimal form without unnecessary trailing zeros, as required for terminating decimals.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R012-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Verifies that the calculator outputs the result followed by a newline, as required by the output specification, using a simple addition expression with integer result.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R012-T02",
+      "args": [
+        "10 / 2"
+      ],
+      "justification": "Validates that the calculator correctly outputs a terminating decimal result with no unnecessary trailing zeros, and includes a newline, as per the output formatting rules for division.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R013-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Valid expression with addition; tests successful evaluation and exit status 0.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R013"
+    },
+    {
+      "test_case_id": "R013-T02",
+      "args": [
+        "4 * 2 / 1"
+      ],
+      "justification": "Valid expression with multiplication and division; tests standard precedence and correct exit status 0.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R013"
+    }
+  ],
+  "sha256": "a0fae3d991394448fa69a8249e20b58f19bdc7cbe2a4f8ee9248ac63c8a52eb8"
+}

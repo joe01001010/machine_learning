@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "2+3"
+      ],
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "justification": "Exercise a straightforward successful case.",
+      "requirement_id": "R001"
+    }
+  ],
+  "rationale": "Exercise a straightforward successful case."
+}

@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R012-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Verifies that the calculator outputs the result followed by a newline, as required by the output specification, using a simple addition expression with integer result.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R012-T02",
+      "args": [
+        "10 / 2"
+      ],
+      "justification": "Validates that the calculator correctly outputs a terminating decimal result with no unnecessary trailing zeros, and includes a newline, as per the output formatting rules for division.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R012"
+    }
+  ],
+  "rationale": "This test set focuses on the core output requirement: printing only the result followed by a newline. It includes a simple addition and a division case with a terminating decimal to ensure the output format is preserved as specified. These cases are minimal, direct, and cover the exact behavior stated in the requirement without introducing complexity or ambiguity."
+}

@@ -1,0 +1,43 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R026-T01",
+      "args": [
+        "addition",
+        "precedence",
+        "left_to_right"
+      ],
+      "stdin": "2 + 3 * 4 - 1",
+      "expected_stdout": "13",
+      "expected_exit_code": 0,
+      "justification": "This test verifies correct application of arithmetic precedence and left-to-right evaluation for operators of equal precedence. The expression 2 + 3 * 4 - 1 is evaluated as: 3 * 4 = 12 (multiplication first due to precedence), then 2 + 12 = 14 (addition), then 14 - 1 = 13. The result 13 is derived from standard precedence rules and left-to-right evaluation for same-precedence operators, correcting the previous error in the requirement.",
+      "requirement_id": "R026"
+    },
+    {
+      "test_case_id": "R026-T02",
+      "args": [
+        "nested_parentheses",
+        "balanced",
+        "deeply_nested"
+      ],
+      "stdin": "(2 + (3 * (4 + (5 * 6))))",
+      "expected_stdout": "104",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates a deeply nested expression with balanced parentheses to verify correct handling of nested grouping and operator precedence. The innermost: 5 * 6 = 30; 4 + 30 = 34; 3 * 34 = 102; 2 + 102 = 104. The result 104 is derived from correct step-by-step evaluation respecting parentheses and precedence, correcting the previous incorrect value of 142.",
+      "requirement_id": "R026"
+    },
+    {
+      "test_case_id": "R026-T03",
+      "args": [
+        "fractional_result",
+        "terminating_decimal"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that division produces a fractional result in decimal notation when the result has a terminating decimal. The expression 5 / 2 = 2.5, which is a terminating decimal, so the output should be '2.5' with no unnecessary trailing zeros, as per the output requirements.",
+      "requirement_id": "R026"
+    }
+  ],
+  "rationale": "The original tests contained arithmetic errors in the expected outputs due to miscalculations of precedence and nested operations. These revised tests now reflect accurate mathematical evaluations based on standard arithmetic rules: precedence, left-to-right evaluation for same precedence, and correct handling of parentheses. All expected outputs have been recalculated using reference math to ensure correctness. The tests now fully cover the core requirements: precedence, nested parentheses, and fractional output with terminating decimals."
+}

@@ -1,0 +1,9 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "Proposed requirements R020, R021, and R022 are fully supported by the source block and align with the accepted requirements. All elements are directly traceable to source IDs S022, S023, and S024. No omissions, unsupported claims, or ambiguities are present. The scope, behavior, and testability are consistent with the full prompt context and existing requirements.",
+  "source_ids": [
+    "S022",
+    "S023",
+    "S024"
+  ]
+}

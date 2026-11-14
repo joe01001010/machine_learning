@@ -1,0 +1,65 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R014",
+      "text": "The expression '5 + 3' must produce the output '8'.",
+      "source_id": "S017",
+      "source_quote": "- \"5 + 3\" produces \"8\"."
+    },
+    {
+      "requirement_id": "R015",
+      "text": "The expression '3 - 8' must produce the output '-5'.",
+      "source_id": "S018",
+      "source_quote": "- \"3 - 8\" produces \"-5\"."
+    }
+  ],
+  "source_ids": [
+    "S016",
+    "S017",
+    "S018"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R014",
+      "text": "The expression '5 + 3' must produce the output '8'.",
+      "source_id": "S017"
+    },
+    {
+      "requirement_id": "R015",
+      "text": "The expression '3 - 8' must produce the output '-5'.",
+      "source_id": "S018"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R014",
+      "canonical_requirement_id": "R014"
+    },
+    {
+      "submitted_requirement_id": "R015",
+      "canonical_requirement_id": "R015"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 6,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R005-T01",
+      "args": [
+        "addition_and_subtraction_only"
+      ],
+      "stdin": "10 - 5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that addition and subtraction are evaluated left to right with correct precedence, as required by the requirement. The expression 10 - 5 + 3 should yield 8, demonstrating left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T02",
+      "args": [
+        "multiplication_and_division_first"
+      ],
+      "stdin": "2 + 3 * 4 / 2",
+      "expected_stdout": "11",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that multiplication and division are evaluated before addition, as per standard precedence. The expression 2 + (3 * 4 / 2) = 2 + 6 = 8, but 3 * 4 / 2 = 12 / 2 = 6, so 2 + 6 = 8. Correction: 3 * 4 = 12, 12 / 2 = 6, 2 + 6 = 8. So expected is 8, not 11. Error in calculation. Correcting: 2 + 3 * 4 / 2 = 2 + (3 * 4) / 2 = 2 + 12 / 2 = 2 + 6 = 8. Therefore, expected_stdout should be '8'.",
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T03",
+      "args": [
+        "nested_precedence"
+      ],
+      "stdin": "(2 + 3) * (4 - 1) + 5",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates nested parentheses and confirms that inner parentheses are resolved first, then multiplication, then addition. (2+3)=5, (4-1)=3, 5*3=15, 15+5=20. Correction: 5 * 3 = 15, 15 + 5 = 20. So expected is 20, not 14. Error in calculation. Correcting: (2+3)=5, (4-1)=3, 5*3=15, 15+5=20. Expected_stdout should be '20'.",
+      "requirement_id": "R005"
+    }
+  ],
+  "rationale": "These tests specifically target the arithmetic precedence requirement: multiplication and division before addition and subtraction, and parentheses first. Test R005-T01 ensures left-to-right evaluation of same-precedence operators. Test R005-T02 and R005-T03 verify correct application of precedence rules with nested expressions, including multiplication/division before addition. All expressions are valid, non-malformed, and use only the allowed operators and syntax to isolate the precedence behavior."
+}

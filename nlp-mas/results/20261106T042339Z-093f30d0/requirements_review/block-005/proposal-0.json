@@ -1,0 +1,41 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R012",
+      "text": "The controller supplies implementation conventions for the entrypoint, newline, error spelling/exit code, and rounding mode. These are separate from the user's mathematical requirements.",
+      "source_id": "S014",
+      "source_quote": "The controller supplies implementation conventions for the entrypoint, newline, error spelling/exit code, and rounding mode. Those conventions are separate from the user's mathematical requirements."
+    }
+  ],
+  "source_ids": [
+    "S013",
+    "S014"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R012",
+      "text": "For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle.",
+      "source_id": "S013"
+    },
+    {
+      "requirement_id": "R013",
+      "text": "The controller supplies implementation conventions for the entrypoint, newline, error spelling/exit code, and rounding mode. These are separate from the user's mathematical requirements.",
+      "source_id": "S014"
+    }
+  ],
+  "duplicates": [
+    {
+      "submitted_requirement_id": "R012",
+      "canonical_requirement_id": "R009",
+      "source_id": "S013",
+      "source_quote": "repeating-cycle rules above."
+    }
+  ],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R013",
+      "canonical_requirement_id": "R012"
+    }
+  ],
+  "complete": true
+}

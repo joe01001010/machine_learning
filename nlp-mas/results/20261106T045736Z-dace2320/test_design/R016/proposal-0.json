@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R016-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "0 * 17",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement that '0 * 17' produces '0'. It exercises the multiplication operation with a zero operand, which must yield zero as per the stated behavior. The requirement explicitly states this case, so it is essential for validating the core arithmetic functionality.",
+      "requirement_id": "R016"
+    },
+    {
+      "test_case_id": "R016-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test validates standard arithmetic precedence: multiplication before addition. The expression '2 + 3 * 4' evaluates to 14 (3*4=12, 2+12=14), ensuring the calculator respects operator precedence. This is a foundational behavior required by the specification and not covered in the original example.",
+      "requirement_id": "R016"
+    },
+    {
+      "test_case_id": "R016-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test verifies nested parentheses and correct precedence. The expression '(2 + 3) * 4' evaluates to 20 (5*4=20), confirming the calculator correctly applies parentheses first, then performs multiplication. This is a key requirement for expression parsing and precedence handling.",
+      "requirement_id": "R016"
+    }
+  ],
+  "rationale": "The requirement specifically cites '0 * 17' as a valid case that must produce '0'. To ensure full coverage of the stated requirements, we include a second test for precedence (2 + 3 * 4) and a third for nested parentheses ((2 + 3) * 4). These together validate core arithmetic operations, precedence, and expression parsing as required by the specification. All tests use valid, well-formed expressions with no invalid syntax or edge cases, as per the customer's intent to only test specified behaviors."
+}

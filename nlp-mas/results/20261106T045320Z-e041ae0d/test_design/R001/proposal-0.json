@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Validates support for addition with nonnegative integers and standard precedence.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T02",
+      "args": [
+        "10 - 4 * 2"
+      ],
+      "justification": "Validates subtraction and multiplication with standard precedence (multiplication before subtraction).",
+      "stdin": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    }
+  ],
+  "rationale": "These tests directly validate the core arithmetic operations (addition and subtraction) with multiplication, ensuring correct application of operator precedence as required. The expressions use only supported operations, nonnegative integers, and standard syntax to align with the requirement's scope."
+}

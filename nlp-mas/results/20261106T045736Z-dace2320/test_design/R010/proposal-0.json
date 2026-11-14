@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R010-T01",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the requirement to print fractional results in decimal notation without unnecessary trailing zeros. The expression '5 / 2' evaluates to 2.5, which is a terminating decimal. The output must include the decimal point and exactly one digit after it, with no extra trailing zeros. This directly tests the specified behavior for fractional output.",
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R010-T02",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "10 / 4",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test ensures that the calculator correctly handles a fractional result with a terminating decimal. The expression '10 / 4' evaluates to 2.5, which is a terminating decimal. The output must not include unnecessary trailing zeros, and must be printed in decimal notation as specified. This test focuses on the precision and formatting of fractional outputs, ensuring alignment with the requirement to omit unnecessary trailing zeros.",
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R010-T03",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "7 / 8",
+      "expected_stdout": "0.875",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates the requirement for fractional output with non-terminating decimals (though the requirement specifies only terminating decimals). However, since the requirement explicitly states that only terminating decimals are considered, this test is included to verify that the system correctly formats a terminating decimal with all significant digits. The expression '7 / 8' evaluates to 0.875, which is a terminating decimal. The output must include the decimal point and all digits, with no unnecessary trailing zeros, ensuring correct formatting as per the requirement.",
+      "requirement_id": "R010"
+    }
+  ],
+  "rationale": "The requirement specifies that fractional results must be printed in decimal notation without unnecessary trailing zeros. These tests cover key cases: simple fractions (5/2, 10/4), and a more complex terminating decimal (7/8). Each test ensures the output is correctly formatted with no extraneous zeros, and that the decimal point is preserved. The tests are designed to validate the exact behavior as described in the requirement, focusing on formatting precision and compliance with decimal output rules."
+}

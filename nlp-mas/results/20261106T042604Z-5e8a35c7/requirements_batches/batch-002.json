@@ -1,0 +1,70 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R003",
+      "text": "The calculator must support parentheses and standard PEMDAS order of operations.",
+      "source_id": "S004",
+      "source_quote": "- Support parentheses and standard PEMDAS order of operations."
+    },
+    {
+      "requirement_id": "R004",
+      "text": "The calculator must support exponents written with either ^ or **, including fractional exponents such as 9^0.5.",
+      "source_id": "S005",
+      "source_quote": "- Support exponents written with either ^ or **, including fractional exponents such as 9^0.5."
+    },
+    {
+      "requirement_id": "R005",
+      "text": "The calculator must support modulo (%) and floor division (//) operations.",
+      "source_id": "S006",
+      "source_quote": "- Support modulo (%) and floor division (//)."
+    }
+  ],
+  "source_ids": [
+    "S004",
+    "S005",
+    "S006"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R003",
+      "text": "The calculator must support parentheses and standard PEMDAS order of operations.",
+      "source_id": "S004"
+    },
+    {
+      "requirement_id": "R004",
+      "text": "The calculator must support exponents written with either ^ or **, including fractional exponents such as 9^0.5.",
+      "source_id": "S005"
+    },
+    {
+      "requirement_id": "R005",
+      "text": "The calculator must support modulo (%) and floor division (//) operations.",
+      "source_id": "S006"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R003",
+      "canonical_requirement_id": "R003"
+    },
+    {
+      "submitted_requirement_id": "R004",
+      "canonical_requirement_id": "R004"
+    },
+    {
+      "submitted_requirement_id": "R005",
+      "canonical_requirement_id": "R005"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 2,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "S001": "Consolidated specification prepared from the user's request and explicit answers. The original wording is preserved separately in calculator_experiment_prompt.txt.",
+  "S002": "Build a Python calculator that accepts one arithmetic expression as a plain text command-line argument and prints its answer as plain text.",
+  "S003": "- Support addition (+), subtraction (-), multiplication (*), and division (/).",
+  "S004": "- Support parentheses and standard PEMDAS order of operations.",
+  "S005": "- Support exponents written with either ^ or **, including fractional exponents such as 9^0.5.",
+  "S006": "- Support modulo (%) and floor division (//).",
+  "S007": "- Accept numeric expressions as text, including decimal numbers and negative numbers.",
+  "S008": "- For valid input, print the result. For invalid input, print an error response.",
+  "S009": "- Preserve exact terminating decimal answers where possible.",
+  "S010": "- For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle. The user explicitly selected these examples: 1/3 produces 0.3; 1/6 produces 0.16;",
+  "S011": "1/7 produces 0.142857.",
+  "S012": "- For irrational, nonrepeating answers from fractional powers, such as 2^0.5, use 17 significant digits. This is the user's explicit precision selection and does not replace the exact-terminating or",
+  "S013": "repeating-cycle rules above.",
+  "S014": "The controller supplies implementation conventions for the entrypoint, newline, error spelling/exit code, and rounding mode. Those conventions are separate from the user's mathematical requirements."
+}

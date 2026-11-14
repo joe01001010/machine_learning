@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R014-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "stdin": "",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Directly verifies the stated example in the requirement: '5 + 3' must evaluate to '8'. This tests basic addition with no parentheses, confirming correct handling of operator precedence and input format tolerance (including no spaces).",
+      "requirement_id": "R014"
+    },
+    {
+      "test_case_id": "R014-T02",
+      "args": [
+        "2 + 3 * 4"
+      ],
+      "stdin": "",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "Tests operator precedence: multiplication before addition. The expression '2 + 3 * 4' evaluates to 2 + 12 = 14, verifying that the calculator respects standard arithmetic precedence (multiplication before addition) and correctly applies left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R014"
+    },
+    {
+      "test_case_id": "R014-T03",
+      "args": [
+        "(2 + 3) * 4"
+      ],
+      "stdin": "",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "Tests the use of parentheses to override precedence. The expression '(2 + 3) * 4' evaluates to 5 * 4 = 20, confirming that parentheses are properly evaluated first, and that nested or grouped expressions are handled correctly.",
+      "requirement_id": "R014"
+    }
+  ],
+  "rationale": "These tests cover core arithmetic behaviors: basic addition, operator precedence (multiplication before addition), and parentheses override. They directly validate the requirement examples and ensure the calculator correctly applies standard arithmetic rules as specified. All inputs are valid, non-malformed expressions with clear, unambiguous expected outputs."
+}

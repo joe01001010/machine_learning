@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R004-T01",
+      "args": [
+        "(5 + 3) * (4 - 2)"
+      ],
+      "justification": "Verify correct evaluation of nested parentheses with basic arithmetic operations. This test ensures the calculator respects operator precedence and properly handles nested parentheses as required by the requirement to support nested parentheses.",
+      "stdin": "",
+      "expected_stdout": "16\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T02",
+      "args": [
+        "(2 + (3 * 4)) - (1 + (5 - 2))"
+      ],
+      "justification": "Test nested parentheses with mixed operations to validate correct precedence: multiplication before addition, and left-to-right evaluation for same precedence. The expression (2 + (3 * 4)) - (1 + (5 - 2)) evaluates to (2 + 12) - (1 + 3) = 14 - 4 = 10. This confirms the calculator correctly handles nested and deeply nested parentheses with proper precedence.",
+      "stdin": "",
+      "expected_stdout": "10\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T03",
+      "args": [
+        "(10 / 2) + (3 * (4 + 1))"
+      ],
+      "justification": "Validate nested parentheses with division and multiplication, ensuring parentheses are resolved correctly and precedence rules are applied. The expression (10 / 2) + (3 * (4 + 1)) evaluates to 5 + (3 * 5) = 5 + 15 = 20. This test confirms the calculator correctly handles nested parentheses and operator precedence, including mixed operations.",
+      "stdin": "",
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates support for nested parentheses. These tests cover multiple scenarios: simple nesting, deep nesting with mixed operations, and precedence interactions. Test R004-T02 was previously flagged with an error in expected output; this resubmission corrects it to 10 using reference_math to ensure mathematical accuracy. All tests use valid, well-formed expressions with nonnegative integers and standard arithmetic operations, ensuring alignment with the requirement and interface."
+}

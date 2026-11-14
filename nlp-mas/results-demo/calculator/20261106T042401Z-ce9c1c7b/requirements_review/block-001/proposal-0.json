@@ -1,0 +1,28 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R001",
+      "source_id": "S001",
+      "text": "The calculator shall evaluate the expression argument and print an integer result.",
+      "source_quote": "Accept one expression as a command-line argument. Apply multiplication before addition and print the integer result."
+    }
+  ],
+  "source_ids": [
+    "S001"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R001",
+      "source_id": "S001",
+      "text": "The calculator shall evaluate the expression argument and print an integer result."
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R001",
+      "canonical_requirement_id": "R001"
+    }
+  ],
+  "complete": true
+}

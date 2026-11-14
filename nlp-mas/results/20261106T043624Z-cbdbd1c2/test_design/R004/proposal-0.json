@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R004-T01",
+      "args": [
+        "addition",
+        "subtraction",
+        "multiplication",
+        "division"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the basic arithmetic operations (addition, subtraction, multiplication, division) with nonnegative integers as specified in the requirement. It directly validates the calculator's ability to handle simple expressions with standard precedence, as per the examples provided in the customer prompt.",
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T02",
+      "args": [
+        "zero_operand"
+      ],
+      "stdin": "0 * 17",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test specifically targets the requirement to accept nonnegative integer operands, including zero. It confirms that zero behaves as an identity element under multiplication, which is a fundamental property of arithmetic and directly aligns with the requirement to support nonnegative integers.",
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T03",
+      "args": [
+        "nested_parentheses"
+      ],
+      "stdin": "2 * (3 + (4 * 5))",
+      "expected_stdout": "46",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates the handling of nested parentheses and operator precedence. It ensures that multiplication and addition follow the correct precedence (multiplication before addition), and that the expression is evaluated correctly as per the requirement to apply standard arithmetic precedence. The result 46 is derived from (4 * 5) = 20, (3 + 20) = 23, and 2 * 23 = 46, which is consistent with the requirement.",
+      "requirement_id": "R004"
+    }
+  ],
+  "rationale": "These tests are designed to validate the core requirement of accepting nonnegative integer operands, including zero, by covering fundamental arithmetic operations, zero behavior, and expression structure with parentheses. Each test is grounded in the provided examples and directly addresses the stated intent of the requirement without introducing unrelated or speculative cases."
+}

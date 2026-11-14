@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases fully cover the requirement R017 as specified. Test R017-T01 validates integer division (4 / 2 → 2), R017-T02 verifies operator precedence (2 + 3 * 4 → 14), and R017-T03 confirms correct fractional output (5 / 2 → 2.5) with proper decimal formatting. All tests align with the stated requirements, including precedence, output formatting, and expression parsing. The mathematical reference checks are not needed here as the examples are simple and directly verifiable. Coverage is complete and justified by the customer intent."
+}

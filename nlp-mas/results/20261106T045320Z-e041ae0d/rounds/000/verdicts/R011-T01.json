@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '4 / 2' evaluates to 2.0, which is a terminating decimal. The calculator outputs '2' (integer form, without decimal point), matching the requirement to omit unnecessary decimal points for terminating decimals. The expected stdout is '2' and the actual stdout is '2', with an exit code of 0. The host_match is true, and the mathematical reference confirms the expected rational result. All criteria are met: the division produces a terminating decimal, the output is correctly formatted as an integer, and the exit code is correct. No deviations from the specification are observed."
+}

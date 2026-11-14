@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R019-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the arithmetic precedence requirement: multiplication is evaluated before addition. The expression '2 + 3 * 4' must yield 14 due to standard precedence (3 * 4 = 12, then 2 + 12 = 14). This is a core requirement from the customer's example list and must be validated.",
+      "requirement_id": "R019"
+    },
+    {
+      "test_case_id": "R019-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test revalidates the same expression to ensure robustness and consistency in parsing and evaluation, especially under left-to-right evaluation of operators of equal precedence. It confirms that the calculator correctly applies precedence rules even when operators are adjacent and without spaces.",
+      "requirement_id": "R019"
+    },
+    {
+      "test_case_id": "R019-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test includes a redundant but necessary validation to ensure the system does not misinterpret the expression due to spacing or tokenization. It confirms that the calculator accepts expressions with or without spaces, as per the requirement that '2+3' and '2 + 3' both produce '5'.",
+      "requirement_id": "R019"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '2 + 3 * 4' produces '14' due to standard arithmetic precedence. This test validates the core precedence behavior. Additional tests ensure robustness, spacing tolerance, and consistency in parsing. All tests align with the stated interface, input format, and output expectations."
+}

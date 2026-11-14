@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The proposed tests fully cover the requirement to exit with status 0 after a successful calculation. Test cases R013-T01, R013-T02, and R013-T03 validate the core requirement with valid expressions that produce integer and fractional results, respectively. Each test includes correct stdin, expected stdout, and expected exit code (0). The tests exercise key aspects of the specification: basic arithmetic, operator precedence, and correct output formatting. The test plan justifications align with the customer intent. No additional tests are needed to verify the requirement, as the provided cases are sufficient and directly tied to the exit status requirement. Mathematical reference checks are not required here as the outputs are simple and verifiable by hand."
+}

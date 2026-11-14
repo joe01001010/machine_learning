@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '10 - 4 * 2' evaluates to 2, which matches the expected output '2' as per standard arithmetic precedence (multiplication before subtraction). The execution completed with exit code 0, and the stdout output is exactly '2' (after removing one terminal newline), matching the mathematical reference. The requirement for precedence (multiplication before subtraction) is satisfied. The host_match is true, confirming alignment with the expected behavior. All criteria are met."
+}

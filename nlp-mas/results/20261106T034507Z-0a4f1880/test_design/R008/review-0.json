@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "All test cases directly and adequately address the requirement to allow negative and fractional results. Test R008-T01 validates negative results from subtraction, R008-T02 validates fractional results with terminating decimals, and R008-T03 validates precedence and correct evaluation order. The tests cover the full scope of the requirement, including output formatting (integer vs. decimal), precedence, and correct handling of arithmetic operations. No test is missing or unjustified. Mathematical reference checks are not required as the examples are simple and verifiable by standard arithmetic. Coverage is complete as per the stated intent and interface."
+}

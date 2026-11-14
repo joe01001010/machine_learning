@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases directly and adequately cover the requirement to allow negative and fractional results. Test R008-T01 validates negative output with '3 - 5' → -2. Test R008-T02 validates a terminating decimal fraction with '7 / 2' → 3.5. Test R008-T03 validates another terminating decimal with '10 / 4' → 2.5. All tests align with the stated examples, precedence rules, and output formatting. The mathematical reference checks confirm the computed values are correct. The scope is complete and the coverage is sufficient for the requirement. No invalid inputs are included, as per the specification (malformed expressions, division by zero, etc. are unspecified). The tests are well-justified and meet all stated criteria."
+}

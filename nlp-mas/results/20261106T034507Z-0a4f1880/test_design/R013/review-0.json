@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "All test cases are justified by the requirement and customer intent. They cover core functionality: basic arithmetic, operator precedence, left-to-right evaluation for same-precedence operators, and correct handling of integer vs. decimal outputs. The tests include valid expressions with clear expectations, and the exit codes are correctly specified. The scope aligns with the stated requirements, including support for parentheses, standard precedence, and left-to-right evaluation. No invalid inputs are included, as per the specification (malformed expressions are not to be assessed). The mathematical reference checks are not required here as the examples are simple and verifiable by hand. Coverage is sufficient for the stated intent."
+}

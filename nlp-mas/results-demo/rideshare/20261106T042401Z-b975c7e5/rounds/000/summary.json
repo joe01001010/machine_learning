@@ -1,0 +1,66 @@
+{
+  "round": 0,
+  "summary": "Coder submitted rideshare.c and requested build/test execution",
+  "source_sha256": {
+    "rideshare.c": "ce686dd6a4a81eb2ae0e1804065af89349ec4afc3c0657d6737bc076bf4bd0dd"
+  },
+  "build": {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-O0",
+      "-Wall",
+      "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/000/source/rideshare.c",
+      "-lm",
+      "-o",
+      "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/000/source/program"
+    ],
+    "started_at": "2026-11-06T04:24:01.674427+00:00",
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "execution_status": "COMPLETED",
+    "output_truncated": false,
+    "isolation": "bwrap",
+    "duration_ms": 117.327,
+    "success": true
+  },
+  "tests": [
+    {
+      "requirement_id": "R001",
+      "test_case_id": "R001-T01",
+      "execution": {
+        "command": [
+          "/tmp/nlp-mas-test-jmeijmln/app/program"
+        ],
+        "started_at": "2026-11-06T04:24:01.793398+00:00",
+        "return_code": 0,
+        "stdout": "18.00\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 5.21,
+        "execution_id": "0d4aa78a903c4c338669dfb8f13c1493",
+        "requirement_id": "R001",
+        "test_case_id": "R001-T01",
+        "args": [],
+        "stdin": "2.00\n0.50\n1.00\n10\n12\n20.00\n",
+        "source_sha256": {
+          "rideshare.c": "ce686dd6a4a81eb2ae0e1804065af89349ec4afc3c0657d6737bc076bf4bd0dd"
+        },
+        "host_match": false
+      },
+      "verdict": {
+        "verdict": "FAIL",
+        "criteria_justified": true,
+        "explanation": "Observed '18.00' against the frozen expectation '20.00'."
+      },
+      "controller_assessment": {
+        "verdict": "FAIL",
+        "criteria_justified": true,
+        "explanation": "The completed process did not meet the previously frozen test expectation."
+      }
+    }
+  ]
+}

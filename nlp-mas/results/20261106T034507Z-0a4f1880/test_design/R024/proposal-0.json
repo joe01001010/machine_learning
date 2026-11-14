@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R024-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2+3",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement that '2+3' and '2 + 3' both produce '5'. It validates that the calculator accepts expressions with or without spaces between operators and operands, as specified in the customer prompt. The output must be exactly '5' with no extra whitespace or formatting.",
+      "requirement_id": "R024"
+    },
+    {
+      "test_case_id": "R024-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test confirms that the calculator correctly evaluates expressions with spaces between tokens. It ensures that spacing does not affect the arithmetic result, which is explicitly allowed in the requirement. The output must be exactly '5' to match the expected behavior.",
+      "requirement_id": "R024"
+    },
+    {
+      "test_case_id": "R024-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2+3  ",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement by including trailing whitespace. It verifies that the calculator can handle extraneous whitespace at the end of the expression without altering the result. The requirement allows for expressions with or without spaces, so this edge case must be supported.",
+      "requirement_id": "R024"
+    }
+  ],
+  "rationale": "The requirement explicitly states that both '2+3' and '2 + 3' produce '5'. These inputs differ only in spacing, and the calculator must be robust to such variations. The tests cover the core behavior, including minimal spacing, standard spacing, and trailing whitespace, to ensure full compliance with the stated requirement."
+}

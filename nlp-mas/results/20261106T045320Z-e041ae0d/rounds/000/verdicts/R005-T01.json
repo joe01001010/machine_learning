@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case (5 + 3) * 2 - 4 / 2 evaluates to 14, as required by the precedence rule: multiplication and division are performed before addition and subtraction. The execution produced the expected output '14' with a successful exit code (0), matching the mathematical reference. The host_match is true, and the stdout (after normalization) exactly matches the expected output. All requirements related to operator precedence, expression parsing, and output formatting are satisfied in this test case."
+}

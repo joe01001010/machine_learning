@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R022-T01",
+      "args": [
+        "10 - 3 - 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the requirement that '10 - 3 - 2' evaluates to '5'. It exercises the left-to-right evaluation of operators of equal precedence (subtraction) as per standard arithmetic rules. The input is simple and unambiguous, ensuring the core behavior of sequential subtraction is tested.",
+      "requirement_id": "R022"
+    },
+    {
+      "test_case_id": "R022-T02",
+      "args": [
+        "10 - 3 - 2 - 1"
+      ],
+      "stdin": "",
+      "expected_stdout": "4",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement by adding a fourth subtraction to verify consistent left-to-right evaluation. It confirms that the calculator correctly applies the rule of left-to-right evaluation for operators of equal precedence, even with a longer sequence. This ensures robustness beyond the minimal example.",
+      "requirement_id": "R022"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '10 - 3 - 2' produces '5'. This is a foundational case for testing left-to-right evaluation of subtraction. A second test with an extended sequence ('10 - 3 - 2 - 1') is added to verify the consistent application of the rule across multiple subtractions, ensuring the implementation correctly handles chains of equal-precedence operations without introducing errors or misinterpretations."
+}

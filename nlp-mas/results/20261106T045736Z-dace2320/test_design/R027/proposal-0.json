@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R027-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates basic addition with no parentheses, confirming the calculator correctly handles simple arithmetic expressions with spaces and without spaces, as per the requirement that both '2+3' and '2 + 3' are valid.",
+      "requirement_id": "R027"
+    },
+    {
+      "test_case_id": "R027-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 * (3 + (4 * 5))",
+      "expected_stdout": "46",
+      "expected_exit_code": 0,
+      "justification": "Tests nested parentheses and operator precedence: multiplication and addition follow standard precedence, with multiplication evaluated before addition. This validates the correct handling of nested parentheses and left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R027"
+    },
+    {
+      "test_case_id": "R027-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "12 / 3 * 2",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates division and multiplication with equal precedence, evaluated left to right. The requirement specifies that operators of equal precedence are evaluated left to right, so 12/3=4, then 4*2=8, confirming correct left-to-right processing.",
+      "requirement_id": "R027"
+    }
+  ],
+  "rationale": "These tests cover core arithmetic operations, operator precedence, and left-to-right evaluation for same-precedence operators. They include expressions with and without spaces, nested parentheses, and mixed operations, ensuring full coverage of the stated requirements without introducing invalid or ambiguous inputs."
+}

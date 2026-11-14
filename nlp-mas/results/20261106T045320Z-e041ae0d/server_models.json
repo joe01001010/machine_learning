@@ -1,0 +1,138 @@
+[
+  {
+    "role": "requirements-engineer",
+    "endpoint": "http://127.0.0.1:8001/v1/chat/completions",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "requirements-engineer",
+          "object": "model",
+          "created": 1793940800,
+          "owned_by": "vllm",
+          "root": "Eslzzyl/Qwen3-4B-Instruct-2507-AWQ",
+          "parent": null,
+          "max_model_len": 4096,
+          "permission": [
+            {
+              "id": "modelperm-8432cb8902663892",
+              "object": "model_permission",
+              "created": 1793940800,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "role": "test-engineer",
+    "endpoint": "http://127.0.0.1:8002/v1/chat/completions",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "test-engineer",
+          "object": "model",
+          "created": 1793940800,
+          "owned_by": "vllm",
+          "root": "Eslzzyl/Qwen3-4B-Instruct-2507-AWQ",
+          "parent": null,
+          "max_model_len": 4096,
+          "permission": [
+            {
+              "id": "modelperm-a445716aadf3042b",
+              "object": "model_permission",
+              "created": 1793940800,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "role": "coder",
+    "endpoint": "http://127.0.0.1:8003/v1/chat/completions",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "coder",
+          "object": "model",
+          "created": 1793940800,
+          "owned_by": "vllm",
+          "root": "Eslzzyl/Qwen3-4B-Instruct-2507-AWQ",
+          "parent": null,
+          "max_model_len": 4096,
+          "permission": [
+            {
+              "id": "modelperm-b677efe3b391dd3a",
+              "object": "model_permission",
+              "created": 1793940800,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "role": "verification-engineer",
+    "endpoint": "http://127.0.0.1:8004/v1/chat/completions",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "verification-engineer",
+          "object": "model",
+          "created": 1793940800,
+          "owned_by": "vllm",
+          "root": "Eslzzyl/Qwen3-4B-Instruct-2507-AWQ",
+          "parent": null,
+          "max_model_len": 4096,
+          "permission": [
+            {
+              "id": "modelperm-9811ef7e813a6a1a",
+              "object": "model_permission",
+              "created": 1793940800,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

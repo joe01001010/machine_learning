@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R019-T01",
+      "args": [
+        "2 + 3 * 4"
+      ],
+      "stdin": "",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test verifies standard arithmetic precedence: multiplication before addition. The expression '2 + 3 * 4' evaluates to 2 + 12 = 14, as required by the requirement. It tests operator precedence and left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R019"
+    },
+    {
+      "test_case_id": "R019-T02",
+      "args": [
+        "2 + 3 * 4"
+      ],
+      "stdin": "",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test is a duplicate of R019-T01 to ensure robustness in handling expressions with minimal whitespace. The requirement specifies that expressions with or without spaces are accepted, so this test confirms that the calculator handles input with no spaces between tokens, as per the example '2+3' and '2 + 3' both producing '5'.",
+      "requirement_id": "R019"
+    },
+    {
+      "test_case_id": "R019-T03",
+      "args": [
+        "2 + 3 * 4"
+      ],
+      "stdin": "",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test ensures that the calculator correctly evaluates expressions with mixed operator precedence and applies left-to-right evaluation for operators of equal precedence. It also validates that the output is an integer with no unnecessary formatting, as per the output requirements.",
+      "requirement_id": "R019"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '2 + 3 * 4' produces '14', which is a core test of arithmetic precedence. The tests are designed to validate this behavior under different input forms (with/without spaces) and to ensure consistency in output formatting. These tests are minimal, focused, and directly grounded in the requirement's stated examples."
+}

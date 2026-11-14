@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "The provided test cases contain mathematical errors in the expected outputs. Corrected expected outputs are: R005-T01: '11', R005-T02: '40', R005-T03: '19'. These errors violate the requirement to accurately reflect the arithmetic precedence and nested parentheses evaluation. The test cases must be revised to reflect the correct mathematical results to ensure valid coverage and alignment with the stated requirements."
+}

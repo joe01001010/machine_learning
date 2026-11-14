@@ -1,0 +1,200 @@
+[
+  {
+    "requirement_id": "R001",
+    "text": "The application must be a command-line tool written in C that allows an administrator to configure multiple rideshare organizations.",
+    "source_id": "S001",
+    "source_quote": "I want a command-line rideshare management application written in C. It should let an administrator configure multiple rideshare organizations, let riders select an organization and complete trips,"
+  },
+  {
+    "requirement_id": "R002",
+    "text": "After administrator authentication with ID 'a' and passcode 'b', the system must allow adding multiple organizations, each with a unique name, base fare, price per minute, price per mile, and minimum fare.",
+    "source_id": "S003",
+    "source_quote": "Administrator and organization setup:"
+  },
+  {
+    "requirement_id": "R003",
+    "text": "Each pricing value must be between 0.10 and 50.00 inclusive; invalid values must be rejected with a request for replacement.",
+    "source_id": "S003",
+    "source_quote": "Administrator and organization setup:"
+  },
+  {
+    "requirement_id": "R004",
+    "text": "Administrator authentication requires admin ID 'a' and passcode 'b'; allows two login attempts and terminates after two failures.",
+    "source_id": "S004",
+    "source_quote": "- At startup, require administrator authentication. For this experiment, use admin ID \"a\" and passcode \"b\". Allow two login attempts; terminate after two failures."
+  },
+  {
+    "requirement_id": "R005",
+    "text": "After successful login, administrator can add multiple organizations with unique names, base fare, price per minute, price per mile, and minimum fare.",
+    "source_id": "S005",
+    "source_quote": "- After successful login, allow the administrator to add multiple organizations. Each organization has a unique name, base fare, price per minute, price per mile, and minimum fare."
+  },
+  {
+    "requirement_id": "R006",
+    "text": "All four pricing values must be between 0.10 and 50.00 inclusive; invalid inputs like '3abc' are rejected and require replacement.",
+    "source_id": "S006",
+    "source_quote": "- Each of the four pricing values must be between 0.10 and 50.00 inclusive. Reject invalid values and request a replacement without accepting partial numbers such as \"3abc\"."
+  },
+  {
+    "requirement_id": "R007",
+    "text": "Riders select an organization by its exact name; if the name is unknown, request another selection.",
+    "source_id": "S007",
+    "source_quote": "- Present organizations alphabetically and let riders select an organization by its exact name. Reject an unknown name and request another selection."
+  },
+  {
+    "requirement_id": "R008",
+    "text": "Accept trip distance from 1.0 to 100.0 miles inclusive, including fractional miles.",
+    "source_id": "S009",
+    "source_quote": "- Accept a trip distance from 1 through 100 miles inclusive, including fractional miles."
+  },
+  {
+    "requirement_id": "R009",
+    "text": "In normal operation, calculate travel minutes by multiplying distance by a factor from 1.2 to 1.5 minutes per mile, then rounding down to a whole number.",
+    "source_id": "S010",
+    "source_quote": "- In normal operation, calculate whole-number travel minutes by choosing a factor from 1.2 through 1.5 minutes per mile, multiplying by the distance, and rounding down."
+  },
+  {
+    "requirement_id": "R010",
+    "text": "Fare is the greater of the minimum fare or (base fare + (minutes × price per minute) + (miles × price per mile)).",
+    "source_id": "S011",
+    "source_quote": "- Calculate fare as the greater of the minimum fare and: base fare + (minutes multiplied by price per minute) + (miles multiplied by price per mile)."
+  },
+  {
+    "requirement_id": "R011",
+    "text": "For example, with base fare 2.00, per-minute 0.50, per-mile 1.00, 10 miles, 12 minutes, and minimum fare 20.00, the fare is 20.00.",
+    "source_id": "S012",
+    "source_quote": "- For example, a base fare of 2.00, a per-minute price of 0.50, a per-mile price of 1.00, 10 miles, and 12 minutes produce 18.00. With a minimum fare of 20.00, the same trip costs 20.00."
+  },
+  {
+    "requirement_id": "R012",
+    "text": "Display the organization, trip distance, travel minutes, and fare with two decimal places for monetary values.",
+    "source_id": "S013",
+    "source_quote": "- Display the organization, distance, minutes, and fare. Display monetary amounts with two decimal places."
+  },
+  {
+    "requirement_id": "R013",
+    "text": "Maintain independent totals for each organization: completed ride count, total miles, total minutes, and total fares; rejected inputs and cancelled trips must not affect these totals.",
+    "source_id": "S014",
+    "source_quote": "- Maintain each organization's completed ride count, total miles, total minutes, and total fares independently. Rejected inputs, cancelled trips, and administrator actions must not change these"
+  },
+  {
+    "requirement_id": "R014",
+    "text": "Organizational totals must not be altered by rejected inputs, cancelled trips, or administrator actions.",
+    "source_id": "S015",
+    "source_quote": "totals."
+  },
+  {
+    "requirement_id": "R015",
+    "text": "After each completed ride, the rider may choose to submit ratings with 'y' or 'n' regardless of case; other inputs are rejected.",
+    "source_id": "S017",
+    "source_quote": "- After each completed ride, let the rider choose whether to submit ratings. Accept y or n without regard to case and reject other responses."
+  },
+  {
+    "requirement_id": "R016",
+    "text": "A submitted rating includes four integer scores from 1 to 5 inclusive: Safety, Cleanliness, Comfort, and Test.",
+    "source_id": "S018",
+    "source_quote": "- A submitted survey contains four integer scores from 1 through 5 inclusive: Safety, Cleanliness, Comfort, and Test. \"Test\" is the fourth category name used for this experiment."
+  },
+  {
+    "requirement_id": "R017",
+    "text": "An unrated ride contributes to ride totals but not to rating averages.",
+    "source_id": "S019",
+    "source_quote": "- An unrated ride still contributes to ride totals but not to rating averages. Calculate each category average using only submitted surveys for that organization. Show that no ratings are available"
+  },
+  {
+    "requirement_id": "R018",
+    "text": "Rating averages are calculated only from submitted surveys; display 'no ratings available' when no surveys exist.",
+    "source_id": "S020",
+    "source_quote": "when no surveys have been submitted; do not divide by zero or display NaN."
+  },
+  {
+    "requirement_id": "R019",
+    "text": "Session completion requires administrator authentication; after authentication, display all organization summaries and exit.",
+    "source_id": "S021",
+    "source_quote": "Session completion and reporting:"
+  },
+  {
+    "requirement_id": "R020",
+    "text": "Entering -1 for trip distance triggers administrator authentication without creating a ride or charging a fare.",
+    "source_id": "S022",
+    "source_quote": "- Entering -1 instead of a trip distance requests administrator authentication. It must not create a ride or charge a fare."
+  },
+  {
+    "requirement_id": "R021",
+    "text": "After successful administrator authentication, rider processing ends, a summary is displayed for each organization with ride totals and category averages, and the program exits cleanly.",
+    "source_id": "S023",
+    "source_quote": "- After successful administrator authentication, end rider processing, display every organization's summary, and exit cleanly. Summaries must include ride totals and category averages, with"
+  },
+  {
+    "requirement_id": "R022",
+    "text": "Organizations in the summary are listed alphabetically.",
+    "source_id": "S024",
+    "source_quote": "organizations listed alphabetically."
+  },
+  {
+    "requirement_id": "R023",
+    "text": "Write a separate summary text file for each organization using the organization's name as the filename; store in the current working directory without requiring a Windows-specific path.",
+    "source_id": "S025",
+    "source_quote": "- Write a separate summary text file named after each organization in the current working directory. Do not require a Windows-specific directory."
+  },
+  {
+    "requirement_id": "R024",
+    "text": "Experiment conditions require scripted standard input and a fresh process for each test run to ensure isolation and repeatability.",
+    "source_id": "S027",
+    "source_quote": "- Use scripted standard input and a fresh process for each test."
+  },
+  {
+    "requirement_id": "R025",
+    "text": "Test operations must use a documented --test-minutes N option to substitute a known non-negative whole-number duration for random duration generation, with fixture durations within the normal range for tested distances.",
+    "source_id": "S026",
+    "source_quote": "Experiment conditions:"
+  },
+  {
+    "requirement_id": "R026",
+    "text": "A documented --test-minutes N option must substitute a nonnegative whole-number duration for random duration generation, with values within the normal range for tested distances.",
+    "source_id": "S028",
+    "source_quote": "- Add a documented test option, --test-minutes N, that substitutes a known nonnegative whole-number duration for random duration generation. This is a test fixture; normal operation must retain the"
+  },
+  {
+    "requirement_id": "R027",
+    "text": "Console wording and field order must remain stable; before test freezing, the complete expected transcript for each scripted session must be recorded.",
+    "source_id": "S029",
+    "source_quote": "randomized duration rule. Choose fixture durations within the normal range for the tested distances."
+  },
+  {
+    "requirement_id": "R028",
+    "text": "No invented menu wording is allowed; all console output must match the specified format and sequence.",
+    "source_id": "S030",
+    "source_quote": "- Keep console wording and field order stable. Before freezing tests, record the complete expected console transcript for each scripted session; do not invent unspecified menu wording."
+  },
+  {
+    "requirement_id": "R029",
+    "text": "Initial tests use unique single-word organization names and no more than five completed rides per organization; behavior beyond this range is outside initial scope.",
+    "source_id": "S031",
+    "source_quote": "- Initial tests will use unique single-word organization names and no more than five completed rides per organization. Duplicate names, storage overflow, and behavior beyond this range are outside the"
+  },
+  {
+    "requirement_id": "R030",
+    "text": "Administrative shutdown must function correctly within the tested range of up to five rides per organization.",
+    "source_id": "S032",
+    "source_quote": "initial scope. Administrative shutdown must still work within the tested range."
+  },
+  {
+    "requirement_id": "R031",
+    "text": "Behavior must be judged against these directions, not existing bugs; preserve requirements, test inputs, and expected results during code repair.",
+    "source_id": "S033",
+    "source_quote": "- Judge behavior against these directions, not against existing bugs. Preserve requirements, test inputs, and expected results during code repair. Report actual execution evidence for failures."
+  },
+  {
+    "requirement_id": "R032",
+    "text": "Console messages alone do not prove report files contain correct data; file-content verification must be explicitly verified if the runner cannot capture or inspect files.",
+    "source_id": "S034",
+    "source_quote": "- Console messages alone do not prove that report files contain correct data. If the runner cannot capture and inspect files, identify file-content verification as unverified rather than claiming it"
+  },
+  {
+    "requirement_id": "R033",
+    "text": "File-content verification is unverified if the runner cannot capture or inspect files, even if console output appears correct.",
+    "source_id": "S035",
+    "source_quote": "passed."
+  }
+]

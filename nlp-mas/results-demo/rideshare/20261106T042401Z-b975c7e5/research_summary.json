@@ -1,0 +1,88 @@
+{
+  "runs": 1,
+  "status_counts": {
+    "PASS": 1
+  },
+  "pipeline_success_rate": {
+    "value": 1.0,
+    "numerator": 1,
+    "denominator": 1,
+    "source": "all end-to-end runs",
+    "note": ""
+  },
+  "independent_task_success_rate": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "independently labeled end-to-end runs",
+    "note": ""
+  },
+  "task_label_coverage": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "source": "annotation coverage",
+    "note": ""
+  },
+  "requirements_only_success_rate": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "all requirements-only runs",
+    "note": ""
+  },
+  "independent_requirements_success_rate": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "independently labeled requirements-only runs",
+    "note": ""
+  },
+  "requirements_label_coverage": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "annotation coverage",
+    "note": ""
+  },
+  "repair_success_rate": {
+    "value": 1.0,
+    "numerator": 1,
+    "denominator": 1,
+    "source": "pipeline outcomes after initial failure; not independent correctness",
+    "note": ""
+  },
+  "run_costs": [
+    {
+      "run_id": "20261106T042401Z-b975c7e5",
+      "status": "PASS",
+      "elapsed_seconds": 0.319353,
+      "requirements_only": false,
+      "completion_tokens": null,
+      "independent_task_success": null
+    }
+  ],
+  "by_application": {
+    "c:rideshare.c": {
+      "runs": 1,
+      "status_counts": {
+        "PASS": 1
+      },
+      "pipeline_success_rate": {
+        "value": 1.0,
+        "numerator": 1,
+        "denominator": 1,
+        "source": "all application runs in this scope",
+        "note": ""
+      },
+      "independent_task_success_rate": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "source": "independently labeled application runs in this scope",
+        "note": ""
+      }
+    }
+  },
+  "by_requirements_application": {}
+}

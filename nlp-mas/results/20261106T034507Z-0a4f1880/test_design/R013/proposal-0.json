@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R013-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the core functionality of the calculator with a simple addition expression that results in an integer. It aligns with the example provided in the requirement and confirms that the calculator correctly evaluates and outputs integer results without unnecessary formatting.",
+      "requirement_id": "R013"
+    },
+    {
+      "test_case_id": "R013-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "4 / 2",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test validates the division operation with a terminating decimal result. The requirement specifies that division should produce a decimal only when necessary, and this case produces an integer. The output must be exactly '2' to ensure correct handling of integer division outcomes.",
+      "requirement_id": "R013"
+    },
+    {
+      "test_case_id": "R013-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "12 / 3 * 2",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates operator precedence and left-to-right evaluation for equal precedence operators. The expression follows the precedence rules: multiplication and division are evaluated left to right. 12 / 3 = 4, then 4 * 2 = 8. This confirms the calculator respects standard arithmetic precedence and left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R013"
+    }
+  ],
+  "rationale": "These tests cover the core requirements: successful evaluation of arithmetic expressions, correct handling of operator precedence, and proper output formatting. They are grounded in the provided examples and directly validate the requirement to exit with status 0 after a successful calculation. Each test is designed to be unambiguous and directly tied to the stated behavior."
+}

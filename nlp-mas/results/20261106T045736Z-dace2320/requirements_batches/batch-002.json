@@ -1,0 +1,70 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R003",
+      "text": "The calculator shall accept nonnegative integer operands, including zero.",
+      "source_id": "S004",
+      "source_quote": "- Accept nonnegative integer operands, including zero."
+    },
+    {
+      "requirement_id": "R004",
+      "text": "The calculator shall support parentheses, including nested parentheses.",
+      "source_id": "S005",
+      "source_quote": "- Support parentheses, including nested parentheses."
+    },
+    {
+      "requirement_id": "R005",
+      "text": "The calculator shall apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction.",
+      "source_id": "S006",
+      "source_quote": "- Apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction."
+    }
+  ],
+  "source_ids": [
+    "S004",
+    "S005",
+    "S006"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R003",
+      "text": "The calculator shall accept nonnegative integer operands, including zero.",
+      "source_id": "S004"
+    },
+    {
+      "requirement_id": "R004",
+      "text": "The calculator shall support parentheses, including nested parentheses.",
+      "source_id": "S005"
+    },
+    {
+      "requirement_id": "R005",
+      "text": "The calculator shall apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction.",
+      "source_id": "S006"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R003",
+      "canonical_requirement_id": "R003"
+    },
+    {
+      "submitted_requirement_id": "R004",
+      "canonical_requirement_id": "R004"
+    },
+    {
+      "submitted_requirement_id": "R005",
+      "canonical_requirement_id": "R005"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 2,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005"
+  ]
+}

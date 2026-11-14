@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '7 / 2' correctly produces the expected output '3.5' with exit code 0. The mathematical reference confirms the expected rational result of 3.5. The execution output matches the expected stdout exactly (after terminal newline normalization), and the exit code is correct. The requirement to allow fractional results with terminating decimals is satisfied. No deviations from the specified behavior are observed. The host_match is true, indicating alignment with the expected behavior."
+}

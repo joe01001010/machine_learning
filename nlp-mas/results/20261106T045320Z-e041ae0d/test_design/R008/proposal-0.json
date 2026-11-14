@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R008-T01",
+      "args": [
+        "5 - 3"
+      ],
+      "justification": "Exercises negative result generation through subtraction of smaller from larger nonnegative integers.",
+      "stdin": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T02",
+      "args": [
+        "7 / 2"
+      ],
+      "justification": "Exercises fractional result generation with a terminating decimal output as required by the requirement.",
+      "stdin": "",
+      "expected_stdout": "3.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    }
+  ],
+  "rationale": "The requirement explicitly allows negative and fractional results. Test R008-T01 validates negative output from a valid arithmetic expression, while R008-T02 validates fractional output with a terminating decimal. Both use valid, well-formed expressions with nonnegative integers and standard operators, ensuring compliance with precedence and formatting rules without introducing invalid or ambiguous input."
+}

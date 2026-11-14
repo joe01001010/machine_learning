@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "Test case R004-T02 contains a mathematical error in the expected output. The correct result of (10 - (3 + 2)) * (4 + 1) is 25, not 15. The current expected_stdout of '15' is incorrect and violates the requirement to accurately reflect the mathematical evaluation. This test must be corrected to ensure proper coverage and alignment with the stated arithmetic rules. The revised expected_stdout should be '25'."
+}

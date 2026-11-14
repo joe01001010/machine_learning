@@ -1,0 +1,88 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R025",
+      "text": "For this evaluation, do not assess malformed expressions, division by zero, decimal input operands, unary minus in the input, scientific notation, or nonterminating fractional results. These behaviors are unspecified.",
+      "source_id": "S028",
+      "source_quote": "For this evaluation, do not assess malformed expressions, division by zero, decimal input operands, unary minus in the input, scientific notation, or nonterminating fractional results. These behaviors"
+    },
+    {
+      "requirement_id": "R026",
+      "text": "Generate testable requirements from these directions, then design and execute tests against the supplied calculator. Include tests beyond the examples where they exercise the stated requirements.",
+      "source_id": "S029",
+      "source_quote": "are unspecified."
+    }
+  ],
+  "source_ids": [
+    "S028",
+    "S029",
+    "S030"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R025",
+      "text": "For this evaluation, do not assess malformed expressions, division by zero, decimal input operands, unary minus in the input, scientific notation, or nonterminating fractional results. These behaviors are unspecified.",
+      "source_id": "S028"
+    },
+    {
+      "requirement_id": "R026",
+      "text": "Generate testable requirements from these directions, then design and execute tests against the supplied calculator. Include tests beyond the examples where they exercise the stated requirements.",
+      "source_id": "S029"
+    },
+    {
+      "requirement_id": "R027",
+      "text": "Generate testable requirements from these directions, then design and execute tests against the supplied calculator. Include tests beyond the examples where they exercise the stated requirements.",
+      "source_id": "S030"
+    }
+  ],
+  "duplicates": [
+    {
+      "submitted_requirement_id": "R027",
+      "canonical_requirement_id": "R026",
+      "source_id": "S030",
+      "source_quote": "Generate testable requirements from these directions, then design and execute tests against the supplied calculator. Include tests beyond the examples where they exercise the stated requirements."
+    }
+  ],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R025",
+      "canonical_requirement_id": "R025"
+    },
+    {
+      "submitted_requirement_id": "R026",
+      "canonical_requirement_id": "R026"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 10,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023",
+    "R024",
+    "R025",
+    "R026"
+  ]
+}

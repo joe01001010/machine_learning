@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "The minimum is below the computed fare in this test. Set the minimum to 20.00 so the minimum-fare rule determines the result."
+}

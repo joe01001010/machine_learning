@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R001",
+      "text": "The application must be a command-line tool written in C that allows an administrator to configure multiple rideshare organizations.",
+      "source_id": "S001",
+      "source_quote": "I want a command-line rideshare management application written in C. It should let an administrator configure multiple rideshare organizations, let riders select an organization and complete trips,"
+    },
+    {
+      "requirement_id": "R002",
+      "text": "After administrator authentication with ID 'a' and passcode 'b', the system must allow adding multiple organizations, each with a unique name, base fare, price per minute, price per mile, and minimum fare.",
+      "source_id": "S003",
+      "source_quote": "Administrator and organization setup:"
+    },
+    {
+      "requirement_id": "R003",
+      "text": "Each pricing value must be between 0.10 and 50.00 inclusive; invalid values must be rejected with a request for replacement.",
+      "source_id": "S003",
+      "source_quote": "Administrator and organization setup:"
+    }
+  ],
+  "source_ids": [
+    "S001",
+    "S002",
+    "S003"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R001",
+      "text": "The application must be a command-line tool written in C that allows an administrator to configure multiple rideshare organizations.",
+      "source_id": "S001"
+    },
+    {
+      "requirement_id": "R002",
+      "text": "After administrator authentication with ID 'a' and passcode 'b', the system must allow adding multiple organizations, each with a unique name, base fare, price per minute, price per mile, and minimum fare.",
+      "source_id": "S003"
+    },
+    {
+      "requirement_id": "R003",
+      "text": "Each pricing value must be between 0.10 and 50.00 inclusive; invalid values must be rejected with a request for replacement.",
+      "source_id": "S003"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R001",
+      "canonical_requirement_id": "R001"
+    },
+    {
+      "submitted_requirement_id": "R002",
+      "canonical_requirement_id": "R002"
+    },
+    {
+      "submitted_requirement_id": "R003",
+      "canonical_requirement_id": "R003"
+    }
+  ],
+  "complete": true
+}

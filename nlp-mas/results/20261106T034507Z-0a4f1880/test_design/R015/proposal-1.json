@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R015-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "3 - 8",
+      "expected_stdout": "-5",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the requirement that '3 - 8' evaluates to '-5' as specified in the customer prompt. It exercises subtraction with negative results, ensuring the output correctly displays the negative sign without leading spaces or extra formatting. The requirement explicitly states this behavior, and this test is minimal, precise, and unambiguous.",
+      "requirement_id": "R015"
+    },
+    {
+      "test_case_id": "R015-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test validates the standard arithmetic precedence (multiplication before addition) as per the requirement. The expression '2 + 3 * 4' evaluates to 14, demonstrating that multiplication is performed before addition, and the result is correctly formatted as an integer without a decimal point. This confirms the precedence and left-to-right evaluation for operators of equal precedence.",
+      "requirement_id": "R015"
+    },
+    {
+      "test_case_id": "R015-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test validates the application of parentheses to override precedence. The expression '(2 + 3) * 4' evaluates to 20, confirming that parentheses are processed first, and the result is correctly computed and formatted. This ensures the calculator respects standard arithmetic precedence and nested grouping as required.",
+      "requirement_id": "R015"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '3 - 8' must produce '-5'. This is a foundational arithmetic case that must be validated. To ensure full coverage of the stated requirements, we include a test for operator precedence (multiplication before addition) and a test for parentheses precedence. These three tests collectively validate core arithmetic behaviors without introducing malformed or invalid inputs, as per the customer's instruction to not assess malformed expressions. All tests use valid, well-formed expressions and align with the specified output formatting rules."
+}

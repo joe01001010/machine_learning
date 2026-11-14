@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R023",
+      "text": "Write a separate summary text file for each organization using the organization's name as the filename, in the current working directory; the file does not need to be Windows-specific.",
+      "source_id": "S025",
+      "source_quote": "- Write a separate summary text file named after each organization in the current working directory. Do not require a Windows-specific directory."
+    },
+    {
+      "requirement_id": "R024",
+      "text": "Experiment conditions require scripted standard input and a fresh process for each test run.",
+      "source_id": "S027",
+      "source_quote": "- Use scripted standard input and a fresh process for each test."
+    },
+    {
+      "requirement_id": "R025",
+      "text": "Test operations must use a documented --test-minutes N option to substitute a known nonnegative whole-number duration for random duration generation, with fixture durations within the normal range for tested distances.",
+      "source_id": "S026",
+      "source_quote": "Experiment conditions:"
+    }
+  ],
+  "source_ids": [
+    "S025",
+    "S026",
+    "S027"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R023",
+      "text": "Write a separate summary text file for each organization using the organization's name as the filename, in the current working directory; the file does not need to be Windows-specific.",
+      "source_id": "S025"
+    },
+    {
+      "requirement_id": "R024",
+      "text": "Experiment conditions require scripted standard input and a fresh process for each test run.",
+      "source_id": "S027"
+    },
+    {
+      "requirement_id": "R025",
+      "text": "Test operations must use a documented --test-minutes N option to substitute a known nonnegative whole-number duration for random duration generation, with fixture durations within the normal range for tested distances.",
+      "source_id": "S026"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R023",
+      "canonical_requirement_id": "R023"
+    },
+    {
+      "submitted_requirement_id": "R024",
+      "canonical_requirement_id": "R024"
+    },
+    {
+      "submitted_requirement_id": "R025",
+      "canonical_requirement_id": "R025"
+    }
+  ],
+  "complete": true
+}

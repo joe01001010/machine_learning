@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R020-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement that the calculator evaluates '(2 + 3) * 4' to produce '20'. It tests standard arithmetic precedence: addition inside parentheses is performed first, then multiplication. The result must be an integer with no unnecessary formatting, as per the output requirements.",
+      "requirement_id": "R020"
+    },
+    {
+      "test_case_id": "R020-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test verifies operator precedence: multiplication is evaluated before addition. The expression 2 + 3 * 4 equals 14, demonstrating that the calculator respects standard precedence (multiplication before addition) and evaluates left to right for same-precedence operators. This is a distinct behavior from the given requirement and ensures correct precedence handling.",
+      "requirement_id": "R020"
+    },
+    {
+      "test_case_id": "R020-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4 + 1",
+      "expected_stdout": "21",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement by adding a subsequent addition after a parenthesized multiplication. It confirms that the calculator correctly applies precedence and left-to-right evaluation for same-precedence operators. The result (20 + 1 = 21) validates that the expression is parsed and evaluated correctly with nested parentheses and operator precedence.",
+      "requirement_id": "R020"
+    }
+  ],
+  "rationale": "The requirement specifically cites '(2 + 3) * 4' producing '20'. To fully validate the requirement and ensure robustness, we include a minimal test for the exact requirement (R020-T01), a test for operator precedence (R020-T02), and a test for extended expression with multiple operations (R020-T03). These cover the core arithmetic precedence, parentheses, and left-to-right evaluation as specified in the customer intent."
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R020-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies basic addition with no parentheses, ensuring the calculator correctly applies left-to-right evaluation for same-precedence operators and produces an integer result without unnecessary formatting.",
+      "requirement_id": "R020"
+    },
+    {
+      "test_case_id": "R020-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the requirement that '(2 + 3) * 4' evaluates to 20, confirming correct application of operator precedence: parentheses first, then multiplication. It tests nested grouping and standard arithmetic order.",
+      "requirement_id": "R020"
+    },
+    {
+      "test_case_id": "R020-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * (4 + 1)",
+      "expected_stdout": "25",
+      "expected_exit_code": 0,
+      "justification": "This test verifies nested parentheses and correct precedence. (2+3)=5 and (4+1)=5, so 5*5=25. This corrects the previously erroneous expectation of '30' in the review feedback, which violated mathematical accuracy. The test ensures the system does not misapply arithmetic due to incorrect parsing or precedence.",
+      "requirement_id": "R020"
+    }
+  ],
+  "rationale": "The requirement specifies that '(2 + 3) * 4' produces '20'. This test design includes a direct validation of that requirement (R020-T02), a basic addition case (R020-T01) to establish baseline functionality, and a corrected version of a previously flawed test (R020-T03) to ensure mathematical fidelity. All tests align with the stated precedence, input format tolerance, and output formatting rules."
+}

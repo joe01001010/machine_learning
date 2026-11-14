@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "2+3*4"
+      ],
+      "stdin": "",
+      "expected_stdout": "14\n",
+      "expected_exit_code": 0,
+      "justification": "Exercise the decisive condition identified by the reviewer.",
+      "requirement_id": "R001"
+    }
+  ],
+  "rationale": "Exercise the decisive condition identified by the reviewer."
+}

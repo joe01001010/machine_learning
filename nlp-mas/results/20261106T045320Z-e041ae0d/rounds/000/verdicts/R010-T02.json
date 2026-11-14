@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '10 / 4' produces the expected output '2.5' with no unnecessary trailing zeros, as required by the requirement to print fractional results in decimal notation without unnecessary trailing zeros. The execution completed successfully (return code 0), and the stdout matches the mathematical reference exactly after terminal newline normalization. The host_match is true, confirming alignment with the expected behavior. All criteria are met."
+}

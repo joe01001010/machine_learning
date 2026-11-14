@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R002-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Validates basic addition with nonnegative integers and standard precedence. Matches example behavior in the requirement.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T02",
+      "args": [
+        "10 - 3 * 2"
+      ],
+      "justification": "Tests subtraction and multiplication with operator precedence (multiplication before subtraction), ensuring correct application of standard arithmetic precedence.",
+      "stdin": "",
+      "expected_stdout": "4\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T03",
+      "args": [
+        "4 * (2 + 3) / 2"
+      ],
+      "justification": "Validates nested parentheses and mixed operations (addition, multiplication, division) with correct precedence and left-to-right evaluation for equal precedence.",
+      "stdin": "",
+      "expected_stdout": "10\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    }
+  ],
+  "rationale": "These tests cover the core arithmetic operations (addition, subtraction, multiplication, division) with proper precedence and parentheses as required. They include simple cases, precedence interactions, and nested expressions to fully validate the calculator's support for the specified operations."
+}

@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R015-T01",
+      "args": [
+        "3 - 8"
+      ],
+      "stdin": "",
+      "expected_stdout": "-5",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement that the calculator evaluates '3 - 8' to produce '-5'. It tests the subtraction operation with negative result, ensuring the output is exactly '-5' with no extra formatting or trailing zeros, as per the stated output requirements.",
+      "requirement_id": "R015"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '3 - 8' produces '-5'. This is a foundational test for subtraction with negative results. It is minimal, focused, and directly validates the core arithmetic behavior without introducing complexity from parentheses, fractions, or other operations."
+}

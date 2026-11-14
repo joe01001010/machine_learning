@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases adequately cover the requirement R012: output formatting, integer vs. fractional results, and scope restriction for terminating decimals. Test R012-T01 validates correct integer output with newline. Test R012-T03 confirms integer output without decimal point. Test R012-T02 correctly enforces the scope restriction by rejecting non-terminating decimals with exit code 1. All tests are aligned with the customer intent, interface, and mathematical expectations. Coverage is complete and justified."
+}

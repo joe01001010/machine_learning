@@ -1,0 +1,1058 @@
+{
+  "round": 0,
+  "summary": "Coder submitted main.py and requested build/test execution",
+  "source_sha256": {
+    "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+    "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+    "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+    "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+    "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+  },
+  "build": {
+    "success": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "tests": [
+    {
+      "requirement_id": "R001",
+      "test_case_id": "R001-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-3u1y3s7m/app/main.py",
+          "5 + 3"
+        ],
+        "started_at": "2026-11-06T04:55:27.043191+00:00",
+        "return_code": 0,
+        "stdout": "8\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.823,
+        "execution_id": "6613ab1d401a4e9984b0e78282a5f665",
+        "requirement_id": "R001",
+        "test_case_id": "R001-T01",
+        "args": [
+          "5 + 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '5 + 3' correctly produces the expected output '8' with an exit code of 0. The execution matches the mathematical reference exactly, and the output conforms to the specified format: integer result without a decimal point, followed by a newline. The requirement for support of addition is validated. The host_match is true, and the comparison of stdout (after removing one terminal LF or CRLF) is exact. All criteria in the requirement are met by the observed execution."
+      }
+    },
+    {
+      "requirement_id": "R001",
+      "test_case_id": "R001-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-d75xxe_6/app/main.py",
+          "10 - 4 * 2"
+        ],
+        "started_at": "2026-11-06T04:55:30.701648+00:00",
+        "return_code": 0,
+        "stdout": "2\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.609,
+        "execution_id": "0c645fe77d4a44e8839d5c209b0607ab",
+        "requirement_id": "R001",
+        "test_case_id": "R001-T02",
+        "args": [
+          "10 - 4 * 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '10 - 4 * 2' evaluates to 2, which matches the expected output '2' as per standard arithmetic precedence (multiplication before subtraction). The execution completed with exit code 0, and the stdout output is exactly '2' (after removing one terminal newline), matching the mathematical reference. The requirement for precedence (multiplication before subtraction) is satisfied. The host_match is true, confirming alignment with the expected behavior. All criteria are met."
+      }
+    },
+    {
+      "requirement_id": "R002",
+      "test_case_id": "R002-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-_bfnmih5/app/main.py",
+          "5 + 3"
+        ],
+        "started_at": "2026-11-06T04:55:34.044770+00:00",
+        "return_code": 0,
+        "stdout": "8\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 36.117,
+        "execution_id": "f0ad9abaf074412a92e79df098d9316d",
+        "requirement_id": "R002",
+        "test_case_id": "R002-T01",
+        "args": [
+          "5 + 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case R002-T01 validates the basic addition functionality with input '5 + 3'. The expected output is '8' and the execution produced exactly that. The exit code is 0, matching the expected value. The stdout matches the expected output after removing one terminal newline, and the host_match is true. All requirements for this test case—accepting a single arithmetic expression, producing correct integer output, and exiting with status 0—are satisfied. The mathematical reference confirms the rational result of 8. No discrepancies exist between expected and actual output."
+      }
+    },
+    {
+      "requirement_id": "R002",
+      "test_case_id": "R002-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-3g13nymz/app/main.py",
+          "(2 + 3) * 4"
+        ],
+        "started_at": "2026-11-06T04:55:37.805357+00:00",
+        "return_code": 0,
+        "stdout": "20\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.933,
+        "execution_id": "7bd47c22fc114e679e458930a8915f30",
+        "requirement_id": "R002",
+        "test_case_id": "R002-T02",
+        "args": [
+          "(2 + 3) * 4"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case (2 + 3) * 4 correctly evaluates to 20 as required by the specification. The execution output is exactly '20' followed by a newline, matching the expected_stdout. The exit code is 0, as required. The mathematical reference confirms the rational result of 20. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) is exact. All requirements for this test case—parentheses, operator precedence, correct evaluation, and output formatting—are satisfied. No deviations from the specification are observed."
+      }
+    },
+    {
+      "requirement_id": "R003",
+      "test_case_id": "R003-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-uu2490sn/app/main.py",
+          "0 + 5"
+        ],
+        "started_at": "2026-11-06T04:55:41.571172+00:00",
+        "return_code": 0,
+        "stdout": "5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.09,
+        "execution_id": "82cf9b6e3582437d86562205ab2ab3af",
+        "requirement_id": "R003",
+        "test_case_id": "R003-T01",
+        "args": [
+          "0 + 5"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case R003-T01 validates the acceptance of zero as a nonnegative integer operand in addition. The input '0 + 5' produces the expected output '5' with an exit code of 0, matching the mathematical reference. The execution output exactly matches the expected stdout after terminal newline normalization. The requirement to accept nonnegative integer operands, including zero, is satisfied. All criteria are met, and the host_match is true, confirming alignment with the specification."
+      }
+    },
+    {
+      "requirement_id": "R003",
+      "test_case_id": "R003-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-q24blbju/app/main.py",
+          "17 * 0"
+        ],
+        "started_at": "2026-11-06T04:55:44.943338+00:00",
+        "return_code": 0,
+        "stdout": "0\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.058,
+        "execution_id": "93a385e35ed84597accd713c2f3c0987",
+        "requirement_id": "R003",
+        "test_case_id": "R003-T02",
+        "args": [
+          "17 * 0"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '17 * 0' correctly produces expected output '0' with exit code 0. The execution matches the mathematical reference exactly: the output is '0' (as required for nonnegative integer operands, including zero), and the exit code is 0. The host_match is true, and the stdout (after removing one terminal LF or CRLF) matches the expected stdout '0'. The requirement to accept nonnegative integer operands, including zero, is fully satisfied. No deviations from the specification are observed."
+      }
+    },
+    {
+      "requirement_id": "R004",
+      "test_case_id": "R004-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-2t82hc5a/app/main.py",
+          "(5 + 3) * 2"
+        ],
+        "started_at": "2026-11-06T04:55:48.514459+00:00",
+        "return_code": 0,
+        "stdout": "16\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.542,
+        "execution_id": "24a514582e554dac89bd15e7f258f217",
+        "requirement_id": "R004",
+        "test_case_id": "R004-T01",
+        "args": [
+          "(5 + 3) * 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case (5 + 3) * 2 evaluates to 16, which matches the expected output exactly. The execution produced stdout: '16' (after removing one terminal newline), with an exit code of 0, satisfying all required conditions. The requirement to support nested parentheses is directly validated. The mathematical reference confirms the rational result of 16. The output format, including no unnecessary trailing zeros or decimal points, is correct. All criteria are met, and the host match is true."
+      }
+    },
+    {
+      "requirement_id": "R004",
+      "test_case_id": "R004-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-lc23uvad/app/main.py",
+          "(10 - (3 + 2)) * 4"
+        ],
+        "started_at": "2026-11-06T04:55:52.017330+00:00",
+        "return_code": 0,
+        "stdout": "20\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.983,
+        "execution_id": "0d82748d17e94d09a595c0a8443fb48c",
+        "requirement_id": "R004",
+        "test_case_id": "R004-T02",
+        "args": [
+          "(10 - (3 + 2)) * 4"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case (10 - (3 + 2)) * 4 correctly evaluates to 20, as required by the requirement to support nested parentheses. The execution output is exactly '20' followed by a newline, matching the expected_stdout. The exit code is 0, as required. The mathematical reference confirms the rational result of 20. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) aligns exactly. All stated requirements for parentheses handling, precedence, and expression parsing are satisfied in this test case. No deviations from the specification are observed."
+      }
+    },
+    {
+      "requirement_id": "R005",
+      "test_case_id": "R005-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-9nvk2izj/app/main.py",
+          "(5 + 3) * 2 - 4 / 2"
+        ],
+        "started_at": "2026-11-06T04:55:55.970837+00:00",
+        "return_code": 0,
+        "stdout": "14\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.159,
+        "execution_id": "3f36c88ade6146b3b8936e931d481111",
+        "requirement_id": "R005",
+        "test_case_id": "R005-T01",
+        "args": [
+          "(5 + 3) * 2 - 4 / 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case (5 + 3) * 2 - 4 / 2 evaluates to 14, as required by the precedence rule: multiplication and division are performed before addition and subtraction. The execution produced the expected output '14' with a successful exit code (0), matching the mathematical reference. The host_match is true, and the stdout (after normalization) exactly matches the expected output. All requirements related to operator precedence, expression parsing, and output formatting are satisfied in this test case."
+      }
+    },
+    {
+      "requirement_id": "R005",
+      "test_case_id": "R005-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-zpd9669m/app/main.py",
+          "10 - 2 * 3 + 4 / 2"
+        ],
+        "started_at": "2026-11-06T04:55:57.214807+00:00",
+        "return_code": 0,
+        "stdout": "6\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.627,
+        "execution_id": "3649230f842941f4acbe1dd6fc586272",
+        "requirement_id": "R005",
+        "test_case_id": "R005-T02",
+        "args": [
+          "10 - 2 * 3 + 4 / 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case R005-T02 evaluates the expression '10 - 2 * 3 + 4 / 2' with the expected output '6'. The execution produced the exact expected stdout ('6') and had the correct exit code (0). The mathematical reference confirms the expected rational result. The precedence rules are satisfied: multiplication and division are performed before addition and subtraction, and operations of equal precedence are evaluated left to right. The host_match is true, and the output matches the reference after standardizing line endings. All requirements specified in the customer prompt are addressed, and the test case is valid and fully justified."
+      }
+    },
+    {
+      "requirement_id": "R006",
+      "test_case_id": "R006-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-ihut_z5y/app/main.py",
+          "3 - 5 - 2"
+        ],
+        "started_at": "2026-11-06T04:56:01.661907+00:00",
+        "return_code": 0,
+        "stdout": "-4\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.926,
+        "execution_id": "730bc99aca3648b9aca1409a4d8ca7c2",
+        "requirement_id": "R006",
+        "test_case_id": "R006-T01",
+        "args": [
+          "3 - 5 - 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '3 - 5 - 2' evaluates to -4, as required by the requirement to evaluate operators of equal precedence from left to right. The execution output is exactly '-4' followed by a newline, matching the expected_stdout. The exit code is 0, as required. The mathematical reference confirms the expected rational result of -4. The host_match is true, indicating a perfect match between expected and actual output. All criteria are fully justified by the evidence."
+      }
+    },
+    {
+      "requirement_id": "R006",
+      "test_case_id": "R006-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-ad0oxbpl/app/main.py",
+          "10 - 3 * 2 + 1"
+        ],
+        "started_at": "2026-11-06T04:56:05.243804+00:00",
+        "return_code": 0,
+        "stdout": "5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.695,
+        "execution_id": "77c7ff155cbc43099536ea1f4fac52c4",
+        "requirement_id": "R006",
+        "test_case_id": "R006-T02",
+        "args": [
+          "10 - 3 * 2 + 1"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '10 - 3 * 2 + 1' evaluates to 5, as required by the requirement to evaluate operators of equal precedence from left to right. The expression follows standard precedence: multiplication is performed first (3 * 2 = 6), resulting in 10 - 6 + 1. Then, subtraction and addition are evaluated left to right: 10 - 6 = 4, then 4 + 1 = 5. The observed stdout is '5' with a newline, matching the expected output exactly. The execution returned exit code 0, which is correct. The mathematical reference confirms the expected rational result of 5. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) aligns perfectly. All criteria are met."
+      }
+    },
+    {
+      "requirement_id": "R007",
+      "test_case_id": "R007-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-m9qgr4xf/app/main.py",
+          "2+3"
+        ],
+        "started_at": "2026-11-06T04:56:10.419270+00:00",
+        "return_code": 0,
+        "stdout": "5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.372,
+        "execution_id": "e50f8e95cf2b4f7f8890d330c5290d58",
+        "requirement_id": "R007",
+        "test_case_id": "R007-T01",
+        "args": [
+          "2+3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case R007-T01 evaluates the requirement to accept expressions with or without spaces between numbers and operators. The input '2+3' is a valid expression with no spaces, and the expected output is '5', which matches the observed stdout exactly. The exit code is 0, as required. The mathematical reference confirms the expected rational result of 5. The host_match is true, and the comparison of stdout (after removing one terminal newline) is exact. All criteria are met, and the execution aligns with the specified behavior."
+      }
+    },
+    {
+      "requirement_id": "R007",
+      "test_case_id": "R007-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-26pgf4af/app/main.py",
+          "2 + 3"
+        ],
+        "started_at": "2026-11-06T04:56:14.369039+00:00",
+        "return_code": 0,
+        "stdout": "5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.433,
+        "execution_id": "f3addbf639ee4e39803c52e6d51a04ac",
+        "requirement_id": "R007",
+        "test_case_id": "R007-T02",
+        "args": [
+          "2 + 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case R007-T02 checks the requirement to accept expressions with or without spaces between numbers and operators. The input '2 + 3' is a valid expression with a space between the numbers and the operator. The execution produced the expected output '5' with an exit code of 0, matching the mathematical reference. The host_match is true, and the stdout (after removing one terminal LF or CRLF) exactly matches the expected output. The requirement is fully satisfied, and the evidence justifies the pass."
+      }
+    },
+    {
+      "requirement_id": "R008",
+      "test_case_id": "R008-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-f9grx2ld/app/main.py",
+          "5 - 3"
+        ],
+        "started_at": "2026-11-06T04:56:18.640396+00:00",
+        "return_code": 0,
+        "stdout": "2\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.284,
+        "execution_id": "c44e6c6714e34bea8970ab942e5c2707",
+        "requirement_id": "R008",
+        "test_case_id": "R008-T01",
+        "args": [
+          "5 - 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '5 - 3' correctly produces the expected output '2' with exit code 0. The execution matches the mathematical reference exactly, including output formatting (no unnecessary trailing zeros, correct integer output). The requirement to allow negative and fractional results is satisfied in the context of this test, as it demonstrates a valid negative result from a subtraction operation. The host_match is true, and the output is exactly as expected. All criteria are met, and the evidence justifies the pass."
+      }
+    },
+    {
+      "requirement_id": "R008",
+      "test_case_id": "R008-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-ai0qlvin/app/main.py",
+          "7 / 2"
+        ],
+        "started_at": "2026-11-06T04:56:22.495374+00:00",
+        "return_code": 0,
+        "stdout": "3.5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.774,
+        "execution_id": "26f506fd075641969582c95b40aaae04",
+        "requirement_id": "R008",
+        "test_case_id": "R008-T02",
+        "args": [
+          "7 / 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '7 / 2' correctly produces the expected output '3.5' with exit code 0. The mathematical reference confirms the expected rational result of 3.5. The execution output matches the expected stdout exactly (after terminal newline normalization), and the exit code is correct. The requirement to allow fractional results with terminating decimals is satisfied. No deviations from the specified behavior are observed. The host_match is true, indicating alignment with the expected behavior."
+      }
+    },
+    {
+      "requirement_id": "R009",
+      "test_case_id": "R009-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-jdamqjzj/app/main.py",
+          "5 + 3"
+        ],
+        "started_at": "2026-11-06T04:56:25.957946+00:00",
+        "return_code": 0,
+        "stdout": "8\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 18.848,
+        "execution_id": "ceacad1395064e79bfa76b7107bad070",
+        "requirement_id": "R009",
+        "test_case_id": "R009-T01",
+        "args": [
+          "5 + 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '5 + 3' evaluates to 8, which is an integer result. The output is exactly '8' as required: no decimal point, no unnecessary leading zeros, and followed by a newline. The execution status is completed with return code 0, matching the expected exit code. The mathematical reference confirms the expected output of '8'. The host match is true, and the stdout matches the expected output after terminal newline normalization. All criteria in the requirement (R009) are satisfied."
+      }
+    },
+    {
+      "requirement_id": "R009",
+      "test_case_id": "R009-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-2vkuv_sb/app/main.py",
+          "100 - 50 * 2"
+        ],
+        "started_at": "2026-11-06T04:56:27.237554+00:00",
+        "return_code": 0,
+        "stdout": "0\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.168,
+        "execution_id": "bc39b96420d5499dba05229c2ad86549",
+        "requirement_id": "R009",
+        "test_case_id": "R009-T02",
+        "args": [
+          "100 - 50 * 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '100 - 50 * 2' evaluates to 0, which is an integer result. The output is exactly '0' as required by the requirement to print integer results without a decimal point or unnecessary leading zeros. The execution produced the expected stdout '0' with a matching exit code of 0. The mathematical reference confirms the expected rational result is 0. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) aligns exactly. All criteria are met, and the execution evidence justifies the pass."
+      }
+    },
+    {
+      "requirement_id": "R010",
+      "test_case_id": "R010-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-zim37vsd/app/main.py",
+          "5 / 2"
+        ],
+        "started_at": "2026-11-06T04:56:31.113645+00:00",
+        "return_code": 0,
+        "stdout": "2.5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.627,
+        "execution_id": "cce2dd519ec440d38aeb7f61782075b5",
+        "requirement_id": "R010",
+        "test_case_id": "R010-T01",
+        "args": [
+          "5 / 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '5 / 2' produces the expected output '2.5' with a return code of 0, matching the mathematical reference and requirement specification. The output is in decimal notation with no unnecessary trailing zeros, as required by the requirement R010. The host match is true, and the stdout (after removing one terminal LF or CRLF) exactly matches the expected output. All criteria are met, and the execution is fully aligned with the stated requirement."
+      }
+    },
+    {
+      "requirement_id": "R010",
+      "test_case_id": "R010-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-mvb9mfir/app/main.py",
+          "10 / 4"
+        ],
+        "started_at": "2026-11-06T04:56:34.505061+00:00",
+        "return_code": 0,
+        "stdout": "2.5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.922,
+        "execution_id": "ffbce8cf57fb4e5d9d10e2f4d09a161c",
+        "requirement_id": "R010",
+        "test_case_id": "R010-T02",
+        "args": [
+          "10 / 4"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '10 / 4' produces the expected output '2.5' with no unnecessary trailing zeros, as required by the requirement to print fractional results in decimal notation without unnecessary trailing zeros. The execution completed successfully (return code 0), and the stdout matches the mathematical reference exactly after terminal newline normalization. The host_match is true, confirming alignment with the expected behavior. All criteria are met."
+      }
+    },
+    {
+      "requirement_id": "R011",
+      "test_case_id": "R011-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-ynk7k09d/app/main.py",
+          "4 / 2"
+        ],
+        "started_at": "2026-11-06T04:56:37.635523+00:00",
+        "return_code": 0,
+        "stdout": "2\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.354,
+        "execution_id": "70fc284902e549618cacd4aa6e46cef8",
+        "requirement_id": "R011",
+        "test_case_id": "R011-T01",
+        "args": [
+          "4 / 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '4 / 2' evaluates to 2.0, which is a terminating decimal. The calculator outputs '2' (integer form, without decimal point), matching the requirement to omit unnecessary decimal points for terminating decimals. The expected stdout is '2' and the actual stdout is '2', with an exit code of 0. The host_match is true, and the mathematical reference confirms the expected rational result. All criteria are met: the division produces a terminating decimal, the output is correctly formatted as an integer, and the exit code is correct. No deviations from the specification are observed."
+      }
+    },
+    {
+      "requirement_id": "R011",
+      "test_case_id": "R011-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-z8pi_ui_/app/main.py",
+          "10 / 4"
+        ],
+        "started_at": "2026-11-06T04:56:41.559169+00:00",
+        "return_code": 0,
+        "stdout": "2.5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 36.067,
+        "execution_id": "df2cb8b2ee3f412ab613c33fe8649a2a",
+        "requirement_id": "R011",
+        "test_case_id": "R011-T02",
+        "args": [
+          "10 / 4"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '10 / 4' evaluates to 2.5, which is a terminating decimal. The execution output is exactly '2.5' with a trailing newline, matching the expected_stdout as defined in the mathematical reference. The exit code is 0, satisfying the expected_exit_code. The requirement specifies that division with terminating decimal results must be correctly evaluated and output in decimal form without unnecessary trailing zeros, which is fully met. The host_match is true, confirming exact alignment between expected and actual output. All criteria are justified by the evidence."
+      }
+    },
+    {
+      "requirement_id": "R012",
+      "test_case_id": "R012-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-cxgqobsd/app/main.py",
+          "5 + 3"
+        ],
+        "started_at": "2026-11-06T04:56:45.248701+00:00",
+        "return_code": 0,
+        "stdout": "8\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.471,
+        "execution_id": "f458677c376b43669611ac9202dc9594",
+        "requirement_id": "R012",
+        "test_case_id": "R012-T01",
+        "args": [
+          "5 + 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '5 + 3' produces the expected output '8' followed by a newline, matching the requirement to print only the result on standard output with a trailing newline. The execution status is completed with return code 0, and the stdout matches the mathematical reference exactly (after removing one terminal LF or CRLF). The host_match is true, confirming alignment with the expected output. All criteria in the requirement R012 are fully satisfied by the observed evidence."
+      }
+    },
+    {
+      "requirement_id": "R012",
+      "test_case_id": "R012-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-dpw8xnc7/app/main.py",
+          "10 / 2"
+        ],
+        "started_at": "2026-11-06T04:56:48.596544+00:00",
+        "return_code": 0,
+        "stdout": "5\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 34.558,
+        "execution_id": "b503a6b6ddb448f19e895c043eb1afdd",
+        "requirement_id": "R012",
+        "test_case_id": "R012-T02",
+        "args": [
+          "10 / 2"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '10 / 2' evaluates to 5, which matches the expected output '5' with a trailing newline. The execution output exactly matches the expected stdout after normalization (removing one terminal LF or CRLF). The exit code is 0, as required. The requirement specifies that the output should be the result followed by a newline, and this is fully satisfied. The mathematical reference confirms the rational result of 5. All criteria are met, and the host_match is true."
+      }
+    },
+    {
+      "requirement_id": "R013",
+      "test_case_id": "R013-T01",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-x2imrk6f/app/main.py",
+          "5 + 3"
+        ],
+        "started_at": "2026-11-06T04:56:52.066017+00:00",
+        "return_code": 0,
+        "stdout": "8\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 36.485,
+        "execution_id": "87078bc4c9cd48d8954b0272226523d3",
+        "requirement_id": "R013",
+        "test_case_id": "R013-T01",
+        "args": [
+          "5 + 3"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '5 + 3' produces the expected output '8' with a trailing newline, matching the required output format. The exit code is 0, which satisfies the requirement to exit with status 0 after a successful calculation. The host match confirms exact alignment with the mathematical reference. All criteria in the requirement (correct output, correct exit code, proper formatting) are met. No deviations or missing evidence are observed."
+      }
+    },
+    {
+      "requirement_id": "R013",
+      "test_case_id": "R013-T02",
+      "execution": {
+        "command": [
+          "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+          "-B",
+          "/tmp/nlp-mas-test-3rsxbp3n/app/main.py",
+          "4 * 2 / 1"
+        ],
+        "started_at": "2026-11-06T04:56:55.215996+00:00",
+        "return_code": 0,
+        "stdout": "8\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 35.887,
+        "execution_id": "c55066977557472f808a061c93d75510",
+        "requirement_id": "R013",
+        "test_case_id": "R013-T02",
+        "args": [
+          "4 * 2 / 1"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+          "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+          "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+          "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "The test case '4 * 2 / 1' evaluates to 8 as required. The execution produced the expected stdout '8' and exited with exit code 0, matching the expected_exit_code of 0. The mathematical reference confirms the expected output is 8. The host_match is true, and the output, after removing one terminal LF or CRLF, exactly matches the expected stdout. All requirements for this test case—valid expression, correct precedence, correct output format, and correct exit status—are satisfied. No deviations from the specification are observed."
+      }
+    }
+  ]
+}

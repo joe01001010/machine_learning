@@ -1,0 +1,17 @@
+{
+  "run_id": "20261106T042339Z-093f30d0",
+  "started_at": "2026-11-06T04:23:39.999903+00:00",
+  "status": "INCOMPLETE",
+  "rounds": [],
+  "questions": [],
+  "run_directory": "/home/weibelj/git/machine_learning/nlp-mas/results/20261106T042339Z-093f30d0",
+  "requirements_only": true,
+  "requirements_staged_count": 11,
+  "requirements_source_blocks_completed": 4,
+  "requirements_source_excerpts_completed": 12,
+  "reason": "Requirements block 005: review limit reached",
+  "finished_at": "2026-11-06T04:24:17.600205+00:00",
+  "model_calls": 14,
+  "requirements": [],
+  "test_count": 0
+}

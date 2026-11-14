@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "addition",
+        "stdin",
+        "5 + 3"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates basic addition with no parentheses, testing left-to-right evaluation and integer output as per requirement examples.",
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T02",
+      "args": [
+        "multiplication_precedence",
+        "stdin",
+        "2 + 3 * 4"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "Validates operator precedence: multiplication before addition, ensuring correct evaluation of 3*4=12, then 2+12=14, as per standard arithmetic rules.",
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T03",
+      "args": [
+        "nested_parentheses",
+        "stdin",
+        "2 * (3 + (4 * 5))"
+      ],
+      "stdin": "2 * (3 + (4 * 5))",
+      "expected_stdout": "46",
+      "expected_exit_code": 0,
+      "justification": "Validates nested parentheses and correct application of precedence: 4*5=20, 3+20=23, 2*23=46, ensuring full expression parsing and evaluation.",
+      "requirement_id": "R001"
+    }
+  ],
+  "rationale": "These tests cover core arithmetic operations, operator precedence, and nested parentheses as explicitly required. They include integer and simple fractional results, validate output formatting, and align with provided examples. All inputs are valid, non-malformed expressions with clear intent to test the core functionality of the calculator."
+}

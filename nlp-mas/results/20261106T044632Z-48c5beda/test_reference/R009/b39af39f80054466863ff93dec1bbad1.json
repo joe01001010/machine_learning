@@ -1,0 +1,38 @@
+[
+  {
+    "test_case_id": "R009-T01",
+    "args": [
+      "5 + 3"
+    ],
+    "reference": {
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  },
+  {
+    "test_case_id": "R009-T02",
+    "args": [
+      "100 - 50 - 25"
+    ],
+    "reference": {
+      "expected_stdout": "25\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  },
+  {
+    "test_case_id": "R009-T03",
+    "args": [
+      "0 * 1000"
+    ],
+    "reference": {
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R013-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the core requirement that the calculator exits with status 0 after a successful calculation. It uses a valid, simple expression that produces an integer result, ensuring the system correctly evaluates and exits with exit code 0 as required by the specification.",
+      "requirement_id": "R013"
+    },
+    {
+      "test_case_id": "R013-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "10 / 2",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test validates the arithmetic precedence and correct evaluation of a division expression with integer result. It ensures the calculator correctly handles division and produces the expected integer output without a decimal point, in line with the output convention. It also confirms the exit status is 0 for a valid expression.",
+      "requirement_id": "R013"
+    },
+    {
+      "test_case_id": "R013-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test exercises operator precedence (multiplication before addition) and left-to-right evaluation for operators of equal precedence. It confirms the system correctly applies standard arithmetic precedence and produces the expected result, while ensuring the exit status is 0 as required by the requirement.",
+      "requirement_id": "R013"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates exit status 0 after a successful calculation. These three tests cover different valid expressions: a simple addition, a division with integer result, and a precedence-based expression. Each validates both the correct output and the required exit code 0, ensuring full compliance with the stated requirement."
+}

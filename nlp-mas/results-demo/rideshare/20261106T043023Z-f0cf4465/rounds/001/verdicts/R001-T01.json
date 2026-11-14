@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "Observed '20.00' against the frozen expectation '20.00'."
+}

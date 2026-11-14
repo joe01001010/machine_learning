@@ -1,0 +1,84 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R017",
+      "text": "An unrated ride contributes to ride totals but not to rating averages.",
+      "source_id": "S019",
+      "source_quote": "- An unrated ride still contributes to ride totals but not to rating averages. Calculate each category average using only submitted surveys for that organization. Show that no ratings are available"
+    },
+    {
+      "requirement_id": "R018",
+      "text": "Rating averages are calculated only from submitted surveys; display 'no ratings available' when no surveys exist.",
+      "source_id": "S020",
+      "source_quote": "when no surveys have been submitted; do not divide by zero or display NaN."
+    },
+    {
+      "requirement_id": "R019",
+      "text": "Session completion requires administrator authentication; after authentication, display all organization summaries and exit.",
+      "source_id": "S021",
+      "source_quote": "Session completion and reporting:"
+    }
+  ],
+  "source_ids": [
+    "S019",
+    "S020",
+    "S021"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R017",
+      "text": "An unrated ride contributes to ride totals but not to rating averages.",
+      "source_id": "S019"
+    },
+    {
+      "requirement_id": "R018",
+      "text": "Rating averages are calculated only from submitted surveys; display 'no ratings available' when no surveys exist.",
+      "source_id": "S020"
+    },
+    {
+      "requirement_id": "R019",
+      "text": "Session completion requires administrator authentication; after authentication, display all organization summaries and exit.",
+      "source_id": "S021"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R017",
+      "canonical_requirement_id": "R017"
+    },
+    {
+      "submitted_requirement_id": "R018",
+      "canonical_requirement_id": "R018"
+    },
+    {
+      "submitted_requirement_id": "R019",
+      "canonical_requirement_id": "R019"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 7,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019"
+  ]
+}

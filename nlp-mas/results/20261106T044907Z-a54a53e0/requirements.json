@@ -1,0 +1,80 @@
+[
+  {
+    "requirement_id": "R001",
+    "text": "The calculator shall support addition (+), subtraction (-), multiplication (*), and division (/) as arithmetic operations.",
+    "source_id": "S003",
+    "source_quote": "- Support addition (+), subtraction (-), multiplication (*), and division (/)."
+  },
+  {
+    "requirement_id": "R002",
+    "text": "The calculator shall accept a single arithmetic expression as an argument and print the result.",
+    "source_id": "S001",
+    "source_quote": "I want a command-line calculator that accepts one arithmetic expression as an argument and prints the result."
+  },
+  {
+    "requirement_id": "R003",
+    "text": "Accept nonnegative integer operands, including zero.",
+    "source_id": "S004",
+    "source_quote": "- Accept nonnegative integer operands, including zero."
+  },
+  {
+    "requirement_id": "R004",
+    "text": "Support parentheses, including nested parentheses.",
+    "source_id": "S005",
+    "source_quote": "- Support parentheses, including nested parentheses."
+  },
+  {
+    "requirement_id": "R005",
+    "text": "Apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction.",
+    "source_id": "S006",
+    "source_quote": "- Apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction."
+  },
+  {
+    "requirement_id": "R006",
+    "text": "Evaluate operators of equal precedence from left to right.",
+    "source_id": "S007",
+    "source_quote": "- Evaluate operators of equal precedence from left to right."
+  },
+  {
+    "requirement_id": "R007",
+    "text": "Accept expressions with or without spaces between numbers and operators.",
+    "source_id": "S008",
+    "source_quote": "- Accept expressions with or without spaces between numbers and operators."
+  },
+  {
+    "requirement_id": "R008",
+    "text": "Allow negative and fractional results.",
+    "source_id": "S009",
+    "source_quote": "- Allow negative and fractional results."
+  },
+  {
+    "requirement_id": "R009",
+    "text": "Print integer results without a decimal point or unnecessary leading zeros.",
+    "source_id": "S011",
+    "source_quote": "- Print integer results without a decimal point or unnecessary leading zeros."
+  },
+  {
+    "requirement_id": "R010",
+    "text": "Print fractional results in decimal notation without unnecessary trailing zeros.",
+    "source_id": "S012",
+    "source_quote": "- Print fractional results in decimal notation without unnecessary trailing zeros."
+  },
+  {
+    "requirement_id": "R011",
+    "text": "For division, this initial evaluation only requires cases whose exact results have terminating decimal representations.",
+    "source_id": "S013",
+    "source_quote": "- For division, this initial evaluation only requires cases whose exact results have terminating decimal representations."
+  },
+  {
+    "requirement_id": "R012",
+    "text": "Print only the result on standard output, followed by a newline.",
+    "source_id": "S014",
+    "source_quote": "- Print only the result on standard output, followed by a newline."
+  },
+  {
+    "requirement_id": "R013",
+    "text": "Exit with status 0 after a successful calculation.",
+    "source_id": "S015",
+    "source_quote": "- Exit with status 0 after a successful calculation."
+  }
+]

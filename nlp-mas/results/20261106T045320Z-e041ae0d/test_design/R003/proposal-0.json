@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R003-T01",
+      "args": [
+        "0 + 5"
+      ],
+      "justification": "Validates acceptance of zero as a nonnegative integer operand in addition.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T02",
+      "args": [
+        "17 * 0"
+      ],
+      "justification": "Validates acceptance of zero as a nonnegative integer operand in multiplication.",
+      "stdin": "",
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    }
+  ],
+  "rationale": "The requirement explicitly states support for nonnegative integer operands, including zero. These tests verify the calculator correctly processes zero in arithmetic operations, ensuring it is not rejected or misinterpreted. The expressions use valid syntax with standard operators and parentheses, aligning with the interface and precedence rules. Zero is a boundary case that must be handled correctly to confirm compliance with the nonnegative integer requirement."
+}

@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R009",
+      "text": "For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle.",
+      "source_id": "S010",
+      "source_quote": "- For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle. The user explicitly selected these examples: 1/3 produces 0.3; 1/6 produces 0.16;"
+    },
+    {
+      "requirement_id": "R010",
+      "text": "For irrational, nonrepeating answers from fractional powers, such as 2^0.5, use 17 significant digits.",
+      "source_id": "S012",
+      "source_quote": "- For irrational, nonrepeating answers from fractional powers, such as 2^0.5, use 17 significant digits. This is the user's explicit precision selection and does not replace the exact-terminating or"
+    }
+  ],
+  "source_ids": [
+    "S010",
+    "S011",
+    "S012"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R009",
+      "text": "For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle.",
+      "source_id": "S010"
+    },
+    {
+      "requirement_id": "R010",
+      "text": "For irrational, nonrepeating answers from fractional powers, such as 2^0.5, use 17 significant digits.",
+      "source_id": "S012"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R009",
+      "canonical_requirement_id": "R009"
+    },
+    {
+      "submitted_requirement_id": "R010",
+      "canonical_requirement_id": "R010"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 4,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R004-T01",
+      "args": [
+        "accept_nonnegative_integers"
+      ],
+      "stdin": "0 + 5",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the requirement to accept nonnegative integer operands, including zero. The input '0 + 5' uses zero as a nonnegative integer operand in a simple expression, ensuring the calculator correctly handles zero as a valid operand. This isolates the behavior of zero as a nonnegative integer, addressing the feedback that previous tests lacked explicit coverage of zero.",
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T02",
+      "args": [
+        "accept_zero_in_multiplication"
+      ],
+      "stdin": "0 * 17",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator's handling of zero in a multiplication expression with a non-zero integer. It confirms that zero is accepted as a valid nonnegative integer operand and that the result is correctly computed as zero, in line with the requirement to support nonnegative integer operands, including zero.",
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T03",
+      "args": [
+        "accept_zero_in_nested_precedence"
+      ],
+      "stdin": "(0 + 3) * (4 - 1)",
+      "expected_stdout": "9",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates zero in a nested expression with standard precedence. It ensures zero is correctly processed as a nonnegative integer operand within parentheses and that the overall expression evaluates correctly. This test combines zero with arithmetic operations and nested parentheses, validating the requirement in a more complex context.",
+      "requirement_id": "R004"
+    }
+  ],
+  "rationale": "The requirement explicitly emphasizes accepting nonnegative integer operands, including zero. Previous tests failed to isolate or validate zero as a valid operand. These new tests specifically target zero as a nonnegative integer in simple and complex expressions, ensuring full coverage of the requirement. Test R004-T01 isolates zero in a basic addition, R004-T02 in multiplication, and R004-T03 in a nested expression with precedence, providing comprehensive validation of the requirement."
+}

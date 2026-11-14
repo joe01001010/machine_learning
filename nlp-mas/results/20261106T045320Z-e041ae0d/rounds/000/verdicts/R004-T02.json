@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case (10 - (3 + 2)) * 4 correctly evaluates to 20, as required by the requirement to support nested parentheses. The execution output is exactly '20' followed by a newline, matching the expected_stdout. The exit code is 0, as required. The mathematical reference confirms the rational result of 20. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) aligns exactly. All stated requirements for parentheses handling, precedence, and expression parsing are satisfied in this test case. No deviations from the specification are observed."
+}

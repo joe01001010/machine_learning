@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases fully cover the requirement to print fractional results in decimal notation without unnecessary trailing zeros. They include terminating decimal cases with varying magnitudes (e.g., 5/2, 10/4, 7/8) and correctly reflect the expected output format. The mathematical evaluations are accurate, and the tests align with the specified precedence, formatting, and output rules. All inputs are valid and within the scope of the requirement. No invalid or edge cases are included beyond what is specified, as per the customer's instruction to not assess malformed expressions or non-terminating decimals. The test design is complete, precise, and justified by the requirement."
+}

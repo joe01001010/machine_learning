@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R023-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "12 / 3 * 2",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the stated requirement that '12 / 3 * 2' evaluates to '8'. It exercises standard arithmetic precedence: division and multiplication are evaluated left to right, so 12 / 3 = 4, then 4 * 2 = 8. This confirms correct handling of operator precedence and left-to-right evaluation for same-precedence operators.",
+      "requirement_id": "R023"
+    },
+    {
+      "test_case_id": "R023-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 * 3 / 4 * 5",
+      "expected_stdout": "7.5",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement by testing left-to-right evaluation of multiplication and division with a non-integer result. It ensures the calculator correctly applies precedence and evaluates from left to right when operators have equal precedence, producing 2 * 3 = 6, 6 / 4 = 1.5, 1.5 * 5 = 7.5, which matches the expected output.",
+      "requirement_id": "R023"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '12 / 3 * 2' produces '8', so this test directly validates that behavior. A second test is added to exercise the left-to-right evaluation of equal-precedence operators (like * and /) with a fractional result, ensuring the system correctly handles such cases under standard precedence rules."
+}

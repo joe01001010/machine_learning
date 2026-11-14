@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R004-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * (4 - 1)",
+      "expected_stdout": "15",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that nested parentheses are correctly evaluated with standard precedence. The inner expressions (2+3) and (4-1) are computed first, resulting in 5 and 3, then multiplied to yield 15. This directly tests the requirement for support of nested parentheses.",
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "((5 + 3) * 2) - (4 / 2)",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates nested parentheses with mixed operations. First, (5+3)=8, multiplied by 2 gives 16; then (4/2)=2, so 16 - 2 = 14. This confirms correct handling of nested parentheses and operator precedence.",
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + (3 * (4 + 5))",
+      "expected_stdout": "29",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that parentheses are properly nested and evaluated in the correct order. First, (4+5)=9, then 3*9=27, then 2+27=29. This directly tests nested parentheses and correct application of arithmetic precedence.",
+      "requirement_id": "R004"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates support for nested parentheses. The revised tests now accurately reflect the correct mathematical results based on standard arithmetic precedence. Each test case is designed to validate nested parentheses evaluation with clear, verifiable arithmetic steps. Test R004-T01 covers basic nested multiplication and subtraction; R004-T02 combines nested addition and division with precedence; R004-T03 tests a deeper nesting with multiplication and addition. All expected outputs have been corrected to match the actual mathematical results as per the requirement."
+}

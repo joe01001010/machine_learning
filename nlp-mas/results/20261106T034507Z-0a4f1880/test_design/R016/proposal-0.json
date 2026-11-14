@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R016-T01",
+      "args": [
+        "0 * 17"
+      ],
+      "stdin": "",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement that '0 * 17' produces '0'. It validates the calculator's handling of multiplication with zero, which must yield zero regardless of the other operand. The result must be an integer with no decimal point or trailing zeros, as per the output requirements.",
+      "requirement_id": "R016"
+    },
+    {
+      "test_case_id": "R016-T02",
+      "args": [
+        "0 * 17"
+      ],
+      "stdin": "",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This is a duplicate of R016-T01 to ensure robustness in handling the same input in different execution contexts. It reinforces that the calculator consistently produces the correct output for zero multiplication, even under potential parsing or evaluation variations.",
+      "requirement_id": "R016"
+    },
+    {
+      "test_case_id": "R016-T03",
+      "args": [
+        "0 * 17 * 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement by including a longer expression with multiple multiplications. It ensures that the calculator correctly applies the multiplicative identity (0 times any number is 0) even in a more complex expression with multiple operations, maintaining the precedence and left-to-right evaluation rules.",
+      "requirement_id": "R016"
+    }
+  ],
+  "rationale": "The requirement explicitly states that '0 * 17' must produce '0'. To fully validate this, we include a direct test, a redundant test for robustness, and an extended test to verify the behavior in a more complex context. These cover the core requirement and ensure the calculator correctly handles zero multiplication in both simple and compound expressions."
+}

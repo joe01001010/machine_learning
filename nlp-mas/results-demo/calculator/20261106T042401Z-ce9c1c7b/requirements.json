@@ -1,0 +1,8 @@
+[
+  {
+    "requirement_id": "R001",
+    "source_id": "S001",
+    "text": "The calculator shall evaluate multiplication before addition in an expression argument and print the integer result.",
+    "source_quote": "Accept one expression as a command-line argument. Apply multiplication before addition and print the integer result."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R017-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "4 / 2",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the requirement that '4 / 2' produces '2'. It exercises the division operation with integer operands and confirms the output is an integer without a decimal point, as per the output requirements. The expression is simple and unambiguous, ensuring the core arithmetic functionality is working as specified.",
+      "requirement_id": "R017"
+    },
+    {
+      "test_case_id": "R017-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test verifies standard arithmetic precedence: multiplication before addition. The expression '2 + 3 * 4' evaluates to 14, which is a required behavior under the precedence rules. It ensures the calculator correctly applies operator precedence, even when multiple operations are present, and confirms the output format (integer without decimal point) is preserved.",
+      "requirement_id": "R017"
+    },
+    {
+      "test_case_id": "R017-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test validates the division of two integers that results in a non-terminating decimal (2.5), which is a terminating decimal. The requirement specifies that fractional results should be printed in decimal notation without unnecessary trailing zeros. This test ensures the calculator correctly outputs '2.5' for '5 / 2', demonstrating proper handling of fractional results.",
+      "requirement_id": "R017"
+    }
+  ],
+  "rationale": "The requirement specifically references '4 / 2' producing '2', but to fully validate the arithmetic engine, we include adjacent tests that cover precedence, fractional output, and expression parsing. These tests collectively verify the core functionality of the calculator as described in the requirement, including operator precedence, integer and fractional output formatting, and input robustness."
+}

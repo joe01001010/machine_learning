@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R011-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "4 / 2",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test validates that division with a terminating decimal result (4/2 = 2) produces an integer output without a decimal point, as required by the requirement. It directly exercises the terminating decimal condition specified in the requirement.",
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R011-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test validates that division with a terminating decimal result (5/2 = 2.5) produces a fractional output in decimal notation without unnecessary trailing zeros, as required. It confirms the calculator correctly handles terminating decimals in division, per the requirement.",
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R011-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "7 / 4",
+      "expected_stdout": "1.75",
+      "expected_exit_code": 0,
+      "justification": "This test validates that division with a terminating decimal result (7/4 = 1.75) produces a fractional output in decimal notation, with no unnecessary trailing zeros. It ensures the calculator correctly formats terminating decimals as per the requirement, including non-integer results with finite decimal expansions.",
+      "requirement_id": "R011"
+    }
+  ],
+  "rationale": "The requirement specifies that the calculator only needs to handle cases with terminating decimal results in division. These tests cover integer, finite decimal, and mixed cases to fully validate the behavior under the stated constraint. They are focused on division outcomes with exact terminating decimals, as per the requirement's scope."
+}

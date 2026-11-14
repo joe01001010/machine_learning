@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R007-T01",
+      "args": [
+        "2+3"
+      ],
+      "justification": "This test verifies that the calculator accepts expressions without spaces between numbers and operators, as specified in the requirement. It directly tests the 'or without spaces' condition using a minimal, valid expression.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T02",
+      "args": [
+        "5 - 2 * 3"
+      ],
+      "justification": "This test checks that spacing is not required between operators and operands, while also validating standard precedence (multiplication before subtraction). It includes a mix of operators and demonstrates that the parser correctly handles expressions with both spaces and no spaces.",
+      "stdin": "",
+      "expected_stdout": "-1\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R007"
+    }
+  ],
+  "rationale": "The requirement explicitly states that expressions with or without spaces between numbers and operators are accepted. These two tests cover the minimal case (no spaces) and a more complex expression with multiple operators to ensure robustness in parsing, without introducing invalid syntax."
+}

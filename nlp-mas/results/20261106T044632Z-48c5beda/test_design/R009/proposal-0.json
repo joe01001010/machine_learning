@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R009-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "This test verifies that integer results are printed without a decimal point or unnecessary leading zeros, as required by the requirement to print integer results without a decimal point or unnecessary leading zeros. The expression evaluates to 8, an integer, so the output should be exactly '8'.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R009-T02",
+      "args": [
+        "100 - 50 - 25"
+      ],
+      "justification": "This test ensures that integer results are correctly formatted even in multi-step subtractions. The expression evaluates to 25, an integer, and should output '25' without any decimal point or extra zeros.",
+      "stdin": "",
+      "expected_stdout": "25\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R009-T03",
+      "args": [
+        "0 * 1000"
+      ],
+      "justification": "This test validates that zero as a result is printed as '0' without any extra leading zeros or decimal point, in line with the requirement for integer output formatting.",
+      "stdin": "",
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    }
+  ],
+  "rationale": "These tests focus on the core requirement of integer output formatting: ensuring that integer results are presented without a decimal point or unnecessary leading zeros. The tests use simple, valid expressions with clear integer outcomes to isolate the formatting behavior. They cover different arithmetic operations and edge cases (like zero) to ensure robustness."
+}

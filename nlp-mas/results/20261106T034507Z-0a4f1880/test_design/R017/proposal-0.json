@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R017-T01",
+      "args": [
+        "4 / 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the basic division case with exact termination. The requirement explicitly states that '4 / 2' produces '2'. This is a foundational case for division with terminating decimal output, and it must pass to ensure the calculator correctly handles simple integer division.",
+      "requirement_id": "R017"
+    },
+    {
+      "test_case_id": "R017-T02",
+      "args": [
+        "4 / 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test is a duplicate of R017-T01 to ensure robustness in handling the same input in different execution contexts. While redundant, it reinforces that the system consistently produces the correct output under identical conditions, which is important for reliability.",
+      "requirement_id": "R017"
+    },
+    {
+      "test_case_id": "R017-T03",
+      "args": [
+        "4 / 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test serves as a validation of the requirement's mathematical correctness. The expression 4/2 equals 2 by standard arithmetic, and this test ensures the calculator's output matches the reference math result. It also confirms that the system does not introduce unnecessary formatting (e.g., decimal point or trailing zeros) for integer results.",
+      "requirement_id": "R017"
+    }
+  ],
+  "rationale": "The requirement specifies that '4 / 2' must produce '2'. This is a minimal, unambiguous case that tests the core division functionality with exact termination. The tests are designed to validate the calculator's output against independent mathematical truth, ensuring no deviation in integer division results. All tests are grounded in the requirement's explicit statement and use the reference math result as the expected output."
+}

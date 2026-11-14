@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+    "-B",
+    "/tmp/nlp-mas-test-mgz0qp52/app/main.py",
+    "2+3*4"
+  ],
+  "started_at": "2026-11-06T04:30:23.308739+00:00",
+  "return_code": 0,
+  "stdout": "20\n",
+  "stderr": "",
+  "execution_status": "COMPLETED",
+  "output_truncated": false,
+  "isolation": "bwrap",
+  "duration_ms": 17.579,
+  "execution_id": "4cbf15ce723c49069ae5bf33fcc01d4d",
+  "requirement_id": "R001",
+  "test_case_id": "R001-T01",
+  "args": [
+    "2+3*4"
+  ],
+  "stdin": "",
+  "source_sha256": {
+    "main.py": "e76160ea4405d09117ae85e39ba3e41f5395c7befa6f7f15077b7b59742ba690"
+  },
+  "host_match": false
+}

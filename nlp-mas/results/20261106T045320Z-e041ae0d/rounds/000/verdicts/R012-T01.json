@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '5 + 3' produces the expected output '8' followed by a newline, matching the requirement to print only the result on standard output with a trailing newline. The execution status is completed with return code 0, and the stdout matches the mathematical reference exactly (after removing one terminal LF or CRLF). The host_match is true, confirming alignment with the expected output. All criteria in the requirement R012 are fully satisfied by the observed evidence."
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R003-T01",
+      "args": [
+        "evaluate_expression"
+      ],
+      "stdin": "2 + 3 * 4 - 1",
+      "expected_stdout": "13",
+      "expected_exit_code": 0,
+      "justification": "This test validates standard arithmetic precedence and left-to-right evaluation for operators of equal precedence. Multiplication is evaluated before addition and subtraction, so 3 * 4 = 12, then 2 + 12 = 14, then 14 - 1 = 13. The example in the review feedback incorrectly stated '9', which is mathematically invalid. This correction ensures alignment with mathematical correctness and the requirement to follow standard precedence and left-to-right evaluation.",
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T02",
+      "args": [
+        "evaluate_expression"
+      ],
+      "stdin": "10 - 3 - 2",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies left-to-right evaluation for operators of equal precedence (subtraction). Since subtraction is left-associative, it is evaluated left to right: 10 - 3 = 7, then 7 - 2 = 5. This confirms the requirement that operators of equal precedence are evaluated left to right, as specified in the requirement text.",
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T03",
+      "args": [
+        "evaluate_expression"
+      ],
+      "stdin": "2 * (3 + (4 * 5))",
+      "expected_stdout": "46",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates nested parentheses with mixed precedence. First, 4 * 5 = 20, then 3 + 20 = 23, then 2 * 23 = 46. It confirms that parentheses override precedence and that multiplication (higher precedence) is evaluated before addition, and that left-to-right evaluation applies when operators have equal precedence. This test ensures the system correctly handles precedence and left-to-right evaluation in complex expressions.",
+      "requirement_id": "R003"
+    }
+  ],
+  "rationale": "These tests are designed to independently validate the core requirement: standard arithmetic precedence and left-to-right evaluation for operators of equal precedence. Test R003-T01 corrects a previously invalid expectation from the review feedback to reflect mathematical accuracy. Tests T02 and T03 cover simple left-to-right evaluation and nested precedence, respectively, ensuring full coverage of the requirement without introducing invalid or incorrect expectations."
+}

@@ -1,0 +1,41 @@
+{
+  "run_id": "20261106T042417Z-3347736d",
+  "roles": [
+    "requirements-engineer",
+    "test-engineer",
+    "coder",
+    "verification-engineer"
+  ],
+  "controller_sha256": "eca457eae4e6b7bbb90dbfdbed9c84347129f5bf6f14431e67cb96da9b369436",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "endpoints": [
+    "http://127.0.0.1:8001/v1/chat/completions",
+    "http://127.0.0.1:8002/v1/chat/completions",
+    "http://127.0.0.1:8003/v1/chat/completions",
+    "http://127.0.0.1:8004/v1/chat/completions"
+  ],
+  "language": "c",
+  "entrypoint": "main.c",
+  "max_repairs": 3,
+  "max_turns": 32,
+  "max_model_calls": 200,
+  "max_tokens": 1024,
+  "temperature": 0,
+  "review_requirements": true,
+  "requirements_only": true,
+  "agent_transport": "http",
+  "calculator_reference": false,
+  "python_entry_function": null,
+  "python_launcher_sha256": null,
+  "calculator_oracle_sha256": null,
+  "interface": {
+    "language": "c",
+    "entrypoint": "main.c",
+    "invocation": "compiled program with argument list and/or scripted stdin",
+    "dependencies": "C standard library and libm; compiled with gcc -std=c11",
+    "comparison": "stdout compared exactly after removing one terminal LF or CRLF from each string; preserve all other whitespace. Exit code compared exactly.",
+    "test_input_convention": "args contains actual process arguments only, such as [\"--test-minutes\", \"12\"], or [] for none. Put interactive responses in stdin in the documented order, one response per input line; never put scenario descriptions in args.",
+    "console_output_convention": "Expected stdout must use a documented console transcript. Do not include terminal echo of typed input unless the application explicitly prints it. Ask for missing console wording or input order before inventing expected output."
+  },
+  "seed_dir": null
+}

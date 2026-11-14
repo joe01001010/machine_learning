@@ -1,0 +1,52 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R001",
+      "text": "The calculator shall accept a single arithmetic expression as a command-line argument and print the result.",
+      "source_id": "S001",
+      "source_quote": "I want a command-line calculator that accepts one arithmetic expression as an argument and prints the result."
+    },
+    {
+      "requirement_id": "R002",
+      "text": "The calculator shall support addition (+), subtraction (-), multiplication (*), and division (/) operations.",
+      "source_id": "S003",
+      "source_quote": "- Support addition (+), subtraction (-), multiplication (*), and division (/)."
+    }
+  ],
+  "source_ids": [
+    "S001",
+    "S002",
+    "S003"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R001",
+      "text": "The calculator shall accept a single arithmetic expression as a command-line argument and print the result.",
+      "source_id": "S001"
+    },
+    {
+      "requirement_id": "R002",
+      "text": "The calculator shall support addition (+), subtraction (-), multiplication (*), and division (/) operations.",
+      "source_id": "S003"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R001",
+      "canonical_requirement_id": "R001"
+    },
+    {
+      "submitted_requirement_id": "R002",
+      "canonical_requirement_id": "R002"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 1,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002"
+  ]
+}

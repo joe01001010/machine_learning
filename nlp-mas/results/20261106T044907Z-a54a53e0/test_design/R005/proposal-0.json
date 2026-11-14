@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R005-T01",
+      "args": [
+        "(5 + 3) * 2 - 4 / 2"
+      ],
+      "justification": "This test verifies that multiplication and division (with higher precedence) are evaluated before addition and subtraction, even when nested in parentheses. It specifically checks the precedence of multiplication and division over addition and subtraction.",
+      "stdin": "",
+      "expected_stdout": "14\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T02",
+      "args": [
+        "10 - 2 * 3 + 4 / 2"
+      ],
+      "justification": "This test confirms that multiplication and division are performed before addition and subtraction, demonstrating correct precedence order. It also includes a mix of operations to validate left-to-right evaluation for same-precedence operators.",
+      "stdin": "",
+      "expected_stdout": "6\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates standard arithmetic precedence: parentheses first, then multiplication and division, then addition and subtraction. These two tests cover distinct scenarios: one with nested parentheses and mixed operations, and another with a simple chain of operations where precedence is critical. Both use terminating decimal results to ensure compliance with the output format and avoid non-terminating cases."
+}

@@ -1,0 +1,5 @@
+{
+  "verdict": "FAIL",
+  "criteria_justified": true,
+  "explanation": "Observed '20' against the frozen expectation '14'."
+}

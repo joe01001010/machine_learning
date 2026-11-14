@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "Test cases R005-T02 and R005-T03 contain arithmetic errors in expected outputs. Corrected calculations show that 2 + 3 * 4 / 2 = 8, not 11, and (2 + 3) * (4 - 1) + 5 = 20, not 14. These errors violate the requirement to accurately reflect standard arithmetic precedence. The test cases must be revised to reflect correct mathematical evaluation. Test R005-T01 is valid and correctly justifies left-to-right evaluation of addition and subtraction."
+}

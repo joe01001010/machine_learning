@@ -1,0 +1,86 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R019",
+      "text": "The expression '2 + 3 * 4' produces '14'.",
+      "source_id": "S022",
+      "source_quote": "- \"2 + 3 * 4\" produces \"14\"."
+    },
+    {
+      "requirement_id": "R020",
+      "text": "The expression '(2 + 3) * 4' produces '20'.",
+      "source_id": "S023",
+      "source_quote": "- \"(2 + 3) * 4\" produces \"20\"."
+    },
+    {
+      "requirement_id": "R021",
+      "text": "The expression '2 * (3 + (4 * 5))' produces '46'.",
+      "source_id": "S024",
+      "source_quote": "- \"2 * (3 + (4 * 5))\" produces \"46\"."
+    }
+  ],
+  "source_ids": [
+    "S022",
+    "S023",
+    "S024"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R019",
+      "text": "The expression '2 + 3 * 4' produces '14'.",
+      "source_id": "S022"
+    },
+    {
+      "requirement_id": "R020",
+      "text": "The expression '(2 + 3) * 4' produces '20'.",
+      "source_id": "S023"
+    },
+    {
+      "requirement_id": "R021",
+      "text": "The expression '2 * (3 + (4 * 5))' produces '46'.",
+      "source_id": "S024"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R019",
+      "canonical_requirement_id": "R019"
+    },
+    {
+      "submitted_requirement_id": "R020",
+      "canonical_requirement_id": "R020"
+    },
+    {
+      "submitted_requirement_id": "R021",
+      "canonical_requirement_id": "R021"
+    }
+  ],
+  "source_block_index": 8,
+  "complete": true,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021"
+  ]
+}

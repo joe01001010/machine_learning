@@ -1,0 +1,28 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R001",
+      "source_id": "S001",
+      "text": "The rideshare fare calculator shall read fare and trip data from stdin and print the greater of the minimum fare and base fare plus minutes times price per minute plus miles times price per mile, to two decimals.",
+      "source_quote": "Read base fare, price per minute, price per mile, miles, minutes, and minimum fare from stdin. Print max(minimum fare, base fare + minutes * minute price + miles * mile price) with two decimals."
+    }
+  ],
+  "source_ids": [
+    "S001"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R001",
+      "source_id": "S001",
+      "text": "The rideshare fare calculator shall read fare and trip data from stdin and print the greater of the minimum fare and base fare plus minutes times price per minute plus miles times price per mile, to two decimals."
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R001",
+      "canonical_requirement_id": "R001"
+    }
+  ],
+  "complete": true
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R008-T01",
+      "args": [
+        "3 - 5"
+      ],
+      "justification": "This test directly validates the ability to produce a negative result as required by the requirement to 'allow negative and fractional results'. The expression '3 - 5' evaluates to -2, which is a negative integer, ensuring coverage of negative output behavior as demonstrated in the example '3 - 5' in the customer prompt.",
+      "stdin": "",
+      "expected_stdout": "-2\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T02",
+      "args": [
+        "7 / 2"
+      ],
+      "justification": "This test verifies the calculator's ability to produce a fractional result with a terminating decimal. The expression '7 / 2' evaluates to 3.5, which is a valid fractional output as per the requirement to allow fractional results, and matches the expected behavior in the provided examples.",
+      "stdin": "",
+      "expected_stdout": "3.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T03",
+      "args": [
+        "10 / 4"
+      ],
+      "justification": "This test confirms the calculator correctly evaluates a division that results in a terminating decimal fraction. The expression '10 / 4' evaluates to 2.5, which is a valid fractional output and ensures the system handles fractional results as required, without unnecessary trailing zeros.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R008"
+    }
+  ],
+  "rationale": "The requirement explicitly states the need to allow negative and fractional results. Test R008-T01 is corrected to produce a negative result to fully validate the negative output requirement, while R008-T02 and R008-T03 validate fractional results with terminating decimals. All tests use valid, well-defined expressions with standard arithmetic operators and follow the input format and output conventions specified in the requirement."
+}

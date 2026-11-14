@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R012-T01",
+      "args": [
+        "print_result"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the core requirement: the calculator must print only the result on standard output, followed by a newline. The expression '5 + 3' is a simple addition with clear precedence and produces an integer result, which should be output without a decimal point or unnecessary leading zeros. This validates the output formatting as specified in the requirement.",
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R012-T03",
+      "args": [
+        "fractional_terminating"
+      ],
+      "stdin": "6 / 3",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test validates that the calculator correctly handles a terminating decimal result. The expression '6 / 3' evaluates to 2, which is an integer. The requirement specifies that fractional results are printed in decimal notation without unnecessary trailing zeros. Since 2 is an integer, it should be printed as '2' without a decimal point, which aligns with the output convention. This test ensures the calculator correctly applies the output formatting for integer results.",
+      "requirement_id": "R012"
+    },
+    {
+      "test_case_id": "R012-T02",
+      "args": [
+        "fractional_non_terminating_excluded"
+      ],
+      "stdin": "10 / 3",
+      "expected_stdout": "",
+      "expected_exit_code": 1,
+      "justification": "This test validates the scope restriction: the calculator only evaluates expressions with terminating decimal representations. The expression '10 / 3' produces a non-terminating decimal (0.333...), which is outside the defined evaluation scope. According to the requirement, such cases are not to be processed. Therefore, the calculator must reject this input and exit with status 1, indicating invalid input. This test ensures the implementation correctly enforces the scope restriction.",
+      "requirement_id": "R012"
+    }
+  ],
+  "rationale": "The requirement explicitly states that the calculator only evaluates cases with terminating decimal representations. Therefore, tests must include valid terminating decimals (e.g., 6/3 = 2) and exclude non-terminating decimals (e.g., 10/3). Test R012-T01 validates basic integer output, R012-T03 validates correct formatting of terminating decimals, and R012-T02 validates the exclusion of non-terminating decimals with an error exit. This covers the full scope of the requirement as defined."
+}

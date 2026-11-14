@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases fully cover the requirement R020 and validate key aspects of arithmetic precedence, parentheses, and operator evaluation. Test R020-T01 directly verifies the stated requirement: '(2 + 3) * 4' produces '20'. Test R020-T02 validates multiplication precedence over addition (2 + 3 * 4 = 14), and R020-T03 extends this with nested parentheses and left-to-right evaluation for same-precedence operators. All tests align with the stated requirements, including precedence rules, expression parsing, and output formatting. The mathematical reference checks are not needed as the examples are self-consistent and grounded in standard arithmetic. The scope is complete and the coverage is sufficient for the given intent."
+}

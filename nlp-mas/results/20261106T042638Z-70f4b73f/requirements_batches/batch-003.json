@@ -1,0 +1,58 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R007",
+      "text": "Riders must select an organization by its exact name, which is presented alphabetically; unknown names are rejected and require reselection.",
+      "source_id": "S007",
+      "source_quote": "- Present organizations alphabetically and let riders select an organization by its exact name. Reject an unknown name and request another selection."
+    },
+    {
+      "requirement_id": "R008",
+      "text": "Accept a trip distance from 1.0 to 100.0 miles inclusive, including fractional miles, with no upper or lower bounds beyond this range.",
+      "source_id": "S009",
+      "source_quote": "- Accept a trip distance from 1 through 100 miles inclusive, including fractional miles."
+    }
+  ],
+  "source_ids": [
+    "S007",
+    "S008",
+    "S009"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R007",
+      "text": "Riders must select an organization by its exact name, which is presented alphabetically; unknown names are rejected and require reselection.",
+      "source_id": "S007"
+    },
+    {
+      "requirement_id": "R008",
+      "text": "Accept a trip distance from 1.0 to 100.0 miles inclusive, including fractional miles, with no upper or lower bounds beyond this range.",
+      "source_id": "S009"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R007",
+      "canonical_requirement_id": "R007"
+    },
+    {
+      "submitted_requirement_id": "R008",
+      "canonical_requirement_id": "R008"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 3,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008"
+  ]
+}

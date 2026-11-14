@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R002-T01",
+      "args": [
+        "+"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates support for addition with nonnegative integers and correct precedence handling. Matches example in customer prompt: '5 + 3' produces '8'.",
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T02",
+      "args": [
+        "*"
+      ],
+      "stdin": "4 / 2 * 3",
+      "expected_stdout": "6",
+      "expected_exit_code": 0,
+      "justification": "Validates multiplication and division with correct precedence (division and multiplication have equal precedence, left-to-right). Matches example: '4 / 2 * 3' should be (4/2)=2, then 2*3=6, resulting in 6.",
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T03",
+      "args": [
+        "/"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "Validates division with fractional output. Matches example: '5 / 2' produces '2.5' as per requirement. Ensures decimal output is printed without unnecessary trailing zeros.",
+      "requirement_id": "R002"
+    }
+  ],
+  "rationale": "These tests cover the core arithmetic operations (addition, multiplication, division) with standard precedence and left-to-right evaluation for equal precedence. They include expressions from the provided examples and validate output formatting as specified (integer vs. decimal, no trailing zeros, correct precedence). All inputs are valid and non-malformed, ensuring focus on correct arithmetic behavior as per the requirement."
+}

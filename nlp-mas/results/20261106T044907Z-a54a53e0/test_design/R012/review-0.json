@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test cases fully cover the requirement R012: output format with a newline. Test R012-T01 validates integer output with a newline, and R012-T02 validates terminating decimal output with no trailing zeros and a newline. Both align with the specified output convention. The mathematical reference checks confirm the expected outputs are correct. The tests are minimal but sufficient for the requirement, and no additional tests are needed to verify this specific requirement. Coverage is complete and justified."
+}

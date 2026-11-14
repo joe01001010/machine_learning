@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R006-T01",
+      "args": [
+        "3 - 5 - 2"
+      ],
+      "justification": "This test verifies left-to-right evaluation for operators of equal precedence (subtraction). The expression 3 - 5 - 2 must evaluate as (3 - 5) - 2 = -2 - 2 = -4, not 3 - (5 - 2) = 3 - 3 = 0. This directly tests the requirement to evaluate equal-precedence operators left to right.",
+      "stdin": "",
+      "expected_stdout": "-4\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R006-T02",
+      "args": [
+        "10 / 2 / 5"
+      ],
+      "justification": "This test verifies left-to-right evaluation for division operators of equal precedence. The expression 10 / 2 / 5 must evaluate as (10 / 2) / 5 = 5 / 5 = 1, not 10 / (2 / 5) = 10 / 0.4 = 25. This confirms the left-to-right rule for division, which has the same precedence as multiplication.",
+      "stdin": "",
+      "expected_stdout": "1\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R006"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates left-to-right evaluation for operators of equal precedence. These two tests cover subtraction and division, both with equal precedence, to ensure the calculator respects the left-to-right order. The expressions use only valid, well-formed syntax with nonnegative integers and terminating decimal results as per the specification."
+}

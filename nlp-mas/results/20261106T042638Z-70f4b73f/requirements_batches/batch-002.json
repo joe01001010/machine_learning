@@ -1,0 +1,71 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R004",
+      "text": "At startup, require administrator authentication with ID 'a' and passcode 'b'; allow two login attempts and terminate after two failures.",
+      "source_id": "S004",
+      "source_quote": "- At startup, require administrator authentication. For this experiment, use admin ID \"a\" and passcode \"b\". Allow two login attempts; terminate after two failures."
+    },
+    {
+      "requirement_id": "R005",
+      "text": "After successful login, enable administrator to add multiple organizations, each with a unique name, base fare, price per minute, price per mile, and minimum fare.",
+      "source_id": "S005",
+      "source_quote": "- After successful login, allow the administrator to add multiple organizations. Each organization has a unique name, base fare, price per minute, price per mile, and minimum fare."
+    },
+    {
+      "requirement_id": "R006",
+      "text": "All four pricing values (base fare, per-minute, per-mile, minimum) must be between 0.10 and 50.00 inclusive; invalid inputs like '3abc' must be rejected and require replacement.",
+      "source_id": "S006",
+      "source_quote": "- Each of the four pricing values must be between 0.10 and 50.00 inclusive. Reject invalid values and request a replacement without accepting partial numbers such as \"3abc\"."
+    }
+  ],
+  "source_ids": [
+    "S004",
+    "S005",
+    "S006"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R004",
+      "text": "At startup, require administrator authentication with ID 'a' and passcode 'b'; allow two login attempts and terminate after two failures.",
+      "source_id": "S004"
+    },
+    {
+      "requirement_id": "R005",
+      "text": "After successful login, enable administrator to add multiple organizations, each with a unique name, base fare, price per minute, price per mile, and minimum fare.",
+      "source_id": "S005"
+    },
+    {
+      "requirement_id": "R006",
+      "text": "All four pricing values (base fare, per-minute, per-mile, minimum) must be between 0.10 and 50.00 inclusive; invalid inputs like '3abc' must be rejected and require replacement.",
+      "source_id": "S006"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R004",
+      "canonical_requirement_id": "R004"
+    },
+    {
+      "submitted_requirement_id": "R005",
+      "canonical_requirement_id": "R005"
+    },
+    {
+      "submitted_requirement_id": "R006",
+      "canonical_requirement_id": "R006"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 2,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006"
+  ]
+}

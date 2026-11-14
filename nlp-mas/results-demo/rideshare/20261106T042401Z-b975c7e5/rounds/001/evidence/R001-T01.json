@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/tmp/nlp-mas-test-xk6e18em/app/program"
+  ],
+  "started_at": "2026-11-06T04:24:01.971096+00:00",
+  "return_code": 0,
+  "stdout": "20.00\n",
+  "stderr": "",
+  "execution_status": "COMPLETED",
+  "output_truncated": false,
+  "isolation": "bwrap",
+  "duration_ms": 5.359,
+  "execution_id": "4e8086cf5dd64dd093e377b1b6b219de",
+  "requirement_id": "R001",
+  "test_case_id": "R001-T01",
+  "args": [],
+  "stdin": "2.00\n0.50\n1.00\n10\n12\n20.00\n",
+  "source_sha256": {
+    "rideshare.c": "8fb06572ca8da45d2b702b417092f9751749c654d653472b8aaf0013bdda1e29"
+  },
+  "host_match": true
+}

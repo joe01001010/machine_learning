@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R020",
+      "text": "Entering -1 for trip distance triggers administrator authentication without creating a ride or charging a fare.",
+      "source_id": "S022",
+      "source_quote": "- Entering -1 instead of a trip distance requests administrator authentication. It must not create a ride or charge a fare."
+    },
+    {
+      "requirement_id": "R021",
+      "text": "After successful administrator authentication, rider processing ends, a summary is displayed for each organization with ride totals and category averages, and the program exits cleanly.",
+      "source_id": "S023",
+      "source_quote": "- After successful administrator authentication, end rider processing, display every organization's summary, and exit cleanly. Summaries must include ride totals and category averages, with"
+    },
+    {
+      "requirement_id": "R022",
+      "text": "Organizations in the summary are listed alphabetically.",
+      "source_id": "S024",
+      "source_quote": "organizations listed alphabetically."
+    }
+  ],
+  "source_ids": [
+    "S022",
+    "S023",
+    "S024"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R020",
+      "text": "Entering -1 for trip distance triggers administrator authentication without creating a ride or charging a fare.",
+      "source_id": "S022"
+    },
+    {
+      "requirement_id": "R021",
+      "text": "After successful administrator authentication, rider processing ends, a summary is displayed for each organization with ride totals and category averages, and the program exits cleanly.",
+      "source_id": "S023"
+    },
+    {
+      "requirement_id": "R022",
+      "text": "Organizations in the summary are listed alphabetically.",
+      "source_id": "S024"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R020",
+      "canonical_requirement_id": "R020"
+    },
+    {
+      "submitted_requirement_id": "R021",
+      "canonical_requirement_id": "R021"
+    },
+    {
+      "submitted_requirement_id": "R022",
+      "canonical_requirement_id": "R022"
+    }
+  ],
+  "complete": true
+}

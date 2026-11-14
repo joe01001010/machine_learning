@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R025-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that the calculator correctly handles division with a terminating decimal result as specified in the requirement. The example '5 / 2' produces '2.5' per the provided examples, and this test ensures the system outputs the correct decimal representation without unnecessary trailing zeros. It directly validates the decimal output behavior for a valid, terminating division case.",
+      "requirement_id": "R025"
+    },
+    {
+      "test_case_id": "R025-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test validates standard arithmetic precedence: multiplication before addition. The expression '2 + 3 * 4' evaluates to 14 (3*4=12, 2+12=14). This confirms the calculator respects operator precedence (multiplication before addition) and applies left-to-right evaluation for operators of equal precedence, as required in the specification.",
+      "requirement_id": "R025"
+    },
+    {
+      "test_case_id": "R025-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "10 - 3 - 2",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies left-to-right evaluation for operators of equal precedence. The expression '10 - 3 - 2' is evaluated as (10 - 3) - 2 = 7 - 2 = 5. This ensures the calculator correctly applies left-to-right evaluation when operators have the same precedence, as specified in the requirement. It also confirms that the output is an integer with no unnecessary leading or trailing zeros.",
+      "requirement_id": "R025"
+    }
+  ],
+  "rationale": "The requirement explicitly excludes malformed expressions, division by zero, decimal input, unary minus, scientific notation, and non-terminating fractions. Therefore, tests must focus on valid, well-formed expressions that produce terminating decimals or integers, as per the stated behavior. These three tests cover key aspects: division with terminating decimals, operator precedence, and left-to-right evaluation for same-precedence operators. They are directly grounded in the provided examples and customer intent, ensuring full coverage of the specified behavior without testing unspecified or invalid cases."
+}

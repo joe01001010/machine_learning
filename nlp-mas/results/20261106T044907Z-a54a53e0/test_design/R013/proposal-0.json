@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R013-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Valid expression with addition; tests successful evaluation and exit status 0.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R013"
+    },
+    {
+      "test_case_id": "R013-T02",
+      "args": [
+        "4 * 2 / 1"
+      ],
+      "justification": "Valid expression with multiplication and division; tests standard precedence and correct exit status 0.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R013"
+    }
+  ],
+  "rationale": "These tests verify the calculator exits with status 0 after successful calculation of valid arithmetic expressions with standard precedence. They cover basic operations and ensure the exit code behavior is correctly implemented as per the requirement to exit with status 0 after a successful calculation."
+}

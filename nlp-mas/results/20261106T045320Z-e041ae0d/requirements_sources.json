@@ -1,0 +1,17 @@
+{
+  "S001": "I want a command-line calculator that accepts one arithmetic expression as an argument and prints the result.",
+  "S002": "The calculator shall:",
+  "S003": "- Support addition (+), subtraction (-), multiplication (*), and division (/).",
+  "S004": "- Accept nonnegative integer operands, including zero.",
+  "S005": "- Support parentheses, including nested parentheses.",
+  "S006": "- Apply standard arithmetic precedence: parentheses first, multiplication and division next, then addition and subtraction.",
+  "S007": "- Evaluate operators of equal precedence from left to right.",
+  "S008": "- Accept expressions with or without spaces between numbers and operators.",
+  "S009": "- Allow negative and fractional results.",
+  "S010": "Output requirements:",
+  "S011": "- Print integer results without a decimal point or unnecessary leading zeros.",
+  "S012": "- Print fractional results in decimal notation without unnecessary trailing zeros.",
+  "S013": "- For division, this initial evaluation only requires cases whose exact results have terminating decimal representations.",
+  "S014": "- Print only the result on standard output, followed by a newline.",
+  "S015": "- Exit with status 0 after a successful calculation."
+}

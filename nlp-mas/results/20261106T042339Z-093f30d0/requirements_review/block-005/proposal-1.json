@@ -1,0 +1,35 @@
+{
+  "requirements": [],
+  "source_ids": [
+    "S013",
+    "S014"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R012",
+      "text": "For repeating rational decimal answers, print the nonrepeating digits followed by exactly one full repeating cycle.",
+      "source_id": "S013"
+    },
+    {
+      "requirement_id": "R013",
+      "text": "1/7 produces 0.142857 as a repeating decimal.",
+      "source_id": "S013"
+    }
+  ],
+  "duplicates": [
+    {
+      "submitted_requirement_id": "R012",
+      "canonical_requirement_id": "R009",
+      "source_id": "S013",
+      "source_quote": "repeating-cycle rules above."
+    },
+    {
+      "submitted_requirement_id": "R013",
+      "canonical_requirement_id": "R010",
+      "source_id": "S013",
+      "source_quote": "repeating-cycle rules above."
+    }
+  ],
+  "id_assignments": [],
+  "complete": true
+}

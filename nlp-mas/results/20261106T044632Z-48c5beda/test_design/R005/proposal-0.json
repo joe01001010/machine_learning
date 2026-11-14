@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R005-T01",
+      "args": [
+        "(2 + 3) * 4"
+      ],
+      "justification": "This test verifies that parentheses are evaluated first, as required by the precedence rule. The expression (2 + 3) * 4 must evaluate to 20, following the standard precedence: parentheses first, then multiplication.",
+      "stdin": "",
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T02",
+      "args": [
+        "2 * 3 + 4 * 2"
+      ],
+      "justification": "This test checks that multiplication is evaluated before addition, as per the precedence rule. The expression 2 * 3 + 4 * 2 equals 14 (6 + 8), demonstrating that multiplication takes precedence over addition, and operations of equal precedence are evaluated left to right.",
+      "stdin": "",
+      "expected_stdout": "14\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T03",
+      "args": [
+        "10 / 2 * 3 + 1"
+      ],
+      "justification": "This test confirms that division and multiplication are evaluated before addition, and that they are processed left to right. The expression 10 / 2 * 3 + 1 equals 16 (5 * 3 = 15, then 15 + 1 = 16), verifying correct precedence and left-to-right evaluation for same-precedence operators.",
+      "stdin": "",
+      "expected_stdout": "16\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R005"
+    }
+  ],
+  "rationale": "These tests specifically target the arithmetic precedence requirement: parentheses first, then multiplication and division, then addition and subtraction. They cover nested parentheses, left-to-right evaluation of equal-precedence operators, and the correct handling of mixed operations with proper precedence."
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O0",
+    "-Wall",
+    "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/000/source/rideshare.c",
+    "-lm",
+    "-o",
+    "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/000/source/program"
+  ],
+  "started_at": "2026-11-06T04:24:01.674427+00:00",
+  "return_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "execution_status": "COMPLETED",
+  "output_truncated": false,
+  "isolation": "bwrap",
+  "duration_ms": 117.327,
+  "success": true
+}

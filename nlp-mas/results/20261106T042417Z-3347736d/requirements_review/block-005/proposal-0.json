@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R012",
+      "text": "Display the organization, trip distance, travel minutes, and fare with two decimal places for monetary values.",
+      "source_id": "S013",
+      "source_quote": "- Display the organization, distance, minutes, and fare. Display monetary amounts with two decimal places."
+    },
+    {
+      "requirement_id": "R013",
+      "text": "Maintain independent totals for each organization: completed ride count, total miles, total minutes, and total fares; rejected inputs and cancelled trips must not affect these totals.",
+      "source_id": "S014",
+      "source_quote": "- Maintain each organization's completed ride count, total miles, total minutes, and total fares independently. Rejected inputs, cancelled trips, and administrator actions must not change these"
+    },
+    {
+      "requirement_id": "R014",
+      "text": "Organizational totals must not be altered by rejected inputs, cancelled trips, or administrator actions.",
+      "source_id": "S015",
+      "source_quote": "totals."
+    }
+  ],
+  "source_ids": [
+    "S013",
+    "S014",
+    "S015"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R012",
+      "text": "Display the organization, trip distance, travel minutes, and fare with two decimal places for monetary values.",
+      "source_id": "S013"
+    },
+    {
+      "requirement_id": "R013",
+      "text": "Maintain independent totals for each organization: completed ride count, total miles, total minutes, and total fares; rejected inputs and cancelled trips must not affect these totals.",
+      "source_id": "S014"
+    },
+    {
+      "requirement_id": "R014",
+      "text": "Organizational totals must not be altered by rejected inputs, cancelled trips, or administrator actions.",
+      "source_id": "S015"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R012",
+      "canonical_requirement_id": "R012"
+    },
+    {
+      "submitted_requirement_id": "R013",
+      "canonical_requirement_id": "R013"
+    },
+    {
+      "submitted_requirement_id": "R014",
+      "canonical_requirement_id": "R014"
+    }
+  ],
+  "complete": true
+}

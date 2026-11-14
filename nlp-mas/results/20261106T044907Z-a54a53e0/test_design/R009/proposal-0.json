@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R009-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Tests that integer results are printed without a decimal point or unnecessary leading zeros, as per the requirement.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    },
+    {
+      "test_case_id": "R009-T02",
+      "args": [
+        "100 - 50 * 2"
+      ],
+      "justification": "Tests that integer results are correctly formatted with no unnecessary leading zeros or decimal point, even in expressions with mixed operations and precedence.",
+      "stdin": "",
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R009"
+    }
+  ],
+  "rationale": "The requirement specifically mandates that integer results must be printed without a decimal point or unnecessary leading zeros. These two tests cover both simple and more complex expressions to ensure the calculator correctly formats integer outputs in all relevant cases, while adhering to standard arithmetic precedence."
+}

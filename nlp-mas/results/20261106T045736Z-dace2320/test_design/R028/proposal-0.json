@@ -1,0 +1,43 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R028-T01",
+      "args": [
+        "addition",
+        "preference",
+        "left_to_right"
+      ],
+      "stdin": "2 + 3 - 1",
+      "expected_stdout": "4",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that operators of equal precedence (addition and subtraction) are evaluated left to right, as required by the requirement. The expression 2 + 3 - 1 should yield 4, demonstrating correct left-to-right evaluation.",
+      "requirement_id": "R028"
+    },
+    {
+      "test_case_id": "R028-T02",
+      "args": [
+        "nested_parentheses",
+        "precedence",
+        "multiplication_division"
+      ],
+      "stdin": "2 * (3 + (4 * 5))",
+      "expected_stdout": "46",
+      "expected_exit_code": 0,
+      "justification": "This test validates the correct handling of nested parentheses and standard arithmetic precedence. Multiplication and addition follow precedence, with inner parentheses resolved first. The expression 2 * (3 + (4 * 5)) = 2 * (3 + 20) = 2 * 23 = 46, confirming correct precedence and nested evaluation.",
+      "requirement_id": "R028"
+    },
+    {
+      "test_case_id": "R028-T03",
+      "args": [
+        "fractional_result",
+        "terminating_decimal"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test ensures that division produces a fractional result in decimal notation when the result has a terminating decimal. The expression 5 / 2 = 2.5, and the output must include the decimal point and no unnecessary trailing zeros, as per the output requirements.",
+      "requirement_id": "R028"
+    }
+  ],
+  "rationale": "These tests cover core requirements: left-to-right evaluation for same-precedence operators, correct handling of nested parentheses and operator precedence, and proper formatting of fractional results with terminating decimals. They are directly derived from the examples and explicit rules in the customer prompt, ensuring full coverage of the specified behavior without introducing unrequested cases."
+}

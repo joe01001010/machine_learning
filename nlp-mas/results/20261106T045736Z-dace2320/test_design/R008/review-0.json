@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "Test case R008-T02 is invalid because the requirement explicitly states that the calculator only evaluates cases with terminating decimal representations. The expression '10 / 3' produces a non-terminating decimal, which violates the specified scope. Therefore, this test case is out of scope and must be removed. The requirement to allow fractional results only applies to terminating decimals, so including a non-terminating case is a misalignment. Test R008-T01 and R008-T03 are valid and cover negative and positive arithmetic outcomes, but R008-T02 incorrectly extends the scope. The test plan must be revised to exclude non-terminating decimals."
+}

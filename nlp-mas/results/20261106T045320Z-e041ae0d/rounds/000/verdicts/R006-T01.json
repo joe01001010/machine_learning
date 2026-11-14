@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '3 - 5 - 2' evaluates to -4, as required by the requirement to evaluate operators of equal precedence from left to right. The execution output is exactly '-4' followed by a newline, matching the expected_stdout. The exit code is 0, as required. The mathematical reference confirms the expected rational result of -4. The host_match is true, indicating a perfect match between expected and actual output. All criteria are fully justified by the evidence."
+}

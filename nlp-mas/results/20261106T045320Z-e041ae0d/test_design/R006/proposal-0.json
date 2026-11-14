@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R006-T01",
+      "args": [
+        "3 - 5 - 2"
+      ],
+      "justification": "This test exercises the left-to-right evaluation of operators of equal precedence (subtraction) as required by the requirement. It ensures that the calculator does not apply precedence beyond the standard arithmetic rules and correctly computes the result as -4.",
+      "stdin": "",
+      "expected_stdout": "-4\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R006-T02",
+      "args": [
+        "10 - 3 * 2 + 1"
+      ],
+      "justification": "This test evaluates equal-precedence operators (subtraction and addition) from left to right, despite multiplication having higher precedence. It verifies that the expression is parsed and evaluated left-to-right for operators of the same precedence, producing 5, not 7.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R006"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates left-to-right evaluation for operators of equal precedence. These two tests cover subtraction and addition with mixed precedence, ensuring the implementation respects the order of operations as specified."
+}

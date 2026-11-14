@@ -1,0 +1,38 @@
+[
+  {
+    "test_case_id": "R005-T01",
+    "args": [
+      "(2 + 3) * 4"
+    ],
+    "reference": {
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  },
+  {
+    "test_case_id": "R005-T02",
+    "args": [
+      "2 * 3 + 4 * 2"
+    ],
+    "reference": {
+      "expected_stdout": "14\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  },
+  {
+    "test_case_id": "R005-T03",
+    "args": [
+      "10 / 2 * 3 + 1"
+    ],
+    "reference": {
+      "expected_stdout": "16\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R002-T01",
+      "args": [
+        "addition",
+        "stdin",
+        "5 + 3"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator correctly evaluates a simple addition expression with positive integers, ensuring it respects standard arithmetic precedence and produces the expected integer output without unnecessary formatting.",
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T02",
+      "args": [
+        "subtraction",
+        "stdin",
+        "10 - 4"
+      ],
+      "stdin": "10 - 4",
+      "expected_stdout": "6",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator correctly evaluates a simple subtraction expression with positive integers, confirming it handles basic arithmetic operations as required and produces the expected integer result.",
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T03",
+      "args": [
+        "multiplication",
+        "stdin",
+        "6 * 7"
+      ],
+      "stdin": "6 * 7",
+      "expected_stdout": "42",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator correctly evaluates a simple multiplication expression with positive integers, ensuring it computes the product as expected and outputs it in plain integer form.",
+      "requirement_id": "R002"
+    }
+  ],
+  "rationale": "These tests focus on the core arithmetic operations (addition, subtraction, multiplication, and division) as specified in the requirement. They cover basic expressions with positive integers, validate correct evaluation, and ensure output formatting aligns with the stated conventions. Each test is distinct and targets a different operator to fully assess the calculator's support for the required operations."
+}

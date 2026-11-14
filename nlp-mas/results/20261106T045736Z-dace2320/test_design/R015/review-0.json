@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The test case R015-T01 directly and unambiguously verifies the requirement that '3 - 8' produces '-5'. The input, expected output, and exit code are fully aligned with the stated requirement and output conventions. The test includes the exact expression, matches the required format (no extra whitespace, correct sign), and satisfies the requirement for negative results. No additional tests are needed to validate this specific requirement, as it is explicitly covered. The mathematical and interface constraints are satisfied. No revision is necessary."
+}

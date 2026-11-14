@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "Addition alone cannot distinguish the required precedence from left-to-right evaluation. Include 2+3*4."
+}

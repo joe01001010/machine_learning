@@ -1,0 +1,45 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R015",
+      "text": "After each completed ride, the rider must be prompted to submit ratings; responses 'y' or 'n' are accepted regardless of case, others are rejected.",
+      "source_id": "S017",
+      "source_quote": "- After each completed ride, let the rider choose whether to submit ratings. Accept y or n without regard to case and reject other responses."
+    },
+    {
+      "requirement_id": "R016",
+      "text": "A submitted rating includes four integer scores from 1 to 5 inclusive: Safety, Cleanliness, Comfort, and Test, where 'Test' is the fourth category for this experiment.",
+      "source_id": "S018",
+      "source_quote": "- A submitted survey contains four integer scores from 1 through 5 inclusive: Safety, Cleanliness, Comfort, and Test. \"Test\" is the fourth category name used for this experiment."
+    }
+  ],
+  "source_ids": [
+    "S016",
+    "S017",
+    "S018"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R015",
+      "text": "After each completed ride, the rider must be prompted to submit ratings; responses 'y' or 'n' are accepted regardless of case, others are rejected.",
+      "source_id": "S017"
+    },
+    {
+      "requirement_id": "R016",
+      "text": "A submitted rating includes four integer scores from 1 to 5 inclusive: Safety, Cleanliness, Comfort, and Test, where 'Test' is the fourth category for this experiment.",
+      "source_id": "S018"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R015",
+      "canonical_requirement_id": "R015"
+    },
+    {
+      "submitted_requirement_id": "R016",
+      "canonical_requirement_id": "R016"
+    }
+  ],
+  "complete": true
+}

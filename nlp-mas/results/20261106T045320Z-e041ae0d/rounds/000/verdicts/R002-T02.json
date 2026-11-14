@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case (2 + 3) * 4 correctly evaluates to 20 as required by the specification. The execution output is exactly '20' followed by a newline, matching the expected_stdout. The exit code is 0, as required. The mathematical reference confirms the rational result of 20. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) is exact. All requirements for this test case—parentheses, operator precedence, correct evaluation, and output formatting—are satisfied. No deviations from the specification are observed."
+}

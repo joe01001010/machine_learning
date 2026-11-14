@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R007-T01",
+      "args": [
+        "expression"
+      ],
+      "stdin": "2+3",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that the calculator accepts expressions without spaces between numbers and operators, as specified in the requirement. It directly tests the 'or without spaces' behavior by using a minimal, valid expression with no spaces, ensuring the system parses and evaluates it correctly.",
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T02",
+      "args": [
+        "expression"
+      ],
+      "stdin": "5-2+1",
+      "expected_stdout": "4",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the left-to-right evaluation of operators of equal precedence (subtraction and addition) as per the requirement. It also confirms that the system accepts expressions with spaces and without spaces, testing the robustness of parsing. The input includes a mix of operators and operands, ensuring the system handles multiple operations in sequence.",
+      "requirement_id": "R007"
+    },
+    {
+      "test_case_id": "R007-T03",
+      "args": [
+        "expression"
+      ],
+      "stdin": "100/2/5",
+      "expected_stdout": "10",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates the precedence and left-to-right evaluation of division operators. It ensures that the system correctly applies division from left to right, even when operators are adjacent and without spaces, confirming the system's handling of expressions with no spaces and consistent operator precedence.",
+      "requirement_id": "R007"
+    }
+  ],
+  "rationale": "The requirement explicitly states that expressions can have spaces or not. These tests cover minimal, valid expressions with and without spaces, ensuring the parser is robust to spacing variations. They also validate arithmetic correctness under different spacing patterns, directly aligning with the stated requirement."
+}

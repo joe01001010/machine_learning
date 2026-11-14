@@ -1,0 +1,7 @@
+{
+  "decision": "REVISE",
+  "feedback": "The prompt explicitly requires multiplication before addition. Include that rule.",
+  "source_ids": [
+    "S001"
+  ]
+}

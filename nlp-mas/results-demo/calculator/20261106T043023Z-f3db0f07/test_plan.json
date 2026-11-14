@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "2+3*4"
+      ],
+      "stdin": "",
+      "expected_stdout": "14\n",
+      "expected_exit_code": 0,
+      "justification": "Exercise the decisive condition identified by the reviewer.",
+      "requirement_id": "R001"
+    }
+  ],
+  "sha256": "b44b3881807e663a2257b24f9b0243291b38a16d2bf4129aba0519456115c522"
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R010-T01",
+      "args": [
+        "eval"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that fractional results are printed in decimal notation without unnecessary trailing zeros, as required by the requirement. The expression '5 / 2' evaluates to 2.5, which must be output exactly as '2.5' to satisfy the specification.",
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R010-T02",
+      "args": [
+        "eval"
+      ],
+      "stdin": "10 / 4",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test confirms that the calculator correctly handles a division that results in a terminating decimal. The expression '10 / 4' equals 2.5, and the output must be '2.5' with no extra trailing zeros, demonstrating compliance with the requirement to avoid unnecessary trailing zeros in fractional outputs.",
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R010-T03",
+      "args": [
+        "eval"
+      ],
+      "stdin": "3 / 8",
+      "expected_stdout": "0.375",
+      "expected_exit_code": 0,
+      "justification": "This test validates the handling of a division that results in a terminating decimal with multiple digits. The expression '3 / 8' equals 0.375, and the output must be exactly '0.375' to ensure that trailing zeros are not added or omitted, preserving the precision as required by the requirement.",
+      "requirement_id": "R010"
+    }
+  ],
+  "rationale": "The requirement specifies that fractional results must be printed in decimal notation without unnecessary trailing zeros. These tests cover key cases: simple fractions, non-integer results, and multi-digit terminating decimals. They ensure the calculator correctly formats decimal outputs as per the stated convention, without adding or removing trailing zeros."
+}

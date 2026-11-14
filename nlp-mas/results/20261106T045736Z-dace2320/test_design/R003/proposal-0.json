@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R003-T01",
+      "args": [
+        "accept_nonnegative_integer_operands"
+      ],
+      "stdin": "5 + 0",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that the calculator correctly handles nonnegative integer operands, including zero, in a simple addition expression. The requirement explicitly states support for nonnegative integers, including zero, so this test ensures zero is treated as a valid operand and the result is computed correctly.",
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T02",
+      "args": [
+        "accept_nonnegative_integer_operands_with_parentheses"
+      ],
+      "stdin": "(100 - 50) * 0",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates the behavior when zero is used as a multiplier in a parenthesized expression. It confirms that the calculator correctly applies arithmetic precedence and handles zero as a valid nonnegative integer operand, even in nested expressions, producing the expected result of zero.",
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T03",
+      "args": [
+        "accept_nonnegative_integer_operands_with_nested_parentheses"
+      ],
+      "stdin": "2 * (3 + (4 * 5))",
+      "expected_stdout": "46",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator's handling of nested parentheses with nonnegative integer operands. It ensures that the expression is parsed and evaluated correctly according to standard precedence, with multiplication and addition applied in the correct order, producing the expected result of 46.",
+      "requirement_id": "R003"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates support for nonnegative integer operands, including zero. These tests cover basic, parenthesized, and nested expressions to fully validate the calculator's ability to accept and process zero and other nonnegative integers in various contexts, ensuring compliance with the stated requirement."
+}

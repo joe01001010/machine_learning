@@ -1,0 +1,26 @@
+[
+  {
+    "test_case_id": "R011-T01",
+    "args": [
+      "4 / 2"
+    ],
+    "reference": {
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  },
+  {
+    "test_case_id": "R011-T02",
+    "args": [
+      "10 / 4"
+    ],
+    "reference": {
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "kind": "rational"
+    },
+    "matches": true
+  }
+]

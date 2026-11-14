@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R009",
+      "text": "Print integer results without a decimal point or unnecessary leading zeros.",
+      "source_id": "S011",
+      "source_quote": "- Print integer results without a decimal point or unnecessary leading zeros."
+    },
+    {
+      "requirement_id": "R010",
+      "text": "Print fractional results in decimal notation without unnecessary trailing zeros.",
+      "source_id": "S012",
+      "source_quote": "- Print fractional results in decimal notation without unnecessary trailing zeros."
+    }
+  ],
+  "source_ids": [
+    "S010",
+    "S011",
+    "S012"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R009",
+      "text": "Print integer results without a decimal point or unnecessary leading zeros.",
+      "source_id": "S011"
+    },
+    {
+      "requirement_id": "R010",
+      "text": "Print fractional results in decimal notation without unnecessary trailing zeros.",
+      "source_id": "S012"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R009",
+      "canonical_requirement_id": "R009"
+    },
+    {
+      "submitted_requirement_id": "R010",
+      "canonical_requirement_id": "R010"
+    }
+  ],
+  "source_block_index": 4,
+  "complete": true,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R003-T01",
+      "args": [
+        "addition"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator correctly evaluates a simple addition expression with nonnegative integer operands, as required by the requirement to support addition and accept nonnegative integers. The example in the customer prompt confirms this behavior.",
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T02",
+      "args": [
+        "zero_operand"
+      ],
+      "stdin": "0 * 17",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test checks the behavior when a zero operand is used in a multiplication expression. The requirement explicitly includes zero as a valid nonnegative integer operand, and this test ensures the calculator correctly returns zero as the result, preserving the requirement for handling zero.",
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T03",
+      "args": [
+        "nested_parentheses"
+      ],
+      "stdin": "(2 + 3) * (4 + 1)",
+      "expected_stdout": "28",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates a nested expression with parentheses, ensuring the calculator correctly applies precedence and handles nonnegative integer operands within parentheses. It validates that the system processes grouped expressions as required, even when multiple operations are nested, and confirms the result aligns with standard arithmetic.",
+      "requirement_id": "R003"
+    }
+  ],
+  "rationale": "These tests collectively verify the core requirement of accepting nonnegative integer operands, including zero, by covering basic arithmetic, zero handling, and nested expressions. Each test is grounded in the provided examples and directly addresses the requirement without introducing undefined behaviors (e.g., decimals, negative numbers, or invalid inputs). They are minimal, focused, and aligned with the stated interface and output expectations."
+}

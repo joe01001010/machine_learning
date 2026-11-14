@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "The tests for requirement R009 cover the specified behavior of printing integer results without a decimal point or unnecessary leading zeros. Each test case uses a valid arithmetic expression with a known integer result (8, 25, 0), and the expected outputs match the requirement. The mathematical reference checks confirm the correctness of the expected outputs. The test cases are well-chosen, simple, and directly target the integer output formatting requirement. Coverage is sufficient and aligned with the customer intent. No revisions are needed."
+}

@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R026-T01",
+      "args": [
+        "addition",
+        "subtraction",
+        "multiplication",
+        "division"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates basic arithmetic operations with positive integers and standard precedence. Matches example behavior for addition as specified in the requirement.",
+      "requirement_id": "R026"
+    },
+    {
+      "test_case_id": "R026-T02",
+      "args": [
+        "parentheses",
+        "precedence",
+        "nested"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "Tests standard precedence with parentheses. Confirms that multiplication after parentheses is applied correctly, as per precedence rules. Matches example behavior for (2+3)*4.",
+      "requirement_id": "R026"
+    },
+    {
+      "test_case_id": "R026-T03",
+      "args": [
+        "left_to_right",
+        "equal_precedence"
+      ],
+      "stdin": "10 - 3 - 2",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "Validates left-to-right evaluation for operators of equal precedence (subtraction). Ensures that the expression is evaluated sequentially, not as 10 - (3 - 2). Matches requirement for left-to-right processing.",
+      "requirement_id": "R026"
+    }
+  ],
+  "rationale": "These tests cover core requirements: basic operations, operator precedence with parentheses, and left-to-right evaluation for equal precedence. They include edge cases not in the provided examples, such as nested parentheses and left-to-right evaluation, to fully validate the arithmetic engine's correctness."
+}

@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '17 * 0' correctly produces expected output '0' with exit code 0. The execution matches the mathematical reference exactly: the output is '0' (as required for nonnegative integer operands, including zero), and the exit code is 0. The host_match is true, and the stdout (after removing one terminal LF or CRLF) matches the expected stdout '0'. The requirement to accept nonnegative integer operands, including zero, is fully satisfied. No deviations from the specification are observed."
+}

@@ -1,0 +1,42 @@
+{
+  "run_id": "20261106T045736Z-dace2320",
+  "roles": [
+    "requirements-engineer",
+    "test-engineer",
+    "coder",
+    "verification-engineer"
+  ],
+  "controller_sha256": "e8057f09a6b191ac4172fd8d40bd539db639a5fd7efe939016dbc8c72f1b9a67",
+  "python": "3.12.14 | packaged by Anaconda, Inc. | (main, Aug 27 2026, 14:46:43) [GCC 14.3.0]",
+  "endpoints": [
+    "http://127.0.0.1:8001/v1/chat/completions",
+    "http://127.0.0.1:8002/v1/chat/completions",
+    "http://127.0.0.1:8003/v1/chat/completions",
+    "http://127.0.0.1:8004/v1/chat/completions"
+  ],
+  "language": "python",
+  "entrypoint": "main.py",
+  "max_repairs": 3,
+  "max_turns": 32,
+  "max_model_calls": 200,
+  "max_tokens": 1024,
+  "temperature": 0,
+  "review_requirements": false,
+  "requirements_only": false,
+  "agent_transport": "http",
+  "calculator_reference": false,
+  "calculator_basic_reference": false,
+  "python_entry_function": null,
+  "python_launcher_sha256": null,
+  "calculator_oracle_sha256": null,
+  "interface": {
+    "language": "python",
+    "entrypoint": "main.py",
+    "invocation": "python main.py <expression>",
+    "dependencies": "Python standard library only",
+    "comparison": "stdout compared exactly after removing one terminal LF or CRLF from each string; preserve all other whitespace. Exit code compared exactly.",
+    "calculator_output_convention": "Plain decimal notation; omit unnecessary leading/trailing zeros and decimal point for integers; append one newline. Use round-half-even when a significant-digit limit applies.",
+    "invalid_input_convention": "For a requested generic error response use Error: invalid input\n and exit 1, unless the customer specifies otherwise."
+  },
+  "seed_dir": "calculator_v1"
+}

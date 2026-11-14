@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R005-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 + 3 * 4",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that multiplication (with higher precedence than addition) is evaluated before addition, as per the requirement: 'multiplication and division next, then addition and subtraction'. The expression 2 + 3 * 4 should yield 2 + 12 = 14, demonstrating correct precedence.",
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "(2 + 3) * 4",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test verifies that parentheses override standard precedence. The expression (2 + 3) * 4 evaluates as (5) * 4 = 20, confirming that parentheses are processed first, as required by the precedence rule.",
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "10 / 2 * 3 - 1",
+      "expected_stdout": "14",
+      "expected_exit_code": 0,
+      "justification": "This test checks the left-to-right evaluation of operators with equal precedence (division and multiplication, then subtraction). The expression 10 / 2 * 3 - 1 evaluates as (5 * 3) - 1 = 15 - 1 = 14, demonstrating correct left-to-right processing for same-precedence operators.",
+      "requirement_id": "R005"
+    }
+  ],
+  "rationale": "These tests specifically target the arithmetic precedence requirement: multiplication and division before addition and subtraction, with parentheses overriding precedence, and left-to-right evaluation for equal precedence. They cover core cases from the requirement without introducing undefined behaviors (e.g., division by zero, decimals, or invalid syntax). Each test is grounded in the provided examples and directly validates the precedence logic."
+}

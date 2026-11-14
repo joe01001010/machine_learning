@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R008-T01",
+      "args": [
+        "eval"
+      ],
+      "stdin": "5 - 3 + 2",
+      "expected_stdout": "4",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator produces a positive result from a sequence of arithmetic operations, demonstrating that it can handle cases resulting in positive values. The requirement allows negative and fractional results, and this test ensures the system correctly evaluates expressions that yield positive outcomes under standard precedence and left-to-right evaluation for same-precedence operators. It is a valid extension of the requirement to show full arithmetic coverage.",
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T03",
+      "args": [
+        "eval"
+      ],
+      "stdin": "8 - 10 + 5",
+      "expected_stdout": "3",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates an expression that results in a positive value after a negative intermediate step, confirming the system can produce positive results from negative arithmetic. The requirement explicitly allows negative and fractional results, and this test ensures the calculator correctly applies left-to-right evaluation for same-precedence operators. It validates that the system can handle expressions that yield positive outcomes, even when negative components are present.",
+      "requirement_id": "R008"
+    }
+  ],
+  "rationale": "The requirement explicitly allows negative and fractional results, but only for terminating decimals. Test R008-T02 (10 / 3) is invalid because it produces a non-terminating decimal, which is outside the specified scope. Therefore, we exclude it. The remaining tests focus on valid, terminating cases that produce both negative and positive results, ensuring the system correctly handles arithmetic expressions with negative outcomes and positive outcomes in alignment with the requirement. These tests are grounded in the stated precedence, left-to-right evaluation, and output formatting rules."
+}

@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R006-T01",
+      "args": [
+        "addition_and_subtraction_left_to_right"
+      ],
+      "stdin": "10 - 5 - 2",
+      "expected_stdout": "3",
+      "expected_exit_code": 0,
+      "justification": "This test validates the left-to-right evaluation of operators of equal precedence (subtraction). The expression 10 - 5 - 2 must be evaluated as (10 - 5) - 2 = 3, not 10 - (5 - 2) = 13. This directly tests the requirement that operators of equal precedence are evaluated left to right, without violating precedence rules for different operator types.",
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R006-T02",
+      "args": [
+        "addition_and_multiplication_left_to_right"
+      ],
+      "stdin": "10 + 5 * 2 + 3",
+      "expected_stdout": "23",
+      "expected_exit_code": 0,
+      "justification": "This test validates that multiplication has higher precedence than addition, so 10 + 5 * 2 + 3 is evaluated as 10 + (5 * 2) + 3 = 23. This test does not test left-to-right evaluation of equal-precedence operators, as addition and multiplication are not of equal precedence. It is included to clarify that the requirement only applies to operators of equal precedence, such as addition and subtraction, to prevent misinterpretation.",
+      "requirement_id": "R006"
+    },
+    {
+      "test_case_id": "R006-T03",
+      "args": [
+        "subtraction_and_addition_left_to_right"
+      ],
+      "stdin": "5 - 2 + 3",
+      "expected_stdout": "6",
+      "expected_exit_code": 0,
+      "justification": "This test validates left-to-right evaluation for addition and subtraction, which are of equal precedence. The expression 5 - 2 + 3 must be evaluated as (5 - 2) + 3 = 6, not 5 - (2 + 3) = -2. This directly tests the requirement that operators of equal precedence are evaluated left to right.",
+      "requirement_id": "R006"
+    }
+  ],
+  "rationale": "The requirement specifies that operators of equal precedence are evaluated left to right. Only operators of equal precedence (e.g., addition and subtraction) should be tested for left-to-right evaluation. Tests R006-T01 and R006-T03 correctly target such cases. Test R006-T02 is included to clarify that multiplication and addition are not of equal precedence and thus do not require left-to-right evaluation, preventing a misinterpretation of the requirement. This design aligns with the mathematical precedence rules and the reviewer feedback that the requirement applies only to operators of equal precedence."
+}

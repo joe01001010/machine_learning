@@ -1,0 +1,78 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R011",
+      "text": "For division, this initial evaluation only requires cases whose exact results have terminating decimal representations.",
+      "source_id": "S013",
+      "source_quote": "- For division, this initial evaluation only requires cases whose exact results have terminating decimal representations."
+    },
+    {
+      "requirement_id": "R012",
+      "text": "Print only the result on standard output, followed by a newline.",
+      "source_id": "S014",
+      "source_quote": "- Print only the result on standard output, followed by a newline."
+    },
+    {
+      "requirement_id": "R013",
+      "text": "Exit with status 0 after a successful calculation.",
+      "source_id": "S015",
+      "source_quote": "- Exit with status 0 after a successful calculation."
+    }
+  ],
+  "source_ids": [
+    "S013",
+    "S014",
+    "S015"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R011",
+      "text": "For division, this initial evaluation only requires cases whose exact results have terminating decimal representations.",
+      "source_id": "S013"
+    },
+    {
+      "requirement_id": "R012",
+      "text": "Print only the result on standard output, followed by a newline.",
+      "source_id": "S014"
+    },
+    {
+      "requirement_id": "R013",
+      "text": "Exit with status 0 after a successful calculation.",
+      "source_id": "S015"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R011",
+      "canonical_requirement_id": "R011"
+    },
+    {
+      "submitted_requirement_id": "R012",
+      "canonical_requirement_id": "R012"
+    },
+    {
+      "submitted_requirement_id": "R013",
+      "canonical_requirement_id": "R013"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 5,
+  "block_complete": true,
+  "intake_complete": true,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013"
+  ]
+}

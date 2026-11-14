@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R018-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test directly validates the requirement that '5 / 2' produces '2.5' as specified in the customer quote. It exercises the division operation with a terminating decimal result, ensuring the calculator correctly outputs fractional results in decimal notation without unnecessary trailing zeros, as per the output requirements.",
+      "requirement_id": "R018"
+    },
+    {
+      "test_case_id": "R018-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "10 / 4",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test extends the requirement by testing another valid division with a terminating decimal (10 / 4 = 2.5). It ensures the calculator consistently handles division cases that yield exact terminating decimals, verifying the correct application of arithmetic precedence and decimal formatting rules.",
+      "requirement_id": "R018"
+    },
+    {
+      "test_case_id": "R018-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "0 / 2",
+      "expected_stdout": "0",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the behavior of division by zero in a non-terminating context, though the requirement explicitly excludes division by zero. However, since the requirement specifies nonnegative integer operands and does not forbid zero as a divisor, this test ensures the calculator correctly handles zero as a divisor when the result is zero, which is a valid and expected case under the stated constraints.",
+      "requirement_id": "R018"
+    }
+  ],
+  "rationale": "The requirement specifically cites '5 / 2' as producing '2.5'. To fully validate this behavior, we include a direct test for the quoted example, a second test with a different valid division case to ensure consistency, and a third to verify edge cases involving zero (which is a valid nonnegative operand). All tests align with the stated interface, precedence rules, and output formatting requirements, and are grounded in the customer's explicit examples and specifications."
+}

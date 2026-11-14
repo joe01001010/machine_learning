@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R025-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies basic addition with no parentheses, confirming the calculator handles simple arithmetic expressions with correct precedence and output formatting.",
+      "requirement_id": "R025"
+    },
+    {
+      "test_case_id": "R025-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "4 / 2",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test verifies division with exact terminating decimal result, ensuring the calculator correctly outputs integer results when division yields a whole number.",
+      "requirement_id": "R025"
+    },
+    {
+      "test_case_id": "R025-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies division with a non-integer result, confirming the calculator outputs fractional results in decimal notation without unnecessary trailing zeros.",
+      "requirement_id": "R025"
+    }
+  ],
+  "rationale": "The requirement explicitly states that division by zero, decimal input, unary minus, and non-terminating fractions are unspecified. These tests focus only on valid, well-defined arithmetic cases as specified. They cover core operations (addition, subtraction, multiplication, division) with and without parentheses, and validate output formatting (integer vs. decimal, no trailing zeros). These tests are independent, directly tied to the stated behavior, and avoid testing undefined or invalid cases as per the requirement."
+}

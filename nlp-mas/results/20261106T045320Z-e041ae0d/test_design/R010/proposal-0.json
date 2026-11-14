@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R010-T01",
+      "args": [
+        "5 / 2"
+      ],
+      "justification": "Tests fractional output with a terminating decimal (2.5) as required by the requirement to print fractional results in decimal notation without unnecessary trailing zeros.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R010"
+    },
+    {
+      "test_case_id": "R010-T02",
+      "args": [
+        "10 / 4"
+      ],
+      "justification": "Tests fractional output with a terminating decimal (2.5) and ensures no unnecessary trailing zeros are printed, confirming correct formatting of exact decimals.",
+      "stdin": "",
+      "expected_stdout": "2.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R010"
+    }
+  ],
+  "rationale": "The requirement mandates that fractional results be printed in decimal notation without unnecessary trailing zeros. These tests cover valid terminating decimals with clear formatting expectations. The expressions use simple division with known terminating results to validate the output format as specified."
+}

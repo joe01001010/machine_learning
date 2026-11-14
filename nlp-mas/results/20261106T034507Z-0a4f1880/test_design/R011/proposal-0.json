@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R011-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "4 / 2",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test validates that division with a terminating decimal result (4/2 = 2) produces an integer output without a decimal point, as per the requirement that only terminating decimal results are required in the initial evaluation. The example in the customer prompt confirms this behavior.",
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R011-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 / 2",
+      "expected_stdout": "2.5",
+      "expected_exit_code": 0,
+      "justification": "This test validates that division with a terminating decimal result (5/2 = 2.5) produces a fractional output in decimal notation without unnecessary trailing zeros. The requirement specifies that only terminating decimals are evaluated, and 5/2 is a terminating decimal, so the output must be 2.5, not 2.50 or 2.500.",
+      "requirement_id": "R011"
+    },
+    {
+      "test_case_id": "R011-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "7 / 4",
+      "expected_stdout": "1.75",
+      "expected_exit_code": 0,
+      "justification": "This test validates that a division with a terminating decimal (7/4 = 1.75) is correctly evaluated and formatted. The requirement specifies that only terminating decimals are required, and 1.75 is a terminating decimal. The output must be exactly 1.75, with no extra zeros, to match the output convention.",
+      "requirement_id": "R011"
+    }
+  ],
+  "rationale": "The requirement explicitly limits the division evaluation to cases with terminating decimal representations. These tests cover three distinct cases: integer division (4/2), a simple terminating decimal (5/2), and a more complex terminating decimal (7/4). Each test ensures the calculator correctly outputs the result in the required format—integer without a decimal point when applicable, and fractional in decimal notation when needed—without adding unnecessary trailing zeros. These cases are directly grounded in the customer's specification and examples."
+}

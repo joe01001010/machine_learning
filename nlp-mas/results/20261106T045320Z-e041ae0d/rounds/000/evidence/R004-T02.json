@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/home/weibelj/miniconda3/envs/nlp-mas-serving/bin/python",
+    "-B",
+    "/tmp/nlp-mas-test-lc23uvad/app/main.py",
+    "(10 - (3 + 2)) * 4"
+  ],
+  "started_at": "2026-11-06T04:55:52.017330+00:00",
+  "return_code": 0,
+  "stdout": "20\n",
+  "stderr": "",
+  "execution_status": "COMPLETED",
+  "output_truncated": false,
+  "isolation": "bwrap",
+  "duration_ms": 34.983,
+  "execution_id": "0d82748d17e94d09a595c0a8443fb48c",
+  "requirement_id": "R004",
+  "test_case_id": "R004-T02",
+  "args": [
+    "(10 - (3 + 2)) * 4"
+  ],
+  "stdin": "",
+  "source_sha256": {
+    "compute.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+    "graphviz.py": "8d4824aa7dd02a770fafdbe347bd9d460b0b1fa7c26aba402f2a56a5f01db1ac",
+    "main.py": "eb5951afdaafb1189babe5f8a9d0e7dc58e176801b3d8d39f223782ac3c68cdc",
+    "parser.py": "8add523e96a4e4b3b557b49a4feb06fc924da84066525bdeea59fb168667ec35",
+    "test.py": "d0eb5ea2af32a544ee1d853f4d95644aa278b1ee2767a20b7c3826a6f8465673"
+  },
+  "host_match": true
+}

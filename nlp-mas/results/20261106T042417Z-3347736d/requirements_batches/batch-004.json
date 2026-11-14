@@ -1,0 +1,76 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R009",
+      "text": "In normal operation, calculate travel minutes by multiplying distance by a factor from 1.2 to 1.5 minutes per mile, then rounding down to a whole number.",
+      "source_id": "S010",
+      "source_quote": "- In normal operation, calculate whole-number travel minutes by choosing a factor from 1.2 through 1.5 minutes per mile, multiplying by the distance, and rounding down."
+    },
+    {
+      "requirement_id": "R010",
+      "text": "Fare is the greater of the minimum fare or (base fare + (minutes × price per minute) + (miles × price per mile)).",
+      "source_id": "S011",
+      "source_quote": "- Calculate fare as the greater of the minimum fare and: base fare + (minutes multiplied by price per minute) + (miles multiplied by price per mile)."
+    },
+    {
+      "requirement_id": "R011",
+      "text": "For example, with base fare 2.00, per-minute 0.50, per-mile 1.00, 10 miles, 12 minutes, and minimum fare 20.00, the fare is 20.00.",
+      "source_id": "S012",
+      "source_quote": "- For example, a base fare of 2.00, a per-minute price of 0.50, a per-mile price of 1.00, 10 miles, and 12 minutes produce 18.00. With a minimum fare of 20.00, the same trip costs 20.00."
+    }
+  ],
+  "source_ids": [
+    "S010",
+    "S011",
+    "S012"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R009",
+      "text": "In normal operation, calculate travel minutes by multiplying distance by a factor from 1.2 to 1.5 minutes per mile, then rounding down to a whole number.",
+      "source_id": "S010"
+    },
+    {
+      "requirement_id": "R010",
+      "text": "Fare is the greater of the minimum fare or (base fare + (minutes × price per minute) + (miles × price per mile)).",
+      "source_id": "S011"
+    },
+    {
+      "requirement_id": "R011",
+      "text": "For example, with base fare 2.00, per-minute 0.50, per-mile 1.00, 10 miles, 12 minutes, and minimum fare 20.00, the fare is 20.00.",
+      "source_id": "S012"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R009",
+      "canonical_requirement_id": "R009"
+    },
+    {
+      "submitted_requirement_id": "R010",
+      "canonical_requirement_id": "R010"
+    },
+    {
+      "submitted_requirement_id": "R011",
+      "canonical_requirement_id": "R011"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 4,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "All proposed requirements are directly and fully supported by the source block. R020 maps exactly to S022, R021 to S023, and R022 to S024. No omissions, unsupported claims, or ambiguities exist. The scope, behavior, and constraints are testable and aligned with the source.",
+  "source_ids": [
+    "S022",
+    "S023",
+    "S024"
+  ]
+}

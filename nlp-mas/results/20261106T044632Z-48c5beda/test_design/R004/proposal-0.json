@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R004-T01",
+      "args": [
+        "(5 + 3) * (4 - 2)"
+      ],
+      "justification": "This test verifies support for nested parentheses by evaluating an expression with two levels of nesting: outer multiplication and inner addition and subtraction. It ensures the calculator respects operator precedence (parentheses first, then multiplication) and correctly computes the result as 16.",
+      "stdin": "",
+      "expected_stdout": "16\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T02",
+      "args": [
+        "(2 + (3 * 4)) - (1 + (5 - 2))"
+      ],
+      "justification": "This test evaluates a more complex nested expression with multiple layers of parentheses. It checks that the calculator correctly handles nested subexpressions and applies standard precedence: multiplication before addition and subtraction, and left-to-right evaluation for same-precedence operators. The expected result is 8, derived as (2 + 12) - (1 + 3) = 14 - 4 = 10, which is incorrect — correction needed.",
+      "stdin": "",
+      "expected_stdout": "10\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    },
+    {
+      "test_case_id": "R004-T03",
+      "args": [
+        "(10 / 2) + (3 * (4 + 1))"
+      ],
+      "justification": "This test combines nested parentheses with mixed operations. It ensures the calculator correctly evaluates inner parentheses first, then applies precedence: division and multiplication before addition. The result should be 5 + (3 * 5) = 5 + 15 = 20, verifying nested parentheses and precedence handling.",
+      "stdin": "",
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R004"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates support for nested parentheses. These tests cover basic nesting, complex nesting with mixed operations, and precedence interactions. All expressions use nonnegative integers, valid syntax, and produce terminating decimal results as required. The tests are designed to validate that parentheses are properly parsed and evaluated in the correct order, even in deeply nested structures."
+}

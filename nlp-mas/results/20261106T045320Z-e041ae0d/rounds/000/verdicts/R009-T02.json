@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '100 - 50 * 2' evaluates to 0, which is an integer result. The output is exactly '0' as required by the requirement to print integer results without a decimal point or unnecessary leading zeros. The execution produced the expected stdout '0' with a matching exit code of 0. The mathematical reference confirms the expected rational result is 0. The host_match is true, and the output comparison (after removing one terminal LF or CRLF) aligns exactly. All criteria are met, and the execution evidence justifies the pass."
+}

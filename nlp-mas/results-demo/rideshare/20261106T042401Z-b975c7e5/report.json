@@ -1,0 +1,152 @@
+{
+  "run_id": "20261106T042401Z-b975c7e5",
+  "started_at": "2026-11-06T04:24:01.659251+00:00",
+  "status": "PASS",
+  "rounds": [
+    {
+      "round": 0,
+      "summary": "Coder submitted rideshare.c and requested build/test execution",
+      "source_sha256": {
+        "rideshare.c": "ce686dd6a4a81eb2ae0e1804065af89349ec4afc3c0657d6737bc076bf4bd0dd"
+      },
+      "build": {
+        "command": [
+          "gcc",
+          "-std=c11",
+          "-O0",
+          "-Wall",
+          "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/000/source/rideshare.c",
+          "-lm",
+          "-o",
+          "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/000/source/program"
+        ],
+        "started_at": "2026-11-06T04:24:01.674427+00:00",
+        "return_code": 0,
+        "stdout": "",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 117.327,
+        "success": true
+      },
+      "tests": [
+        {
+          "requirement_id": "R001",
+          "test_case_id": "R001-T01",
+          "execution": {
+            "command": [
+              "/tmp/nlp-mas-test-jmeijmln/app/program"
+            ],
+            "started_at": "2026-11-06T04:24:01.793398+00:00",
+            "return_code": 0,
+            "stdout": "18.00\n",
+            "stderr": "",
+            "execution_status": "COMPLETED",
+            "output_truncated": false,
+            "isolation": "bwrap",
+            "duration_ms": 5.21,
+            "execution_id": "0d4aa78a903c4c338669dfb8f13c1493",
+            "requirement_id": "R001",
+            "test_case_id": "R001-T01",
+            "args": [],
+            "stdin": "2.00\n0.50\n1.00\n10\n12\n20.00\n",
+            "source_sha256": {
+              "rideshare.c": "ce686dd6a4a81eb2ae0e1804065af89349ec4afc3c0657d6737bc076bf4bd0dd"
+            },
+            "host_match": false
+          },
+          "verdict": {
+            "verdict": "FAIL",
+            "criteria_justified": true,
+            "explanation": "Observed '18.00' against the frozen expectation '20.00'."
+          },
+          "controller_assessment": {
+            "verdict": "FAIL",
+            "criteria_justified": true,
+            "explanation": "The completed process did not meet the previously frozen test expectation."
+          }
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "summary": "Coder submitted rideshare.c and requested build/test execution",
+      "source_sha256": {
+        "rideshare.c": "8fb06572ca8da45d2b702b417092f9751749c654d653472b8aaf0013bdda1e29"
+      },
+      "build": {
+        "command": [
+          "gcc",
+          "-std=c11",
+          "-O0",
+          "-Wall",
+          "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/001/source/rideshare.c",
+          "-lm",
+          "-o",
+          "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5/rounds/001/source/program"
+        ],
+        "started_at": "2026-11-06T04:24:01.802855+00:00",
+        "return_code": 0,
+        "stdout": "",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 166.575,
+        "success": true
+      },
+      "tests": [
+        {
+          "requirement_id": "R001",
+          "test_case_id": "R001-T01",
+          "execution": {
+            "command": [
+              "/tmp/nlp-mas-test-xk6e18em/app/program"
+            ],
+            "started_at": "2026-11-06T04:24:01.971096+00:00",
+            "return_code": 0,
+            "stdout": "20.00\n",
+            "stderr": "",
+            "execution_status": "COMPLETED",
+            "output_truncated": false,
+            "isolation": "bwrap",
+            "duration_ms": 5.359,
+            "execution_id": "4e8086cf5dd64dd093e377b1b6b219de",
+            "requirement_id": "R001",
+            "test_case_id": "R001-T01",
+            "args": [],
+            "stdin": "2.00\n0.50\n1.00\n10\n12\n20.00\n",
+            "source_sha256": {
+              "rideshare.c": "8fb06572ca8da45d2b702b417092f9751749c654d653472b8aaf0013bdda1e29"
+            },
+            "host_match": true
+          },
+          "verdict": {
+            "verdict": "PASS",
+            "criteria_justified": true,
+            "explanation": "Observed '20.00' against the frozen expectation '20.00'."
+          }
+        }
+      ]
+    }
+  ],
+  "questions": [],
+  "run_directory": "/home/weibelj/git/machine_learning/nlp-mas/results-demo/rideshare/20261106T042401Z-b975c7e5",
+  "requirements_only": false,
+  "requirements_staged_count": 1,
+  "requirements_source_blocks_completed": 1,
+  "requirements_source_excerpts_completed": 1,
+  "reason": "Every frozen test passed on the final source version; this is not exhaustive verification.",
+  "finished_at": "2026-11-06T04:24:01.978604+00:00",
+  "model_calls": 14,
+  "requirements": [
+    {
+      "requirement_id": "R001",
+      "source_id": "S001",
+      "text": "The rideshare fare calculator shall read fare and trip data from stdin and print the greater of the minimum fare and base fare plus minutes times price per minute plus miles times price per mile, to two decimals.",
+      "source_quote": "Read base fare, price per minute, price per mile, miles, minutes, and minimum fare from stdin. Print max(minimum fare, base fare + minutes * minute price + miles * mile price) with two decimals."
+    }
+  ],
+  "test_count": 1
+}

@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '10 / 4' evaluates to 2.5, which is a terminating decimal. The execution output is exactly '2.5' with a trailing newline, matching the expected_stdout as defined in the mathematical reference. The exit code is 0, satisfying the expected_exit_code. The requirement specifies that division with terminating decimal results must be correctly evaluated and output in decimal form without unnecessary trailing zeros, which is fully met. The host_match is true, confirming exact alignment between expected and actual output. All criteria are justified by the evidence."
+}

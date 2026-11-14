@@ -1,0 +1,50 @@
+{
+  "round": 1,
+  "summary": "Coder submitted main.py and requested build/test execution",
+  "source_sha256": {
+    "main.py": "ad77fa1c986527a8cb4b6d6e61ed72737e7af596be08b4a3ed1739bfb9650a60"
+  },
+  "build": {
+    "success": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "tests": [
+    {
+      "requirement_id": "R001",
+      "test_case_id": "R001-T01",
+      "execution": {
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "/tmp/nlp-mas-test-yi2kwt1s/app/main.py",
+          "2+3*4"
+        ],
+        "started_at": "2026-11-06T04:28:33.986950+00:00",
+        "return_code": 0,
+        "stdout": "14\n",
+        "stderr": "",
+        "execution_status": "COMPLETED",
+        "output_truncated": false,
+        "isolation": "bwrap",
+        "duration_ms": 17.973,
+        "execution_id": "1819b70563404e3e843fc0ea2cb3d701",
+        "requirement_id": "R001",
+        "test_case_id": "R001-T01",
+        "args": [
+          "2+3*4"
+        ],
+        "stdin": "",
+        "source_sha256": {
+          "main.py": "ad77fa1c986527a8cb4b6d6e61ed72737e7af596be08b4a3ed1739bfb9650a60"
+        },
+        "host_match": true
+      },
+      "verdict": {
+        "verdict": "PASS",
+        "criteria_justified": true,
+        "explanation": "Observed '14' against the frozen expectation '14'."
+      }
+    }
+  ]
+}

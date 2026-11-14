@@ -1,0 +1,45 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R001",
+      "text": "The Python calculator must accept a single arithmetic expression as a plain text command-line argument.",
+      "source_id": "S002",
+      "source_quote": "Build a Python calculator that accepts one arithmetic expression as a plain text command-line argument and prints its answer as plain text."
+    },
+    {
+      "requirement_id": "R002",
+      "text": "The calculator must support addition (+), subtraction (-), multiplication (*), and division (/) operations in the input expression.",
+      "source_id": "S003",
+      "source_quote": "- Support addition (+), subtraction (-), multiplication (*), and division (/)."
+    }
+  ],
+  "source_ids": [
+    "S001",
+    "S002",
+    "S003"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R001",
+      "text": "The Python calculator must accept a single arithmetic expression as a plain text command-line argument.",
+      "source_id": "S002"
+    },
+    {
+      "requirement_id": "R002",
+      "text": "The calculator must support addition (+), subtraction (-), multiplication (*), and division (/) operations in the input expression.",
+      "source_id": "S003"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R001",
+      "canonical_requirement_id": "R001"
+    },
+    {
+      "submitted_requirement_id": "R002",
+      "canonical_requirement_id": "R002"
+    }
+  ],
+  "complete": true
+}

@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case R005-T02 evaluates the expression '10 - 2 * 3 + 4 / 2' with the expected output '6'. The execution produced the exact expected stdout ('6') and had the correct exit code (0). The mathematical reference confirms the expected rational result. The precedence rules are satisfied: multiplication and division are performed before addition and subtraction, and operations of equal precedence are evaluated left to right. The host_match is true, and the output matches the reference after standardizing line endings. All requirements specified in the customer prompt are addressed, and the test case is valid and fully justified."
+}

@@ -1,0 +1,89 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R022",
+      "text": "The expression '10 - 3 - 2' evaluates to '5'.",
+      "source_id": "S025",
+      "source_quote": "- \"10 - 3 - 2\" produces \"5\"."
+    },
+    {
+      "requirement_id": "R023",
+      "text": "The expression '12 / 3 * 2' evaluates to '8'.",
+      "source_id": "S026",
+      "source_quote": "- \"12 / 3 * 2\" produces \"8\"."
+    },
+    {
+      "requirement_id": "R024",
+      "text": "The expressions '2+3' and '2 + 3' both evaluate to '5'.",
+      "source_id": "S027",
+      "source_quote": "- \"2+3\" and \"2 + 3\" both produce \"5\"."
+    }
+  ],
+  "source_ids": [
+    "S025",
+    "S026",
+    "S027"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R022",
+      "text": "The expression '10 - 3 - 2' evaluates to '5'.",
+      "source_id": "S025"
+    },
+    {
+      "requirement_id": "R023",
+      "text": "The expression '12 / 3 * 2' evaluates to '8'.",
+      "source_id": "S026"
+    },
+    {
+      "requirement_id": "R024",
+      "text": "The expressions '2+3' and '2 + 3' both evaluate to '5'.",
+      "source_id": "S027"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R022",
+      "canonical_requirement_id": "R022"
+    },
+    {
+      "submitted_requirement_id": "R023",
+      "canonical_requirement_id": "R023"
+    },
+    {
+      "submitted_requirement_id": "R024",
+      "canonical_requirement_id": "R024"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 9,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023",
+    "R024"
+  ]
+}

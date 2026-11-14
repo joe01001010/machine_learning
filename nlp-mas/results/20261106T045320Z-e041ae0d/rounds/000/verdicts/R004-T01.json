@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case (5 + 3) * 2 evaluates to 16, which matches the expected output exactly. The execution produced stdout: '16' (after removing one terminal newline), with an exit code of 0, satisfying all required conditions. The requirement to support nested parentheses is directly validated. The mathematical reference confirms the rational result of 16. The output format, including no unnecessary trailing zeros or decimal points, is correct. All criteria are met, and the host match is true."
+}

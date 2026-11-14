@@ -1,0 +1,96 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R029",
+      "text": "Initial tests use unique single-word organization names and no more than five completed rides per organization; duplicate names and behavior beyond this range are outside the initial scope.",
+      "source_id": "S031",
+      "source_quote": "- Initial tests will use unique single-word organization names and no more than five completed rides per organization. Duplicate names, storage overflow, and behavior beyond this range are outside the"
+    },
+    {
+      "requirement_id": "R030",
+      "text": "Administrative shutdown must function correctly within the tested range of up to five rides per organization.",
+      "source_id": "S032",
+      "source_quote": "initial scope. Administrative shutdown must still work within the tested range."
+    },
+    {
+      "requirement_id": "R031",
+      "text": "Behavior must be judged against the provided directions, not existing bugs; requirements, test inputs, and expected results must be preserved during code repair.",
+      "source_id": "S033",
+      "source_quote": "- Judge behavior against these directions, not against existing bugs. Preserve requirements, test inputs, and expected results during code repair. Report actual execution evidence for failures."
+    }
+  ],
+  "source_ids": [
+    "S031",
+    "S032",
+    "S033"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R029",
+      "text": "Initial tests use unique single-word organization names and no more than five completed rides per organization; duplicate names and behavior beyond this range are outside the initial scope.",
+      "source_id": "S031"
+    },
+    {
+      "requirement_id": "R030",
+      "text": "Administrative shutdown must function correctly within the tested range of up to five rides per organization.",
+      "source_id": "S032"
+    },
+    {
+      "requirement_id": "R031",
+      "text": "Behavior must be judged against the provided directions, not existing bugs; requirements, test inputs, and expected results must be preserved during code repair.",
+      "source_id": "S033"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R029",
+      "canonical_requirement_id": "R029"
+    },
+    {
+      "submitted_requirement_id": "R030",
+      "canonical_requirement_id": "R030"
+    },
+    {
+      "submitted_requirement_id": "R031",
+      "canonical_requirement_id": "R031"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 11,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023",
+    "R024",
+    "R025",
+    "R026",
+    "R027",
+    "R028",
+    "R029",
+    "R030",
+    "R031"
+  ]
+}

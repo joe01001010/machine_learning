@@ -1,0 +1,7 @@
+{
+  "decision": "REVISE",
+  "feedback": "Specify the stdin interface and that the minimum fare overrides a smaller computed fare.",
+  "source_ids": [
+    "S001"
+  ]
+}

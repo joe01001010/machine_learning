@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R024-T01",
+      "args": [
+        "expression"
+      ],
+      "stdin": "2+3",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test directly verifies the requirement that '2+3' and '2 + 3' both evaluate to '5'. It focuses on the input format sensitivity without spaces, ensuring the calculator respects the stated behavior of accepting expressions with or without spaces between numbers and operators.",
+      "requirement_id": "R024"
+    },
+    {
+      "test_case_id": "R024-T02",
+      "args": [
+        "expression"
+      ],
+      "stdin": "2 + 3",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test confirms that the expression with a space between operands ('2 + 3') also evaluates correctly to '5', validating that the calculator supports both spaced and unspaced arithmetic expressions as per the requirement.",
+      "requirement_id": "R024"
+    }
+  ],
+  "rationale": "The requirement explicitly states that both '2+3' and '2 + 3' produce the same result. These two tests cover the two distinct input formats while ensuring the calculator correctly handles spacing. They are minimal, focused, and directly validate the stated behavior without introducing unrelated cases."
+}

@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R002-T01",
+      "args": [
+        "5 + 3"
+      ],
+      "justification": "Validates basic addition with no parentheses, testing standard precedence and integer output.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    },
+    {
+      "test_case_id": "R002-T02",
+      "args": [
+        "(2 + 3) * 4"
+      ],
+      "justification": "Validates parentheses and operator precedence: inner addition first, then multiplication.",
+      "stdin": "",
+      "expected_stdout": "20\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R002"
+    }
+  ],
+  "rationale": "These tests cover core arithmetic operations and precedence rules as specified. R002-T01 tests simple addition, while R002-T02 tests nested parentheses and correct application of operator precedence. Both use valid, nonnegative integer inputs with terminating decimal results, ensuring compliance with the stated requirements without introducing invalid or edge cases."
+}

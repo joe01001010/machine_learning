@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R003-T01",
+      "args": [
+        "5 + 0"
+      ],
+      "justification": "This test verifies that the calculator correctly handles nonnegative integer operands, including zero, in a simple addition expression. The requirement explicitly includes zero as a valid operand, and this test ensures the system accepts zero and computes the correct result (5) without error.",
+      "stdin": "",
+      "expected_stdout": "5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T02",
+      "args": [
+        "0 * 1000"
+      ],
+      "justification": "This test confirms the calculator correctly evaluates an expression with zero as a multiplicand. The requirement specifies that nonnegative integers, including zero, are accepted. This test ensures that multiplication by zero yields zero, which is a fundamental property of arithmetic and aligns with the stated behavior.",
+      "stdin": "",
+      "expected_stdout": "0\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    },
+    {
+      "test_case_id": "R003-T03",
+      "args": [
+        "17 + 0 - 0"
+      ],
+      "justification": "This test exercises the requirement with multiple nonnegative integer operands, including zero, in a compound expression. It ensures the calculator correctly handles zero in both addition and subtraction contexts, maintaining the integrity of the arithmetic operations while respecting the requirement for nonnegative integer inputs.",
+      "stdin": "",
+      "expected_stdout": "17\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R003"
+    }
+  ],
+  "rationale": "The requirement explicitly mandates support for nonnegative integer operands, including zero. These tests cover foundational cases: simple addition with zero, multiplication by zero, and a compound expression with multiple zeros. They validate the system's ability to accept and correctly process zero as a valid operand in various arithmetic contexts, ensuring compliance with the stated requirement."
+}

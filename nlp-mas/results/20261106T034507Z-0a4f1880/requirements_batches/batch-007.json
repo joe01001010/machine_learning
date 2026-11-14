@@ -1,0 +1,83 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R016",
+      "text": "The expression '0 * 17' must produce '0'.",
+      "source_id": "S019",
+      "source_quote": "- \"0 * 17\" produces \"0\"."
+    },
+    {
+      "requirement_id": "R017",
+      "text": "The expression '4 / 2' must produce '2'.",
+      "source_id": "S020",
+      "source_quote": "- \"4 / 2\" produces \"2\"."
+    },
+    {
+      "requirement_id": "R018",
+      "text": "The expression '5 / 2' must produce '2.5'.",
+      "source_id": "S021",
+      "source_quote": "- \"5 / 2\" produces \"2.5\"."
+    }
+  ],
+  "source_ids": [
+    "S019",
+    "S020",
+    "S021"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R016",
+      "text": "The expression '0 * 17' must produce '0'.",
+      "source_id": "S019"
+    },
+    {
+      "requirement_id": "R017",
+      "text": "The expression '4 / 2' must produce '2'.",
+      "source_id": "S020"
+    },
+    {
+      "requirement_id": "R018",
+      "text": "The expression '5 / 2' must produce '2.5'.",
+      "source_id": "S021"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R016",
+      "canonical_requirement_id": "R016"
+    },
+    {
+      "submitted_requirement_id": "R017",
+      "canonical_requirement_id": "R017"
+    },
+    {
+      "submitted_requirement_id": "R018",
+      "canonical_requirement_id": "R018"
+    }
+  ],
+  "source_block_index": 7,
+  "complete": true,
+  "block_complete": true,
+  "intake_complete": false,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "R029",
+      "text": "Report failures with relevant requirement, test input, expected result, and actual execution evidence.",
+      "source_id": "S031",
+      "source_quote": "Judge the implementation against these directions. Do not change expected behavior to match the implementation. Report failures with the relevant requirement, test input, expected result, and actual"
+    },
+    {
+      "requirement_id": "R030",
+      "text": "Ask for clarification if a necessary expectation is missing.",
+      "source_id": "S032",
+      "source_quote": "execution evidence. Ask for clarification if a necessary expectation is missing."
+    }
+  ],
+  "source_ids": [
+    "S031",
+    "S032"
+  ],
+  "submitted_requirements": [
+    {
+      "requirement_id": "R029",
+      "text": "Report failures with relevant requirement, test input, expected result, and actual execution evidence.",
+      "source_id": "S031"
+    },
+    {
+      "requirement_id": "R030",
+      "text": "Ask for clarification if a necessary expectation is missing.",
+      "source_id": "S032"
+    }
+  ],
+  "duplicates": [],
+  "id_assignments": [
+    {
+      "submitted_requirement_id": "R029",
+      "canonical_requirement_id": "R029"
+    },
+    {
+      "submitted_requirement_id": "R030",
+      "canonical_requirement_id": "R030"
+    }
+  ],
+  "complete": true,
+  "source_block_index": 11,
+  "block_complete": true,
+  "intake_complete": true,
+  "accepted_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023",
+    "R024",
+    "R025",
+    "R026",
+    "R027",
+    "R028",
+    "R029",
+    "R030"
+  ]
+}

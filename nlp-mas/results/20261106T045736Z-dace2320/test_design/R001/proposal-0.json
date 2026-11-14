@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "5 + 3",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates basic addition with no spaces between operands, as per requirement: supports expressions with or without spaces. Matches example behavior in customer prompt.",
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T02",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "2 * (3 + 4) - 1",
+      "expected_stdout": "13",
+      "expected_exit_code": 0,
+      "justification": "Validates operator precedence (parentheses first, then multiplication, then subtraction) and left-to-right evaluation for same-precedence operators. Covers nested parentheses and mixed operations as required.",
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T03",
+      "args": [
+        "evaluate"
+      ],
+      "stdin": "12 / 3 * 2",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "Validates division and multiplication with equal precedence, evaluated left to right. Matches example in customer prompt: 12/3=4, 4*2=8. Ensures correct handling of operator precedence and left-to-right evaluation.",
+      "requirement_id": "R001"
+    }
+  ],
+  "rationale": "These tests cover core requirements: basic arithmetic, operator precedence, parentheses, and left-to-right evaluation for same-precedence operators. They include both simple and nested expressions to validate full expression parsing and evaluation logic. All inputs are valid, nonnegative integers with standard operators, ensuring alignment with the specified behavior and examples."
+}

@@ -1,0 +1,117 @@
+{
+  "runs": 2,
+  "status_counts": {
+    "INCOMPLETE": 2
+  },
+  "pipeline_success_rate": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "source": "all end-to-end runs",
+    "note": ""
+  },
+  "independent_task_success_rate": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "independently labeled end-to-end runs",
+    "note": ""
+  },
+  "task_label_coverage": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "source": "annotation coverage",
+    "note": ""
+  },
+  "requirements_only_success_rate": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "source": "all requirements-only runs",
+    "note": ""
+  },
+  "independent_requirements_success_rate": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "independently labeled requirements-only runs",
+    "note": ""
+  },
+  "requirements_label_coverage": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "source": "annotation coverage",
+    "note": ""
+  },
+  "repair_success_rate": {
+    "value": null,
+    "numerator": 0,
+    "denominator": 0,
+    "source": "pipeline outcomes after initial failure; not independent correctness",
+    "note": ""
+  },
+  "run_costs": [
+    {
+      "run_id": "20261106T034507Z-0a4f1880",
+      "status": "INCOMPLETE",
+      "elapsed_seconds": 450.85594,
+      "requirements_only": false,
+      "completion_tokens": 22008,
+      "independent_task_success": null
+    },
+    {
+      "run_id": "20261106T042339Z-093f30d0",
+      "status": "INCOMPLETE",
+      "elapsed_seconds": 37.600302,
+      "requirements_only": true,
+      "completion_tokens": 1847,
+      "independent_task_success": null
+    }
+  ],
+  "by_application": {
+    "python:main.py": {
+      "runs": 1,
+      "status_counts": {
+        "INCOMPLETE": 1
+      },
+      "pipeline_success_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 1,
+        "source": "all application runs in this scope",
+        "note": ""
+      },
+      "independent_task_success_rate": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "source": "independently labeled application runs in this scope",
+        "note": ""
+      }
+    }
+  },
+  "by_requirements_application": {
+    "python:main.py": {
+      "runs": 1,
+      "status_counts": {
+        "INCOMPLETE": 1
+      },
+      "requirements_only_success_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 1,
+        "source": "all application runs in this scope",
+        "note": ""
+      },
+      "independent_task_success_rate": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "source": "independently labeled application runs in this scope",
+        "note": ""
+      }
+    }
+  }
+}

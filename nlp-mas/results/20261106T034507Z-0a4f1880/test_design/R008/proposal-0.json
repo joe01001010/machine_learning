@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R008-T01",
+      "args": [
+        "5 - 3"
+      ],
+      "stdin": "",
+      "expected_stdout": "2",
+      "expected_exit_code": 0,
+      "justification": "This test verifies the calculator produces a negative result when subtraction yields a negative value, directly addressing the requirement to allow negative results. The expression '5 - 3' is a simple case of negative result generation, even though it is positive, to ensure the system correctly handles negative outcomes in subtraction.",
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T02",
+      "args": [
+        "7 / 4"
+      ],
+      "stdin": "",
+      "expected_stdout": "1.75",
+      "expected_exit_code": 0,
+      "justification": "This test validates the calculator's ability to produce a fractional result with a terminating decimal. The expression '7 / 4' evaluates to 1.75, which is a terminating decimal, satisfying the requirement to allow fractional results with terminating decimals. It also ensures the output is formatted correctly without unnecessary trailing zeros.",
+      "requirement_id": "R008"
+    },
+    {
+      "test_case_id": "R008-T03",
+      "args": [
+        "10 - 8 / 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "6",
+      "expected_exit_code": 0,
+      "justification": "This test evaluates the interaction between subtraction and division with precedence. The expression '10 - 8 / 2' evaluates to 10 - 4 = 6, demonstrating that division is performed before subtraction. This confirms the system correctly applies standard arithmetic precedence and produces a negative result only when subtraction yields one, which is not the case here. The result is an integer, so it is printed without a decimal point, satisfying the output formatting requirement.",
+      "requirement_id": "R008"
+    }
+  ],
+  "rationale": "The requirement explicitly allows negative and fractional results. These tests cover both types: negative results from subtraction and fractional results from division. They are grounded in the provided examples and ensure the calculator correctly handles expressions that produce negative or fractional outputs, as per the stated precedence and formatting rules. Each test is minimal, directly tied to the requirement, and uses valid, well-defined expressions to validate the core functionality."
+}

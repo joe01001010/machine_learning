@@ -1,0 +1,4 @@
+{
+  "decision": "REVISE",
+  "feedback": "The provided test cases contain mathematical errors in the expected outputs. Correct arithmetic calculations show that the expected_stdout values for R005-T01, R005-T02, and R005-T03 are mathematically incorrect. The correct results are 17, 30, and 38, respectively. These errors must be corrected to align with the actual arithmetic precedence and standard operations. The test cases must be REVISED to reflect accurate mathematical outcomes to ensure valid coverage of the requirement to support nested parentheses."
+}

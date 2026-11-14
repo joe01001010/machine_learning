@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "application": "c:rideshare.c",
+  "requirements_only": false,
+  "run_id": "20261106T042401Z-b975c7e5",
+  "status": "PASS",
+  "reason": "Every frozen test passed on the final source version; this is not exhaustive verification.",
+  "elapsed_seconds": 0.319353,
+  "agents": {
+    "requirements-engineer": {
+      "calls": 2,
+      "transport_errors": 0,
+      "truncations": 0,
+      "rejected_tool_calls": 0,
+      "tool_actions": 2,
+      "usage_reported_calls": 0,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "quality": {
+        "precision": {
+          "value": null,
+          "source": "independent labels required",
+          "note": "Supply reference requirements and label every extracted requirement."
+        },
+        "recall": {
+          "value": null,
+          "source": "independent labels required",
+          "note": "Supply reference requirements and label every extracted requirement."
+        },
+        "f1": {
+          "value": null,
+          "source": "independent labels required",
+          "note": "Supply reference requirements and label every extracted requirement."
+        }
+      },
+      "latency_reported_calls": 2,
+      "mean_call_seconds": 1.8675500086828833e-05,
+      "model_seconds": 3.735100017365767e-05,
+      "truncation_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 2,
+        "source": "controller trace",
+        "note": ""
+      },
+      "tool_rejection_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 2,
+        "source": "controller trace",
+        "note": ""
+      }
+    },
+    "test-engineer": {
+      "calls": 4,
+      "transport_errors": 0,
+      "truncations": 0,
+      "rejected_tool_calls": 0,
+      "tool_actions": 4,
+      "usage_reported_calls": 0,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "quality": {
+        "valid_test_rate": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent test labels",
+          "note": "Denominator is labeled frozen tests only."
+        },
+        "test_label_coverage": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 1,
+          "source": "annotation coverage",
+          "note": ""
+        },
+        "mutation_score": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent mutation results",
+          "note": "Exclude equivalent and invalid mutants; uncovered eligible mutants count as survivors. Mutation testing is not run automatically."
+        }
+      },
+      "latency_reported_calls": 4,
+      "mean_call_seconds": 2.4073500185295416e-05,
+      "model_seconds": 9.629400074118166e-05,
+      "truncation_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 4,
+        "source": "controller trace",
+        "note": ""
+      },
+      "tool_rejection_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 4,
+        "source": "controller trace",
+        "note": ""
+      }
+    },
+    "coder": {
+      "calls": 2,
+      "transport_errors": 0,
+      "truncations": 0,
+      "rejected_tool_calls": 0,
+      "tool_actions": 2,
+      "usage_reported_calls": 0,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "quality": {
+        "build_success_rate": {
+          "value": 1.0,
+          "numerator": 2,
+          "denominator": 2,
+          "source": "host build records",
+          "note": ""
+        },
+        "independent_test_pass_rate": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent final-execution labels",
+          "note": ""
+        },
+        "execution_label_coverage": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 1,
+          "source": "annotation coverage",
+          "note": ""
+        },
+        "frozen_test_match_rate": {
+          "value": 1.0,
+          "numerator": 1,
+          "denominator": 1,
+          "source": "host comparison against agent-generated expectations",
+          "note": "Not an independent correctness measure."
+        }
+      },
+      "latency_reported_calls": 2,
+      "mean_call_seconds": 2.677549991858541e-05,
+      "model_seconds": 5.355099983717082e-05,
+      "truncation_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 2,
+        "source": "controller trace",
+        "note": ""
+      },
+      "tool_rejection_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 2,
+        "source": "controller trace",
+        "note": ""
+      }
+    },
+    "verification-engineer": {
+      "calls": 6,
+      "transport_errors": 0,
+      "truncations": 0,
+      "rejected_tool_calls": 0,
+      "tool_actions": 6,
+      "usage_reported_calls": 0,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "quality": {
+        "precision": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent execution labels; FAIL is positive; abstentions excluded",
+          "note": ""
+        },
+        "recall": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent execution labels; FAIL is positive; abstentions excluded",
+          "note": ""
+        },
+        "f1": {
+          "value": null,
+          "source": "independent execution labels; FAIL is positive; abstentions excluded"
+        },
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "false_pass_rate": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent labeled executions",
+          "note": "Incorrect executions labeled PASS / incorrect executions with a recorded verdict."
+        },
+        "abstention_rate": {
+          "value": null,
+          "numerator": 0,
+          "denominator": 0,
+          "source": "independent labeled verdicts",
+          "note": ""
+        }
+      },
+      "latency_reported_calls": 6,
+      "mean_call_seconds": 2.3958000004616526e-05,
+      "model_seconds": 0.00014374800002769916,
+      "truncation_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 6,
+        "source": "controller trace",
+        "note": ""
+      },
+      "tool_rejection_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 6,
+        "source": "controller trace",
+        "note": ""
+      }
+    }
+  },
+  "feedback": {
+    "prompt_excerpts_processed": {
+      "value": 1.0,
+      "numerator": 1,
+      "denominator": 1,
+      "source": "controller intake records",
+      "note": "Processing every excerpt does not establish that every requirement was captured."
+    },
+    "requirements_review": {
+      "reviews": 2,
+      "revise_decisions": 1,
+      "revision_acceptance_rate": {
+        "value": 1.0,
+        "numerator": 1,
+        "denominator": 1,
+        "source": "archived agent reviews",
+        "note": "Source blocks accepted after revision / source blocks marked for revision."
+      }
+    },
+    "test_plan_review": {
+      "reviews": 2,
+      "revise_decisions": 1,
+      "revision_acceptance_rate": {
+        "value": 1.0,
+        "numerator": 1,
+        "denominator": 1,
+        "source": "archived agent reviews",
+        "note": "Test plans accepted after revision / test plans marked for revision."
+      }
+    }
+  },
+  "system": {
+    "pipeline_success": true,
+    "requirements_only_success": null,
+    "independent_task_success": null,
+    "repair_attempts": 1,
+    "initial_pipeline_failure": true,
+    "requirements_count": 1,
+    "frozen_tests_count": 1,
+    "executions_count": 2
+  },
+  "data_quality": {
+    "malformed_trace_lines": 0,
+    "note": "Pipeline PASS and frozen-test agreement do not establish independent correctness. Missing labels/usage/timing remain unavailable."
+  },
+  "reporter_sha256": "c5b5e2db4f08b60e5b915b5f1f960c64121b800db1718303a89bb899eb524865"
+}

@@ -1,0 +1,5 @@
+{
+  "verdict": "PASS",
+  "criteria_justified": true,
+  "explanation": "The test case '10 / 2' evaluates to 5, which matches the expected output '5' with a trailing newline. The execution output exactly matches the expected stdout after normalization (removing one terminal LF or CRLF). The exit code is 0, as required. The requirement specifies that the output should be the result followed by a newline, and this is fully satisfied. The mathematical reference confirms the rational result of 5. All criteria are met, and the host_match is true."
+}

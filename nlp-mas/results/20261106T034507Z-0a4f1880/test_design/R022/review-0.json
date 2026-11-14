@@ -1,0 +1,4 @@
+{
+  "decision": "ACCEPT",
+  "feedback": "All test cases for requirement R022 are justified and cover the specified behavior: left-to-right evaluation of subtraction with equal precedence, spacing variations, and correct output formatting. The tests directly verify the requirement that '10 - 3 - 2' produces '5'. The duplication (T02 and T03) ensures robustness in parsing and spacing tolerance, as required. Coverage is complete within the scope of the stated requirements and interface. No additional tests are needed for this specific requirement, as the examples and edge cases are fully addressed."
+}

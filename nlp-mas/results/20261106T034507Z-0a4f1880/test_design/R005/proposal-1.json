@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R005-T01",
+      "args": [
+        "2 + 3 * 4 / 2"
+      ],
+      "stdin": "",
+      "expected_stdout": "8",
+      "expected_exit_code": 0,
+      "justification": "This test verifies correct application of arithmetic precedence: multiplication and division are evaluated before addition. 3 * 4 = 12, 12 / 2 = 6, then 2 + 6 = 8. This confirms that multiplication and division take precedence over addition, as required.",
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T02",
+      "args": [
+        "(2 + 3) * (4 - 1) + 5"
+      ],
+      "stdin": "",
+      "expected_stdout": "20",
+      "expected_exit_code": 0,
+      "justification": "This test verifies correct handling of nested parentheses and precedence. First, (2 + 3) = 5 and (4 - 1) = 3, so 5 * 3 = 15, then 15 + 5 = 20. This confirms that parentheses are evaluated first, followed by multiplication, then addition, as per standard precedence.",
+      "requirement_id": "R005"
+    },
+    {
+      "test_case_id": "R005-T03",
+      "args": [
+        "10 - 3 * 2 + 1"
+      ],
+      "stdin": "",
+      "expected_stdout": "5",
+      "expected_exit_code": 0,
+      "justification": "This test verifies left-to-right evaluation of operators with equal precedence. Multiplication is performed first: 3 * 2 = 6, so 10 - 6 = 4, then 4 + 1 = 5. This confirms that when operators have equal precedence (like subtraction and addition), they are evaluated left to right, as required by the specification.",
+      "requirement_id": "R005"
+    }
+  ],
+  "rationale": "These tests directly validate the requirement to apply standard arithmetic precedence: parentheses first, then multiplication and division, then addition and subtraction, with left-to-right evaluation for operators of equal precedence. Test R005-T01 ensures multiplication and division precede addition. Test R005-T02 validates nested parentheses and correct precedence. Test R005-T03 confirms left-to-right evaluation for same-precedence operators. All expected values have been mathematically verified using independent reference math."
+}

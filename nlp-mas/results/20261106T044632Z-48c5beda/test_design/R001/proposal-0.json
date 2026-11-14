@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "test_case_id": "R001-T01",
+      "args": [
+        "2 * (3 + 4) - 5 / 2"
+      ],
+      "justification": "This test verifies standard arithmetic precedence with nested parentheses, multiplication, and division. It includes mixed operations with nonnegative integers and a terminating decimal result (5/2 = 2.5), ensuring the calculator correctly applies precedence: parentheses first, then multiplication/division, then addition/subtraction.",
+      "stdin": "",
+      "expected_stdout": "11.5\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T02",
+      "args": [
+        "100 - 2 * (5 + 3)"
+      ],
+      "justification": "This test validates the left-to-right evaluation of operators with equal precedence (subtraction and multiplication) after resolving parentheses. It ensures that multiplication is performed before subtraction, resulting in 100 - 2*8 = 100 - 16 = 84, which is a terminating decimal and an integer output.",
+      "stdin": "",
+      "expected_stdout": "84\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    },
+    {
+      "test_case_id": "R001-T03",
+      "args": [
+        "(1 + 2) * (3 - 1) + 4 / 2"
+      ],
+      "justification": "This test evaluates a complex expression with nested parentheses, multiple operations, and a terminating fractional result (4/2 = 2.0). It confirms the calculator correctly applies precedence: parentheses first, then multiplication/division, and finally addition. The result should be (3)*(2) + 2 = 6 + 2 = 8, an integer output.",
+      "stdin": "",
+      "expected_stdout": "8\n",
+      "expected_exit_code": 0,
+      "requirement_id": "R001"
+    }
+  ],
+  "rationale": "These tests cover core requirements: standard precedence, nested parentheses, left-to-right evaluation for same-precedence operators, and correct handling of integer and terminating decimal results. They are derived from the specified interface and examples, ensuring full coverage of the required behavior without introducing undefined cases (e.g., division by zero, non-terminating decimals, or invalid syntax). All expressions use only nonnegative integers, standard operators, and terminating decimals as per the specification."
+}
